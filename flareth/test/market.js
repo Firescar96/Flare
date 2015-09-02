@@ -1,15 +1,6 @@
 contract('Market', function(accounts) {
   var market = null;
 
-  String.prototype.hexEncode = function(){
-    var hex="";
-    for (var i=0; i<this.length; i++) {
-      hex += this.charCodeAt(i).toString(16)
-    }
-
-    return hex
-  }
-
   String.prototype.hexDecode = function () {
     var str = '';
     for (var i = 2; i < this.length; i += 2) {
@@ -34,7 +25,7 @@ contract('Market', function(accounts) {
       return market.dapps.call("dapp1");
     })
     .then(function(dapp) {
-      assert.isFalse(dapp[4], "Market was created with no nodes")
+      assert.strictEqual("", dapp[0].hexDecode(), "Market was created with no nodes")
       return done();
     })
   });
@@ -44,14 +35,12 @@ contract('Market', function(accounts) {
       return market.nodes.call("node1");
     })
     .then(function(node) {
-      var hexstate = "online".hexEncode()
-      assert.strictEqual(hexstate, node[1].substring(2,14), "Contract data created incorrectly")
+      assert.strictEqual("online", node[1].hexDecode(), "Contract data created incorrectly")
 
-      var hexip = "127.0.0.1".hexEncode()
-      assert.strictEqual(hexip, node[2].substring(2,20), "Contract data created incorrectly")
+      assert.strictEqual("127.0.0.1", node[2].hexDecode(), "Contract data created incorrectly")
       return done();
     })
-  })
+  });
 
   it("should add multiple nodes", function(done) {
     return market.createNode("node2", "online", "127.0.0.1")
@@ -68,11 +57,10 @@ contract('Market', function(accounts) {
       return market.numNodes.call();
     })
     .then(function(data) {
-      assert.strictEqual(data.c[0], 5, "Contract data created incorrectly")
+      assert.strictEqual(data.toNumber(), 5, "Contract data created incorrectly")
       return done();
     })
-  })
-
+  });
   it("should get dapps fee", function(done) {
     return market.createDApp("marke1", 200)
     .then(function() {
@@ -80,7 +68,7 @@ contract('Market', function(accounts) {
     })
     .then(function(dapp) {
       var fee = 200
-      assert.strictEqual(fee, dapp[2].c[0], "Contract data created incorrectly")
+      assert.strictEqual(fee, dapp[2].toNumber(), "Contract data created incorrectly")
       return done();
     })
   });
@@ -93,8 +81,8 @@ contract('Market', function(accounts) {
       return market.dapps.call("marke1");
     })
     .then(function(dapp) {
-      var hexstate = "marketer1".hexEncode()
-      assert.strictEqual(hexstate, dapp[1].substring(2,20), "Contract data created incorrectly")
+      var hexstate = "marketer1"
+      assert.strictEqual(hexstate, dapp[1].hexDecode(), "Contract data created incorrectly")
       return done();
     })
   });
@@ -110,20 +98,20 @@ contract('Market', function(accounts) {
       return market.dapps.call("dapp1");
     })
     .then(function(dapp) {
-      assert.isTrue(dapp[4], "Contract data created incorrectly")
+      assert.strictEqual("start",dapp[4].hexDecode(), "Contract data created incorrectly")
       return done();
     })
   });
-  return it("should make other nodes become workers", function(done) {
-    return market.createDApp("dapp1", 200)
-    .then(function() {
-      return market.startDApp("dapp1");
-    })
-    .then(function() {
-      return market.nodes.call("node1");
-    })
+  it("should make other nodes become workers", function(done) {
+    return market.nodes.call("node1")
     .then(function(node) {
       assert.strictEqual("master", node[1].hexDecode(), "Contract data created incorrectly")
+    })
+    .then(function() {
+      return market.nodes.call("node2");
+    })
+    .then(function(node) {
+      assert.strictEqual("worker",node[1].hexDecode(), "Contract data created incorrectly")
     })
     .then(function() {
       return market.nodes.call("node3");
@@ -131,6 +119,30 @@ contract('Market', function(accounts) {
     .then(function(node) {
       assert.strictEqual("worker",node[1].hexDecode(), "Contract data created incorrectly")
       return done();
+    })
+  });
+  it("should reset nodes when dapp finished", function(done) {
+    return market.finishDApp("dapp1")
+    .then(function() {
+      return market.dapps.call("dapp1");
+    })
+    .then(function(dapp) {
+      assert.strictEqual("",dapp[0].hexDecode(), "Contract data created incorrectly")
+    })
+    .then(function() {
+      return market.nodes.call("marketer1")
+    })
+    .then(function(node) {
+      assert.strictEqual("online", node[1].hexDecode(), "Contract data created incorrectly")
+    })
+    .then(function() {
+      return market.nodes.call("node3")
+    })
+    .then(function(node) {
+      assert.strictEqual("online", node[1].hexDecode(), "Contract data created incorrectly")
+    })
+    .then(function() {
+      return done()
     })
   });
 });

@@ -1,7 +1,7 @@
 Meteor.globals = {
   coinbase: "82a978b3f5962a5b0957d9ee9eef472ee55b42f1",
   contract: {
-    address: "a8809efd13fce61d2f81a32dc8e410ca8e50b791",
+    address: "93f05e82bf079cfcc824cff538c67bea767917b9",
     blockapps: {
       object: null,
       URL: "http://hacknet.blockapps.net",
@@ -150,24 +150,19 @@ Meteor.startup(function() {
       "inputs": [
         {
           "type": "bytes32",
-          "name": "name"
+          "name": "ident"
         }
       ],
       "constant": false,
-      "name": "getState",
-      "outputs": [
-        {
-          "type": "bytes32",
-          "name": ""
-        }
-      ],
+      "name": "startDApp",
+      "outputs": [],
       "type": "function"
     },
     {
       "inputs": [
         {
           "type": "bytes32",
-          "name": "name"
+          "name": "ident"
         }
       ],
       "constant": false,
@@ -179,7 +174,7 @@ Meteor.startup(function() {
       "inputs": [
         {
           "type": "bytes32",
-          "name": "name"
+          "name": "ident"
         },
         {
           "type": "bytes32",
@@ -216,33 +211,16 @@ Meteor.startup(function() {
       "inputs": [
         {
           "type": "bytes32",
-          "name": "dappname"
+          "name": "dappIdent"
         },
         {
           "type": "bytes32",
-          "name": "nodename"
+          "name": "nodeIdent"
         }
       ],
       "constant": false,
       "name": "payNode",
       "outputs": [],
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "type": "bytes32",
-          "name": "name"
-        }
-      ],
-      "constant": false,
-      "name": "getIPAddress",
-      "outputs": [
-        {
-          "type": "bytes32",
-          "name": ""
-        }
-      ],
       "type": "function"
     },
     {
@@ -290,18 +268,6 @@ Meteor.startup(function() {
       "inputs": [
         {
           "type": "bytes32",
-          "name": "dappname"
-        }
-      ],
-      "constant": false,
-      "name": "startDApp",
-      "outputs": [],
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "type": "bytes32",
           "name": ""
         }
       ],
@@ -310,19 +276,23 @@ Meteor.startup(function() {
       "outputs": [
         {
           "type": "bytes32",
-          "name": "master"
+          "name": "ident"
         },
         {
           "type": "bytes32",
-          "name": "ident"
+          "name": "master"
         },
         {
           "type": "uint32",
           "name": "fee"
         },
         {
-          "type": "bool",
-          "name": "on"
+          "type": "address",
+          "name": "coinbase"
+        },
+        {
+          "type": "bytes32",
+          "name": "state"
         }
       ],
       "type": "function"
@@ -339,6 +309,10 @@ Meteor.startup(function() {
       "outputs": [
         {
           "type": "bytes32",
+          "name": "ident"
+        },
+        {
+          "type": "bytes32",
           "name": "state"
         },
         {
@@ -352,10 +326,6 @@ Meteor.startup(function() {
         {
           "type": "address",
           "name": "coinbase"
-        },
-        {
-          "type": "bytes32",
-          "name": "name"
         }
       ],
       "type": "function"

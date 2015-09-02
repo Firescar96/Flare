@@ -45,13 +45,14 @@ contract Market {
 			bytes32 master;
 			uint32 fee;
 			address coinbase;
-			bool on;
+			bytes32 state;
 		}
 
 		//Vars
 		mapping (bytes32 => DApp) public dapps;
 		bytes32[2**5] public dappList;
 		uint32 public numDApps;
+		mapping(bytes32 => bytes32[]) public workers;
 
 		//	Parameter should be the driver nodes, amount of ethereum in escrow, escrow address
 		//	(in the future, add the size of ddapp, memory needed, etc) to determine the
@@ -75,34 +76,50 @@ contract Market {
 			if(!masterFound)
 			return;
 
-			dapps[ident]= DApp({master:masterNode.ident, ident:ident, fee:fee, coinbase:msg.sender, on:false});
-			dappList[numDApps] = ident;
-			numDApps += 1;
-
+			bytes32[] workerNodes;
+			workerNodes.length = 5;
+			uint32 numWorkerNodes;
 			for(i =0; i < numNodes && i < 5; i++) { //TODO: Get a better way of limiting nodes
 				Node worker = nodes[nodeList[i]];
 				if (worker.state == "online") {
 					worker.state = "worker";
 					worker.dappIdent = ident;
+					workerNodes[numWorkerNodes] = worker.ident;
+					numWorkerNodes += 1;
 				}
 			}
+
+			workers[ident].length = 2**5;
+			workers[ident] = workerNodes;
+			dapps[ident]= DApp({master:masterNode.ident, ident:ident, fee:fee, coinbase:msg.sender, state:"off"});
+			dappList[numDApps] = ident;
+			numDApps += 1;
+
 			//DDAP is not started a this point
 		}
 
 		function startDApp(bytes32 ident) {
-			if(nodes[dapps[ident].master].coinbase == msg.sender)
-			dapps[ident].on = true;
+			if(dapps[ident].coinbase == msg.sender)
+			dapps[ident].state = "start";
 		}
 
 		function payNode(bytes32 dappIdent, bytes32 nodeIdent){
+			if(dapps[dappIdent].coinbase == msg.sender)
 			nodes[nodeIdent].coinbase.send(dapps[dappIdent].fee);
 		}
 
+		event Deposit(bytes32 a);
 		//TODO: write test case
 		function finishDApp(bytes32 ident) {
-			for(var i =0; i < nodeList.length; i++) {
-				nodes[nodeList[i]].state = "online";
-				nodes[nodeList[i]].dappIdent = "";
+			nodes[dapps[ident].master].state = "online";
+				Deposit(nodes[dapps[ident].master].state);
+			delete nodes[dapps[ident].master].dappIdent;
+
+			for(var i =0; i < workers[ident].length; i++) {
+				nodes[workers[ident][i]].state = "online";
+				nodes[workers[ident][i]].dappIdent = "";
 			}
+
+			delete dapps[ident];
 		}
 	}

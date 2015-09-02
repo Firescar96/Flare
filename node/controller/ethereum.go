@@ -52,7 +52,7 @@ func payPerComputation() {
 func startEthereum() {
 	runningEthereum = true
 	log.Println("starting ethereum payment handler...")
-	exec.Command("bash", "-c", "cd "+config.Flare.Directory+"/ethereum_meteor && meteor -p 35388").Start()
+	exec.Command("bash", "-c", "cd "+config.Flare.Directory+"/node/ethereum && meteor -p 35388").Start()
 	go payPerComputation()
 }
 
