@@ -19,20 +19,17 @@ Meteor.startup(function() {
         if (Meteor.globals.useBlockapps) {
           var URL = Meteor.globals.URL
 
-          contract.blockapps.object.sync(URL,function() {
-            /*apps.forEach(function(app) {
-            console.log("App:");console.log(app.toString());
-            })*/
-          })
+          contract.blockapps.object.sync(URL,function() {})
         } else {
           var self = this;
           contract.web3.object.dappList(this.props.index, function(err, name) {
             contract.web3.object.dapps.call(name,function(err,info) {
               self.setState({
-                master: web3.toAscii(info[0]),
-                ident: web3.toAscii(info[1]),
+                ident: web3.toAscii(info[0]),
+                master: web3.toAscii(info[1]),
                 fee: info[2].toNumber(),
-                on: info[3]
+                coinbase: info[3],
+                state: web3.toAscii(info[4])
               })
             })
           })
@@ -45,12 +42,12 @@ Meteor.startup(function() {
         })
 
         return (
-          <label className={classes}>
+          <label key={this.state.ident} className={classes}>
             <input type="radio" name="dapp" value={this.state.ident} readOnly></input>
             <h3 className="ident">{this.state.ident}</h3>
             <h3 className="master">{this.state.master}</h3>
             <h3 className="fee">{this.state.fee}</h3>
-            <h3 className="on">{this.state.on.toString()}</h3>
+            <h3 className="on">{this.state.state}</h3>
           </label>
         )
       },
@@ -96,13 +93,27 @@ Meteor.startup(function() {
           }, function() {
           })
         }
+      },//the equivalent of force quitting the dapp
+      fqu: function() {
+        var contract = Meteor.globals.contract
+        if(Meteor.globals.useBlockapps) {}
+        else {
+          var name = $("input[name=dapp]:checked").val()
+          contract.web3.object.finishDApp(name, {
+            from: Meteor.globals.coinbase,
+            gas: 100,
+            gasPrice:1
+          }, function() {
+          })
+        }
       },
       render: function() {
         return (
           <div id="actions">
             <h3>Details and Actions</h3>
             <div>
-              <button id="startup" onClick={this.startup}>Start DApp</button>
+              <button onClick={this.startup}>Start</button>
+              <button onClick={this.fqu}>Cancel/Force Quit</button>
             </div>
           </div>
         )
@@ -119,16 +130,19 @@ Meteor.startup(function() {
     }
     renderPage(0)
 
-    var contract = Meteor.globals.contract
-    if (Meteor.globals.useBlockapps) {
-      contract.blockapps.object.get(contract.blockapps.URL,function(numDApps) {
-        renderPage(numDApps)
-      }, "numDApps")
-    } else {
-      contract.web3.object.numDApps(function(err, numDApps) {
-        renderPage(numDApps)
-      })
-    }
+    Tracker.autorun(function() {
+      if(Session.get("globalsReady")) {
+        var contract = Meteor.globals.contract
+        if (Meteor.globals.useBlockapps) {
+          contract.blockapps.object.get(contract.blockapps.URL,function(numDApps) {
+            renderPage(numDApps)
+          }, "numDApps")
+        } else {
+          contract.web3.object.numDApps(function(err, numDApps) {
+            renderPage(numDApps)
+          })
+        }
+      }
+    })
   }
-
 })

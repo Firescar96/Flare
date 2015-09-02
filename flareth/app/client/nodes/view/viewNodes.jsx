@@ -15,7 +15,7 @@ Meteor.startup(function() {
           state: "",
           ipaddress: "",
           coinbase: "",
-          appIdent: ""
+          dappIdent: ""
         }
       },
       componentWillMount: function() {
@@ -25,24 +25,23 @@ Meteor.startup(function() {
           contract.blockapps.object.sync(contract.blockapps.URL,function() {
             var name = contract.blockapps.object.get["nodeList"][self.props.index].toString()
             var info = contract.blockapps.object.get["nodes"](name)
-            console.log(info);
             self.setState({
-              state: web3.toAscii(info[0]),
-              ipaddress: web3.toAscii(info[1]),
-              appIdent: web3.toAscii(info[2]),
-              coinbase: info[3],
-              name: web3.toAscii(info[4])
+              ident: web3.toAscii(info[0]),
+              state: web3.toAscii(info[1]),
+              ipaddress: web3.toAscii(info[2]),
+              dappIdent: web3.toAscii(info[3]),
+              coinbase: info[4]
             })
           })
         } else {
           contract.web3.object.nodeList(this.props.index, function(err, name) {
             contract.web3.object.nodes.call(name,function(err,info) {
               self.setState({
-                state: web3.toAscii(info[0]),
-                ipaddress: web3.toAscii(info[1]),
-                appIdent: web3.toAscii(info[2]),
-                coinbase: info[3],
-                name: web3.toAscii(info[4])
+                ident: web3.toAscii(info[0]),
+                state: web3.toAscii(info[1]),
+                ipaddress: web3.toAscii(info[2]),
+                dappIdent: web3.toAscii(info[3]),
+                coinbase: info[4]
               })
             })
           })
@@ -55,12 +54,12 @@ Meteor.startup(function() {
         })
 
         return (
-          <label className={classes}>
-            <input type="radio" name="node" value={this.state.name} readOnly></input>
-            <h3 className="name">{this.state.name}</h3>
+          <label key={this.state.ident} className={classes}>
+            <input type="radio" name="node" value={this.state.ident} readOnly></input>
+            <h3 className="name">{this.state.ident}</h3>
             <h3 className="state">{this.state.state}</h3>
             <h3 className="ipaddress">{this.state.ipaddress}</h3>
-            <h3 className="appIdent">{this.state.appIdent}</h3>
+            <h3 className="appIdent">{this.state.dappIdent}</h3>
             <h3 className="coinbase">{this.state.coinbase}</h3>
           </label>
         )
@@ -141,15 +140,19 @@ Meteor.startup(function() {
     }
     renderPage(0)
 
-    var contract = Meteor.globals.contract
-    if (Meteor.globals.useBlockapps) {
-      contract.blockapps.object.get(contract.blockapps.URL,function(numNodes) {
-        renderPage(numNodes)
-      }, "numNodes")
-    } else {
-      contract.web3.object.numNodes(function(err, numNodes) {
-        renderPage(numNodes)
-      })
-    }
+    Tracker.autorun(function() {
+      if(Session.get("globalsReady")) {
+        var contract = Meteor.globals.contract
+        if (Meteor.globals.useBlockapps) {
+          contract.blockapps.object.get(contract.blockapps.URL,function(numNodes) {
+            renderPage(numNodes)
+          }, "numNodes")
+        } else {
+          contract.web3.object.numNodes(function(err, numNodes) {
+            renderPage(numNodes)
+          })
+        }
+      }
+    })
   }
 })

@@ -49,12 +49,14 @@ Meteor.startup(function() {
         var create = (
           <button id="create" onClick={this.createNewDApp}>Create</button>
         )
-        var div = React.createElement(
-          'div',
-          {id: "editDApps"},
-          [ident, fee, create]
+
+        return (
+          <div id="editDApps">
+            {ident}
+            {fee}
+            {create}
+          </div>
         )
-        return (div)
       }
     })
 

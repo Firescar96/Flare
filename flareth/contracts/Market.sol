@@ -108,11 +108,12 @@ contract Market {
 			nodes[nodeIdent].coinbase.send(dapps[dappIdent].fee);
 		}
 
-		event Deposit(bytes32 a);
 		//TODO: write test case
 		function finishDApp(bytes32 ident) {
+			if(dapps[ident].coinbase != msg.sender)
+			return;
+
 			nodes[dapps[ident].master].state = "online";
-				Deposit(nodes[dapps[ident].master].state);
 			delete nodes[dapps[ident].master].dappIdent;
 
 			for(var i =0; i < workers[ident].length; i++) {
