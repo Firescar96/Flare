@@ -16,7 +16,6 @@ func completeOperations(operations int) {
 	var response = map[string]interface{}{}
 	response["flag"] = "processPayment"
 	response["operations"] = operations
-	response["address"] = config.Flare.Address
 
 	var res, _ = json.Marshal(response)
 	masterWSClient.writeBytes(res)
@@ -53,6 +52,17 @@ func startEthereum() {
 	runningEthereum = true
 	log.Println("starting ethereum payment handler...")
 	exec.Command("bash", "-c", "cd "+config.Flare.Directory+"/node/ethereum && meteor -p 35388").Start()
+
+	var response = map[string]interface{}{}
+	response["flag"] = "init"
+	response["ident"] = config.Flare.Ident
+	response["privateKey"] = config.Flare.PrivateKey
+	response["contract"] = config.Flare.Contract
+	response["coinbase"] = config.Flare.Coinbase
+
+	var res, _ = json.Marshal(response)
+	masterWSClient.writeBytes(res)
+
 	go payPerComputation()
 }
 

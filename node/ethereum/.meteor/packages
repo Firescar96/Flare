@@ -5,12 +5,14 @@
 # but you can also edit it by hand.
 
 meteor-platform
-insecure
-react
-tomi:upload-server
 meteorhacks:npm
 http
 npm-container
-iron:router
-fourseven:scss
-tomi:upload-jquery
+ethereum:web3
+matteodem:server-session
+peerlibrary:server-autorun
+velocity:console-reporter
+practicalmeteor:chai
+jchristman:exec
+mike:mocha
+insecure

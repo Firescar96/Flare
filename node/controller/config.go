@@ -20,9 +20,12 @@ type configuration struct {
 		Username  string `json:"username"`
 	} `json:"cassandra"`
 	Flare struct {
-		Address   string `json:"address"`
-		Directory string `json:"directory"`
-		Local     struct {
+		Coinbase       string `json:"coinbase"`
+		Contract       string `json:"contract"`
+		Directory      string `json:"directory"`
+		FilesDirectory string `json:"filesDirectory"`
+		Ident          string `json:"ident"`
+		Local          struct {
 			IP   string `json:"ip"`
 			Port string `json:"port"`
 		} `json:"local"`
@@ -30,15 +33,15 @@ type configuration struct {
 			IP   string `json:"ip"`
 			Port string `json:"port"`
 		} `json:"master"`
-		Price          string `json:"price"`
-		FilesDirectory string `json:"filesDirectory"`
+		Price      string `json:"price"`
+		PrivateKey string `json:"privateKey"`
 	} `json:"flare"`
 	Spark struct {
 		Cores     string `json:"cores"`
 		Directory string `json:"directory"`
 		Log4J     struct {
-			ConversionPattern string `json:"conversionPattern"`
 			Appender          string `json:"appender"`
+			ConversionPattern string `json:"conversionPattern"`
 			Directory         string `json:"directory"`
 			Layout            string `json:"layout"`
 			MaxFileSize       string `json:"maxFileSize"`

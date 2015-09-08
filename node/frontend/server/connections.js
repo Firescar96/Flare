@@ -35,9 +35,10 @@ var connections = Meteor.bindEnvironment(function () {
     IPFSDB.upsert({}, {$set: {connections: out.split("\n")}})
   }))
 })
+
 Meteor.startup(function(){
   setInterval(connections, 5000)
-  
+
   localWS.on('message', Meteor.bindEnvironment( function(message) {
     console.log('Flare Received Message: ' + message.escapeSpecialChars());
 

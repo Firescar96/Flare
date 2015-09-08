@@ -47,6 +47,11 @@ Meteor.startup(function() {
           })
         }
       },
+      setActive: function(element) {
+        $('.node').removeClass('active');
+        $('#actions').addClass('active');
+        $(element.target).parent().addClass('active');
+      },
       render: function() {
         var classes = classNames({
           node: true,
@@ -55,7 +60,7 @@ Meteor.startup(function() {
 
         return (
           <label key={this.state.ident} className={classes}>
-            <input type="radio" name="node" value={this.state.ident} readOnly></input>
+            <input type="radio" name="node" value={this.state.ident} onClick={this.setActive} readOnly></input>
             <h3 className="name">{this.state.ident}</h3>
             <h3 className="state">{this.state.state}</h3>
             <h3 className="ipaddress">{this.state.ipaddress}</h3>
@@ -63,13 +68,6 @@ Meteor.startup(function() {
             <h3 className="coinbase">{this.state.coinbase}</h3>
           </label>
         )
-      },
-      componentDidMount: function() {
-        $('.node input[type=radio]').click(function() {
-          $('.node').removeClass('active');
-          $('#actions').addClass('active');
-          $(this).parent().addClass('active');
-        });
       }
     })
 

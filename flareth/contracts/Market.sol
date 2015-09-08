@@ -9,7 +9,7 @@ contract Market {
 	}
 
 	mapping (bytes32 => Node) public nodes;
-	bytes32[2**5] public nodeList;
+	bytes32[2**20] public nodeList;
 	uint32 public numNodes;
 
 	//Parameters should be fields in the struct, then add it to the nodeList
@@ -46,11 +46,14 @@ contract Market {
 			uint32 fee;
 			address coinbase;
 			bytes32 state;
+			//bytes23 file1;
+			//bytes23 file2;
+			//bytes32 class;
 		}
 
 		//Vars
 		mapping (bytes32 => DApp) public dapps;
-		bytes32[2**5] public dappList;
+		bytes32[2**10] public dappList;
 		uint32 public numDApps;
 		mapping(bytes32 => bytes32[]) public workers;
 
@@ -77,7 +80,7 @@ contract Market {
 			return;
 
 			bytes32[] workerNodes;
-			workerNodes.length = 5;
+			workerNodes.length = 2**5;
 			uint32 numWorkerNodes;
 			for(i =0; i < numNodes && i < 5; i++) { //TODO: Get a better way of limiting nodes
 				Node worker = nodes[nodeList[i]];
@@ -103,12 +106,14 @@ contract Market {
 			dapps[ident].state = "start";
 		}
 
-		function payNode(bytes32 dappIdent, bytes32 nodeIdent){
-			if(dapps[dappIdent].coinbase == msg.sender)
-			nodes[nodeIdent].coinbase.send(dapps[dappIdent].fee);
+
+		//TODO: write payNode tests
+		function payNode(bytes32 nodeIdent, uint32 operations){
+			if(nodes[nodeIdent].ident == nodeIdent && nodes[nodeIdent].coinbase == msg.sender)
+			nodes[nodeIdent].coinbase.send(dapps[nodes[nodeIdent].dappIdent].fee*operations);
 		}
 
-		//TODO: write test case
+		//TODO: write more test cases?
 		function finishDApp(bytes32 ident) {
 			if(dapps[ident].coinbase != msg.sender)
 			return;

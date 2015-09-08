@@ -35,6 +35,11 @@ Meteor.startup(function() {
           })
         }
       },
+      setActive: function(element) {
+        $('.dapp').removeClass('active');
+        $('#actions').addClass('active');
+        $(element.target).parent().addClass('active');
+      },
       render: function() {
         var classes = classNames({
           dapp: true,
@@ -43,20 +48,13 @@ Meteor.startup(function() {
 
         return (
           <label key={this.state.ident} className={classes}>
-            <input type="radio" name="dapp" value={this.state.ident} readOnly></input>
+            <input type="radio" name="dapp" value={this.state.ident}  onClick={this.setActive} readOnly></input>
             <h3 className="ident">{this.state.ident}</h3>
             <h3 className="master">{this.state.master}</h3>
             <h3 className="fee">{this.state.fee}</h3>
             <h3 className="on">{this.state.state}</h3>
           </label>
         )
-      },
-      componentDidMount: function() {
-        $('.dapp input[type=radio]').click(function() {
-          $('.dapp').removeClass('active');
-          $('#actions').addClass('active');
-          $(this).parent().addClass('active');
-        });
       }
     })
 

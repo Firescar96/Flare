@@ -14,10 +14,7 @@ fourseven:scss
 
 iron:router
 react
-mquandalle:harmony
-ethereum:web3
 
 
-npm-container
-meteorhacks:npm
 maxharris9:classnames
+ethereum:web3

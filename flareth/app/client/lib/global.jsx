@@ -1,5 +1,3 @@
-
-
 Meteor.startup(function() {
   //indicator variable for when it's safe to get values that are set in this file's async methods are complete
   Session.set("globalsReady", false)
@@ -8,7 +6,7 @@ Meteor.startup(function() {
   Meteor.globals = {
     coinbase: "82a978b3f5962a5b0957d9ee9eef472ee55b42f1",
     contract: {
-      address: "8dcbc74ec8bfdbb620eb98134589626199a3dd31",
+      address: "d6f084ee15e38c4f7e091f8dd0fe6fe4a0e203ef",
       blockapps: {
         object: null,
         URL: "http://hacknet.blockapps.net",
