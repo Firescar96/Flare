@@ -23,6 +23,15 @@ func startFlare() {
 	log.Println("flare is ready")
 
 	go func() {
+		var message = map[string]interface{}{}
+
+		message["flag"] = "init"
+		message["privateKey"] = config.Flare.PrivateKey
+		message["ident"] = config.Flare.PrivateKey
+		message["coinbase"] = config.Flare.Coinbase
+		message["contract"] = config.Flare.Contract
+		var mess, _ = json.Marshal(message)
+		masterWSClient.writeBytes(mess)
 		for {
 			var bytes = masterWSClient.readBytesBlocking()
 			log.Println("got master" + string(bytes))

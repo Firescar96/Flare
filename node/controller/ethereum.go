@@ -12,6 +12,8 @@ import (
 
 var runningEthereum = false
 
+var computationTicker = time.NewTicker(5 * time.Second)
+
 func completeOperations(operations int) {
 	var response = map[string]interface{}{}
 	response["flag"] = "processPayment"
@@ -30,19 +32,22 @@ func payPerComputation() {
 	//SparkContext is a signal that some computation has been done
 	r, _ := regexp.Compile("SparkContext")
 	for {
-		if !runningEthereum {
-			return
-		}
-		//It's expensive to read the whole file so this is a naive method of reducing reads
-		data, _lastMod, _ := readFileBytesIfModified(lastMod, sparkLogName)
-		if _lastMod.After(lastMod) {
-			lastMod = _lastMod
-			matches := r.FindAll(data, -1)
-			_operations := len(matches)
-			if _operations > operations {
-				//if a node has done more operations they deserve more either
-				completeOperations((_operations - operations))
-				operations = _operations
+		select {
+		case <-computationTicker.C:
+			if !runningEthereum {
+				return
+			}
+			//It's expensive to read the whole file so this is a naive method of reducing reads
+			data, _lastMod, _ := readFileBytesIfModified(lastMod, sparkLogName)
+			if _lastMod.After(lastMod) {
+				lastMod = _lastMod
+				matches := r.FindAll(data, -1)
+				_operations := len(matches)
+				if _operations > operations {
+					//if a node has done more operations they deserve more either
+					completeOperations((_operations - operations))
+					operations = _operations
+				}
 			}
 		}
 	}
