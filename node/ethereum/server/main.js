@@ -180,8 +180,11 @@ Meteor.startup(function() {
           var dappIdent = web3.toAscii(info[3]).replace(/\0/g, '')
           contract.web3.object.dapps.call(dappIdent,function(err,dappInfo) {
             var dappState = web3.toAscii(dappInfo[4]).replace(/\0/g, '')
-            if(dappState == "start")
-            globals.masterWSClient.send(JSON.stringify({flag: "startDApp"}))
+            if(dappState == "start") {
+              var ipfsHash = web3.toAscii(dappInfo[4]).replace(/\0/g, '')
+              var classname = web3.toAscii(dappInfo[4]).replace(/\0/g, '')
+              globals.masterWSClient.send(JSON.stringify({flag: "startDApp", ipfsHash:ipfsHash, class:classname}))
+            }
           })
         }
       })

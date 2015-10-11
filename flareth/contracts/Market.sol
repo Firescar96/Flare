@@ -46,9 +46,8 @@ contract Market {
 			uint32 fee;
 			address coinbase;
 			bytes32 state;
-			//bytes23 file1;
-			//bytes23 file2;
-			//bytes32 class;
+			bytes ipfsHash;
+			bytes32 class;
 		}
 
 		//Vars
@@ -60,7 +59,7 @@ contract Market {
 		//	Parameter should be the driver nodes, amount of ethereum in escrow, escrow address
 		//	(in the future, add the size of ddapp, memory needed, etc) to determine the
 		//	most efficient processing.
-		function createDApp(bytes32 ident, uint32 fee) {
+		function createDApp(bytes32 ident, uint32 fee, bytes ipfsHash, bytes32 class) {
 			if(numNodes == 0)
 			return;
 
@@ -94,7 +93,7 @@ contract Market {
 
 			workers[ident].length = 2**5;
 			workers[ident] = workerNodes;
-			dapps[ident]= DApp({master:masterNode.ident, ident:ident, fee:fee, coinbase:msg.sender, state:"off"});
+			dapps[ident]= DApp({master:masterNode.ident, ident:ident, fee:fee, coinbase:msg.sender, state:"off", ipfsHash:ipfsHash, class:class});
 			dappList[numDApps] = ident;
 			numDApps += 1;
 

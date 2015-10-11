@@ -3,7 +3,7 @@ Meteor.startup(function(){
     added: function(id, fields) {
       message = {
         id: id,
-        flag: "sparkSubmit",
+        flag: "submit",
         class: "DDAppTemplate",
         name: filesDirectory+"jar/"+ fields["name"]
       }
@@ -16,9 +16,9 @@ Meteor.startup(function(){
     console.log('Flare Received Message: ' + message.escapeSpecialChars());
 
     var data = JSON.parse(message.escapeSpecialChars())
-    if(data.flag == "sparkSubmit")
+    if(data.flag == "submit")
       if(data.success == true)
-        JARSDB.update(data.id,{state: "completed"})
+        JARSDB.update(data.id,{state: "completed", hash: data.name})
       else
         JARSDB.update(data.id,{state: "failed"})
   }))

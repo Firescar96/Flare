@@ -7,7 +7,7 @@ import (
 )
 
 func uploadJAR(data map[string]interface{}) ([]byte, error) {
-	out, err := exec.Command("bash", "-c", "ipfs add "+data["name"].(string)).CombinedOutput()
+	out, err := exec.Command("bash", "-c", "ipfs add \""+data["name"].(string)+"\"").CombinedOutput()
 	if err != nil {
 		return nil, err
 	}

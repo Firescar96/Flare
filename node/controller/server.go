@@ -111,12 +111,12 @@ func startFlare() {
 				var res, _ = json.Marshal(response)
 				localWSServer.writeBytes(res)
 			}
-			if data["flag"] == "sparkSubmit" {
+			if data["flag"] == "submit" {
 				name, err := uploadJAR(data)
 
-				response["flag"] = "sparkSubmit"
+				response["flag"] = "submit"
 				response["id"] = data["id"]
-				response["name"] = name
+				response["name"] = string(name)
 				if err == nil {
 					response["success"] = true
 				} else {

@@ -5,8 +5,8 @@ Meteor.startup(function() {
   Template.uploadForm.created = function() {
     Uploader.init(this);
     Uploader.finished = function(index, fileInfo, templateContext) {
-      fileInfo.state = "new"
-      JARSDB.insert(fileInfo);
+      fileInfo.hash = ""
+      JARSDB.insert(fileInfo)
     }
   }
 

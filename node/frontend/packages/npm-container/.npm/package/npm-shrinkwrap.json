@@ -71,7 +71,7 @@
           }
         },
         "lodash": {
-          "version": "3.10.0"
+          "version": "3.10.1"
         }
       }
     },
@@ -83,28 +83,6 @@
         },
         "ultron": {
           "version": "1.0.2"
-        },
-        "bufferutil": {
-          "version": "1.1.0",
-          "dependencies": {
-            "bindings": {
-              "version": "1.2.1"
-            },
-            "nan": {
-              "version": "1.8.4"
-            }
-          }
-        },
-        "utf-8-validate": {
-          "version": "1.1.0",
-          "dependencies": {
-            "bindings": {
-              "version": "1.2.1"
-            },
-            "nan": {
-              "version": "1.8.4"
-            }
-          }
         }
       }
     }
