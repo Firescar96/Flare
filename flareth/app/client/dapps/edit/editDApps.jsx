@@ -8,18 +8,13 @@ Meteor.startup(function() {
       createNewDApp: function(argument) {
         var contract = Meteor.globals.contract
         if(Meteor.globals.useBlockapps) {
-          contract.blockapps.object.call(contract.blockapps.URL, function(){
-            console.log("inside data");
-          },
-          {
-            funcName:"createDApp",
-            fromAccount:contract.blockapps.userAccount,
+          contract.blockapps.object.state.createDApp("test","200")
+          .txParams({
             value:0,
             gasPrice:100,
-            gasLimit: 3141592
-          }, {
-            name: "test",
-            fee: "200"
+            gasLimit: 3141592})
+          .callFrom(contract.blockapps.userAccount, function(){
+            console.log("inside data");
           })
         } else {
           var ident = $("#ident").val()

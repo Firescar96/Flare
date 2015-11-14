@@ -19,7 +19,7 @@ Meteor.startup(function() {
         port: 8545
       }
     },
-    useBlockapps: false //true to use blockapps functionality, false to use a web3 RPC Clint
+    useBlockapps: true //true to use blockapps functionality, false to use a web3 RPC Clint
   }
 
   /**Configuring the blockapps contract object**/
