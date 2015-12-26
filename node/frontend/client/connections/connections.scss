@@ -2,30 +2,35 @@
 @import "../lib/imports";
 
 #connections-page {
+
+  h1 {
+    color: $red-pure;
+  }
+
   h2 {
-  	color: $red-light;
+    color: $yellow-dark;
   }
 
   h3 {
-  	color: $red-pure;
+    color: $red-pure;
   }
 
   table {
     margin: auto;
-  	width: 100%;
-  	font-size: 15px;
+    width: 100%;
+    font-size: 15px;
     display: table;
   }
 
   /*Even children of the table are slightly lighter*/
   tr:nth-child(even) {
-      background-color: #ffefa2;
+    background-color: #ffefa2;
   }
   tr {
-      height: 1.5em;
+    height: 1.5em;
   }
   th {
-      padding-top: 7px;
+    padding-top: 7px;
   }
   td {
     padding-top: 3px;

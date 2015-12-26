@@ -7,10 +7,10 @@ Meteor.startup( function(){
     var Spark = React.createClass({
       getInitialState: function() {
         return {
-          status: "",
-          workers: "",
-          url: "",
-          applications: ""
+          status: "Not Connected",
+          workers: "N/A",
+          url: "N/A",
+          applications: "N/A"
         }
       },
       componentDidMount: function() {
@@ -69,7 +69,6 @@ Meteor.startup( function(){
         Meteor.subscribe("cassandra", function() {
           Tracker.autorun(function () {
             var info = CassandraDB.findOne()
-            console.log(JSON.stringify(info) + "inof");
             if(info)
             self.setState({
               ID: info["ID"],
@@ -124,12 +123,13 @@ Meteor.startup( function(){
         Meteor.subscribe("ipfs", function() {
           Tracker.autorun(function () {
             var info = IPFSDB.findOne()
-            if(info)
-            self.setState({
-              id: info["id"],
-              status: info["status"],
-              publicKey: info["publicKey"]
-            })
+            console.log(JSON.stringify(info) + "inof");
+            if(info && typeof info.id != "undefined")
+              self.setState({
+                id: info.id,
+                status: info.status,
+                publicKey: info.publicKey
+              })
           })
         })
       },
@@ -140,7 +140,7 @@ Meteor.startup( function(){
             <div className='infobox'>
               <div>
                 <h3>ID: </h3>
-                <span>{this.state.ID}</span>
+                <span>{this.state.id}</span>
               </div>
               <div>
                 <h3>Status: </h3>

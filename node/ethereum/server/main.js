@@ -183,7 +183,7 @@ Meteor.startup(function() {
             if(dappState == "start") {
               var ipfsHash = web3.toAscii(dappInfo[4]).replace(/\0/g, '')
               var classname = web3.toAscii(dappInfo[4]).replace(/\0/g, '')
-              globals.masterWSClient.send(JSON.stringify({flag: "startDApp", ipfsHash:ipfsHash, class:classname}))
+              globals.masterWSClient.send(JSON.stringify({flag: "startDApp", state:state, ipfsHash:ipfsHash, class:classname}))
             }
           })
         }

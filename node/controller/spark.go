@@ -11,8 +11,19 @@ import (
 var sparkLogName string
 var sparkDeployName string
 
+type sparkInstance struct {
+	logName    string
+	depolyName string
+}
+
+type sparkInterface interface {
+	start(state []byte)
+}
+
+var spark = sparkInstance{}
+
 func getSparkLog() (string, error) {
-	text, err := readFileWithLines(sparkLogName)
+	text, err := readFileWithLines(spark.logName)
 
 	return text, err
 }
@@ -36,11 +47,12 @@ func sparkSubmit(data map[string]interface{}) bool {
 	return true
 }
 
-func startSpark() {
+//state should either be 'master' or 'worker'
+func (si *sparkInstance) start(state []byte) {
 	log.Println("starting spark...")
 	//create the path for the log file
 	exec.Command("mkdir", "-p", config.Spark.Log4J.Directory)
-	sparkLogName = config.Spark.Log4J.Directory + "/sparkLogging"
+	spark.logName = config.Spark.Log4J.Directory + "/sparkLogging"
 	exec.Command("touch", sparkLogName)
 
 	//create the spark logging config file
@@ -93,21 +105,23 @@ func startSpark() {
 	slave := config.Spark.Directory + "/sbin/start-slave.sh"
 	slaveArg := "spark://" + config.Spark.Master.IP + ":" + config.Spark.Master.Port
 
-	_, err := exec.Command(master).CombinedOutput()
-	if err != nil {
-		log.Println("error with starting spark master")
-		log.Fatal(err.Error())
+	switch string(state) {
+	case "master":
+		_, err := exec.Command(master).CombinedOutput()
+		if err != nil {
+			log.Println("error with starting spark master")
+			log.Fatal(err.Error())
+		}
+	case "slave":
+		_, err := exec.Command(slave, slaveArg).CombinedOutput()
+
+		if err != nil {
+			//This is most likely due to the slave already running, TODO: Gracefully handle this case
+			//log.Println("error with starting spark slave")
+			//log.Println(string(out[:]))
+			//log.Fatal(err.Error())
+		}
 	}
-
-	_, err = exec.Command(slave, slaveArg).CombinedOutput()
-
-	if err != nil {
-		//This is most likely due to the slave already running, TODO: Gracefully handle this case
-		//log.Println("error with starting spark slave")
-		//log.Println(string(out[:]))
-		//log.Fatal(err.Error())
-	}
-
 }
 
 func stopSpark() {

@@ -6,7 +6,16 @@ import (
 	"strings"
 )
 
-func uploadJAR(data map[string]interface{}) ([]byte, error) {
+type ipfsInstance struct {
+}
+
+type ipfsInterface interface {
+	add(data map[string]interface{}) ([]byte, error)
+}
+
+var ipfs = ipfsInstance{}
+
+func (ii *ipfsInstance) add(data map[string]interface{}) ([]byte, error) {
 	out, err := exec.Command("bash", "-c", "ipfs add \""+data["name"].(string)+"\"").CombinedOutput()
 	if err != nil {
 		return nil, err
@@ -15,6 +24,10 @@ func uploadJAR(data map[string]interface{}) ([]byte, error) {
 	name := strings.Split(string(out), " ")[1]
 
 	return []byte(name), nil
+}
+
+func (ii *ipfsInstance) get(name []byte) {
+	exec.Command("bash", "-c", "ipfs get \""+string(name)+"\" -o "+config.Flare.FilesDirectory+"/currentDApp").Run()
 }
 
 func startIPFS() {

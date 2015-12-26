@@ -14,7 +14,7 @@ type status struct {
 
 func startFlare() {
 	//startup all the different asynchronous processes ,ORDER IS IMPORTANT
-	startSpark()
+	//startSpark()
 	startEthereum()
 	startCassandra()
 	startIPFS()
@@ -22,6 +22,7 @@ func startFlare() {
 	startFrontend()
 	log.Println("flare is ready")
 
+	//connects to the local handler for the ethereum network
 	go func() {
 		var message = map[string]interface{}{}
 
@@ -35,9 +36,32 @@ func startFlare() {
 		for {
 			var bytes = masterWSClient.readBytesBlocking()
 			log.Println("got master" + string(bytes))
+			var data = map[string]interface{}{}
+			if err := json.Unmarshal(bytes, &data); err != nil {
+				panic(err)
+			}
+
+			/*Continue work here*/
+			if data["flag"] == "startDapp" {
+
+				spark.start(data["state"].([]byte))
+
+				//TODO: make sure spark has started before continuing
+				if data["state"] == "master" {
+					ipfs.get(data["ipfsHash"].([]byte))
+					var sparkData = map[string]interface{}{}
+					sparkData["class"] = data["class"]
+					sparkData["name"] = config.Flare.FilesDirectory + "/currentDApp"
+				}
+
+				if data["state"] == "worker" {
+					//don't need to do anything
+				}
+			}
 		}
 	}()
 
+	//publishes some status info to a local connection on changes
 	go func() {
 		for {
 			var response = map[string]interface{}{}
@@ -63,6 +87,7 @@ func startFlare() {
 		}
 	}()
 
+	//reads from local connections and sends requested info
 	go func() {
 		for {
 			var bytes = localWSServer.readBytesBlocking()
@@ -112,7 +137,7 @@ func startFlare() {
 				localWSServer.writeBytes(res)
 			}
 			if data["flag"] == "submit" {
-				name, err := uploadJAR(data)
+				name, err := ipfs.add(data)
 
 				response["flag"] = "submit"
 				response["id"] = data["id"]

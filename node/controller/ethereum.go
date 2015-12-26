@@ -38,7 +38,7 @@ func payPerComputation() {
 				return
 			}
 			//It's expensive to read the whole file so this is a naive method of reducing reads
-			data, _lastMod, _ := readFileBytesIfModified(lastMod, sparkLogName)
+			data, _lastMod, _ := readFileBytesIfModified(lastMod, spark.logName)
 			if _lastMod.After(lastMod) {
 				lastMod = _lastMod
 				matches := r.FindAll(data, -1)

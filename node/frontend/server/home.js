@@ -21,6 +21,7 @@ var home = Meteor.bindEnvironment(function () {
   //call the IPFS REST API for state information
   HTTP.get('http://127.0.0.1:5001/api/v0/id', function(error, response) {
     if(response) {
+      console.log(response);
       var id = response.data.ID
       var publicKey = response.data.PublicKey
       var obj = {
