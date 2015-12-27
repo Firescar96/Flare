@@ -75,6 +75,7 @@ MochaWeb.testOnly(function(){
       it('should detect start using web3', function(done) {
         ws.on('message', function(message, flags){
           var data = JSON.parse(message)
+          console.log(message);
           if(data.flag == "startDApp")
           done()
         })

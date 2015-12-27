@@ -1,0 +1,14 @@
+development:
+  SimpleStorage:
+    args:
+      - 100
+  Market:
+    args:
+      - 100
+staging:
+  SimpleStorage:
+    args:
+      - 100
+  Market:
+    args:
+      - 100
