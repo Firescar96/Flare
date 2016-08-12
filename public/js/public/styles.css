@@ -1,0 +1,112 @@
+nav {
+  border-bottom: solid 2px black; }
+  nav h1 {
+    display: block;
+    padding: 20px 0;
+    text-align: center; }
+
+main {
+  display: flex; }
+  main div#nodeSidebar {
+    float: left; }
+    main div#nodeSidebar button.nodeReference {
+      display: block;
+      position: relative;
+      margin: 10px;
+      padding: 0 5px;
+      background-color: transparent;
+      border: solid 2px black;
+      outline: none;
+      font-size: 24px; }
+  main div#graphs {
+    flex: 1; }
+  main div#actionSidebar {
+    float: right; }
+    main div#actionSidebar button.nodeAction {
+      display: block;
+      position: relative;
+      margin: 10px;
+      padding: 0 5px;
+      background-color: transparent;
+      border: solid 2px black;
+      outline: none;
+      font-size: 24px; }
+    main div#actionSidebar .tgl {
+      display: none; }
+      main div#actionSidebar .tgl, main div#actionSidebar .tgl:after, main div#actionSidebar .tgl:before,
+      main div#actionSidebar .tgl *,
+      main div#actionSidebar .tgl *:after,
+      main div#actionSidebar .tgl *:before,
+      main div#actionSidebar .tgl + .tgl-btn {
+        box-sizing: border-box; }
+        main div#actionSidebar .tgl::selection, main div#actionSidebar .tgl:after::selection, main div#actionSidebar .tgl:before::selection,
+        main div#actionSidebar .tgl *::selection,
+        main div#actionSidebar .tgl *:after::selection,
+        main div#actionSidebar .tgl *:before::selection,
+        main div#actionSidebar .tgl + .tgl-btn::selection {
+          background: none; }
+      main div#actionSidebar .tgl + .tgl-btn {
+        outline: 0;
+        display: block;
+        width: 4em;
+        height: 2em;
+        position: relative; }
+        main div#actionSidebar .tgl + .tgl-btn:after, main div#actionSidebar .tgl + .tgl-btn:before {
+          position: relative;
+          display: block;
+          content: "";
+          width: 50%;
+          height: 100%; }
+        main div#actionSidebar .tgl + .tgl-btn:after {
+          left: 0; }
+        main div#actionSidebar .tgl + .tgl-btn:before {
+          display: none; }
+      main div#actionSidebar .tgl:checked + .tgl-btn:after {
+        left: 50%; }
+    main div#actionSidebar .tgl-flat#microbeSelector + .tgl-btn {
+      border: 4px solid #99afb3; }
+      main div#actionSidebar .tgl-flat#microbeSelector + .tgl-btn:after {
+        background: #b3f6ff; }
+    main div#actionSidebar .tgl-flat#microbeSelector:checked + .tgl-btn {
+      border: 4px solid #00cae6; }
+      main div#actionSidebar .tgl-flat#microbeSelector:checked + .tgl-btn:after {
+        background: #08e1ff; }
+    main div#actionSidebar .tgl-flat#macrophageSelector + .tgl-btn {
+      border: 4px solid #a99999; }
+      main div#actionSidebar .tgl-flat#macrophageSelector + .tgl-btn:after {
+        background: #e3b3b3; }
+    main div#actionSidebar .tgl-flat#macrophageSelector:checked + .tgl-btn {
+      border: 4px solid #930000; }
+      main div#actionSidebar .tgl-flat#macrophageSelector:checked + .tgl-btn:after {
+        background: #a60808; }
+    main div#actionSidebar .tgl-flat#connectionsSelector + .tgl-btn {
+      border: 4px solid #9caa99; }
+      main div#actionSidebar .tgl-flat#connectionsSelector + .tgl-btn:after {
+        background: #bde6b3; }
+    main div#actionSidebar .tgl-flat#connectionsSelector:checked + .tgl-btn {
+      border: 4px solid #1f9900; }
+      main div#actionSidebar .tgl-flat#connectionsSelector:checked + .tgl-btn:after {
+        background: #29ad08; }
+    main div#actionSidebar .tgl-flat#godsnodeSelector + .tgl-btn {
+      border: 4px solid #a399a8; }
+      main div#actionSidebar .tgl-flat#godsnodeSelector + .tgl-btn:after {
+        background: #cfb3df; }
+    main div#actionSidebar .tgl-flat#godsnodeSelector:checked + .tgl-btn {
+      border: 4px solid #560085; }
+      main div#actionSidebar .tgl-flat#godsnodeSelector:checked + .tgl-btn:after {
+        background: #650897; }
+    main div#actionSidebar .tgl-flat + .tgl-btn {
+      margin: auto;
+      padding: 2px;
+      transition: all .2s ease;
+      background: #fff;
+      border-radius: 2em; }
+      main div#actionSidebar .tgl-flat + .tgl-btn:after {
+        transition: all .2s ease;
+        content: "";
+        border-radius: 1em; }
+    main div#actionSidebar .tgl-flat:checked + .tgl-btn {
+      border: 4px solid #f00; }
+      main div#actionSidebar .tgl-flat:checked + .tgl-btn:after {
+        left: 50%;
+        background: #f00; }

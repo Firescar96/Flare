@@ -1,0 +1,41 @@
+{
+  "name": "eth-macrophage",
+  "version": "0.0.2",
+  "description": "Experiments of Ethereum node peer selection",
+  "main": "app.js",
+  "dependencies": {
+    "babel-cli": "^6.10.1",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.11.1",
+    "body-parser": "~1.15.1",
+    "cookie-parser": "~1.4.3",
+    "ejs": "^2.5.1",
+    "express": "~4.13.4",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "json-loader": "^0.5.4",
+    "react": "^0.14.8",
+    "react-dom": "^0.14.8",
+    "react-mounter": "^1.2.0"
+  },
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Firescar96/react-boilerplate.git"
+  },
+  "author": "Firescar96",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Firescar96/react-boilerplate/issues"
+  },
+  "homepage": "https://github.com/Firescar96/react-boilerplate#readme",
+  "devDependencies": {
+    "css-loader": "^0.23.1",
+    "node-sass": "^3.8.0",
+    "sass-loader": "^4.0.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.1"
+  }
+}
