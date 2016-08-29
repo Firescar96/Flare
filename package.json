@@ -16,7 +16,7 @@
     "json-loader": "^0.5.4",
     "react": "^0.14.8",
     "react-dom": "^0.14.8",
-    "react-mounter": "^1.2.0"
+    "react-router": "^2.7.0"
   },
   "scripts": {
     "start": "node app.js"

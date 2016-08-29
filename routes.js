@@ -6,7 +6,7 @@ exports = module.exports = function (app) {
   });
 
   //HomePage
-  app.get('/', function (req, res, next) {
+  app.get('/*', function (req, res, next) {
     res.render('index.html');
   });
 };
