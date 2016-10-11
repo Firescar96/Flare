@@ -1,3 +1,5 @@
+pragma solidity ^0.4.2;
+
 contract Market {
 
 	struct Node {
@@ -103,8 +105,10 @@ contract Market {
 
 		//TODO: write payNode tests
 		function payNode(bytes32 nodeIdent, uint32 operations){
-			if(nodes[nodeIdent].ident == nodeIdent && nodes[nodeIdent].coinbase == msg.sender)
-			nodes[nodeIdent].coinbase.send(dapps[nodes[nodeIdent].dappIdent].fee*operations);
+			if(nodes[nodeIdent].ident == nodeIdent && nodes[nodeIdent].coinbase == msg.sender) {
+				if(!nodes[nodeIdent].coinbase.send(dapps[nodes[nodeIdent].dappIdent].fee*operations))
+					throw;
+			}
 		}
 
 		//TODO: write more test cases?
