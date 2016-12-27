@@ -1,0 +1,45 @@
+@import "./lib/global";
+@import "./lib/imports";
+
+#logs-page {
+	h1 {
+		color: $gray-darker;
+	}
+
+	#log-select {
+		display: flex;
+	  width: 100%;
+		height: 10%;
+
+		>label {
+			margin: 0;
+	    display: flex;
+	    float: left;
+			width: 25%;
+	    align-items: center;
+			@include txtColorInvert($gray-dark, $gray-light);
+
+			input {
+				display: none;
+
+				+ span {
+					font-size: 20px;
+	        margin: auto;
+				}
+
+				&:checked + span {
+					font-weight: bold;
+				}
+			}
+		}
+	}
+
+	#logData {
+		white-space: pre-wrap;
+		color: $white;
+		.hide {
+			display: none;
+			height: 100%;
+		}
+	}
+}

@@ -227,7 +227,6 @@
               "indent": [2, 2, {"SwitchCase": 1}],
               "key-spacing": [2, {
                 "afterColon": true,
-                "align": "value",
                 "beforeColon": false,
                 }], // 'prop': x, extra spacing allowed if lining up blocks
                 "linebreak-style": [
@@ -247,7 +246,6 @@
                 "quotes": [
                   2, "single", "avoid-escape"
                 ],
-                "semi": [2, "always"],
                 "semi-spacing": [2, {
                   "before": false,
                   "after": true
@@ -261,6 +259,6 @@
                     "space-before-blocks": 2,
                     "space-before-function-paren": [2, "always"],
                     "space-infix-ops": 2,
-                    "spaced-comment": [2, "never"],
+                    "spaced-comment": [2, "always"],
                   }
                 }
