@@ -1,0 +1,139 @@
+$nav-height: 70px;
+
+$blue-darker: #13223c;
+$blue-dark: #223765;
+$blue: #337ab7;
+$blue-light: #4d94ff;
+$turquoise: #3cb5b5;
+$yellow-darker: #bb6600;
+$yellow-dark: #ffa319;
+$yellow: #ffd600;
+$red-dark: #4e0a0a;
+$red: #a31919;
+$red-pure: #dd0000;
+$red-light: #e53b51;
+$gray-darker: #343434;
+$gray-dark: #565656;
+$gray-light: #f2f2f2;
+$white : #fff;
+$black : #000;
+
+html, body {
+  margin: 0;
+  height: 100%
+}
+
+body {
+  background-color: $blue-dark;
+  display: flex;
+  flex-direction: column;
+}
+
+nav {
+  position: static;
+  display: flex;
+  width: 100%;
+  background-color: $red;
+  color: $yellow-dark;
+  text-align: left;
+  height: $nav-height;
+  z-index: 1000;
+
+  >* {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  h2 {
+    font-size: 15px;
+    margin-left: 10px;
+  }
+
+  ul {
+    margin-left: auto;
+    list-style: none;
+
+    li {
+      display: inline-block;
+      position: relative;
+      padding: 15px 20px;
+      background-color: transparent;
+      cursor: pointer;
+      -webkit-transition: all 0.2s;
+      -moz-transition: all 0.2s;
+      -ms-transition: all 0.2s;
+      -o-transition: all 0.2s;
+      transition: all 0.2s;
+
+      &:hover {
+        background-color: darken($red, 10% );
+        color: $white;
+
+        ul {
+          display: block;
+          opacity: 1;
+        }
+      }
+      ul {
+        padding: 0;
+        position: absolute;
+        top: 48px;
+        left: 0;
+        width: 150px;
+        display: none;
+        -webkit-transiton: opacity 0.2s;
+        -moz-transition: opacity 0.2s;
+        -ms-transition: opacity 0.2s;
+        -o-transition: opacity 0.2s;
+        transition: opacity 0.2s;
+        li {
+          background: #555;
+          display: block;
+          color: #fff;
+
+          &:hover { background: #666; }
+        }
+      }
+    }
+  }
+}
+
+header {
+  display: flex;
+
+  label {
+    display: inline-block;
+    margin: auto;
+    padding: 30px 0;
+    color: $yellow;
+    font-size: 20px;
+
+    input {
+      background-color: transparent;
+      padding: 0 10px;
+      outline: none;
+      border: none;
+      border-bottom: solid 1px $yellow;
+      color: $turquoise;
+      font-size: 20px;
+      width: 420px;
+    }
+  }
+}
+
+div#root > div {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

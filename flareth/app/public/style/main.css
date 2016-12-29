@@ -1,0 +1,690 @@
+html, body {
+  margin: 0;
+  height: 100%; }
+
+body {
+  background-color: #223765;
+  display: flex;
+  flex-direction: column; }
+
+nav {
+  position: static;
+  display: flex;
+  width: 100%;
+  background-color: #a31919;
+  color: #ffa319;
+  text-align: left;
+  height: 70px;
+  z-index: 1000; }
+  nav > * {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 0;
+    margin-right: 0; }
+  nav h1 {
+    font-size: 20px; }
+  nav h2 {
+    font-size: 15px;
+    margin-left: 10px; }
+  nav ul {
+    margin-left: auto;
+    list-style: none; }
+    nav ul li {
+      display: inline-block;
+      position: relative;
+      padding: 15px 20px;
+      background-color: transparent;
+      cursor: pointer;
+      -webkit-transition: all 0.2s;
+      -moz-transition: all 0.2s;
+      -ms-transition: all 0.2s;
+      -o-transition: all 0.2s;
+      transition: all 0.2s; }
+      nav ul li:hover {
+        background-color: #771212;
+        color: #fff; }
+        nav ul li:hover ul {
+          display: block;
+          opacity: 1; }
+      nav ul li ul {
+        padding: 0;
+        position: absolute;
+        top: 48px;
+        left: 0;
+        width: 150px;
+        display: none;
+        -webkit-transiton: opacity 0.2s;
+        -moz-transition: opacity 0.2s;
+        -ms-transition: opacity 0.2s;
+        -o-transition: opacity 0.2s;
+        transition: opacity 0.2s; }
+        nav ul li ul li {
+          background: #555;
+          display: block;
+          color: #fff; }
+          nav ul li ul li:hover {
+            background: #666; }
+
+header {
+  display: flex; }
+  header label {
+    display: inline-block;
+    margin: auto;
+    padding: 30px 0;
+    color: #ffd600;
+    font-size: 20px; }
+    header label input {
+      background-color: transparent;
+      padding: 0 10px;
+      outline: none;
+      border: none;
+      border-bottom: solid 1px #ffd600;
+      color: #3cb5b5;
+      font-size: 20px;
+      width: 420px; }
+
+div#root > div {
+  position: relative;
+  display: flex;
+  flex-direction: column; }
+
+a {
+  color: inherit;
+  text-decoration: none; }
+html, body {
+  margin: 0;
+  height: 100%; }
+
+body {
+  background-color: #223765;
+  display: flex;
+  flex-direction: column; }
+
+nav {
+  position: static;
+  display: flex;
+  width: 100%;
+  background-color: #a31919;
+  color: #ffa319;
+  text-align: left;
+  height: 70px;
+  z-index: 1000; }
+  nav > * {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 0;
+    margin-right: 0; }
+  nav h1 {
+    font-size: 20px; }
+  nav h2 {
+    font-size: 15px;
+    margin-left: 10px; }
+  nav ul {
+    margin-left: auto;
+    list-style: none; }
+    nav ul li {
+      display: inline-block;
+      position: relative;
+      padding: 15px 20px;
+      background-color: transparent;
+      cursor: pointer;
+      -webkit-transition: all 0.2s;
+      -moz-transition: all 0.2s;
+      -ms-transition: all 0.2s;
+      -o-transition: all 0.2s;
+      transition: all 0.2s; }
+      nav ul li:hover {
+        background-color: #771212;
+        color: #fff; }
+        nav ul li:hover ul {
+          display: block;
+          opacity: 1; }
+      nav ul li ul {
+        padding: 0;
+        position: absolute;
+        top: 48px;
+        left: 0;
+        width: 150px;
+        display: none;
+        -webkit-transiton: opacity 0.2s;
+        -moz-transition: opacity 0.2s;
+        -ms-transition: opacity 0.2s;
+        -o-transition: opacity 0.2s;
+        transition: opacity 0.2s; }
+        nav ul li ul li {
+          background: #555;
+          display: block;
+          color: #fff; }
+          nav ul li ul li:hover {
+            background: #666; }
+
+header {
+  display: flex; }
+  header label {
+    display: inline-block;
+    margin: auto;
+    padding: 30px 0;
+    color: #ffd600;
+    font-size: 20px; }
+    header label input {
+      background-color: transparent;
+      padding: 0 10px;
+      outline: none;
+      border: none;
+      border-bottom: solid 1px #ffd600;
+      color: #3cb5b5;
+      font-size: 20px;
+      width: 420px; }
+
+div#root > div {
+  position: relative;
+  display: flex;
+  flex-direction: column; }
+
+a {
+  color: inherit;
+  text-decoration: none; }
+
+#viewDApps {
+  margin: 0 2%;
+  display: flex;
+  flex: 1; }
+  #viewDApps #display {
+    display: block;
+    margin: auto;
+    padding: 20px;
+    flex-grow: 3;
+    text-align: center;
+    display: inline-block; }
+    #viewDApps #display:empty {
+      visibility: hidden; }
+    #viewDApps #display .dapp {
+      text-align: left;
+      position: relative;
+      float: left;
+      width: 300px;
+      height: 300px;
+      padding: 0px;
+      background-color: #757575;
+      color: #fff;
+      margin: 20px 50px;
+      border: 2px solid #fff;
+      word-wrap: break-word; }
+      #viewDApps #display .dapp.clearLeft {
+        clear: left; }
+      #viewDApps #display .dapp.active {
+        background-color: #337ab7; }
+      #viewDApps #display .dapp input {
+        display: none; }
+      #viewDApps #display .dapp h3 {
+        text-align: center; }
+  #viewDApps #actions {
+    position: static;
+    margin: 5% 0 5% 2%;
+    display: flex;
+    flex-grow: 1;
+    background-color: #757575;
+    color: #ffd600;
+    flex-direction: column;
+    font-size: 20px; }
+    #viewDApps #actions.active {
+      background-color: #337ab7; }
+    #viewDApps #actions h3 {
+      text-align: center;
+      font-size: 30px;
+      margin: 5% auto; }
+    #viewDApps #actions div {
+      margin: auto; }
+      #viewDApps #actions div label {
+        margin: auto; }
+        #viewDApps #actions div label input {
+          margin: 20px;
+          border: 2px solid transparent;
+          border-bottom: 2px solid #223765;
+          outline: none;
+          background-color: transparent;
+          color: #fff;
+          font-size: 20px; }
+        #viewDApps #actions div label input[type=number]::-webkit-inner-spin-button,
+        #viewDApps #actions div label input[type=number]::-webkit-outer-spin-button {
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          margin: 0; }
+      #viewDApps #actions div button {
+        display: block;
+        margin: 30% auto;
+        clear: both;
+        padding: 5px;
+        border: #fff;
+        background-color: #223765;
+        color: #fff;
+        font-size: 20px; }
+html, body {
+  margin: 0;
+  height: 100%; }
+
+body {
+  background-color: #223765;
+  display: flex;
+  flex-direction: column; }
+
+nav {
+  position: static;
+  display: flex;
+  width: 100%;
+  background-color: #a31919;
+  color: #ffa319;
+  text-align: left;
+  height: 70px;
+  z-index: 1000; }
+  nav > * {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 0;
+    margin-right: 0; }
+  nav h1 {
+    font-size: 20px; }
+  nav h2 {
+    font-size: 15px;
+    margin-left: 10px; }
+  nav ul {
+    margin-left: auto;
+    list-style: none; }
+    nav ul li {
+      display: inline-block;
+      position: relative;
+      padding: 15px 20px;
+      background-color: transparent;
+      cursor: pointer;
+      -webkit-transition: all 0.2s;
+      -moz-transition: all 0.2s;
+      -ms-transition: all 0.2s;
+      -o-transition: all 0.2s;
+      transition: all 0.2s; }
+      nav ul li:hover {
+        background-color: #771212;
+        color: #fff; }
+        nav ul li:hover ul {
+          display: block;
+          opacity: 1; }
+      nav ul li ul {
+        padding: 0;
+        position: absolute;
+        top: 48px;
+        left: 0;
+        width: 150px;
+        display: none;
+        -webkit-transiton: opacity 0.2s;
+        -moz-transition: opacity 0.2s;
+        -ms-transition: opacity 0.2s;
+        -o-transition: opacity 0.2s;
+        transition: opacity 0.2s; }
+        nav ul li ul li {
+          background: #555;
+          display: block;
+          color: #fff; }
+          nav ul li ul li:hover {
+            background: #666; }
+
+header {
+  display: flex; }
+  header label {
+    display: inline-block;
+    margin: auto;
+    padding: 30px 0;
+    color: #ffd600;
+    font-size: 20px; }
+    header label input {
+      background-color: transparent;
+      padding: 0 10px;
+      outline: none;
+      border: none;
+      border-bottom: solid 1px #ffd600;
+      color: #3cb5b5;
+      font-size: 20px;
+      width: 420px; }
+
+div#root > div {
+  position: relative;
+  display: flex;
+  flex-direction: column; }
+
+a {
+  color: inherit;
+  text-decoration: none; }
+
+#editDApps {
+  display: inline-flex;
+  flex-direction: column;
+  margin: auto;
+  padding: 10%;
+  height: 40%;
+  text-align: center;
+  background-color: #337ab7; }
+  #editDApps label {
+    display: inline-block;
+    margin: 20px 0;
+    font-size: 40px;
+    font-weight: bold;
+    color: #13223c; }
+    #editDApps label span {
+      float: left; }
+    #editDApps label input {
+      margin: 0 20px;
+      float: right;
+      background-color: transparent;
+      outline: none;
+      border: 2px solid transparent;
+      border-bottom: 2px solid #13223c;
+      font-size: 40px;
+      color: #fff; }
+      #editDApps label input:focus {
+        border: 2px solid #a31919; }
+  #editDApps button {
+    display: block;
+    margin: 30px auto;
+    clear: both;
+    padding: 5px;
+    border: #fff;
+    background-color: #223765;
+    color: #fff;
+    font-size: 40px; }
+html, body {
+  margin: 0;
+  height: 100%; }
+
+body {
+  background-color: #223765;
+  display: flex;
+  flex-direction: column; }
+
+nav {
+  position: static;
+  display: flex;
+  width: 100%;
+  background-color: #a31919;
+  color: #ffa319;
+  text-align: left;
+  height: 70px;
+  z-index: 1000; }
+  nav > * {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 0;
+    margin-right: 0; }
+  nav h1 {
+    font-size: 20px; }
+  nav h2 {
+    font-size: 15px;
+    margin-left: 10px; }
+  nav ul {
+    margin-left: auto;
+    list-style: none; }
+    nav ul li {
+      display: inline-block;
+      position: relative;
+      padding: 15px 20px;
+      background-color: transparent;
+      cursor: pointer;
+      -webkit-transition: all 0.2s;
+      -moz-transition: all 0.2s;
+      -ms-transition: all 0.2s;
+      -o-transition: all 0.2s;
+      transition: all 0.2s; }
+      nav ul li:hover {
+        background-color: #771212;
+        color: #fff; }
+        nav ul li:hover ul {
+          display: block;
+          opacity: 1; }
+      nav ul li ul {
+        padding: 0;
+        position: absolute;
+        top: 48px;
+        left: 0;
+        width: 150px;
+        display: none;
+        -webkit-transiton: opacity 0.2s;
+        -moz-transition: opacity 0.2s;
+        -ms-transition: opacity 0.2s;
+        -o-transition: opacity 0.2s;
+        transition: opacity 0.2s; }
+        nav ul li ul li {
+          background: #555;
+          display: block;
+          color: #fff; }
+          nav ul li ul li:hover {
+            background: #666; }
+
+header {
+  display: flex; }
+  header label {
+    display: inline-block;
+    margin: auto;
+    padding: 30px 0;
+    color: #ffd600;
+    font-size: 20px; }
+    header label input {
+      background-color: transparent;
+      padding: 0 10px;
+      outline: none;
+      border: none;
+      border-bottom: solid 1px #ffd600;
+      color: #3cb5b5;
+      font-size: 20px;
+      width: 420px; }
+
+div#root > div {
+  position: relative;
+  display: flex;
+  flex-direction: column; }
+
+a {
+  color: inherit;
+  text-decoration: none; }
+
+#editNodes {
+  display: inline-flex;
+  flex-direction: column;
+  margin: auto;
+  padding: 10%;
+  height: 40%;
+  text-align: center;
+  background-color: #337ab7; }
+  #editNodes label {
+    display: inline-block;
+    margin: 20px 0;
+    font-size: 40px;
+    font-weight: bold;
+    color: #13223c; }
+    #editNodes label span {
+      float: left; }
+    #editNodes label input {
+      margin: 0 20px;
+      float: right;
+      background-color: transparent;
+      outline: none;
+      border: 2px solid transparent;
+      border-bottom: 2px solid #13223c;
+      font-size: 40px;
+      color: #fff; }
+      #editNodes label input:focus {
+        border: 2px solid #a31919; }
+  #editNodes button {
+    display: block;
+    margin: 30px auto;
+    clear: both;
+    padding: 5px;
+    border: #fff;
+    background-color: #223765;
+    color: #fff;
+    font-size: 40px; }
+html, body {
+  margin: 0;
+  height: 100%; }
+
+body {
+  background-color: #223765;
+  display: flex;
+  flex-direction: column; }
+
+nav {
+  position: static;
+  display: flex;
+  width: 100%;
+  background-color: #a31919;
+  color: #ffa319;
+  text-align: left;
+  height: 70px;
+  z-index: 1000; }
+  nav > * {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 0;
+    margin-right: 0; }
+  nav h1 {
+    font-size: 20px; }
+  nav h2 {
+    font-size: 15px;
+    margin-left: 10px; }
+  nav ul {
+    margin-left: auto;
+    list-style: none; }
+    nav ul li {
+      display: inline-block;
+      position: relative;
+      padding: 15px 20px;
+      background-color: transparent;
+      cursor: pointer;
+      -webkit-transition: all 0.2s;
+      -moz-transition: all 0.2s;
+      -ms-transition: all 0.2s;
+      -o-transition: all 0.2s;
+      transition: all 0.2s; }
+      nav ul li:hover {
+        background-color: #771212;
+        color: #fff; }
+        nav ul li:hover ul {
+          display: block;
+          opacity: 1; }
+      nav ul li ul {
+        padding: 0;
+        position: absolute;
+        top: 48px;
+        left: 0;
+        width: 150px;
+        display: none;
+        -webkit-transiton: opacity 0.2s;
+        -moz-transition: opacity 0.2s;
+        -ms-transition: opacity 0.2s;
+        -o-transition: opacity 0.2s;
+        transition: opacity 0.2s; }
+        nav ul li ul li {
+          background: #555;
+          display: block;
+          color: #fff; }
+          nav ul li ul li:hover {
+            background: #666; }
+
+header {
+  display: flex; }
+  header label {
+    display: inline-block;
+    margin: auto;
+    padding: 30px 0;
+    color: #ffd600;
+    font-size: 20px; }
+    header label input {
+      background-color: transparent;
+      padding: 0 10px;
+      outline: none;
+      border: none;
+      border-bottom: solid 1px #ffd600;
+      color: #3cb5b5;
+      font-size: 20px;
+      width: 420px; }
+
+div#root > div {
+  position: relative;
+  display: flex;
+  flex-direction: column; }
+
+a {
+  color: inherit;
+  text-decoration: none; }
+
+#viewNodes {
+  margin: 0 2%;
+  display: flex;
+  flex: 1; }
+  #viewNodes #display {
+    display: block;
+    margin: auto;
+    padding: 20px;
+    flex-grow: 3;
+    text-align: center;
+    display: inline-block; }
+    #viewNodes #display:empty {
+      visibility: hidden; }
+    #viewNodes #display .node {
+      text-align: left;
+      position: relative;
+      float: left;
+      width: 300px;
+      height: 300px;
+      padding: 0px;
+      background-color: #757575;
+      color: #fff;
+      margin: 20px 50px;
+      border: 2px solid #fff;
+      word-wrap: break-word; }
+      #viewNodes #display .node.clearLeft {
+        clear: left; }
+      #viewNodes #display .node.active {
+        background-color: #337ab7; }
+      #viewNodes #display .node input {
+        display: none; }
+      #viewNodes #display .node h3 {
+        text-align: center; }
+  #viewNodes #actions {
+    position: static;
+    margin: 5% 0 5% 2%;
+    display: flex;
+    flex-grow: 1;
+    background-color: #757575;
+    color: #ffd600;
+    flex-direction: column;
+    font-size: 20px; }
+    #viewNodes #actions.active {
+      background-color: #337ab7; }
+    #viewNodes #actions h3 {
+      font-size: 30px;
+      margin: 5% auto; }
+    #viewNodes #actions div {
+      margin: auto; }
+      #viewNodes #actions div label {
+        margin: auto; }
+        #viewNodes #actions div label input {
+          margin: 20px;
+          border: 2px solid transparent;
+          border-bottom: 2px solid #223765;
+          outline: none;
+          background-color: transparent;
+          color: #fff;
+          font-size: 20px; }
+        #viewNodes #actions div label input[type=number]::-webkit-inner-spin-button,
+        #viewNodes #actions div label input[type=number]::-webkit-outer-spin-button {
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          margin: 0; }
+      #viewNodes #actions div button {
+        display: block;
+        margin: auto;
+        clear: both;
+        padding: 5px;
+        border: #fff;
+        background-color: #223765;
+        color: #fff;
+        font-size: 20px; }
