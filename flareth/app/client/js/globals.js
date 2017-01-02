@@ -1,46 +1,31 @@
 import React from 'react';
+import Market from './Market.sol.js';
 // import web3 from 'web3';
 
 // variables that are used throughout the app
-var globals = {
-  web3: null,
-  coinbase: '82a978b3f5962a5b0957d9ee9eef472ee55b42f1',
-  contract: {
-    address: 'd6f084ee15e38c4f7e091f8dd0fe6fe4a0e203ef',
-    factory: null,
-    object: null,
-  },
-  host: 'localhost',
-  port: 8545,
-}
+var HOST = 'localhost';
+var PORT = 8545;
+var COINBASE = '0xb82dbe47bdcf7776a9c360eabda590742d9a516c';
 
-globals.web3 = new Web3(new Web3.providers
-  .HttpProvider('http://' + globals.host + ':' + globals.port));
+window.web3 = new Web3(new Web3.providers
+.HttpProvider('http://' + HOST + ':' + PORT));
+web3.eth.defaultAccount = COINBASE;
+Market.setProvider(web3.currentProvider);
 
   var Navbar = React.createClass({
     getInitialState: function () {
       return {
-        contract: globals.contract.address,
-        coinbase: globals.coinbase,
+        contract: Market.address,
+        coinbase: COINBASE,
       }
     },
     setContract: function (event) {
       this.newState({contract: event.target.value})
-      globals.contract.object = globals.contract.factory
-      .at(event.target.value)
+      Market.address = event.target.value;
     },
     setCoinbase: function (event) {
       this.newState({coinbase: event.target.value})
-      globals.coinbase = event.target.value
-    },
-    componentDidMount: function () {
-      $.get('/contractCode.sol', function (contractCode) {
-        globals.web3.eth.compile.solidity(contractCode, function (err, compiledCode) {
-          var abi = compiledCode.info.abiDefinition
-          globals.contract.factory = globals.web3.eth.contract(abi)
-          globals.contract.object = globals.contract.factory.at(globals.contract.address)
-        })
-      }, 'text');
+      web3.eth.defaultAccount = event.target.value
     },
     render: function () {
       return (
@@ -71,4 +56,4 @@ globals.web3 = new Web3(new Web3.providers
     },
   })
 
-  export {Navbar, globals}
+  export {Navbar}

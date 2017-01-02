@@ -1,5 +1,7 @@
 import React from 'react';
-import {Navbar, globals} from './globals'
+import classnames from 'classnames';
+import {Navbar} from './globals'
+import Market from './Market.sol.js';
 require('../sass/viewNodes.scss');
 
 /* A single Dapp with state taken from the contract */
@@ -14,15 +16,15 @@ var Node = React.createClass({
     }
   },
   componentWillMount: function () {
-    globals.contract.object.nodeList(this.props.index, function (err, name) {
-      globals.contract.object.nodes.call(name, function (err, info) {
-        self.setState({
-          ident: web3.toAscii(info[0]),
-          state: web3.toAscii(info[1]),
-          ipaddress: web3.toAscii(info[2]),
-          dappIdent: web3.toAscii(info[3]),
-          coinbase: info[4],
-        })
+    Market.deployed().nodeList(this.props.index).then((name) => {
+      return Market.deployed().nodes.call(name)
+    }).then((info) => {
+      this.setState({
+        ident: web3.toAscii(info[0]),
+        state: web3.toAscii(info[1]),
+        ipaddress: web3.toAscii(info[2]),
+        dappIdent: web3.toAscii(info[3]),
+        coinbase: info[4],
       })
     })
   },
@@ -32,7 +34,7 @@ var Node = React.createClass({
     $(element.target).parent().addClass('active');
   },
   render: function () {
-    var classes = classNames({
+    var classes = classnames({
       node: true,
       clearLeft: this.props.clearLeft,
     })
@@ -63,12 +65,10 @@ var NodeActions = React.createClass({
   },
   payup: function () {
     var name = $('input[name=node]:checked').val()
-    globals.contract.object.nodes.call(name, function (err, info) {
-      globals.contract.object.sendTransaction({
-        from: globals.coinbase,
-        to: info[3],
+    Market.deployed().nodes.call(name).then((info) => {
+      web3.eth.sendTransaction({
+        to: info[4],
         value: 1,
-      }, function () {
       })
     })
   },
@@ -116,9 +116,9 @@ var ViewNodes = React.createClass({
     )
   },
   componentDidMount: function () {
-    // globals.contract.object.numDApps(function (err, numNodes) {
-    //   this.setState({numNodes: numNodes})
-    // })
+    Market.deployed().numNodes.call().then((numNodes) => {
+      this.setState({numNodes: numNodes})
+    })
   },
 })
 

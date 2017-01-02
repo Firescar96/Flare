@@ -1,5 +1,7 @@
 import React from 'react';
+import classnames from 'classnames';
 import {Navbar, globals} from './globals'
+import Market from './Market.sol.js';
 require('../sass/viewDApps.scss');
 
 /* A single Dapp with state taken from the contract */
@@ -13,10 +15,9 @@ var DApp = React.createClass({
     }
   },
   componentWillMount: function () {
-    var contract = globals.contract
     var self = this;
-    contract.web3.object.dappList(this.props.index, function (err, name) {
-      contract.web3.object.dapps.call(name, function (err, info) {
+    Market.deployed().dappList.call(this.props.index).then((name) => {
+      Market.deployed().dapps.call(name).then((info) => {
         self.setState({
           ident: web3.toAscii(info[0]),
           master: web3.toAscii(info[1]),
@@ -33,7 +34,7 @@ var DApp = React.createClass({
     $(element.target).parent().addClass('active');
   },
   render: function () {
-    var classes = classNames({
+    var classes = classnames({
       dapp: true,
       clearLeft: this.props.clearLeft,
     })
@@ -53,21 +54,19 @@ var DApp = React.createClass({
 var DAppActions = React.createClass({
   startup: function () {
     var name = $('input[name=dapp]:checked').val()
-    globals.contract.web3.object.startDApp(name, {
-      from: Meteor.globals.coinbase,
-      gas: 100,
-      gasPrice: 1,
-    }, function () {
+    Market.deployed().startDApp.estimateGas(name).then((gas) => {
+      Market.deployed().startDApp.sendTransaction(name, {
+        gas: gas*2,
+      })
     })
   },
   // the equivalent of force quitting the dapp
   fqu: function () {
     var name = $('input[name=dapp]:checked').val()
-    globals.contract.web3.object.finishDApp(name, {
-      from: Meteor.globals.coinbase,
-      gas: 100,
-      gasPrice: 1,
-    }, function () {
+    Market.deployed().finishDApp.estimateGas(name).then((gas) => {
+      Market.deployed().finishDApp.sendTransaction(name, {
+        gas: gas*2,
+      })
     })
   },
   render: function () {
@@ -110,9 +109,9 @@ var ViewDApps = React.createClass({
     )
   },
   componentDidMount: function () {
-    // globals.contract.object.numDApps(function (err, numDApps) {
-    //   this.setState({numDApps: numDApps})
-    // })
+    Market.deployed().numDApps.call().then((numDApps) => {
+      this.setState({numDApps: numDApps})
+    })
   },
 })
 

@@ -1,5 +1,6 @@
 import React from 'react';
-import {Navbar, globals} from './globals'
+import {Navbar} from './globals'
+import Market from './Market.sol.js';
 require('../sass/editNodes.scss');
 
 var EditNodes = React.createClass({
@@ -7,11 +8,10 @@ var EditNodes = React.createClass({
     var name = $('#name').val()
     var state = $('#state').val()
     var ipaddress = $('#ipaddress').val()
-    globals.contract.object.createNode(name, state, ipaddress, {
-      from: globals.coinbase,
-      gas: 100,
-      gasPrice: 1,
-    }, function () {
+    Market.deployed().createNode.estimateGas(name, state, ipaddress).then((gas) => {
+      Market.deployed().createNode.sendTransaction(name, state, ipaddress, {
+        gas: gas*2,
+      })
     })
   },
   render: function () {
