@@ -62,15 +62,15 @@
 
 	var _ViewDApps2 = _interopRequireDefault(_ViewDApps);
 
-	var _EditDApps = __webpack_require__(292);
+	var _EditDApps = __webpack_require__(293);
 
 	var _EditDApps2 = _interopRequireDefault(_EditDApps);
 
-	var _EditNodes = __webpack_require__(295);
+	var _EditNodes = __webpack_require__(296);
 
 	var _EditNodes2 = _interopRequireDefault(_EditNodes);
 
-	var _ViewNodes = __webpack_require__(298);
+	var _ViewNodes = __webpack_require__(299);
 
 	var _ViewNodes2 = _interopRequireDefault(_ViewNodes);
 
@@ -25485,34 +25485,33 @@
 
 	var _MarketSol2 = _interopRequireDefault(_MarketSol);
 
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	var _web = __webpack_require__(302);
 
-	// import web3 from 'web3';
+	var _web2 = _interopRequireDefault(_web);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	// variables that are used throughout the app
 	var HOST = 'localhost';
 	var PORT = 8545;
-	var COINBASE = '0xb82dbe47bdcf7776a9c360eabda590742d9a516c';
 
-	window.web3 = new Web3(new Web3.providers.HttpProvider('http://' + HOST + ':' + PORT));
-	web3.eth.defaultAccount = COINBASE;
+	window.web3 = new _web2.default(new _web2.default.providers.HttpProvider('http://' + HOST + ':' + PORT));
 	_MarketSol2.default.setProvider(web3.currentProvider);
 
 	var Navbar = _react2.default.createClass({
 	  displayName: 'Navbar',
-
 	  getInitialState: function getInitialState() {
 	    return {
 	      contract: _MarketSol2.default.address,
-	      coinbase: COINBASE
+	      coinbase: web3.eth.defaultAccount
 	    };
 	  },
 	  setContract: function setContract(event) {
-	    this.newState({ contract: event.target.value });
+	    this.setState({ contract: event.target.value });
 	    _MarketSol2.default.address = event.target.value;
 	  },
 	  setCoinbase: function setCoinbase(event) {
-	    this.newState({ coinbase: event.target.value });
+	    this.setState({ coinbase: event.target.value });
 	    web3.eth.defaultAccount = event.target.value;
 	  },
 	  render: function render() {
@@ -25584,7 +25583,7 @@
 	            null,
 	            'Contract Address'
 	          ),
-	          _react2.default.createElement('input', { id: 'contract', defaultValue: this.state.contract, onChange: this.setContract })
+	          _react2.default.createElement('input', { id: 'contract', value: this.state.contract, onChange: this.setContract })
 	        ),
 	        _react2.default.createElement(
 	          'label',
@@ -25594,10 +25593,18 @@
 	            null,
 	            'Coinbase Address'
 	          ),
-	          _react2.default.createElement('input', { id: 'coinbase', defaultValue: this.state.coinbase, onChange: this.setCoinbase })
+	          _react2.default.createElement('input', { id: 'coinbase', value: this.state.coinbase, onChange: this.setCoinbase })
 	        )
 	      )
 	    );
+	  },
+	  componentDidMount: function componentDidMount() {
+	    var _this = this;
+
+	    web3.eth.getAccounts(function (err, accounts) {
+	      web3.eth.defaultAccount = accounts[0];
+	      _this.setState({ coinbase: accounts[0] });
+	    });
 	  }
 	});
 
@@ -25611,6 +25618,7 @@
 
 	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
+	var Web3 = __webpack_require__(302);
 	var SolidityEvent = __webpack_require__(225);
 
 	(function () {
@@ -26139,9 +26147,9 @@
 	      }],
 	      "unlinked_binary": "0x6060604052610a41806100126000396000f3606060405236156100985760e060020a600035046308a9ec7a811461009a578063110568741461010357806312f7e8181461013f578063208f2a311461020357806374609d0c1461021d5780638240a49b1461028d578063834579fb146102a857806394ca304b146102dd57806396fdedbe146102ee578063b6453318146102ff578063d86e697d1461034f578063f15beecf1461038b575b005b61009860043560008181526210000260205260409020600201546401000000009004600160a060020a03908116339190911614156101005760406000207f7374617274000000000000000000000000000000000000000000000000000000600391909101555b50565b61009860043560008181526210000260205260408120600201546401000000009004600160a060020a039081163391909116146105d9576105d5565b6100986004356024356044356040805160a081018252848152602081810185815282840185815260006060850181815233608087019081528a835294829052959020935184559051600184810191909155905160028401559251600383015551600491909101805473ffffffffffffffffffffffffffffffffffffffff19169091179055621000015484919063ffffffff166210000081101561000257016000505562100001805463ffffffff19811663ffffffff91909116600101179055505050565b610435600435600181621000008110156100025750015481565b604080516020604435600481810135601f810184900484028501840190955284845261009894813594602480359593946064949293910191819084018382808284375094965050933593505050506210000154600090819081908190819063ffffffff1681141561073e57610733565b61043560043562100003816104008110156100025750015481565b610435600435602435621004046020526000828152604090208054829081101561000257506000908152602090200154905081565b610447621000015463ffffffff1681565b610447621004035463ffffffff1681565b62100002602052600480356000908152604090206001810154815460028301546003840154600585015461046196939563ffffffff841694640100000000909404600160a060020a031693019087565b61052a600435600060208190529081526040902060018101548154600283015460038401546004949094015491939091600160a060020a031685565b610098600435602435600082815260208190526040902054821480156103cf5750600082815260208190526040902060040154600160a060020a0390811633909116145b156105d557600082815260208181526040808320600481015460039190910154845262100002909252808320600201549051600160a060020a0392909216929163ffffffff91821685029091169082818181858883f1935050505015156105d557610002565b60408051918252519081900360200190f35b6040805163ffffffff929092168252519081900360200190f35b604080518881526020810188905263ffffffff871691810191909152600160a060020a03851660608201526080810184905260c0810182905260e060a082018181528454600260018216156101009081026000190190921604928401839052909190830190859080156105155780601f106104ea57610100808354040283529160200191610515565b820191906000526020600020905b8154815290600101906020018083116104f857829003601f168201915b50509850505050505050505060405180910390f35b604080519586526020860194909452848401929092526060840152600160a060020a03166080830152519081900360a00190f35b6000828152621000026020526040812081815560018181018390556002828101805477ffffffffffffffffffffffffffffffffffffffffffffffff1916905560038301849055600483018054858255939493909281161561010002600019011604601f8190106106b857505b505060006005909101555b5050565b50600081815262100002602090815260408083206001908101805485529284905281842060d060020a656f6e6c696e65029101559054825281206003018190555b600082815262100404602052604090205460ff8216101561055e5760406000908120805460d060020a656f6e6c696e65029291829160ff861690811015610002578183526020808420820154845283815260408420600101959095558683526210040490945280549193839281101561000257906000526020600020900160005054815260208101919091526040016000206003015560010161061a565b601f0160209004906000526020600020908101906105ca91905b808211156106e657600081556001016106d2565b5090565b505060c09091015160059091015562100403548990621000039063ffffffff16610400811015610002570155621004038054600163ffffffff82160163ffffffff199091161790555b505050505050505050565b600092505b621000015463ffffffff168310156107cb576000806001856210000081101561000257015481526020810191909152604001600020600181015490925060d060020a656f6e6c696e650214156107d7577f6d61737465720000000000000000000000000000000000000000000000000000600183810191909155600383018a90558254955093505b8315156107e257610733565b600190920191610743565b600092505b621000015463ffffffff16831080156108005750600583105b156108b2576000806001856210000081101561000257015481526020810191909152604001600020600181015490915060d060020a656f6e6c696e65021415610a05577f776f726b65720000000000000000000000000000000000000000000000000000600182810191909155600382018a905560008a81526210040460205260409020805491820180825590919082818380158290116109f1576000838152602090206109f19181019083016106d2565b60e0604051908101604052808a81526020018681526020018981526020013381526020017f6f666600000000000000000000000000000000000000000000000000000000008152602001888152602001878152602001506210000260005060008b600019168152602001908152602001600020600050600082015181600001600050556020820151816001016000505560408201518160020160006101000a81548163ffffffff0219169083021790555060608201518160020160046101000a815481600160a060020a03021916908302179055506080820151816003016000505560a0820151816004016000509080519060200190828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f10610a1157805160ff19168380011785555b506106ea9291506106d2565b505050600092835250602090912082549101555b600192909201916107e7565b828001600101855582156109e5579182015b828111156109e5578251826000505591602001919060010190610a2356",
 	      "events": {},
-	      "updated_at": 1483218747721,
+	      "updated_at": 1485037266348,
 	      "links": {},
-	      "address": "0x4aaae7d47117c351ddbb4690275f94c9f607e110"
+	      "address": "0xef7be4d5f2d1261a6ec9f4a074d342916ad2e04d"
 	    }
 	  };
 
@@ -39331,7 +39339,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _classnames = __webpack_require__(299);
+	var _classnames = __webpack_require__(290);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
@@ -39343,7 +39351,7 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	__webpack_require__(290);
+	__webpack_require__(291);
 
 	/* A single Dapp with state taken from the contract */
 	var DApp = _react2.default.createClass({
@@ -39500,13 +39508,67 @@
 
 /***/ },
 /* 290 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
+	  Copyright (c) 2016 Jed Watson.
+	  Licensed under the MIT License (MIT), see
+	  http://jedwatson.github.io/classnames
+	*/
+	/* global define */
+
+	(function () {
+		'use strict';
+
+		var hasOwn = {}.hasOwnProperty;
+
+		function classNames () {
+			var classes = [];
+
+			for (var i = 0; i < arguments.length; i++) {
+				var arg = arguments[i];
+				if (!arg) continue;
+
+				var argType = typeof arg;
+
+				if (argType === 'string' || argType === 'number') {
+					classes.push(arg);
+				} else if (Array.isArray(arg)) {
+					classes.push(classNames.apply(null, arg));
+				} else if (argType === 'object') {
+					for (var key in arg) {
+						if (hasOwn.call(arg, key) && arg[key]) {
+							classes.push(key);
+						}
+					}
+				}
+			}
+
+			return classes.join(' ');
+		}
+
+		if (typeof module !== 'undefined' && module.exports) {
+			module.exports = classNames;
+		} else if (true) {
+			// register as 'classnames', consistent with npm package name
+			!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
+				return classNames;
+			}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+		} else {
+			window.classNames = classNames;
+		}
+	}());
+
+
+/***/ },
+/* 291 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 291 */,
-/* 292 */
+/* 292 */,
+/* 293 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -39527,7 +39589,7 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	__webpack_require__(293);
+	__webpack_require__(294);
 
 	var EditDApps = _react2.default.createClass({
 	  displayName: 'EditDApps',
@@ -39604,14 +39666,14 @@
 	exports.default = EditDApps;
 
 /***/ },
-/* 293 */
+/* 294 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 294 */,
-/* 295 */
+/* 295 */,
+/* 296 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -39632,7 +39694,7 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	__webpack_require__(296);
+	__webpack_require__(297);
 
 	var EditNodes = _react2.default.createClass({
 	  displayName: 'EditNodes',
@@ -39704,14 +39766,14 @@
 	exports.default = EditNodes;
 
 /***/ },
-/* 296 */
+/* 297 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 297 */,
-/* 298 */
+/* 298 */,
+/* 299 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -39724,7 +39786,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _classnames = __webpack_require__(299);
+	var _classnames = __webpack_require__(290);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
@@ -39824,11 +39886,13 @@
 	    });
 	  },
 	  payup: function payup() {
+	    var _this2 = this;
+
 	    var name = $('input[name=node]:checked').val();
 	    _MarketSol2.default.deployed().nodes.call(name).then(function (info) {
 	      web3.eth.sendTransaction({
 	        to: info[4],
-	        value: 1
+	        value: _this2.state.value
 	      });
 	    });
 	  },
@@ -39896,10 +39960,10 @@
 	    );
 	  },
 	  componentDidMount: function componentDidMount() {
-	    var _this2 = this;
+	    var _this3 = this;
 
 	    _MarketSol2.default.deployed().numNodes.call().then(function (numNodes) {
-	      _this2.setState({ numNodes: numNodes });
+	      _this3.setState({ numNodes: numNodes });
 	    });
 	  }
 	});
@@ -39907,64 +39971,3306 @@
 	exports.default = ViewNodes;
 
 /***/ },
-/* 299 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
-	  Copyright (c) 2016 Jed Watson.
-	  Licensed under the MIT License (MIT), see
-	  http://jedwatson.github.io/classnames
-	*/
-	/* global define */
-
-	(function () {
-		'use strict';
-
-		var hasOwn = {}.hasOwnProperty;
-
-		function classNames () {
-			var classes = [];
-
-			for (var i = 0; i < arguments.length; i++) {
-				var arg = arguments[i];
-				if (!arg) continue;
-
-				var argType = typeof arg;
-
-				if (argType === 'string' || argType === 'number') {
-					classes.push(arg);
-				} else if (Array.isArray(arg)) {
-					classes.push(classNames.apply(null, arg));
-				} else if (argType === 'object') {
-					for (var key in arg) {
-						if (hasOwn.call(arg, key) && arg[key]) {
-							classes.push(key);
-						}
-					}
-				}
-			}
-
-			return classes.join(' ');
-		}
-
-		if (typeof module !== 'undefined' && module.exports) {
-			module.exports = classNames;
-		} else if (true) {
-			// register as 'classnames', consistent with npm package name
-			!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
-				return classNames;
-			}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-		} else {
-			window.classNames = classNames;
-		}
-	}());
-
-
-/***/ },
 /* 300 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 301 */,
+/* 302 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var Web3 = __webpack_require__(303);
+
+	// dont override global variable
+	if (typeof window !== 'undefined' && typeof window.Web3 === 'undefined') {
+	    window.Web3 = Web3;
+	}
+
+	module.exports = Web3;
+
+
+/***/ },
+/* 303 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/*
+	    This file is part of web3.js.
+
+	    web3.js is free software: you can redistribute it and/or modify
+	    it under the terms of the GNU Lesser General Public License as published by
+	    the Free Software Foundation, either version 3 of the License, or
+	    (at your option) any later version.
+
+	    web3.js is distributed in the hope that it will be useful,
+	    but WITHOUT ANY WARRANTY; without even the implied warranty of
+	    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	    GNU Lesser General Public License for more details.
+
+	    You should have received a copy of the GNU Lesser General Public License
+	    along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
+	*/
+	/**
+	 * @file web3.js
+	 * @authors:
+	 *   Jeffrey Wilcke <jeff@ethdev.com>
+	 *   Marek Kotewicz <marek@ethdev.com>
+	 *   Marian Oancea <marian@ethdev.com>
+	 *   Fabian Vogelsteller <fabian@ethdev.com>
+	 *   Gav Wood <g@ethdev.com>
+	 * @date 2014
+	 */
+
+	var RequestManager = __webpack_require__(304);
+	var Iban = __webpack_require__(280);
+	var Eth = __webpack_require__(306);
+	var DB = __webpack_require__(317);
+	var Shh = __webpack_require__(318);
+	var Net = __webpack_require__(319);
+	var Personal = __webpack_require__(320);
+	var Settings = __webpack_require__(321);
+	var version = __webpack_require__(322);
+	var utils = __webpack_require__(226);
+	var sha3 = __webpack_require__(228);
+	var extend = __webpack_require__(323);
+	var Batch = __webpack_require__(324);
+	var Property = __webpack_require__(307);
+	var HttpProvider = __webpack_require__(325);
+	var IpcProvider = __webpack_require__(327);
+	var BigNumber = __webpack_require__(227);
+
+
+
+	function Web3 (provider) {
+	    this._requestManager = new RequestManager(provider);
+	    this.currentProvider = provider;
+	    this.eth = new Eth(this);
+	    this.db = new DB(this);
+	    this.shh = new Shh(this);
+	    this.net = new Net(this);
+	    this.personal = new Personal(this);
+	    this.settings = new Settings();
+	    this.version = {
+	        api: version.version
+	    };
+	    this.providers = {
+	        HttpProvider: HttpProvider,
+	        IpcProvider: IpcProvider
+	    };
+	    this._extend = extend(this);
+	    this._extend({
+	        properties: properties()
+	    });
+	}
+
+	// expose providers on the class
+	Web3.providers = {
+	    HttpProvider: HttpProvider,
+	    IpcProvider: IpcProvider
+	};
+
+	Web3.prototype.setProvider = function (provider) {
+	    this._requestManager.setProvider(provider);
+	    this.currentProvider = provider;
+	};
+
+	Web3.prototype.reset = function (keepIsSyncing) {
+	    this._requestManager.reset(keepIsSyncing);
+	    this.settings = new Settings();
+	};
+
+	Web3.prototype.BigNumber = BigNumber;
+	Web3.prototype.toHex = utils.toHex;
+	Web3.prototype.toAscii = utils.toAscii;
+	Web3.prototype.toUtf8 = utils.toUtf8;
+	Web3.prototype.fromAscii = utils.fromAscii;
+	Web3.prototype.fromUtf8 = utils.fromUtf8;
+	Web3.prototype.toDecimal = utils.toDecimal;
+	Web3.prototype.fromDecimal = utils.fromDecimal;
+	Web3.prototype.toBigNumber = utils.toBigNumber;
+	Web3.prototype.toWei = utils.toWei;
+	Web3.prototype.fromWei = utils.fromWei;
+	Web3.prototype.isAddress = utils.isAddress;
+	Web3.prototype.isChecksumAddress = utils.isChecksumAddress;
+	Web3.prototype.toChecksumAddress = utils.toChecksumAddress;
+	Web3.prototype.isIBAN = utils.isIBAN;
+
+
+	Web3.prototype.sha3 = function(string, options) {
+	    return '0x' + sha3(string, options);
+	};
+
+	/**
+	 * Transforms direct icap to address
+	 */
+	Web3.prototype.fromICAP = function (icap) {
+	    var iban = new Iban(icap);
+	    return iban.address();
+	};
+
+	var properties = function () {
+	    return [
+	        new Property({
+	            name: 'version.node',
+	            getter: 'web3_clientVersion'
+	        }),
+	        new Property({
+	            name: 'version.network',
+	            getter: 'net_version',
+	            inputFormatter: utils.toDecimal
+	        }),
+	        new Property({
+	            name: 'version.ethereum',
+	            getter: 'eth_protocolVersion',
+	            inputFormatter: utils.toDecimal
+	        }),
+	        new Property({
+	            name: 'version.whisper',
+	            getter: 'shh_version',
+	            inputFormatter: utils.toDecimal
+	        })
+	    ];
+	};
+
+	Web3.prototype.isConnected = function(){
+	    return (this.currentProvider && this.currentProvider.isConnected());
+	};
+
+	Web3.prototype.createBatch = function () {
+	    return new Batch(this);
+	};
+
+	module.exports = Web3;
+
+
+
+/***/ },
+/* 304 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/*
+	    This file is part of web3.js.
+
+	    web3.js is free software: you can redistribute it and/or modify
+	    it under the terms of the GNU Lesser General Public License as published by
+	    the Free Software Foundation, either version 3 of the License, or
+	    (at your option) any later version.
+
+	    web3.js is distributed in the hope that it will be useful,
+	    but WITHOUT ANY WARRANTY; without even the implied warranty of
+	    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	    GNU Lesser General Public License for more details.
+
+	    You should have received a copy of the GNU Lesser General Public License
+	    along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
+	*/
+	/** 
+	 * @file requestmanager.js
+	 * @author Jeffrey Wilcke <jeff@ethdev.com>
+	 * @author Marek Kotewicz <marek@ethdev.com>
+	 * @author Marian Oancea <marian@ethdev.com>
+	 * @author Fabian Vogelsteller <fabian@ethdev.com>
+	 * @author Gav Wood <g@ethdev.com>
+	 * @date 2014
+	 */
+
+	var Jsonrpc = __webpack_require__(305);
+	var utils = __webpack_require__(226);
+	var c = __webpack_require__(267);
+	var errors = __webpack_require__(284);
+
+	/**
+	 * It's responsible for passing messages to providers
+	 * It's also responsible for polling the ethereum node for incoming messages
+	 * Default poll timeout is 1 second
+	 * Singleton
+	 */
+	var RequestManager = function (provider) {
+	    this.provider = provider;
+	    this.polls = {};
+	    this.timeout = null;
+	};
+
+	/**
+	 * Should be used to synchronously send request
+	 *
+	 * @method send
+	 * @param {Object} data
+	 * @return {Object}
+	 */
+	RequestManager.prototype.send = function (data) {
+	    if (!this.provider) {
+	        console.error(errors.InvalidProvider());
+	        return null;
+	    }
+
+	    var payload = Jsonrpc.toPayload(data.method, data.params);
+	    var result = this.provider.send(payload);
+
+	    if (!Jsonrpc.isValidResponse(result)) {
+	        throw errors.InvalidResponse(result);
+	    }
+
+	    return result.result;
+	};
+
+	/**
+	 * Should be used to asynchronously send request
+	 *
+	 * @method sendAsync
+	 * @param {Object} data
+	 * @param {Function} callback
+	 */
+	RequestManager.prototype.sendAsync = function (data, callback) {
+	    if (!this.provider) {
+	        return callback(errors.InvalidProvider());
+	    }
+
+	    var payload = Jsonrpc.toPayload(data.method, data.params);
+	    this.provider.sendAsync(payload, function (err, result) {
+	        if (err) {
+	            return callback(err);
+	        }
+	        
+	        if (!Jsonrpc.isValidResponse(result)) {
+	            return callback(errors.InvalidResponse(result));
+	        }
+
+	        callback(null, result.result);
+	    });
+	};
+
+	/**
+	 * Should be called to asynchronously send batch request
+	 *
+	 * @method sendBatch
+	 * @param {Array} batch data
+	 * @param {Function} callback
+	 */
+	RequestManager.prototype.sendBatch = function (data, callback) {
+	    if (!this.provider) {
+	        return callback(errors.InvalidProvider());
+	    }
+
+	    var payload = Jsonrpc.toBatchPayload(data);
+
+	    this.provider.sendAsync(payload, function (err, results) {
+	        if (err) {
+	            return callback(err);
+	        }
+
+	        if (!utils.isArray(results)) {
+	            return callback(errors.InvalidResponse(results));
+	        }
+
+	        callback(err, results);
+	    }); 
+	};
+
+	/**
+	 * Should be used to set provider of request manager
+	 *
+	 * @method setProvider
+	 * @param {Object}
+	 */
+	RequestManager.prototype.setProvider = function (p) {
+	    this.provider = p;
+	};
+
+	/**
+	 * Should be used to start polling
+	 *
+	 * @method startPolling
+	 * @param {Object} data
+	 * @param {Number} pollId
+	 * @param {Function} callback
+	 * @param {Function} uninstall
+	 *
+	 * @todo cleanup number of params
+	 */
+	RequestManager.prototype.startPolling = function (data, pollId, callback, uninstall) {
+	    this.polls[pollId] = {data: data, id: pollId, callback: callback, uninstall: uninstall};
+
+
+	    // start polling
+	    if (!this.timeout) {
+	        this.poll();
+	    }
+	};
+
+	/**
+	 * Should be used to stop polling for filter with given id
+	 *
+	 * @method stopPolling
+	 * @param {Number} pollId
+	 */
+	RequestManager.prototype.stopPolling = function (pollId) {
+	    delete this.polls[pollId];
+
+	    // stop polling
+	    if(Object.keys(this.polls).length === 0 && this.timeout) {
+	        clearTimeout(this.timeout);
+	        this.timeout = null;
+	    }
+	};
+
+	/**
+	 * Should be called to reset the polling mechanism of the request manager
+	 *
+	 * @method reset
+	 */
+	RequestManager.prototype.reset = function (keepIsSyncing) {
+	    /*jshint maxcomplexity:5 */
+
+	    for (var key in this.polls) {
+	        // remove all polls, except sync polls,
+	        // they need to be removed manually by calling syncing.stopWatching()
+	        if(!keepIsSyncing || key.indexOf('syncPoll_') === -1) {
+	            this.polls[key].uninstall();
+	            delete this.polls[key];
+	        }
+	    }
+
+	    // stop polling
+	    if(Object.keys(this.polls).length === 0 && this.timeout) {
+	        clearTimeout(this.timeout);
+	        this.timeout = null;
+	    }
+	};
+
+	/**
+	 * Should be called to poll for changes on filter with given id
+	 *
+	 * @method poll
+	 */
+	RequestManager.prototype.poll = function () {
+	    /*jshint maxcomplexity: 6 */
+	    this.timeout = setTimeout(this.poll.bind(this), c.ETH_POLLING_TIMEOUT);
+
+	    if (Object.keys(this.polls).length === 0) {
+	        return;
+	    }
+
+	    if (!this.provider) {
+	        console.error(errors.InvalidProvider());
+	        return;
+	    }
+
+	    var pollsData = [];
+	    var pollsIds = [];
+	    for (var key in this.polls) {
+	        pollsData.push(this.polls[key].data);
+	        pollsIds.push(key);
+	    }
+
+	    if (pollsData.length === 0) {
+	        return;
+	    }
+
+	    var payload = Jsonrpc.toBatchPayload(pollsData);
+	    
+	    // map the request id to they poll id
+	    var pollsIdMap = {};
+	    payload.forEach(function(load, index){
+	        pollsIdMap[load.id] = pollsIds[index];
+	    });
+
+
+	    var self = this;
+	    this.provider.sendAsync(payload, function (error, results) {
+
+
+	        // TODO: console log?
+	        if (error) {
+	            return;
+	        }
+
+	        if (!utils.isArray(results)) {
+	            throw errors.InvalidResponse(results);
+	        }
+	        results.map(function (result) {
+	            var id = pollsIdMap[result.id];
+
+	            // make sure the filter is still installed after arrival of the request
+	            if (self.polls[id]) {
+	                result.callback = self.polls[id].callback;
+	                return result;
+	            } else
+	                return false;
+	        }).filter(function (result) {
+	            return !!result; 
+	        }).filter(function (result) {
+	            var valid = Jsonrpc.isValidResponse(result);
+	            if (!valid) {
+	                result.callback(errors.InvalidResponse(result));
+	            }
+	            return valid;
+	        }).forEach(function (result) {
+	            result.callback(null, result.result);
+	        });
+	    });
+	};
+
+	module.exports = RequestManager;
+
+
+
+/***/ },
+/* 305 */
+/***/ function(module, exports) {
+
+	/*
+	    This file is part of web3.js.
+
+	    web3.js is free software: you can redistribute it and/or modify
+	    it under the terms of the GNU Lesser General Public License as published by
+	    the Free Software Foundation, either version 3 of the License, or
+	    (at your option) any later version.
+
+	    web3.js is distributed in the hope that it will be useful,
+	    but WITHOUT ANY WARRANTY; without even the implied warranty of
+	    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	    GNU Lesser General Public License for more details.
+
+	    You should have received a copy of the GNU Lesser General Public License
+	    along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
+	*/
+	/** @file jsonrpc.js
+	 * @authors:
+	 *   Marek Kotewicz <marek@ethdev.com>
+	 *   Aaron Kumavis <aaron@kumavis.me>
+	 * @date 2015
+	 */
+
+	// Initialize Jsonrpc as a simple object with utility functions.
+	var Jsonrpc = {
+	    messageId: 0
+	};
+
+	/**
+	 * Should be called to valid json create payload object
+	 *
+	 * @method toPayload
+	 * @param {Function} method of jsonrpc call, required
+	 * @param {Array} params, an array of method params, optional
+	 * @returns {Object} valid jsonrpc payload object
+	 */
+	Jsonrpc.toPayload = function (method, params) {
+	    if (!method)
+	        console.error('jsonrpc method should be specified!');
+
+	    // advance message ID
+	    Jsonrpc.messageId++;
+
+	    return {
+	        jsonrpc: '2.0',
+	        id: Jsonrpc.messageId,
+	        method: method,
+	        params: params || []
+	    };
+	};
+
+	/**
+	 * Should be called to check if jsonrpc response is valid
+	 *
+	 * @method isValidResponse
+	 * @param {Object}
+	 * @returns {Boolean} true if response is valid, otherwise false
+	 */
+	Jsonrpc.isValidResponse = function (response) {
+	    return Array.isArray(response) ? response.every(validateSingleMessage) : validateSingleMessage(response);
+
+	    function validateSingleMessage(message){
+	      return !!message &&
+	        !message.error &&
+	        message.jsonrpc === '2.0' &&
+	        typeof message.id === 'number' &&
+	        message.result !== undefined; // only undefined is not valid json object
+	    }
+	};
+
+	/**
+	 * Should be called to create batch payload object
+	 *
+	 * @method toBatchPayload
+	 * @param {Array} messages, an array of objects with method (required) and params (optional) fields
+	 * @returns {Array} batch payload
+	 */
+	Jsonrpc.toBatchPayload = function (messages) {
+	    return messages.map(function (message) {
+	        return Jsonrpc.toPayload(message.method, message.params);
+	    });
+	};
+
+	module.exports = Jsonrpc;
+
+
+
+/***/ },
+/* 306 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/*
+	    This file is part of web3.js.
+
+	    web3.js is free software: you can redistribute it and/or modify
+	    it under the terms of the GNU Lesser General Public License as published by
+	    the Free Software Foundation, either version 3 of the License, or
+	    (at your option) any later version.
+
+	    web3.js is distributed in the hope that it will be useful,
+	    but WITHOUT ANY WARRANTY; without even the implied warranty of
+	    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	    GNU Lesser General Public License for more details.
+
+	    You should have received a copy of the GNU Lesser General Public License
+	    along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
+	*/
+	/**
+	 * @file eth.js
+	 * @author Marek Kotewicz <marek@ethdev.com>
+	 * @author Fabian Vogelsteller <fabian@ethdev.com>
+	 * @date 2015
+	 */
+
+	"use strict";
+
+	var formatters = __webpack_require__(279);
+	var utils = __webpack_require__(226);
+	var Method = __webpack_require__(283);
+	var Property = __webpack_require__(307);
+	var c = __webpack_require__(267);
+	var Contract = __webpack_require__(308);
+	var watches = __webpack_require__(282);
+	var Filter = __webpack_require__(281);
+	var IsSyncing = __webpack_require__(311);
+	var namereg = __webpack_require__(312);
+	var Iban = __webpack_require__(280);
+	var transfer = __webpack_require__(315);
+
+	var blockCall = function (args) {
+	    return (utils.isString(args[0]) && args[0].indexOf('0x') === 0) ? "eth_getBlockByHash" : "eth_getBlockByNumber";
+	};
+
+	var transactionFromBlockCall = function (args) {
+	    return (utils.isString(args[0]) && args[0].indexOf('0x') === 0) ? 'eth_getTransactionByBlockHashAndIndex' : 'eth_getTransactionByBlockNumberAndIndex';
+	};
+
+	var uncleCall = function (args) {
+	    return (utils.isString(args[0]) && args[0].indexOf('0x') === 0) ? 'eth_getUncleByBlockHashAndIndex' : 'eth_getUncleByBlockNumberAndIndex';
+	};
+
+	var getBlockTransactionCountCall = function (args) {
+	    return (utils.isString(args[0]) && args[0].indexOf('0x') === 0) ? 'eth_getBlockTransactionCountByHash' : 'eth_getBlockTransactionCountByNumber';
+	};
+
+	var uncleCountCall = function (args) {
+	    return (utils.isString(args[0]) && args[0].indexOf('0x') === 0) ? 'eth_getUncleCountByBlockHash' : 'eth_getUncleCountByBlockNumber';
+	};
+
+	function Eth(web3) {
+	    this._requestManager = web3._requestManager;
+
+	    var self = this;
+
+	    methods().forEach(function(method) { 
+	        method.attachToObject(self);
+	        method.setRequestManager(self._requestManager);
+	    });
+
+	    properties().forEach(function(p) { 
+	        p.attachToObject(self);
+	        p.setRequestManager(self._requestManager);
+	    });
+
+
+	    this.iban = Iban;
+	    this.sendIBANTransaction = transfer.bind(null, this);
+	}
+
+	Object.defineProperty(Eth.prototype, 'defaultBlock', {
+	    get: function () {
+	        return c.defaultBlock;
+	    },
+	    set: function (val) {
+	        c.defaultBlock = val;
+	        return val;
+	    }
+	});
+
+	Object.defineProperty(Eth.prototype, 'defaultAccount', {
+	    get: function () {
+	        return c.defaultAccount;
+	    },
+	    set: function (val) {
+	        c.defaultAccount = val;
+	        return val;
+	    }
+	});
+
+	var methods = function () {
+	    var getBalance = new Method({
+	        name: 'getBalance',
+	        call: 'eth_getBalance',
+	        params: 2,
+	        inputFormatter: [formatters.inputAddressFormatter, formatters.inputDefaultBlockNumberFormatter],
+	        outputFormatter: formatters.outputBigNumberFormatter
+	    });
+
+	    var getStorageAt = new Method({
+	        name: 'getStorageAt',
+	        call: 'eth_getStorageAt',
+	        params: 3,
+	        inputFormatter: [null, utils.toHex, formatters.inputDefaultBlockNumberFormatter]
+	    });
+
+	    var getCode = new Method({
+	        name: 'getCode',
+	        call: 'eth_getCode',
+	        params: 2,
+	        inputFormatter: [formatters.inputAddressFormatter, formatters.inputDefaultBlockNumberFormatter]
+	    });
+
+	    var getBlock = new Method({
+	        name: 'getBlock',
+	        call: blockCall,
+	        params: 2,
+	        inputFormatter: [formatters.inputBlockNumberFormatter, function (val) { return !!val; }],
+	        outputFormatter: formatters.outputBlockFormatter
+	    });
+
+	    var getUncle = new Method({
+	        name: 'getUncle',
+	        call: uncleCall,
+	        params: 2,
+	        inputFormatter: [formatters.inputBlockNumberFormatter, utils.toHex],
+	        outputFormatter: formatters.outputBlockFormatter,
+
+	    });
+
+	    var getCompilers = new Method({
+	        name: 'getCompilers',
+	        call: 'eth_getCompilers',
+	        params: 0
+	    });
+
+	    var getBlockTransactionCount = new Method({
+	        name: 'getBlockTransactionCount',
+	        call: getBlockTransactionCountCall,
+	        params: 1,
+	        inputFormatter: [formatters.inputBlockNumberFormatter],
+	        outputFormatter: utils.toDecimal
+	    });
+
+	    var getBlockUncleCount = new Method({
+	        name: 'getBlockUncleCount',
+	        call: uncleCountCall,
+	        params: 1,
+	        inputFormatter: [formatters.inputBlockNumberFormatter],
+	        outputFormatter: utils.toDecimal
+	    });
+
+	    var getTransaction = new Method({
+	        name: 'getTransaction',
+	        call: 'eth_getTransactionByHash',
+	        params: 1,
+	        outputFormatter: formatters.outputTransactionFormatter
+	    });
+
+	    var getTransactionFromBlock = new Method({
+	        name: 'getTransactionFromBlock',
+	        call: transactionFromBlockCall,
+	        params: 2,
+	        inputFormatter: [formatters.inputBlockNumberFormatter, utils.toHex],
+	        outputFormatter: formatters.outputTransactionFormatter
+	    });
+
+	    var getTransactionReceipt = new Method({
+	        name: 'getTransactionReceipt',
+	        call: 'eth_getTransactionReceipt',
+	        params: 1,
+	        outputFormatter: formatters.outputTransactionReceiptFormatter
+	    });
+
+	    var getTransactionCount = new Method({
+	        name: 'getTransactionCount',
+	        call: 'eth_getTransactionCount',
+	        params: 2,
+	        inputFormatter: [null, formatters.inputDefaultBlockNumberFormatter],
+	        outputFormatter: utils.toDecimal
+	    });
+
+	    var sendRawTransaction = new Method({
+	        name: 'sendRawTransaction',
+	        call: 'eth_sendRawTransaction',
+	        params: 1,
+	        inputFormatter: [null]
+	    });
+
+	    var sendTransaction = new Method({
+	        name: 'sendTransaction',
+	        call: 'eth_sendTransaction',
+	        params: 1,
+	        inputFormatter: [formatters.inputTransactionFormatter]
+	    });
+
+	    var sign = new Method({
+	        name: 'sign',
+	        call: 'eth_sign',
+	        params: 2,
+	        inputFormatter: [formatters.inputAddressFormatter, null]
+	    });
+
+	    var call = new Method({
+	        name: 'call',
+	        call: 'eth_call',
+	        params: 2,
+	        inputFormatter: [formatters.inputCallFormatter, formatters.inputDefaultBlockNumberFormatter]
+	    });
+
+	    var estimateGas = new Method({
+	        name: 'estimateGas',
+	        call: 'eth_estimateGas',
+	        params: 1,
+	        inputFormatter: [formatters.inputCallFormatter],
+	        outputFormatter: utils.toDecimal
+	    });
+
+	    var compileSolidity = new Method({
+	        name: 'compile.solidity',
+	        call: 'eth_compileSolidity',
+	        params: 1
+	    });
+
+	    var compileLLL = new Method({
+	        name: 'compile.lll',
+	        call: 'eth_compileLLL',
+	        params: 1
+	    });
+
+	    var compileSerpent = new Method({
+	        name: 'compile.serpent',
+	        call: 'eth_compileSerpent',
+	        params: 1
+	    });
+
+	    var submitWork = new Method({
+	        name: 'submitWork',
+	        call: 'eth_submitWork',
+	        params: 3
+	    });
+
+	    var getWork = new Method({
+	        name: 'getWork',
+	        call: 'eth_getWork',
+	        params: 0
+	    });
+
+	    return [
+	        getBalance,
+	        getStorageAt,
+	        getCode,
+	        getBlock,
+	        getUncle,
+	        getCompilers,
+	        getBlockTransactionCount,
+	        getBlockUncleCount,
+	        getTransaction,
+	        getTransactionFromBlock,
+	        getTransactionReceipt,
+	        getTransactionCount,
+	        call,
+	        estimateGas,
+	        sendRawTransaction,
+	        sendTransaction,
+	        sign,
+	        compileSolidity,
+	        compileLLL,
+	        compileSerpent,
+	        submitWork,
+	        getWork
+	    ];
+	};
+
+
+	var properties = function () {
+	    return [
+	        new Property({
+	            name: 'coinbase',
+	            getter: 'eth_coinbase'
+	        }),
+	        new Property({
+	            name: 'mining',
+	            getter: 'eth_mining'
+	        }),
+	        new Property({
+	            name: 'hashrate',
+	            getter: 'eth_hashrate',
+	            outputFormatter: utils.toDecimal
+	        }),
+	        new Property({
+	            name: 'syncing',
+	            getter: 'eth_syncing',
+	            outputFormatter: formatters.outputSyncingFormatter
+	        }),
+	        new Property({
+	            name: 'gasPrice',
+	            getter: 'eth_gasPrice',
+	            outputFormatter: formatters.outputBigNumberFormatter
+	        }),
+	        new Property({
+	            name: 'accounts',
+	            getter: 'eth_accounts'
+	        }),
+	        new Property({
+	            name: 'blockNumber',
+	            getter: 'eth_blockNumber',
+	            outputFormatter: utils.toDecimal
+	        }),
+	        new Property({
+	            name: 'protocolVersion',
+	            getter: 'eth_protocolVersion'
+	        })
+	    ];
+	};
+
+	Eth.prototype.contract = function (abi) {
+	    var factory = new Contract(this, abi);
+	    return factory;
+	};
+
+	Eth.prototype.filter = function (fil, callback) {
+	    return new Filter(this._requestManager, fil, watches.eth(), formatters.outputLogFormatter, callback);
+	};
+
+	Eth.prototype.namereg = function () {
+	    return this.contract(namereg.global.abi).at(namereg.global.address);
+	};
+
+	Eth.prototype.icapNamereg = function () {
+	    return this.contract(namereg.icap.abi).at(namereg.icap.address);
+	};
+
+	Eth.prototype.isSyncing = function (callback) {
+	    return new IsSyncing(this._requestManager, callback);
+	};
+
+	module.exports = Eth;
+
+
+
+/***/ },
+/* 307 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/*
+	    This file is part of web3.js.
+
+	    web3.js is free software: you can redistribute it and/or modify
+	    it under the terms of the GNU Lesser General Public License as published by
+	    the Free Software Foundation, either version 3 of the License, or
+	    (at your option) any later version.
+
+	    web3.js is distributed in the hope that it will be useful,
+	    but WITHOUT ANY WARRANTY; without even the implied warranty of
+	    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	    GNU Lesser General Public License for more details.
+
+	    You should have received a copy of the GNU Lesser General Public License
+	    along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
+	*/
+	/**
+	 * @file property.js
+	 * @author Fabian Vogelsteller <fabian@frozeman.de>
+	 * @author Marek Kotewicz <marek@ethdev.com>
+	 * @date 2015
+	 */
+
+	var utils = __webpack_require__(226);
+
+	var Property = function (options) {
+	    this.name = options.name;
+	    this.getter = options.getter;
+	    this.setter = options.setter;
+	    this.outputFormatter = options.outputFormatter;
+	    this.inputFormatter = options.inputFormatter;
+	    this.requestManager = null;
+	};
+
+	Property.prototype.setRequestManager = function (rm) {
+	    this.requestManager = rm;
+	};
+
+	/**
+	 * Should be called to format input args of method
+	 * 
+	 * @method formatInput
+	 * @param {Array}
+	 * @return {Array}
+	 */
+	Property.prototype.formatInput = function (arg) {
+	    return this.inputFormatter ? this.inputFormatter(arg) : arg;
+	};
+
+	/**
+	 * Should be called to format output(result) of method
+	 *
+	 * @method formatOutput
+	 * @param {Object}
+	 * @return {Object}
+	 */
+	Property.prototype.formatOutput = function (result) {
+	    return this.outputFormatter && result !== null ? this.outputFormatter(result) : result;
+	};
+
+	/**
+	 * Should be used to extract callback from array of arguments. Modifies input param
+	 *
+	 * @method extractCallback
+	 * @param {Array} arguments
+	 * @return {Function|Null} callback, if exists
+	 */
+	Property.prototype.extractCallback = function (args) {
+	    if (utils.isFunction(args[args.length - 1])) {
+	        return args.pop(); // modify the args array!
+	    }
+	};
+
+
+	/**
+	 * Should attach function to method
+	 * 
+	 * @method attachToObject
+	 * @param {Object}
+	 * @param {Function}
+	 */
+	Property.prototype.attachToObject = function (obj) {
+	    var proto = {
+	        get: this.buildGet(),
+	        enumerable: true 
+	    };
+
+	    var names = this.name.split('.');
+	    var name = names[0];
+	    if (names.length > 1) {
+	        obj[names[0]] = obj[names[0]] || {};
+	        obj = obj[names[0]];
+	        name = names[1];
+	    }
+
+	    Object.defineProperty(obj, name, proto);
+	    obj[asyncGetterName(name)] = this.buildAsyncGet();
+	};
+
+	var asyncGetterName = function (name) {
+	    return 'get' + name.charAt(0).toUpperCase() + name.slice(1);
+	};
+
+	Property.prototype.buildGet = function () {
+	    var property = this;
+	    return function get() {
+	        return property.formatOutput(property.requestManager.send({
+	            method: property.getter
+	        })); 
+	    };
+	};
+
+	Property.prototype.buildAsyncGet = function () {
+	    var property = this;
+	    var get = function (callback) {
+	        property.requestManager.sendAsync({
+	            method: property.getter
+	        }, function (err, result) {
+	            callback(err, property.formatOutput(result));
+	        });
+	    };
+	    get.request = this.request.bind(this);
+	    return get;
+	};
+
+	/**
+	 * Should be called to create pure JSONRPC request which can be used in batch request
+	 *
+	 * @method request
+	 * @param {...} params
+	 * @return {Object} jsonrpc request
+	 */
+	Property.prototype.request = function () {
+	    var payload = {
+	        method: this.getter,
+	        params: [],
+	        callback: this.extractCallback(Array.prototype.slice.call(arguments))
+	    };
+	    payload.format = this.formatOutput.bind(this);
+	    return payload;
+	};
+
+	module.exports = Property;
+
+
+
+/***/ },
+/* 308 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/*
+	    This file is part of web3.js.
+
+	    web3.js is free software: you can redistribute it and/or modify
+	    it under the terms of the GNU Lesser General Public License as published by
+	    the Free Software Foundation, either version 3 of the License, or
+	    (at your option) any later version.
+
+	    web3.js is distributed in the hope that it will be useful,
+	    but WITHOUT ANY WARRANTY; without even the implied warranty of
+	    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	    GNU Lesser General Public License for more details.
+
+	    You should have received a copy of the GNU Lesser General Public License
+	    along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
+	*/
+	/**
+	 * @file contract.js
+	 * @author Marek Kotewicz <marek@ethdev.com>
+	 * @date 2014
+	 */
+
+	var utils = __webpack_require__(226);
+	var coder = __webpack_require__(265);
+	var SolidityEvent = __webpack_require__(225);
+	var SolidityFunction = __webpack_require__(309);
+	var AllEvents = __webpack_require__(310);
+
+	/**
+	 * Should be called to encode constructor params
+	 *
+	 * @method encodeConstructorParams
+	 * @param {Array} abi
+	 * @param {Array} constructor params
+	 */
+	var encodeConstructorParams = function (abi, params) {
+	    return abi.filter(function (json) {
+	        return json.type === 'constructor' && json.inputs.length === params.length;
+	    }).map(function (json) {
+	        return json.inputs.map(function (input) {
+	            return input.type;
+	        });
+	    }).map(function (types) {
+	        return coder.encodeParams(types, params);
+	    })[0] || '';
+	};
+
+	/**
+	 * Should be called to add functions to contract object
+	 *
+	 * @method addFunctionsToContract
+	 * @param {Contract} contract
+	 * @param {Array} abi
+	 */
+	var addFunctionsToContract = function (contract) {
+	    contract.abi.filter(function (json) {
+	        return json.type === 'function';
+	    }).map(function (json) {
+	        return new SolidityFunction(contract._eth, json, contract.address);
+	    }).forEach(function (f) {
+	        f.attachToContract(contract);
+	    });
+	};
+
+	/**
+	 * Should be called to add events to contract object
+	 *
+	 * @method addEventsToContract
+	 * @param {Contract} contract
+	 * @param {Array} abi
+	 */
+	var addEventsToContract = function (contract) {
+	    var events = contract.abi.filter(function (json) {
+	        return json.type === 'event';
+	    });
+
+	    var All = new AllEvents(contract._eth._requestManager, events, contract.address);
+	    All.attachToContract(contract);
+
+	    events.map(function (json) {
+	        return new SolidityEvent(contract._eth._requestManager, json, contract.address);
+	    }).forEach(function (e) {
+	        e.attachToContract(contract);
+	    });
+	};
+
+
+	/**
+	 * Should be called to check if the contract gets properly deployed on the blockchain.
+	 *
+	 * @method checkForContractAddress
+	 * @param {Object} contract
+	 * @param {Function} callback
+	 * @returns {Undefined}
+	 */
+	var checkForContractAddress = function(contract, callback){
+	    var count = 0,
+	        callbackFired = false;
+
+	    // wait for receipt
+	    var filter = contract._eth.filter('latest', function(e){
+	        if (!e && !callbackFired) {
+	            count++;
+
+	            // stop watching after 50 blocks (timeout)
+	            if (count > 50) {
+
+	                filter.stopWatching();
+	                callbackFired = true;
+
+	                if (callback)
+	                    callback(new Error('Contract transaction couldn\'t be found after 50 blocks'));
+	                else
+	                    throw new Error('Contract transaction couldn\'t be found after 50 blocks');
+
+
+	            } else {
+
+	                contract._eth.getTransactionReceipt(contract.transactionHash, function(e, receipt){
+	                    if(receipt && !callbackFired) {
+
+	                        contract._eth.getCode(receipt.contractAddress, function(e, code){
+	                            /*jshint maxcomplexity: 6 */
+
+	                            if(callbackFired || !code)
+	                                return;
+
+	                            filter.stopWatching();
+	                            callbackFired = true;
+
+	                            if(code.length > 3) {
+
+	                                // console.log('Contract code deployed!');
+
+	                                contract.address = receipt.contractAddress;
+
+	                                // attach events and methods again after we have
+	                                addFunctionsToContract(contract);
+	                                addEventsToContract(contract);
+
+	                                // call callback for the second time
+	                                if(callback)
+	                                    callback(null, contract);
+
+	                            } else {
+	                                if(callback)
+	                                    callback(new Error('The contract code couldn\'t be stored, please check your gas amount.'));
+	                                else
+	                                    throw new Error('The contract code couldn\'t be stored, please check your gas amount.');
+	                            }
+	                        });
+	                    }
+	                });
+	            }
+	        }
+	    });
+	};
+
+	/**
+	 * Should be called to create new ContractFactory instance
+	 *
+	 * @method ContractFactory
+	 * @param {Array} abi
+	 */
+	var ContractFactory = function (eth, abi) {
+	    this.eth = eth;
+	    this.abi = abi;
+
+	    /**
+	     * Should be called to create new contract on a blockchain
+	     *
+	     * @method new
+	     * @param {Any} contract constructor param1 (optional)
+	     * @param {Any} contract constructor param2 (optional)
+	     * @param {Object} contract transaction object (required)
+	     * @param {Function} callback
+	     * @returns {Contract} returns contract instance
+	     */
+	    this.new = function () {
+	        var contract = new Contract(this.eth, this.abi);
+
+	        // parse arguments
+	        var options = {}; // required!
+	        var callback;
+
+	        var args = Array.prototype.slice.call(arguments);
+	        if (utils.isFunction(args[args.length - 1])) {
+	            callback = args.pop();
+	        }
+
+	        var last = args[args.length - 1];
+	        if (utils.isObject(last) && !utils.isArray(last)) {
+	            options = args.pop();
+	        }
+
+	        var bytes = encodeConstructorParams(this.abi, args);
+	        options.data += bytes;
+
+	        if (callback) {
+
+	            // wait for the contract address adn check if the code was deployed
+	            this.eth.sendTransaction(options, function (err, hash) {
+	                if (err) {
+	                    callback(err);
+	                } else {
+	                    // add the transaction hash
+	                    contract.transactionHash = hash;
+
+	                    // call callback for the first time
+	                    callback(null, contract);
+
+	                    checkForContractAddress(contract, callback);
+	                }
+	            });
+	        } else {
+	            var hash = this.eth.sendTransaction(options);
+	            // add the transaction hash
+	            contract.transactionHash = hash;
+	            checkForContractAddress(contract);
+	        }
+
+	        return contract;
+	    };
+
+	    this.new.getData = this.getData.bind(this);
+	};
+
+	/**
+	 * Should be called to create new ContractFactory
+	 *
+	 * @method contract
+	 * @param {Array} abi
+	 * @returns {ContractFactory} new contract factory
+	 */
+	//var contract = function (abi) {
+	    //return new ContractFactory(abi);
+	//};
+
+
+
+	/**
+	 * Should be called to get access to existing contract on a blockchain
+	 *
+	 * @method at
+	 * @param {Address} contract address (required)
+	 * @param {Function} callback {optional)
+	 * @returns {Contract} returns contract if no callback was passed,
+	 * otherwise calls callback function (err, contract)
+	 */
+	ContractFactory.prototype.at = function (address, callback) {
+	    var contract = new Contract(this.eth, this.abi, address);
+
+	    // this functions are not part of prototype,
+	    // because we dont want to spoil the interface
+	    addFunctionsToContract(contract);
+	    addEventsToContract(contract);
+
+	    if (callback) {
+	        callback(null, contract);
+	    }
+	    return contract;
+	};
+
+	/**
+	 * Gets the data, which is data to deploy plus constructor params
+	 *
+	 * @method getData
+	 */
+	ContractFactory.prototype.getData = function () {
+	    var options = {}; // required!
+	    var args = Array.prototype.slice.call(arguments);
+
+	    var last = args[args.length - 1];
+	    if (utils.isObject(last) && !utils.isArray(last)) {
+	        options = args.pop();
+	    }
+
+	    var bytes = encodeConstructorParams(this.abi, args);
+	    options.data += bytes;
+
+	    return options.data;
+	};
+
+	/**
+	 * Should be called to create new contract instance
+	 *
+	 * @method Contract
+	 * @param {Array} abi
+	 * @param {Address} contract address
+	 */
+	var Contract = function (eth, abi, address) {
+	    this._eth = eth;
+	    this.transactionHash = null;
+	    this.address = address;
+	    this.abi = abi;
+	};
+
+	module.exports = ContractFactory;
+
+
+/***/ },
+/* 309 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/*
+	    This file is part of web3.js.
+
+	    web3.js is free software: you can redistribute it and/or modify
+	    it under the terms of the GNU Lesser General Public License as published by
+	    the Free Software Foundation, either version 3 of the License, or
+	    (at your option) any later version.
+
+	    web3.js is distributed in the hope that it will be useful,
+	    but WITHOUT ANY WARRANTY; without even the implied warranty of
+	    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	    GNU Lesser General Public License for more details.
+
+	    You should have received a copy of the GNU Lesser General Public License
+	    along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
+	*/
+	/**
+	 * @file function.js
+	 * @author Marek Kotewicz <marek@ethdev.com>
+	 * @date 2015
+	 */
+
+	var coder = __webpack_require__(265);
+	var utils = __webpack_require__(226);
+	var formatters = __webpack_require__(279);
+	var sha3 = __webpack_require__(228);
+
+	/**
+	 * This prototype should be used to call/sendTransaction to solidity functions
+	 */
+	var SolidityFunction = function (eth, json, address) {
+	    this._eth = eth;
+	    this._inputTypes = json.inputs.map(function (i) {
+	        return i.type;
+	    });
+	    this._outputTypes = json.outputs.map(function (i) {
+	        return i.type;
+	    });
+	    this._constant = json.constant;
+	    this._name = utils.transformToFullName(json);
+	    this._address = address;
+	};
+
+	SolidityFunction.prototype.extractCallback = function (args) {
+	    if (utils.isFunction(args[args.length - 1])) {
+	        return args.pop(); // modify the args array!
+	    }
+	};
+
+	SolidityFunction.prototype.extractDefaultBlock = function (args) {
+	    if (args.length > this._inputTypes.length && !utils.isObject(args[args.length -1])) {
+	        return formatters.inputDefaultBlockNumberFormatter(args.pop()); // modify the args array!
+	    }
+	};
+
+	/**
+	 * Should be used to create payload from arguments
+	 *
+	 * @method toPayload
+	 * @param {Array} solidity function params
+	 * @param {Object} optional payload options
+	 */
+	SolidityFunction.prototype.toPayload = function (args) {
+	    var options = {};
+	    if (args.length > this._inputTypes.length && utils.isObject(args[args.length -1])) {
+	        options = args[args.length - 1];
+	    }
+	    options.to = this._address;
+	    options.data = '0x' + this.signature() + coder.encodeParams(this._inputTypes, args);
+	    return options;
+	};
+
+	/**
+	 * Should be used to get function signature
+	 *
+	 * @method signature
+	 * @return {String} function signature
+	 */
+	SolidityFunction.prototype.signature = function () {
+	    return sha3(this._name).slice(0, 8);
+	};
+
+
+	SolidityFunction.prototype.unpackOutput = function (output) {
+	    if (!output) {
+	        return;
+	    }
+
+	    output = output.length >= 2 ? output.slice(2) : output;
+	    var result = coder.decodeParams(this._outputTypes, output);
+	    return result.length === 1 ? result[0] : result;
+	};
+
+	/**
+	 * Calls a contract function.
+	 *
+	 * @method call
+	 * @param {...Object} Contract function arguments
+	 * @param {function} If the last argument is a function, the contract function
+	 *   call will be asynchronous, and the callback will be passed the
+	 *   error and result.
+	 * @return {String} output bytes
+	 */
+	SolidityFunction.prototype.call = function () {
+	    var args = Array.prototype.slice.call(arguments).filter(function (a) {return a !== undefined; });
+	    var callback = this.extractCallback(args);
+	    var defaultBlock = this.extractDefaultBlock(args);
+	    var payload = this.toPayload(args);
+
+
+	    if (!callback) {
+	        var output = this._eth.call(payload, defaultBlock);
+	        return this.unpackOutput(output);
+	    } 
+	        
+	    var self = this;
+	    this._eth.call(payload, defaultBlock, function (error, output) {
+	        callback(error, self.unpackOutput(output));
+	    });
+	};
+
+	/**
+	 * Should be used to sendTransaction to solidity function
+	 *
+	 * @method sendTransaction
+	 */
+	SolidityFunction.prototype.sendTransaction = function () {
+	    var args = Array.prototype.slice.call(arguments).filter(function (a) {return a !== undefined; });
+	    var callback = this.extractCallback(args);
+	    var payload = this.toPayload(args);
+
+	    if (!callback) {
+	        return this._eth.sendTransaction(payload);
+	    }
+
+	    this._eth.sendTransaction(payload, callback);
+	};
+
+	/**
+	 * Should be used to estimateGas of solidity function
+	 *
+	 * @method estimateGas
+	 */
+	SolidityFunction.prototype.estimateGas = function () {
+	    var args = Array.prototype.slice.call(arguments);
+	    var callback = this.extractCallback(args);
+	    var payload = this.toPayload(args);
+
+	    if (!callback) {
+	        return this._eth.estimateGas(payload);
+	    }
+
+	    this._eth.estimateGas(payload, callback);
+	};
+
+	/**
+	 * Return the encoded data of the call
+	 *
+	 * @method getData
+	 * @return {String} the encoded data
+	 */
+	SolidityFunction.prototype.getData = function () {
+	    var args = Array.prototype.slice.call(arguments);
+	    var payload = this.toPayload(args);
+
+	    return payload.data;
+	};
+
+	/**
+	 * Should be used to get function display name
+	 *
+	 * @method displayName
+	 * @return {String} display name of the function
+	 */
+	SolidityFunction.prototype.displayName = function () {
+	    return utils.extractDisplayName(this._name);
+	};
+
+	/**
+	 * Should be used to get function type name
+	 *
+	 * @method typeName
+	 * @return {String} type name of the function
+	 */
+	SolidityFunction.prototype.typeName = function () {
+	    return utils.extractTypeName(this._name);
+	};
+
+	/**
+	 * Should be called to get rpc requests from solidity function
+	 *
+	 * @method request
+	 * @returns {Object}
+	 */
+	SolidityFunction.prototype.request = function () {
+	    var args = Array.prototype.slice.call(arguments);
+	    var callback = this.extractCallback(args);
+	    var payload = this.toPayload(args);
+	    var format = this.unpackOutput.bind(this);
+	    
+	    return {
+	        method: this._constant ? 'eth_call' : 'eth_sendTransaction',
+	        callback: callback,
+	        params: [payload], 
+	        format: format
+	    };
+	};
+
+	/**
+	 * Should be called to execute function
+	 *
+	 * @method execute
+	 */
+	SolidityFunction.prototype.execute = function () {
+	    var transaction = !this._constant;
+
+	    // send transaction
+	    if (transaction) {
+	        return this.sendTransaction.apply(this, Array.prototype.slice.call(arguments));
+	    }
+
+	    // call
+	    return this.call.apply(this, Array.prototype.slice.call(arguments));
+	};
+
+	/**
+	 * Should be called to attach function to contract
+	 *
+	 * @method attachToContract
+	 * @param {Contract}
+	 */
+	SolidityFunction.prototype.attachToContract = function (contract) {
+	    var execute = this.execute.bind(this);
+	    execute.request = this.request.bind(this);
+	    execute.call = this.call.bind(this);
+	    execute.sendTransaction = this.sendTransaction.bind(this);
+	    execute.estimateGas = this.estimateGas.bind(this);
+	    execute.getData = this.getData.bind(this);
+	    var displayName = this.displayName();
+	    if (!contract[displayName]) {
+	        contract[displayName] = execute;
+	    }
+	    contract[displayName][this.typeName()] = execute; // circular!!!!
+	};
+
+	module.exports = SolidityFunction;
+
+
+
+/***/ },
+/* 310 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/*
+	    This file is part of web3.js.
+
+	    web3.js is free software: you can redistribute it and/or modify
+	    it under the terms of the GNU Lesser General Public License as published by
+	    the Free Software Foundation, either version 3 of the License, or
+	    (at your option) any later version.
+
+	    web3.js is distributed in the hope that it will be useful,
+	    but WITHOUT ANY WARRANTY; without even the implied warranty of
+	    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	    GNU Lesser General Public License for more details.
+
+	    You should have received a copy of the GNU Lesser General Public License
+	    along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
+	*/
+	/** 
+	 * @file allevents.js
+	 * @author Marek Kotewicz <marek@ethdev.com>
+	 * @date 2014
+	 */
+
+	var sha3 = __webpack_require__(228);
+	var SolidityEvent = __webpack_require__(225);
+	var formatters = __webpack_require__(279);
+	var utils = __webpack_require__(226);
+	var Filter = __webpack_require__(281);
+	var watches = __webpack_require__(282);
+
+	var AllSolidityEvents = function (requestManager, json, address) {
+	    this._requestManager = requestManager;
+	    this._json = json;
+	    this._address = address;
+	};
+
+	AllSolidityEvents.prototype.encode = function (options) {
+	    options = options || {};
+	    var result = {};
+
+	    ['fromBlock', 'toBlock'].filter(function (f) {
+	        return options[f] !== undefined;
+	    }).forEach(function (f) {
+	        result[f] = formatters.inputBlockNumberFormatter(options[f]);
+	    });
+
+	    result.address = this._address;
+
+	    return result;
+	};
+
+	AllSolidityEvents.prototype.decode = function (data) {
+	    data.data = data.data || '';
+	    data.topics = data.topics || [];
+
+	    var eventTopic = data.topics[0].slice(2);
+	    var match = this._json.filter(function (j) {
+	        return eventTopic === sha3(utils.transformToFullName(j));
+	    })[0];
+
+	    if (!match) { // cannot find matching event?
+	        console.warn('cannot find event for log');
+	        return data;
+	    }
+
+	    var event = new SolidityEvent(this._requestManager, match, this._address);
+	    return event.decode(data);
+	};
+
+	AllSolidityEvents.prototype.execute = function (options, callback) {
+
+	    if (utils.isFunction(arguments[arguments.length - 1])) {
+	        callback = arguments[arguments.length - 1];
+	        if(arguments.length === 1)
+	            options = null;
+	    }
+
+	    var o = this.encode(options);
+	    var formatter = this.decode.bind(this);
+	    return new Filter(this._requestManager, o, watches.eth(), formatter, callback);
+	};
+
+	AllSolidityEvents.prototype.attachToContract = function (contract) {
+	    var execute = this.execute.bind(this);
+	    contract.allEvents = execute;
+	};
+
+	module.exports = AllSolidityEvents;
+
+
+
+/***/ },
+/* 311 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/*
+	    This file is part of web3.js.
+
+	    web3.js is free software: you can redistribute it and/or modify
+	    it under the terms of the GNU Lesser General Public License as published by
+	    the Free Software Foundation, either version 3 of the License, or
+	    (at your option) any later version.
+
+	    web3.js is distributed in the hope that it will be useful,
+	    but WITHOUT ANY WARRANTY; without even the implied warranty of
+	    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	    GNU Lesser General Public License for more details.
+
+	    You should have received a copy of the GNU Lesser General Public License
+	    along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
+	*/
+	/** @file syncing.js
+	 * @authors:
+	 *   Fabian Vogelsteller <fabian@ethdev.com>
+	 * @date 2015
+	 */
+
+	var formatters = __webpack_require__(279);
+	var utils = __webpack_require__(226);
+
+	var count = 1;
+
+	/**
+	Adds the callback and sets up the methods, to iterate over the results.
+
+	@method pollSyncing
+	@param {Object} self
+	*/
+	var pollSyncing = function(self) {
+
+	    var onMessage = function (error, sync) {
+	        if (error) {
+	            return self.callbacks.forEach(function (callback) {
+	                callback(error);
+	            });
+	        }
+
+	        if(utils.isObject(sync) && sync.startingBlock)
+	            sync = formatters.outputSyncingFormatter(sync);
+
+	        self.callbacks.forEach(function (callback) {
+	            if (self.lastSyncState !== sync) {
+	                
+	                // call the callback with true first so the app can stop anything, before receiving the sync data
+	                if(!self.lastSyncState && utils.isObject(sync))
+	                    callback(null, true);
+	                
+	                // call on the next CPU cycle, so the actions of the sync stop can be processes first
+	                setTimeout(function() {
+	                    callback(null, sync);
+	                }, 0);
+	                
+	                self.lastSyncState = sync;
+	            }
+	        });
+	    };
+
+	    self.requestManager.startPolling({
+	        method: 'eth_syncing',
+	        params: [],
+	    }, self.pollId, onMessage, self.stopWatching.bind(self));
+
+	};
+
+	var IsSyncing = function (requestManager, callback) {
+	    this.requestManager = requestManager;
+	    this.pollId = 'syncPoll_'+ count++;
+	    this.callbacks = [];
+	    this.addCallback(callback);
+	    this.lastSyncState = false;
+	    pollSyncing(this);
+
+	    return this;
+	};
+
+	IsSyncing.prototype.addCallback = function (callback) {
+	    if(callback)
+	        this.callbacks.push(callback);
+	    return this;
+	};
+
+	IsSyncing.prototype.stopWatching = function () {
+	    this.requestManager.stopPolling(this.pollId);
+	    this.callbacks = [];
+	};
+
+	module.exports = IsSyncing;
+
+
+
+/***/ },
+/* 312 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/*
+	    This file is part of web3.js.
+
+	    web3.js is free software: you can redistribute it and/or modify
+	    it under the terms of the GNU Lesser General Public License as published by
+	    the Free Software Foundation, either version 3 of the License, or
+	    (at your option) any later version.
+
+	    web3.js is distributed in the hope that it will be useful,
+	    but WITHOUT ANY WARRANTY; without even the implied warranty of
+	    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	    GNU Lesser General Public License for more details.
+
+	    You should have received a copy of the GNU Lesser General Public License
+	    along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
+	*/
+	/** 
+	 * @file namereg.js
+	 * @author Marek Kotewicz <marek@ethdev.com>
+	 * @date 2015
+	 */
+
+	var globalRegistrarAbi = __webpack_require__(313);
+	var icapRegistrarAbi= __webpack_require__(314);
+
+	var globalNameregAddress = '0xc6d9d2cd449a754c494264e1809c50e34d64562b';
+	var icapNameregAddress = '0xa1a111bc074c9cfa781f0c38e63bd51c91b8af00';
+
+	module.exports = {
+	    global: {
+	        abi: globalRegistrarAbi,
+	        address: globalNameregAddress
+	    },
+	    icap: {
+	        abi: icapRegistrarAbi,
+	        address: icapNameregAddress
+	    }
+	};
+
+
+
+/***/ },
+/* 313 */
+/***/ function(module, exports) {
+
+	module.exports = [
+		{
+			"constant": true,
+			"inputs": [
+				{
+					"name": "_owner",
+					"type": "address"
+				}
+			],
+			"name": "name",
+			"outputs": [
+				{
+					"name": "o_name",
+					"type": "bytes32"
+				}
+			],
+			"type": "function"
+		},
+		{
+			"constant": true,
+			"inputs": [
+				{
+					"name": "_name",
+					"type": "bytes32"
+				}
+			],
+			"name": "owner",
+			"outputs": [
+				{
+					"name": "",
+					"type": "address"
+				}
+			],
+			"type": "function"
+		},
+		{
+			"constant": true,
+			"inputs": [
+				{
+					"name": "_name",
+					"type": "bytes32"
+				}
+			],
+			"name": "content",
+			"outputs": [
+				{
+					"name": "",
+					"type": "bytes32"
+				}
+			],
+			"type": "function"
+		},
+		{
+			"constant": true,
+			"inputs": [
+				{
+					"name": "_name",
+					"type": "bytes32"
+				}
+			],
+			"name": "addr",
+			"outputs": [
+				{
+					"name": "",
+					"type": "address"
+				}
+			],
+			"type": "function"
+		},
+		{
+			"constant": false,
+			"inputs": [
+				{
+					"name": "_name",
+					"type": "bytes32"
+				}
+			],
+			"name": "reserve",
+			"outputs": [],
+			"type": "function"
+		},
+		{
+			"constant": true,
+			"inputs": [
+				{
+					"name": "_name",
+					"type": "bytes32"
+				}
+			],
+			"name": "subRegistrar",
+			"outputs": [
+				{
+					"name": "",
+					"type": "address"
+				}
+			],
+			"type": "function"
+		},
+		{
+			"constant": false,
+			"inputs": [
+				{
+					"name": "_name",
+					"type": "bytes32"
+				},
+				{
+					"name": "_newOwner",
+					"type": "address"
+				}
+			],
+			"name": "transfer",
+			"outputs": [],
+			"type": "function"
+		},
+		{
+			"constant": false,
+			"inputs": [
+				{
+					"name": "_name",
+					"type": "bytes32"
+				},
+				{
+					"name": "_registrar",
+					"type": "address"
+				}
+			],
+			"name": "setSubRegistrar",
+			"outputs": [],
+			"type": "function"
+		},
+		{
+			"constant": false,
+			"inputs": [],
+			"name": "Registrar",
+			"outputs": [],
+			"type": "function"
+		},
+		{
+			"constant": false,
+			"inputs": [
+				{
+					"name": "_name",
+					"type": "bytes32"
+				},
+				{
+					"name": "_a",
+					"type": "address"
+				},
+				{
+					"name": "_primary",
+					"type": "bool"
+				}
+			],
+			"name": "setAddress",
+			"outputs": [],
+			"type": "function"
+		},
+		{
+			"constant": false,
+			"inputs": [
+				{
+					"name": "_name",
+					"type": "bytes32"
+				},
+				{
+					"name": "_content",
+					"type": "bytes32"
+				}
+			],
+			"name": "setContent",
+			"outputs": [],
+			"type": "function"
+		},
+		{
+			"constant": false,
+			"inputs": [
+				{
+					"name": "_name",
+					"type": "bytes32"
+				}
+			],
+			"name": "disown",
+			"outputs": [],
+			"type": "function"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": true,
+					"name": "_name",
+					"type": "bytes32"
+				},
+				{
+					"indexed": false,
+					"name": "_winner",
+					"type": "address"
+				}
+			],
+			"name": "AuctionEnded",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": true,
+					"name": "_name",
+					"type": "bytes32"
+				},
+				{
+					"indexed": false,
+					"name": "_bidder",
+					"type": "address"
+				},
+				{
+					"indexed": false,
+					"name": "_value",
+					"type": "uint256"
+				}
+			],
+			"name": "NewBid",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": true,
+					"name": "name",
+					"type": "bytes32"
+				}
+			],
+			"name": "Changed",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": true,
+					"name": "name",
+					"type": "bytes32"
+				},
+				{
+					"indexed": true,
+					"name": "addr",
+					"type": "address"
+				}
+			],
+			"name": "PrimaryChanged",
+			"type": "event"
+		}
+	];
+
+/***/ },
+/* 314 */
+/***/ function(module, exports) {
+
+	module.exports = [
+		{
+			"constant": true,
+			"inputs": [
+				{
+					"name": "_name",
+					"type": "bytes32"
+				}
+			],
+			"name": "owner",
+			"outputs": [
+				{
+					"name": "",
+					"type": "address"
+				}
+			],
+			"type": "function"
+		},
+		{
+			"constant": false,
+			"inputs": [
+				{
+					"name": "_name",
+					"type": "bytes32"
+				},
+				{
+					"name": "_refund",
+					"type": "address"
+				}
+			],
+			"name": "disown",
+			"outputs": [],
+			"type": "function"
+		},
+		{
+			"constant": true,
+			"inputs": [
+				{
+					"name": "_name",
+					"type": "bytes32"
+				}
+			],
+			"name": "addr",
+			"outputs": [
+				{
+					"name": "",
+					"type": "address"
+				}
+			],
+			"type": "function"
+		},
+		{
+			"constant": false,
+			"inputs": [
+				{
+					"name": "_name",
+					"type": "bytes32"
+				}
+			],
+			"name": "reserve",
+			"outputs": [],
+			"type": "function"
+		},
+		{
+			"constant": false,
+			"inputs": [
+				{
+					"name": "_name",
+					"type": "bytes32"
+				},
+				{
+					"name": "_newOwner",
+					"type": "address"
+				}
+			],
+			"name": "transfer",
+			"outputs": [],
+			"type": "function"
+		},
+		{
+			"constant": false,
+			"inputs": [
+				{
+					"name": "_name",
+					"type": "bytes32"
+				},
+				{
+					"name": "_a",
+					"type": "address"
+				}
+			],
+			"name": "setAddr",
+			"outputs": [],
+			"type": "function"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": true,
+					"name": "name",
+					"type": "bytes32"
+				}
+			],
+			"name": "Changed",
+			"type": "event"
+		}
+	];
+
+/***/ },
+/* 315 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/*
+	    This file is part of web3.js.
+
+	    web3.js is free software: you can redistribute it and/or modify
+	    it under the terms of the GNU Lesser General Public License as published by
+	    the Free Software Foundation, either version 3 of the License, or
+	    (at your option) any later version.
+
+	    web3.js is distributed in the hope that it will be useful,
+	    but WITHOUT ANY WARRANTY; without even the implied warranty of
+	    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	    GNU Lesser General Public License for more details.
+
+	    You should have received a copy of the GNU Lesser General Public License
+	    along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
+	*/
+	/** 
+	 * @file transfer.js
+	 * @author Marek Kotewicz <marek@ethdev.com>
+	 * @date 2015
+	 */
+
+	var Iban = __webpack_require__(280);
+	var exchangeAbi = __webpack_require__(316);
+
+	/**
+	 * Should be used to make Iban transfer
+	 *
+	 * @method transfer
+	 * @param {String} from
+	 * @param {String} to iban
+	 * @param {Value} value to be tranfered
+	 * @param {Function} callback, callback
+	 */
+	var transfer = function (eth, from, to, value, callback) {
+	    var iban = new Iban(to); 
+	    if (!iban.isValid()) {
+	        throw new Error('invalid iban address');
+	    }
+
+	    if (iban.isDirect()) {
+	        return transferToAddress(eth, from, iban.address(), value, callback);
+	    }
+	    
+	    if (!callback) {
+	        var address = eth.icapNamereg().addr(iban.institution());
+	        return deposit(eth, from, address, value, iban.client());
+	    }
+
+	    eth.icapNamereg().addr(iban.institution(), function (err, address) {
+	        return deposit(eth, from, address, value, iban.client(), callback);
+	    });
+	    
+	};
+
+	/**
+	 * Should be used to transfer funds to certain address
+	 *
+	 * @method transferToAddress
+	 * @param {String} from
+	 * @param {String} to
+	 * @param {Value} value to be tranfered
+	 * @param {Function} callback, callback
+	 */
+	var transferToAddress = function (eth, from, to, value, callback) {
+	    return eth.sendTransaction({
+	        address: to,
+	        from: from,
+	        value: value
+	    }, callback);
+	};
+
+	/**
+	 * Should be used to deposit funds to generic Exchange contract (must implement deposit(bytes32) method!)
+	 *
+	 * @method deposit
+	 * @param {String} from
+	 * @param {String} to
+	 * @param {Value} value to be transfered
+	 * @param {String} client unique identifier
+	 * @param {Function} callback, callback
+	 */
+	var deposit = function (eth, from, to, value, client, callback) {
+	    var abi = exchangeAbi;
+	    return eth.contract(abi).at(to).deposit(client, {
+	        from: from,
+	        value: value
+	    }, callback);
+	};
+
+	module.exports = transfer;
+
+
+
+/***/ },
+/* 316 */
+/***/ function(module, exports) {
+
+	module.exports = [
+		{
+			"constant": false,
+			"inputs": [
+				{
+					"name": "from",
+					"type": "bytes32"
+				},
+				{
+					"name": "to",
+					"type": "address"
+				},
+				{
+					"name": "value",
+					"type": "uint256"
+				}
+			],
+			"name": "transfer",
+			"outputs": [],
+			"type": "function"
+		},
+		{
+			"constant": false,
+			"inputs": [
+				{
+					"name": "from",
+					"type": "bytes32"
+				},
+				{
+					"name": "to",
+					"type": "address"
+				},
+				{
+					"name": "indirectId",
+					"type": "bytes32"
+				},
+				{
+					"name": "value",
+					"type": "uint256"
+				}
+			],
+			"name": "icapTransfer",
+			"outputs": [],
+			"type": "function"
+		},
+		{
+			"constant": false,
+			"inputs": [
+				{
+					"name": "to",
+					"type": "bytes32"
+				}
+			],
+			"name": "deposit",
+			"outputs": [],
+			"type": "function"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": true,
+					"name": "from",
+					"type": "address"
+				},
+				{
+					"indexed": false,
+					"name": "value",
+					"type": "uint256"
+				}
+			],
+			"name": "AnonymousDeposit",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": true,
+					"name": "from",
+					"type": "address"
+				},
+				{
+					"indexed": true,
+					"name": "to",
+					"type": "bytes32"
+				},
+				{
+					"indexed": false,
+					"name": "value",
+					"type": "uint256"
+				}
+			],
+			"name": "Deposit",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": true,
+					"name": "from",
+					"type": "bytes32"
+				},
+				{
+					"indexed": true,
+					"name": "to",
+					"type": "address"
+				},
+				{
+					"indexed": false,
+					"name": "value",
+					"type": "uint256"
+				}
+			],
+			"name": "Transfer",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": true,
+					"name": "from",
+					"type": "bytes32"
+				},
+				{
+					"indexed": true,
+					"name": "to",
+					"type": "address"
+				},
+				{
+					"indexed": false,
+					"name": "indirectId",
+					"type": "bytes32"
+				},
+				{
+					"indexed": false,
+					"name": "value",
+					"type": "uint256"
+				}
+			],
+			"name": "IcapTransfer",
+			"type": "event"
+		}
+	];
+
+/***/ },
+/* 317 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/*
+	    This file is part of web3.js.
+
+	    web3.js is free software: you can redistribute it and/or modify
+	    it under the terms of the GNU Lesser General Public License as published by
+	    the Free Software Foundation, either version 3 of the License, or
+	    (at your option) any later version.
+
+	    web3.js is distributed in the hope that it will be useful,
+	    but WITHOUT ANY WARRANTY; without even the implied warranty of
+	    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	    GNU Lesser General Public License for more details.
+
+	    You should have received a copy of the GNU Lesser General Public License
+	    along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
+	*/
+	/** @file db.js
+	 * @authors:
+	 *   Marek Kotewicz <marek@ethdev.com>
+	 * @date 2015
+	 */
+
+	var Method = __webpack_require__(283);
+
+	var DB = function (web3) {
+	    this._requestManager = web3._requestManager;
+
+	    var self = this;
+	    
+	    methods().forEach(function(method) { 
+	        method.attachToObject(self);
+	        method.setRequestManager(web3._requestManager);
+	    });
+	};
+
+	var methods = function () {
+	    var putString = new Method({
+	        name: 'putString',
+	        call: 'db_putString',
+	        params: 3
+	    });
+
+	    var getString = new Method({
+	        name: 'getString',
+	        call: 'db_getString',
+	        params: 2
+	    });
+
+	    var putHex = new Method({
+	        name: 'putHex',
+	        call: 'db_putHex',
+	        params: 3
+	    });
+
+	    var getHex = new Method({
+	        name: 'getHex',
+	        call: 'db_getHex',
+	        params: 2
+	    });
+
+	    return [
+	        putString, getString, putHex, getHex
+	    ];
+	};
+
+	module.exports = DB;
+
+
+/***/ },
+/* 318 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/*
+	    This file is part of web3.js.
+
+	    web3.js is free software: you can redistribute it and/or modify
+	    it under the terms of the GNU Lesser General Public License as published by
+	    the Free Software Foundation, either version 3 of the License, or
+	    (at your option) any later version.
+
+	    web3.js is distributed in the hope that it will be useful,
+	    but WITHOUT ANY WARRANTY; without even the implied warranty of
+	    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	    GNU Lesser General Public License for more details.
+
+	    You should have received a copy of the GNU Lesser General Public License
+	    along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
+	*/
+	/** @file shh.js
+	 * @authors:
+	 *   Marek Kotewicz <marek@ethdev.com>
+	 * @date 2015
+	 */
+
+	var Method = __webpack_require__(283);
+	var formatters = __webpack_require__(279);
+	var Filter = __webpack_require__(281);
+	var watches = __webpack_require__(282);
+
+	var Shh = function (web3) {
+	    this._requestManager = web3._requestManager;
+
+	    var self = this;
+
+	    methods().forEach(function(method) { 
+	        method.attachToObject(self);
+	        method.setRequestManager(self._requestManager);
+	    });
+	};
+
+	Shh.prototype.filter = function (fil, callback) {
+	    return new Filter(this._requestManager, fil, watches.shh(), formatters.outputPostFormatter, callback);
+	};
+
+	var methods = function () { 
+
+	    var post = new Method({
+	        name: 'post', 
+	        call: 'shh_post', 
+	        params: 1,
+	        inputFormatter: [formatters.inputPostFormatter]
+	    });
+
+	    var newIdentity = new Method({
+	        name: 'newIdentity',
+	        call: 'shh_newIdentity',
+	        params: 0
+	    });
+
+	    var hasIdentity = new Method({
+	        name: 'hasIdentity',
+	        call: 'shh_hasIdentity',
+	        params: 1
+	    });
+
+	    var newGroup = new Method({
+	        name: 'newGroup',
+	        call: 'shh_newGroup',
+	        params: 0
+	    });
+
+	    var addToGroup = new Method({
+	        name: 'addToGroup',
+	        call: 'shh_addToGroup',
+	        params: 0
+	    });
+
+	    return [
+	        post,
+	        newIdentity,
+	        hasIdentity,
+	        newGroup,
+	        addToGroup
+	    ];
+	};
+
+	module.exports = Shh;
+
+
+
+/***/ },
+/* 319 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/*
+	    This file is part of web3.js.
+
+	    web3.js is free software: you can redistribute it and/or modify
+	    it under the terms of the GNU Lesser General Public License as published by
+	    the Free Software Foundation, either version 3 of the License, or
+	    (at your option) any later version.
+
+	    web3.js is distributed in the hope that it will be useful,
+	    but WITHOUT ANY WARRANTY; without even the implied warranty of
+	    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	    GNU Lesser General Public License for more details.
+
+	    You should have received a copy of the GNU Lesser General Public License
+	    along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
+	*/
+	/** @file eth.js
+	 * @authors:
+	 *   Marek Kotewicz <marek@ethdev.com>
+	 * @date 2015
+	 */
+
+	var utils = __webpack_require__(226);
+	var Property = __webpack_require__(307);
+
+	var Net = function (web3) {
+	    this._requestManager = web3._requestManager;
+
+	    var self = this;
+
+	    properties().forEach(function(p) { 
+	        p.attachToObject(self);
+	        p.setRequestManager(web3._requestManager);
+	    });
+	};
+
+	/// @returns an array of objects describing web3.eth api properties
+	var properties = function () {
+	    return [
+	        new Property({
+	            name: 'listening',
+	            getter: 'net_listening'
+	        }),
+	        new Property({
+	            name: 'peerCount',
+	            getter: 'net_peerCount',
+	            outputFormatter: utils.toDecimal
+	        })
+	    ];
+	};
+
+	module.exports = Net;
+
+
+/***/ },
+/* 320 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/*
+	    This file is part of web3.js.
+
+	    web3.js is free software: you can redistribute it and/or modify
+	    it under the terms of the GNU Lesser General Public License as published by
+	    the Free Software Foundation, either version 3 of the License, or
+	    (at your option) any later version.
+
+	    web3.js is distributed in the hope that it will be useful,
+	    but WITHOUT ANY WARRANTY; without even the implied warranty of
+	    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	    GNU Lesser General Public License for more details.
+
+	    You should have received a copy of the GNU Lesser General Public License
+	    along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
+	*/
+	/**
+	 * @file eth.js
+	 * @author Marek Kotewicz <marek@ethdev.com>
+	 * @author Fabian Vogelsteller <fabian@ethdev.com>
+	 * @date 2015
+	 */
+
+	"use strict";
+
+	var Method = __webpack_require__(283);
+	var Property = __webpack_require__(307);
+	var formatters = __webpack_require__(279);
+
+	function Personal(web3) {
+	    this._requestManager = web3._requestManager;
+
+	    var self = this;
+
+	    methods().forEach(function(method) {
+	        method.attachToObject(self);
+	        method.setRequestManager(self._requestManager);
+	    });
+
+	    properties().forEach(function(p) {
+	        p.attachToObject(self);
+	        p.setRequestManager(self._requestManager);
+	    });
+	}
+
+	var methods = function () {
+	    var newAccount = new Method({
+	        name: 'newAccount',
+	        call: 'personal_newAccount',
+	        params: 1,
+	        inputFormatter: [null]
+	    });
+
+	    var unlockAccount = new Method({
+	        name: 'unlockAccount',
+	        call: 'personal_unlockAccount',
+	        params: 3,
+	        inputFormatter: [formatters.inputAddressFormatter, null, null]
+	    });
+
+	    var unlockAccountAndSendTransaction = new Method({
+	        name: 'unlockAccountAndSendTransaction', // sendTransaction
+	        call: 'personal_signAndSendTransaction', // personal_sendTransaction
+	        params: 2,
+	        inputFormatter: [formatters.inputTransactionFormatter, null]
+	    });
+
+	    var lockAccount = new Method({
+	        name: 'lockAccount',
+	        call: 'personal_lockAccount',
+	        params: 1,
+	        inputFormatter: [formatters.inputAddressFormatter]
+	    });
+
+	    return [
+	        newAccount,
+	        unlockAccount,
+	        unlockAccountAndSendTransaction,
+	        lockAccount
+	    ];
+	};
+
+	var properties = function () {
+	    return [
+	        new Property({
+	            name: 'listAccounts',
+	            getter: 'personal_listAccounts'
+	        })
+	    ];
+	};
+
+
+	module.exports = Personal;
+
+
+/***/ },
+/* 321 */
+/***/ function(module, exports) {
+
+	
+
+	var Settings = function () {
+	    this.defaultBlock = 'latest';
+	    this.defaultAccount = undefined;
+	};
+
+	module.exports = Settings;
+
+
+
+/***/ },
+/* 322 */
+/***/ function(module, exports) {
+
+	module.exports = {
+		"version": "0.17.0-alpha"
+	};
+
+/***/ },
+/* 323 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var formatters = __webpack_require__(279);
+	var utils = __webpack_require__(226);
+	var Method = __webpack_require__(283);
+	var Property = __webpack_require__(307);
+
+	// TODO: refactor, so the input params are not altered.
+	// it's necessary to make same 'extension' work with multiple providers
+	var extend = function (web3) {
+	    /* jshint maxcomplexity:5 */
+	    var ex = function (extension) {
+
+	        var extendedObject;
+	        if (extension.property) {
+	            if (!web3[extension.property]) {
+	                web3[extension.property] = {};
+	            }
+	            extendedObject = web3[extension.property];
+	        } else {
+	            extendedObject = web3;
+	        }
+
+	        if (extension.methods) {
+	            extension.methods.forEach(function (method) {
+	                method.attachToObject(extendedObject);
+	                method.setRequestManager(web3._requestManager);
+	            });
+	        }
+
+	        if (extension.properties) {
+	            extension.properties.forEach(function (property) {
+	                property.attachToObject(extendedObject);
+	                property.setRequestManager(web3._requestManager);
+	            });
+	        }
+	    };
+
+	    ex.formatters = formatters; 
+	    ex.utils = utils;
+	    ex.Method = Method;
+	    ex.Property = Property;
+
+	    return ex;
+	};
+
+
+
+	module.exports = extend;
+
+
+
+/***/ },
+/* 324 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/*
+	    This file is part of web3.js.
+
+	    web3.js is free software: you can redistribute it and/or modify
+	    it under the terms of the GNU Lesser General Public License as published by
+	    the Free Software Foundation, either version 3 of the License, or
+	    (at your option) any later version.
+
+	    web3.js is distributed in the hope that it will be useful,
+	    but WITHOUT ANY WARRANTY; without even the implied warranty of
+	    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	    GNU Lesser General Public License for more details.
+
+	    You should have received a copy of the GNU Lesser General Public License
+	    along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
+	*/
+	/** 
+	 * @file batch.js
+	 * @author Marek Kotewicz <marek@ethdev.com>
+	 * @date 2015
+	 */
+
+	var Jsonrpc = __webpack_require__(305);
+	var errors = __webpack_require__(284);
+
+	var Batch = function (web3) {
+	    this.requestManager = web3._requestManager;
+	    this.requests = [];
+	};
+
+	/**
+	 * Should be called to add create new request to batch request
+	 *
+	 * @method add
+	 * @param {Object} jsonrpc requet object
+	 */
+	Batch.prototype.add = function (request) {
+	    this.requests.push(request);
+	};
+
+	/**
+	 * Should be called to execute batch request
+	 *
+	 * @method execute
+	 */
+	Batch.prototype.execute = function () {
+	    var requests = this.requests;
+	    this.requestManager.sendBatch(requests, function (err, results) {
+	        results = results || [];
+	        requests.map(function (request, index) {
+	            return results[index] || {};
+	        }).forEach(function (result, index) {
+	            if (requests[index].callback) {
+
+	                if (!Jsonrpc.isValidResponse(result)) {
+	                    return requests[index].callback(errors.InvalidResponse(result));
+	                }
+
+	                requests[index].callback(null, (requests[index].format ? requests[index].format(result.result) : result.result));
+	            }
+	        });
+	    }); 
+	};
+
+	module.exports = Batch;
+
+
+
+/***/ },
+/* 325 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/*
+	    This file is part of web3.js.
+
+	    web3.js is free software: you can redistribute it and/or modify
+	    it under the terms of the GNU Lesser General Public License as published by
+	    the Free Software Foundation, either version 3 of the License, or
+	    (at your option) any later version.
+
+	    web3.js is distributed in the hope that it will be useful,
+	    but WITHOUT ANY WARRANTY; without even the implied warranty of
+	    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	    GNU Lesser General Public License for more details.
+
+	    You should have received a copy of the GNU Lesser General Public License
+	    along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
+	*/
+	/** @file httpprovider.js
+	 * @authors:
+	 *   Marek Kotewicz <marek@ethdev.com>
+	 *   Marian Oancea <marian@ethdev.com>
+	 *   Fabian Vogelsteller <fabian@ethdev.com>
+	 * @date 2015
+	 */
+
+	"use strict";
+
+	var errors = __webpack_require__(284);
+
+	// workaround to use httpprovider in different envs
+	var XMLHttpRequest; // jshint ignore: line
+
+	// browser
+	if (typeof window !== 'undefined' && window.XMLHttpRequest) {
+	    XMLHttpRequest = window.XMLHttpRequest; // jshint ignore: line
+
+	// node
+	} else {
+	    XMLHttpRequest = __webpack_require__(326).XMLHttpRequest; // jshint ignore: line
+	}
+
+	/**
+	 * HttpProvider should be used to send rpc calls over http
+	 */
+	var HttpProvider = function (host) {
+	    this.host = host || 'http://localhost:8545';
+	};
+
+	/**
+	 * Should be called to prepare new XMLHttpRequest
+	 *
+	 * @method prepareRequest
+	 * @param {Boolean} true if request should be async
+	 * @return {XMLHttpRequest} object
+	 */
+	HttpProvider.prototype.prepareRequest = function (async) {
+	    var request = new XMLHttpRequest();
+	    request.open('POST', this.host, async);
+	    request.setRequestHeader('Content-Type','application/json');
+	    return request;
+	};
+
+	/**
+	 * Should be called to make sync request
+	 *
+	 * @method send
+	 * @param {Object} payload
+	 * @return {Object} result
+	 */
+	HttpProvider.prototype.send = function (payload) {
+	    var request = this.prepareRequest(false);
+
+	    try {
+	        request.send(JSON.stringify(payload));
+	    } catch(error) {
+	        throw errors.InvalidConnection(this.host);
+	    }
+
+	    var result = request.responseText;
+
+	    try {
+	        result = JSON.parse(result);
+	    } catch(e) {
+	        throw errors.InvalidResponse(request.responseText);                
+	    }
+
+	    return result;
+	};
+
+	/**
+	 * Should be used to make async request
+	 *
+	 * @method sendAsync
+	 * @param {Object} payload
+	 * @param {Function} callback triggered on end with (err, result)
+	 */
+	HttpProvider.prototype.sendAsync = function (payload, callback) {
+	    var request = this.prepareRequest(true); 
+
+	    request.onreadystatechange = function() {
+	        if (request.readyState === 4) {
+	            var result = request.responseText;
+	            var error = null;
+
+	            try {
+	                result = JSON.parse(result);
+	            } catch(e) {
+	                error = errors.InvalidResponse(request.responseText);                
+	            }
+
+	            callback(error, result);
+	        }
+	    };
+	    
+	    try {
+	        request.send(JSON.stringify(payload));
+	    } catch(error) {
+	        callback(errors.InvalidConnection(this.host));
+	    }
+	};
+
+	/**
+	 * Synchronously tries to make Http request
+	 *
+	 * @method isConnected
+	 * @return {Boolean} returns true if request haven't failed. Otherwise false
+	 */
+	HttpProvider.prototype.isConnected = function() {
+	    try {
+	        this.send({
+	            id: 9999999999,
+	            jsonrpc: '2.0',
+	            method: 'net_listening',
+	            params: []
+	        });
+	        return true;
+	    } catch(e) {
+	        return false;
+	    }
+	};
+
+	module.exports = HttpProvider;
+
+
+
+/***/ },
+/* 326 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	// go env doesn't have and need XMLHttpRequest
+	if (typeof XMLHttpRequest === 'undefined') {
+	    exports.XMLHttpRequest = {};
+	} else {
+	    exports.XMLHttpRequest = XMLHttpRequest; // jshint ignore:line
+	}
+
+
+
+/***/ },
+/* 327 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/*
+	    This file is part of web3.js.
+
+	    web3.js is free software: you can redistribute it and/or modify
+	    it under the terms of the GNU Lesser General Public License as published by
+	    the Free Software Foundation, either version 3 of the License, or
+	    (at your option) any later version.
+
+	    web3.js is distributed in the hope that it will be useful,
+	    but WITHOUT ANY WARRANTY; without even the implied warranty of
+	    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	    GNU Lesser General Public License for more details.
+
+	    You should have received a copy of the GNU Lesser General Public License
+	    along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
+	*/
+	/** @file ipcprovider.js
+	 * @authors:
+	 *   Fabian Vogelsteller <fabian@ethdev.com>
+	 * @date 2015
+	 */
+
+	"use strict";
+
+	var utils = __webpack_require__(226);
+	var errors = __webpack_require__(284);
+
+
+	var IpcProvider = function (path, net) {
+	    var _this = this;
+	    this.responseCallbacks = {};
+	    this.path = path;
+	    
+	    this.connection = net.connect({path: this.path});
+
+	    this.connection.on('error', function(e){
+	        console.error('IPC Connection Error', e);
+	        _this._timeout();
+	    });
+
+	    this.connection.on('end', function(){
+	        _this._timeout();
+	    }); 
+
+
+	    // LISTEN FOR CONNECTION RESPONSES
+	    this.connection.on('data', function(data) {
+	        /*jshint maxcomplexity: 6 */
+
+	        _this._parseResponse(data.toString()).forEach(function(result){
+
+	            var id = null;
+
+	            // get the id which matches the returned id
+	            if(utils.isArray(result)) {
+	                result.forEach(function(load){
+	                    if(_this.responseCallbacks[load.id])
+	                        id = load.id;
+	                });
+	            } else {
+	                id = result.id;
+	            }
+
+	            // fire the callback
+	            if(_this.responseCallbacks[id]) {
+	                _this.responseCallbacks[id](null, result);
+	                delete _this.responseCallbacks[id];
+	            }
+	        });
+	    });
+	};
+
+	/**
+	Will parse the response and make an array out of it.
+
+	@method _parseResponse
+	@param {String} data
+	*/
+	IpcProvider.prototype._parseResponse = function(data) {
+	    var _this = this,
+	        returnValues = [];
+	    
+	    // DE-CHUNKER
+	    var dechunkedData = data
+	        .replace(/\}[\n\r]?\{/g,'}|--|{') // }{
+	        .replace(/\}\][\n\r]?\[\{/g,'}]|--|[{') // }][{
+	        .replace(/\}[\n\r]?\[\{/g,'}|--|[{') // }[{
+	        .replace(/\}\][\n\r]?\{/g,'}]|--|{') // }]{
+	        .split('|--|');
+
+	    dechunkedData.forEach(function(data){
+
+	        // prepend the last chunk
+	        if(_this.lastChunk)
+	            data = _this.lastChunk + data;
+
+	        var result = null;
+
+	        try {
+	            result = JSON.parse(data);
+
+	        } catch(e) {
+
+	            _this.lastChunk = data;
+
+	            // start timeout to cancel all requests
+	            clearTimeout(_this.lastChunkTimeout);
+	            _this.lastChunkTimeout = setTimeout(function(){
+	                _this._timeout();
+	                throw errors.InvalidResponse(data);
+	            }, 1000 * 15);
+
+	            return;
+	        }
+
+	        // cancel timeout and set chunk to null
+	        clearTimeout(_this.lastChunkTimeout);
+	        _this.lastChunk = null;
+
+	        if(result)
+	            returnValues.push(result);
+	    });
+
+	    return returnValues;
+	};
+
+
+	/**
+	Get the adds a callback to the responseCallbacks object,
+	which will be called if a response matching the response Id will arrive.
+
+	@method _addResponseCallback
+	*/
+	IpcProvider.prototype._addResponseCallback = function(payload, callback) {
+	    var id = payload.id || payload[0].id;
+	    var method = payload.method || payload[0].method;
+
+	    this.responseCallbacks[id] = callback;
+	    this.responseCallbacks[id].method = method;
+	};
+
+	/**
+	Timeout all requests when the end/error event is fired
+
+	@method _timeout
+	*/
+	IpcProvider.prototype._timeout = function() {
+	    for(var key in this.responseCallbacks) {
+	        if(this.responseCallbacks.hasOwnProperty(key)){
+	            this.responseCallbacks[key](errors.InvalidConnection('on IPC'));
+	            delete this.responseCallbacks[key];
+	        }
+	    }
+	};
+
+
+	/**
+	Check if the current connection is still valid.
+
+	@method isConnected
+	*/
+	IpcProvider.prototype.isConnected = function() {
+	    var _this = this;
+
+	    // try reconnect, when connection is gone
+	    if(!_this.connection.writable)
+	        _this.connection.connect({path: _this.path});
+
+	    return !!this.connection.writable;
+	};
+
+	IpcProvider.prototype.send = function (payload) {
+
+	    if(this.connection.writeSync) {
+	        var result;
+
+	        // try reconnect, when connection is gone
+	        if(!this.connection.writable)
+	            this.connection.connect({path: this.path});
+
+	        var data = this.connection.writeSync(JSON.stringify(payload));
+
+	        try {
+	            result = JSON.parse(data);
+	        } catch(e) {
+	            throw errors.InvalidResponse(data);                
+	        }
+
+	        return result;
+
+	    } else {
+	        throw new Error('You tried to send "'+ payload.method +'" synchronously. Synchronous requests are not supported by the IPC provider.');
+	    }
+	};
+
+	IpcProvider.prototype.sendAsync = function (payload, callback) {
+	    // try reconnect, when connection is gone
+	    if(!this.connection.writable)
+	        this.connection.connect({path: this.path});
+
+
+	    this.connection.write(JSON.stringify(payload));
+	    this._addResponseCallback(payload, callback);
+	};
+
+	module.exports = IpcProvider;
+
+
 
 /***/ }
 /******/ ]);

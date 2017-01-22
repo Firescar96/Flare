@@ -68,7 +68,7 @@ var NodeActions = React.createClass({
     Market.deployed().nodes.call(name).then((info) => {
       web3.eth.sendTransaction({
         to: info[4],
-        value: 1,
+        value: this.state.value,
       })
     })
   },
