@@ -10,7 +10,7 @@ var EditNodes = React.createClass({
     var ipaddress = $('#ipaddress').val()
     Market.deployed().createNode.estimateGas(name, state, ipaddress).then((gas) => {
       Market.deployed().createNode.sendTransaction(name, state, ipaddress, {
-        gas: gas*2,
+        gas: gas * 2,
       })
     })
   },

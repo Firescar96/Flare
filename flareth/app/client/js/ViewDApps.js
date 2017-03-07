@@ -56,7 +56,7 @@ var DAppActions = React.createClass({
     var name = $('input[name=dapp]:checked').val()
     Market.deployed().startDApp.estimateGas(name).then((gas) => {
       Market.deployed().startDApp.sendTransaction(name, {
-        gas: gas*2,
+        gas: gas * 2,
       })
     })
   },
@@ -65,7 +65,7 @@ var DAppActions = React.createClass({
     var name = $('input[name=dapp]:checked').val()
     Market.deployed().finishDApp.estimateGas(name).then((gas) => {
       Market.deployed().finishDApp.sendTransaction(name, {
-        gas: gas*2,
+        gas: gas * 2,
       })
     })
   },

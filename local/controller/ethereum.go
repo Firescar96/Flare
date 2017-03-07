@@ -56,7 +56,7 @@ func payPerComputation() {
 func startEthereum() {
 	runningEthereum = true
 	log.Println("starting ethereum payment handler...")
-	exec.Command("bash", "-c", "cd "+config.Flare.Directory+"/node/ethereum && meteor -p 35388").Start()
+	exec.Command("bash", "-c", "cd "+config.Flare.Directory+"/local/ethereum && npm install && node app.js").Start()
 
 	var response = map[string]interface{}{}
 	response["flag"] = "init"
@@ -73,5 +73,5 @@ func startEthereum() {
 
 func stopEthereum() {
 	runningEthereum = false
-	//TODO: stop ethereum_meteor somehow
+	//TODO: stop ethereum_node somehow
 }

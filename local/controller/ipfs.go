@@ -27,7 +27,7 @@ func (ii *ipfsInstance) add(data map[string]interface{}) ([]byte, error) {
 }
 
 func (ii *ipfsInstance) get(name []byte) {
-	exec.Command("bash", "-c", "ipfs get \""+string(name)+"\" -o "+config.Flare.FilesDirectory+"/currentDApp").Run()
+	exec.Command("bash", "-c", "ipfs get \""+string(name)+"\" -o "+config.Flare.FilesDirectory+"/currentDApp").CombinedOutput()
 }
 
 func startIPFS() {

@@ -22,17 +22,10 @@ func startFlare() {
 	startFrontend()
 	log.Println("flare is ready")
 
+	ipfs.get([]byte("QmXv8fvi8dDFJYLY6PjHvJaMg8o6s7o2ajLtsa7jRCpVRT"))
+
 	//connects to the local handler for the ethereum network
 	go func() {
-		var message = map[string]interface{}{}
-
-		message["flag"] = "init"
-		message["privateKey"] = config.Flare.PrivateKey
-		message["ident"] = config.Flare.PrivateKey
-		message["coinbase"] = config.Flare.Coinbase
-		message["contract"] = config.Flare.Contract
-		var mess, _ = json.Marshal(message)
-		masterWSClient.writeBytes(mess)
 		for {
 			var bytes = masterWSClient.readBytesBlocking()
 			log.Println("got master" + string(bytes))
@@ -42,16 +35,19 @@ func startFlare() {
 			}
 
 			/*Continue work here*/
-			if data["flag"] == "startDapp" {
-
-				spark.start(data["state"].([]byte))
-
+			if data["flag"] == "startDApp" {
 				//TODO: make sure spark has started before continuing
 				if data["state"] == "master" {
-					ipfs.get(data["ipfsHash"].([]byte))
+					ipfs.get([]byte(data["ipfsHash"].(string)))
 					var sparkData = map[string]interface{}{}
 					sparkData["class"] = data["class"]
 					sparkData["name"] = config.Flare.FilesDirectory + "/currentDApp"
+					result := sparkSubmit(sparkData)
+					if result {
+						log.Println("successfully finished computation")
+					} else {
+						log.Println("computation could not be completed, oh dear!")
+					}
 				}
 
 				if data["state"] == "worker" {

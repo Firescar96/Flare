@@ -11,7 +11,8 @@ var initialConfig = {
     'username': '',
   },
   'flare': {
-    'address': '',
+    'ident': '',
+    'coinbase': '',
     'directory': '',
     'local': {
       'ip': '',
@@ -48,11 +49,13 @@ var Flare = React.createClass({
     var newState = this.state
     if(event.target.value == '') {
       newState[event.target.name] = event.target.placeholder
+      this.props.config.flare[event.target.name] = event.target.placeholder
     }else {
       newState[event.target.name] = event.target.value
+      this.props.config.flare[event.target.name] = event.target.value
     }
     this.setState(newState)
-    Meteor.call('setConfig', {$set: {flare: newState}})
+    ws.send(JSON.stringify({flag: 'setConfig', fields: this.props.config}))
   },
   render: function () {
     console.log(this.state);
@@ -62,39 +65,45 @@ var Flare = React.createClass({
         <form>
           <div className="halfColumn">
             <label>Directory
-              <input type='text' name='directory' placeholder={this.props.config.directory} onChange={this.handleChange}/>
+              <input type='text' name='directory' placeholder={this.props.config.flare.directory} onChange={this.handleChange}/>
             </label>
             <label>Ethereum Address
-              <input type='text' name='address' placeholder={this.props.config.address} onChange={this.handleChange}/>
+              <input type='text' name='coinbase' placeholder={this.props.config.flare.coinbase} onChange={this.handleChange}/>
             </label>
           </div>
           <div className="halfColumn">
-            <label>Price
-              <input type='text' name='price' placeholder={this.props.config.price} onChange={this.handleChange}/>
+            <label>Identifier
+              <input type='text' name='ident' placeholder={this.props.config.flare.ident} onChange={this.handleChange}/>
             </label>
+              <label>Price
+                <input type='text' name='price' placeholder={this.props.config.flare.price} onChange={this.handleChange}/>
+              </label>
           </div>
           <div className="halfColumn">
             <h3>Local Node</h3>
             <label>IP Address
-              <input type='text' name='local.ip' placeholder={this.props.config.local.ip} onChange={this.handleChange}/>
+              <input type='text' name='local.ip' placeholder={this.props.config.flare.local.ip} onChange={this.handleChange}/>
             </label>
             <label>Port
-              <input type='text' name='local.port' placeholder={this.props.config.local.port} onChange={this.handleChange}/>
+              <input type='text' name='local.port' placeholder={this.props.config.flare.local.port} onChange={this.handleChange}/>
             </label>
           </div>
           <div className="halfColumn">
             <h3>Master Node</h3>
             <label>IP Address
-              <input type='text' name='master.ip' placeholder={this.props.config.master.ip} onChange={this.handleChange}/>
+              <input type='text' name='master.ip' placeholder={this.props.config.flare.master.ip} onChange={this.handleChange}/>
             </label>
             <label>Port
-              <input type='text' name='master.port' placeholder={this.props.config.master.port} onChange={this.handleChange}/>
+              <input type='text' name='master.port' placeholder={this.props.config.flare.master.port} onChange={this.handleChange}/>
             </label>
           </div>
         </form>
       </div>
     )
-  }
+  },
+  componentDidMount () {
+    this.setState(this.props.config)
+  },
 })
 
 var Spark = React.createClass({
@@ -102,11 +111,13 @@ var Spark = React.createClass({
     var newState = this.state
     if(event.target.value == '') {
       newState[event.target.name] = event.target.placeholder
+      this.props.config.flare[event.target.name] = event.target.placeholder
     }else {
       newState[event.target.name] = event.target.value
+      this.props.config.flare[event.target.name] = event.target.value
     }
     this.setState(newState)
-    Meteor.call('setConfig', {$set: {spark: newState}})
+    ws.send(JSON.stringify({flag: 'setConfig', fields: this.props.config}))
   },
   render: function () {
     return (
@@ -115,25 +126,25 @@ var Spark = React.createClass({
         <form>
           <div className="halfColumn">
             <label>Directory
-              <input type='text' name='directory' placeholder={this.props.config.directory} onChange={this.handleChange}/>
+              <input type='text' name='directory' placeholder={this.props.config.spark.directory} onChange={this.handleChange}/>
             </label>
           </div>
           <div  className="fullColumn">
             <h3>Master Settings</h3>
             <div className="halfColumn">
               <label>IP
-                <input type='text' name='master.ip' placeholder={this.props.config.master.ip} onChange={this.handleChange}/>
+                <input type='text' name='master.ip' placeholder={this.props.config.spark.master.ip} onChange={this.handleChange}/>
               </label>
               <label>Port
-                <input type='text' name='master.port' placeholder={this.props.config.master.port} onChange={this.handleChange}/>
+                <input type='text' name='master.port' placeholder={this.props.config.spark.master.port} onChange={this.handleChange}/>
               </label>
             </div>
             <div className="halfColumn">
               <label>Memory allowed
-                <input type='text' name='receiverMemory' placeholder={this.props.config.receiverMemory} onChange={this.handleChange}/>
+                <input type='text' name='receiverMemory' placeholder={this.props.config.spark.receiverMemory} onChange={this.handleChange}/>
               </label>
               <label>Cores Allowed
-                <input type='text' name='cores' placeholder={this.props.config.cores} onChange={this.handleChange}/>
+                <input type='text' name='cores' placeholder={this.props.config.spark.cores} onChange={this.handleChange}/>
               </label>
             </div>
           </div>
@@ -142,24 +153,24 @@ var Spark = React.createClass({
             <h4>Changing the disabled options may break Flare</h4>
             <div className="halfColumn">
               <label>Root Category
-                <input type='text' name='log4j.rootCategory' placeholder={this.props.config.log4j.rootCategory} disabled/>
+                <input type='text' name='log4j.rootCategory' placeholder={this.props.config.spark.log4j.rootCategory} disabled/>
               </label>
               <label>Appender
-                <input type='text' name='log4j.appender' placeholder={this.props.config.log4j.appender} disabled/>
+                <input type='text' name='log4j.appender' placeholder={this.props.config.spark.log4j.appender} disabled/>
               </label>
               <label>Directory
-                <input type='text' name='log4j.directory' placeholder={this.props.config.log4j.directory} onChange={this.handleChange}/>
+                <input type='text' name='log4j.directory' placeholder={this.props.config.spark.log4j.directory} onChange={this.handleChange}/>
               </label>
             </div>
             <div className="halfColumn">
               <label>Max File Size
-                <input type='text' name='log4j.maxFileSize' placeholder={this.props.config.log4j.maxFileSize} onChange={this.handleChange}/>
+                <input type='text' name='log4j.maxFileSize' placeholder={this.props.config.spark.log4j.maxFileSize} onChange={this.handleChange}/>
               </label>
               <label>Layout
-                <input type='text' name='log4j.layout' placeholder={this.props.config.log4j.layout} disabled/>
+                <input type='text' name='log4j.layout' placeholder={this.props.config.spark.log4j.layout} disabled/>
               </label>
               <label>Conversion Pattern
-                <input type='text' name='log4j.conversionPattern' placeholder={this.props.config.log4j.conversionPattern} disabled/>
+                <input type='text' name='log4j.conversionPattern' placeholder={this.props.config.spark.log4j.conversionPattern} disabled/>
               </label>
             </div>
           </div>
@@ -174,11 +185,13 @@ var Cassandra = React.createClass({
     var newState = this.state
     if(event.target.value == '') {
       newState[event.target.name] = event.target.placeholder
+      this.props.config.flare[event.target.name] = event.target.placeholder
     }else {
       newState[event.target.name] = event.target.value
+      this.props.config.flare[event.target.name] = event.target.value
     }
     this.setState(newState)
-    Meteor.call('setConfig', {$set: {cassandra: newState}})
+    ws.send(JSON.stringify({flag: 'setConfig', fields: this.props.config}))
   },
   render: function () {
     return (
@@ -187,21 +200,21 @@ var Cassandra = React.createClass({
         <form>
           <div className="halfColumn">
             <label>Directory
-              <input type='text' name='directory' placeholder={this.props.config.directory} onChange={this.handleChange}/>
+              <input type='text' name='directory' placeholder={this.props.config.cassandra.directory} onChange={this.handleChange}/>
             </label>
             <label>Username
-              <input type='text' name='username' placeholder={this.props.config.username} onChange={this.handleChange}/>
+              <input type='text' name='username' placeholder={this.props.config.cassandra.username} onChange={this.handleChange}/>
             </label>
             <label>Password
-              <input type='text' name='password' placeholder={this.props.config.password} onChange={this.handleChange}/>
+              <input type='text' name='password' placeholder={this.props.config.cassandra.password} onChange={this.handleChange}/>
             </label>
           </div>
           <div className="halfColumn">
             <label>IP Address
-              <input type='text' name='address' placeholder={this.props.config.ip} onChange={this.handleChange}/>
+              <input type='text' name='ip' placeholder={this.props.config.cassandra.ip} onChange={this.handleChange}/>
             </label>
             <label>Port
-              <input type='text' name='port' placeholder={this.props.config.port} onChange={this.handleChange}/>
+              <input type='text' name='port' placeholder={this.props.config.cassandra.port} onChange={this.handleChange}/>
             </label>
           </div>
         </form>
@@ -215,7 +228,7 @@ var Settings = React.createClass({
     return initialConfig
   },
   componentDidMount: function () {
-    ws.addCallback('config', (message) => {
+    ws.addCallback('getConfig', (message) => {
       this.setState(message)
     })
     ws.send(JSON.stringify({flag: 'getConfig'}))
@@ -227,9 +240,9 @@ var Settings = React.createClass({
         <Sidebar path={window.location.pathname}/>
         <div className='container'>
           <h1>Settings</h1>
-          <Flare config={this.state.flare}/>
-          <Spark config={this.state.spark}/>
-          <Cassandra config={this.state.cassandra}/>
+          <Flare config={this.state}/>
+          <Spark config={this.state}/>
+          <Cassandra config={this.state}/>
         </div>
       </div>
     )

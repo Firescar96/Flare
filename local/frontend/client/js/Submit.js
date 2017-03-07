@@ -29,7 +29,6 @@ var Submit = React.createClass({
               <form id="uploadForm" encType="multipart/form-data"
                 action="/submit" method="post" target="submitFrame">
             		<label>
-                  "Don't know what goes here"
                 	<input type="file" name="upload"/>
             		</label>
                 <div>

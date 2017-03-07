@@ -4,12 +4,13 @@ package main
 
 import (
 	"fmt"
-	"github.com/gocql/gocql"
 	"log"
 	"os/exec"
 	"reflect"
 	"strings"
 	"time"
+
+	"github.com/gocql/gocql"
 )
 
 type sessions struct {
@@ -138,20 +139,21 @@ func publishNodeRing() {
 	var ring = []map[string]interface{}{}
 	params := strings.Split(string(out), "\n")
 	//iterate through every line of output, skipping the last blank line
-	for _, param := range params {
-		if param == "" {
+	for _, _param := range params {
+		param := strings.Fields(_param)
+		if len(param) == 0 {
 			continue
 		}
-		_param := strings.Fields(param)
-		if _param[0] != config.Cassandra.IP {
+
+		if param[0] != config.Cassandra.IP {
 			continue
 		}
 		ring = append(ring, map[string]interface{}{
-			"address": _param[0],
-			"status":  _param[2],
-			"state":   _param[3],
-			"owns":    _param[6],
-			"token":   _param[7],
+			"address": param[0],
+			"status":  param[2],
+			"state":   param[3],
+			"owns":    param[6],
+			"token":   param[7],
 		})
 	}
 
@@ -170,6 +172,7 @@ func startCassandra() {
 	cassandraListenIP := "'s/.*listen_address:.*/listen_address: " + config.Cassandra.IP + "/'"
 	cassandraRPCIP := "'s/.*rpc_address:.*/rpc_address: " + config.Cassandra.IP + "/'"
 	cassandraPort := "'s/.*rpc_port:.*/rpc_port: " + config.Cassandra.Port + "/'"
+	cassandraRPC := "'s/.*start_rpc:.*/start_rpc: true/'"
 
 	_, err := exec.Command("bash", "-c", "sed"+" -i.bak "+cassandraListenIP+" "+cassandraConfigName).CombinedOutput()
 	_, err = exec.Command("bash", "-c", "sed"+" -i.bak "+cassandraRPCIP+" "+cassandraConfigName).CombinedOutput()
@@ -181,6 +184,12 @@ func startCassandra() {
 	_, err = exec.Command("bash", "-c", "sed"+" -i.bak "+cassandraPort+" "+cassandraConfigName).CombinedOutput()
 	if err != nil {
 		log.Println("error with setting cassandra port")
+		log.Fatal(err.Error())
+	}
+
+	_, err = exec.Command("bash", "-c", "sed"+" -i.bak "+cassandraRPC+" "+cassandraConfigName).CombinedOutput()
+	if err != nil {
+		log.Println("error with setting cassandra rpc to on")
 		log.Fatal(err.Error())
 	}
 

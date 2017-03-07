@@ -58,19 +58,19 @@
 
 	var _Home2 = _interopRequireDefault(_Home);
 
-	var _ViewDApps = __webpack_require__(289);
+	var _ViewDApps = __webpack_require__(315);
 
 	var _ViewDApps2 = _interopRequireDefault(_ViewDApps);
 
-	var _EditDApps = __webpack_require__(293);
+	var _EditDApps = __webpack_require__(319);
 
 	var _EditDApps2 = _interopRequireDefault(_EditDApps);
 
-	var _EditNodes = __webpack_require__(296);
+	var _EditNodes = __webpack_require__(322);
 
 	var _EditNodes2 = _interopRequireDefault(_EditNodes);
 
-	var _ViewNodes = __webpack_require__(299);
+	var _ViewNodes = __webpack_require__(325);
 
 	var _ViewNodes2 = _interopRequireDefault(_ViewNodes);
 
@@ -25462,7 +25462,7 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	__webpack_require__(285);
+	__webpack_require__(311);
 
 	exports.default = _globals.Navbar;
 
@@ -25485,7 +25485,7 @@
 
 	var _MarketSol2 = _interopRequireDefault(_MarketSol);
 
-	var _web = __webpack_require__(302);
+	var _web = __webpack_require__(225);
 
 	var _web2 = _interopRequireDefault(_web);
 
@@ -25618,8 +25618,8 @@
 
 	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-	var Web3 = __webpack_require__(302);
-	var SolidityEvent = __webpack_require__(225);
+	var Web3 = __webpack_require__(225);
+	var SolidityEvent = __webpack_require__(289);
 
 	(function () {
 	  // Planned for future features, logging, etc.
@@ -26147,9 +26147,9 @@
 	      }],
 	      "unlinked_binary": "0x6060604052610a41806100126000396000f3606060405236156100985760e060020a600035046308a9ec7a811461009a578063110568741461010357806312f7e8181461013f578063208f2a311461020357806374609d0c1461021d5780638240a49b1461028d578063834579fb146102a857806394ca304b146102dd57806396fdedbe146102ee578063b6453318146102ff578063d86e697d1461034f578063f15beecf1461038b575b005b61009860043560008181526210000260205260409020600201546401000000009004600160a060020a03908116339190911614156101005760406000207f7374617274000000000000000000000000000000000000000000000000000000600391909101555b50565b61009860043560008181526210000260205260408120600201546401000000009004600160a060020a039081163391909116146105d9576105d5565b6100986004356024356044356040805160a081018252848152602081810185815282840185815260006060850181815233608087019081528a835294829052959020935184559051600184810191909155905160028401559251600383015551600491909101805473ffffffffffffffffffffffffffffffffffffffff19169091179055621000015484919063ffffffff166210000081101561000257016000505562100001805463ffffffff19811663ffffffff91909116600101179055505050565b610435600435600181621000008110156100025750015481565b604080516020604435600481810135601f810184900484028501840190955284845261009894813594602480359593946064949293910191819084018382808284375094965050933593505050506210000154600090819081908190819063ffffffff1681141561073e57610733565b61043560043562100003816104008110156100025750015481565b610435600435602435621004046020526000828152604090208054829081101561000257506000908152602090200154905081565b610447621000015463ffffffff1681565b610447621004035463ffffffff1681565b62100002602052600480356000908152604090206001810154815460028301546003840154600585015461046196939563ffffffff841694640100000000909404600160a060020a031693019087565b61052a600435600060208190529081526040902060018101548154600283015460038401546004949094015491939091600160a060020a031685565b610098600435602435600082815260208190526040902054821480156103cf5750600082815260208190526040902060040154600160a060020a0390811633909116145b156105d557600082815260208181526040808320600481015460039190910154845262100002909252808320600201549051600160a060020a0392909216929163ffffffff91821685029091169082818181858883f1935050505015156105d557610002565b60408051918252519081900360200190f35b6040805163ffffffff929092168252519081900360200190f35b604080518881526020810188905263ffffffff871691810191909152600160a060020a03851660608201526080810184905260c0810182905260e060a082018181528454600260018216156101009081026000190190921604928401839052909190830190859080156105155780601f106104ea57610100808354040283529160200191610515565b820191906000526020600020905b8154815290600101906020018083116104f857829003601f168201915b50509850505050505050505060405180910390f35b604080519586526020860194909452848401929092526060840152600160a060020a03166080830152519081900360a00190f35b6000828152621000026020526040812081815560018181018390556002828101805477ffffffffffffffffffffffffffffffffffffffffffffffff1916905560038301849055600483018054858255939493909281161561010002600019011604601f8190106106b857505b505060006005909101555b5050565b50600081815262100002602090815260408083206001908101805485529284905281842060d060020a656f6e6c696e65029101559054825281206003018190555b600082815262100404602052604090205460ff8216101561055e5760406000908120805460d060020a656f6e6c696e65029291829160ff861690811015610002578183526020808420820154845283815260408420600101959095558683526210040490945280549193839281101561000257906000526020600020900160005054815260208101919091526040016000206003015560010161061a565b601f0160209004906000526020600020908101906105ca91905b808211156106e657600081556001016106d2565b5090565b505060c09091015160059091015562100403548990621000039063ffffffff16610400811015610002570155621004038054600163ffffffff82160163ffffffff199091161790555b505050505050505050565b600092505b621000015463ffffffff168310156107cb576000806001856210000081101561000257015481526020810191909152604001600020600181015490925060d060020a656f6e6c696e650214156107d7577f6d61737465720000000000000000000000000000000000000000000000000000600183810191909155600383018a90558254955093505b8315156107e257610733565b600190920191610743565b600092505b621000015463ffffffff16831080156108005750600583105b156108b2576000806001856210000081101561000257015481526020810191909152604001600020600181015490915060d060020a656f6e6c696e65021415610a05577f776f726b65720000000000000000000000000000000000000000000000000000600182810191909155600382018a905560008a81526210040460205260409020805491820180825590919082818380158290116109f1576000838152602090206109f19181019083016106d2565b60e0604051908101604052808a81526020018681526020018981526020013381526020017f6f666600000000000000000000000000000000000000000000000000000000008152602001888152602001878152602001506210000260005060008b600019168152602001908152602001600020600050600082015181600001600050556020820151816001016000505560408201518160020160006101000a81548163ffffffff0219169083021790555060608201518160020160046101000a815481600160a060020a03021916908302179055506080820151816003016000505560a0820151816004016000509080519060200190828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f10610a1157805160ff19168380011785555b506106ea9291506106d2565b505050600092835250602090912082549101555b600192909201916107e7565b828001600101855582156109e5579182015b828111156109e5578251826000505591602001919060010190610a2356",
 	      "events": {},
-	      "updated_at": 1485037266348,
+	      "updated_at": 1488921684912,
 	      "links": {},
-	      "address": "0xef7be4d5f2d1261a6ec9f4a074d342916ad2e04d"
+	      "address": "0xcfeb869f69431e42cdb54a4f4f105c19c080a601"
 	    }
 	  };
 
@@ -26282,6 +26282,174 @@
 /* 225 */
 /***/ function(module, exports, __webpack_require__) {
 
+	var Web3 = __webpack_require__(226);
+
+	// dont override global variable
+	if (typeof window !== 'undefined' && typeof window.Web3 === 'undefined') {
+	    window.Web3 = Web3;
+	}
+
+	module.exports = Web3;
+
+
+/***/ },
+/* 226 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/*
+	    This file is part of web3.js.
+
+	    web3.js is free software: you can redistribute it and/or modify
+	    it under the terms of the GNU Lesser General Public License as published by
+	    the Free Software Foundation, either version 3 of the License, or
+	    (at your option) any later version.
+
+	    web3.js is distributed in the hope that it will be useful,
+	    but WITHOUT ANY WARRANTY; without even the implied warranty of
+	    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	    GNU Lesser General Public License for more details.
+
+	    You should have received a copy of the GNU Lesser General Public License
+	    along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
+	*/
+	/**
+	 * @file web3.js
+	 * @authors:
+	 *   Jeffrey Wilcke <jeff@ethdev.com>
+	 *   Marek Kotewicz <marek@ethdev.com>
+	 *   Marian Oancea <marian@ethdev.com>
+	 *   Fabian Vogelsteller <fabian@ethdev.com>
+	 *   Gav Wood <g@ethdev.com>
+	 * @date 2014
+	 */
+
+	var RequestManager = __webpack_require__(227);
+	var Iban = __webpack_require__(270);
+	var Eth = __webpack_require__(271);
+	var DB = __webpack_require__(300);
+	var Shh = __webpack_require__(301);
+	var Net = __webpack_require__(302);
+	var Personal = __webpack_require__(303);
+	var Settings = __webpack_require__(304);
+	var version = __webpack_require__(305);
+	var utils = __webpack_require__(229);
+	var sha3 = __webpack_require__(231);
+	var extend = __webpack_require__(306);
+	var Batch = __webpack_require__(307);
+	var Property = __webpack_require__(274);
+	var HttpProvider = __webpack_require__(308);
+	var IpcProvider = __webpack_require__(310);
+	var BigNumber = __webpack_require__(230);
+
+
+
+	function Web3 (provider) {
+	    this._requestManager = new RequestManager(provider);
+	    this.currentProvider = provider;
+	    this.eth = new Eth(this);
+	    this.db = new DB(this);
+	    this.shh = new Shh(this);
+	    this.net = new Net(this);
+	    this.personal = new Personal(this);
+	    this.settings = new Settings();
+	    this.version = {
+	        api: version.version
+	    };
+	    this.providers = {
+	        HttpProvider: HttpProvider,
+	        IpcProvider: IpcProvider
+	    };
+	    this._extend = extend(this);
+	    this._extend({
+	        properties: properties()
+	    });
+	}
+
+	// expose providers on the class
+	Web3.providers = {
+	    HttpProvider: HttpProvider,
+	    IpcProvider: IpcProvider
+	};
+
+	Web3.prototype.setProvider = function (provider) {
+	    this._requestManager.setProvider(provider);
+	    this.currentProvider = provider;
+	};
+
+	Web3.prototype.reset = function (keepIsSyncing) {
+	    this._requestManager.reset(keepIsSyncing);
+	    this.settings = new Settings();
+	};
+
+	Web3.prototype.BigNumber = BigNumber;
+	Web3.prototype.toHex = utils.toHex;
+	Web3.prototype.toAscii = utils.toAscii;
+	Web3.prototype.toUtf8 = utils.toUtf8;
+	Web3.prototype.fromAscii = utils.fromAscii;
+	Web3.prototype.fromUtf8 = utils.fromUtf8;
+	Web3.prototype.toDecimal = utils.toDecimal;
+	Web3.prototype.fromDecimal = utils.fromDecimal;
+	Web3.prototype.toBigNumber = utils.toBigNumber;
+	Web3.prototype.toWei = utils.toWei;
+	Web3.prototype.fromWei = utils.fromWei;
+	Web3.prototype.isAddress = utils.isAddress;
+	Web3.prototype.isChecksumAddress = utils.isChecksumAddress;
+	Web3.prototype.toChecksumAddress = utils.toChecksumAddress;
+	Web3.prototype.isIBAN = utils.isIBAN;
+
+
+	Web3.prototype.sha3 = function(string, options) {
+	    return '0x' + sha3(string, options);
+	};
+
+	/**
+	 * Transforms direct icap to address
+	 */
+	Web3.prototype.fromICAP = function (icap) {
+	    var iban = new Iban(icap);
+	    return iban.address();
+	};
+
+	var properties = function () {
+	    return [
+	        new Property({
+	            name: 'version.node',
+	            getter: 'web3_clientVersion'
+	        }),
+	        new Property({
+	            name: 'version.network',
+	            getter: 'net_version',
+	            inputFormatter: utils.toDecimal
+	        }),
+	        new Property({
+	            name: 'version.ethereum',
+	            getter: 'eth_protocolVersion',
+	            inputFormatter: utils.toDecimal
+	        }),
+	        new Property({
+	            name: 'version.whisper',
+	            getter: 'shh_version',
+	            inputFormatter: utils.toDecimal
+	        })
+	    ];
+	};
+
+	Web3.prototype.isConnected = function(){
+	    return (this.currentProvider && this.currentProvider.isConnected());
+	};
+
+	Web3.prototype.createBatch = function () {
+	    return new Batch(this);
+	};
+
+	module.exports = Web3;
+
+
+
+/***/ },
+/* 227 */
+/***/ function(module, exports, __webpack_require__) {
+
 	/*
 	    This file is part of web3.js.
 
@@ -26299,201 +26467,349 @@
 	    along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
 	*/
 	/** 
-	 * @file event.js
+	 * @file requestmanager.js
+	 * @author Jeffrey Wilcke <jeff@ethdev.com>
 	 * @author Marek Kotewicz <marek@ethdev.com>
+	 * @author Marian Oancea <marian@ethdev.com>
+	 * @author Fabian Vogelsteller <fabian@ethdev.com>
+	 * @author Gav Wood <g@ethdev.com>
 	 * @date 2014
 	 */
 
-	var utils = __webpack_require__(226);
-	var coder = __webpack_require__(265);
-	var formatters = __webpack_require__(279);
-	var sha3 = __webpack_require__(228);
-	var Filter = __webpack_require__(281);
-	var watches = __webpack_require__(282);
+	var Jsonrpc = __webpack_require__(228);
+	var utils = __webpack_require__(229);
+	var c = __webpack_require__(268);
+	var errors = __webpack_require__(269);
 
 	/**
-	 * This prototype should be used to create event filters
+	 * It's responsible for passing messages to providers
+	 * It's also responsible for polling the ethereum node for incoming messages
+	 * Default poll timeout is 1 second
+	 * Singleton
 	 */
-	var SolidityEvent = function (requestManager, json, address) {
-	    this._requestManager = requestManager;
-	    this._params = json.inputs;
-	    this._name = utils.transformToFullName(json);
-	    this._address = address;
-	    this._anonymous = json.anonymous;
+	var RequestManager = function (provider) {
+	    this.provider = provider;
+	    this.polls = {};
+	    this.timeout = null;
 	};
 
 	/**
-	 * Should be used to get filtered param types
+	 * Should be used to synchronously send request
 	 *
-	 * @method types
-	 * @param {Bool} decide if returned typed should be indexed
-	 * @return {Array} array of types
+	 * @method send
+	 * @param {Object} data
+	 * @return {Object}
 	 */
-	SolidityEvent.prototype.types = function (indexed) {
-	    return this._params.filter(function (i) {
-	        return i.indexed === indexed;
-	    }).map(function (i) {
-	        return i.type;
-	    });
-	};
-
-	/**
-	 * Should be used to get event display name
-	 *
-	 * @method displayName
-	 * @return {String} event display name
-	 */
-	SolidityEvent.prototype.displayName = function () {
-	    return utils.extractDisplayName(this._name);
-	};
-
-	/**
-	 * Should be used to get event type name
-	 *
-	 * @method typeName
-	 * @return {String} event type name
-	 */
-	SolidityEvent.prototype.typeName = function () {
-	    return utils.extractTypeName(this._name);
-	};
-
-	/**
-	 * Should be used to get event signature
-	 *
-	 * @method signature
-	 * @return {String} event signature
-	 */
-	SolidityEvent.prototype.signature = function () {
-	    return sha3(this._name);
-	};
-
-	/**
-	 * Should be used to encode indexed params and options to one final object
-	 * 
-	 * @method encode
-	 * @param {Object} indexed
-	 * @param {Object} options
-	 * @return {Object} everything combined together and encoded
-	 */
-	SolidityEvent.prototype.encode = function (indexed, options) {
-	    indexed = indexed || {};
-	    options = options || {};
-	    var result = {};
-
-	    ['fromBlock', 'toBlock'].filter(function (f) {
-	        return options[f] !== undefined;
-	    }).forEach(function (f) {
-	        result[f] = formatters.inputBlockNumberFormatter(options[f]);
-	    });
-
-	    result.topics = [];
-
-	    result.address = this._address;
-	    if (!this._anonymous) {
-	        result.topics.push('0x' + this.signature());
+	RequestManager.prototype.send = function (data) {
+	    if (!this.provider) {
+	        console.error(errors.InvalidProvider());
+	        return null;
 	    }
 
-	    var indexedTopics = this._params.filter(function (i) {
-	        return i.indexed === true;
-	    }).map(function (i) {
-	        var value = indexed[i.name];
-	        if (value === undefined || value === null) {
-	            return null;
+	    var payload = Jsonrpc.toPayload(data.method, data.params);
+	    var result = this.provider.send(payload);
+
+	    if (!Jsonrpc.isValidResponse(result)) {
+	        throw errors.InvalidResponse(result);
+	    }
+
+	    return result.result;
+	};
+
+	/**
+	 * Should be used to asynchronously send request
+	 *
+	 * @method sendAsync
+	 * @param {Object} data
+	 * @param {Function} callback
+	 */
+	RequestManager.prototype.sendAsync = function (data, callback) {
+	    if (!this.provider) {
+	        return callback(errors.InvalidProvider());
+	    }
+
+	    var payload = Jsonrpc.toPayload(data.method, data.params);
+	    this.provider.sendAsync(payload, function (err, result) {
+	        if (err) {
+	            return callback(err);
 	        }
 	        
-	        if (utils.isArray(value)) {
-	            return value.map(function (v) {
-	                return '0x' + coder.encodeParam(i.type, v);
-	            });
+	        if (!Jsonrpc.isValidResponse(result)) {
+	            return callback(errors.InvalidResponse(result));
 	        }
-	        return '0x' + coder.encodeParam(i.type, value);
+
+	        callback(null, result.result);
+	    });
+	};
+
+	/**
+	 * Should be called to asynchronously send batch request
+	 *
+	 * @method sendBatch
+	 * @param {Array} batch data
+	 * @param {Function} callback
+	 */
+	RequestManager.prototype.sendBatch = function (data, callback) {
+	    if (!this.provider) {
+	        return callback(errors.InvalidProvider());
+	    }
+
+	    var payload = Jsonrpc.toBatchPayload(data);
+
+	    this.provider.sendAsync(payload, function (err, results) {
+	        if (err) {
+	            return callback(err);
+	        }
+
+	        if (!utils.isArray(results)) {
+	            return callback(errors.InvalidResponse(results));
+	        }
+
+	        callback(err, results);
+	    }); 
+	};
+
+	/**
+	 * Should be used to set provider of request manager
+	 *
+	 * @method setProvider
+	 * @param {Object}
+	 */
+	RequestManager.prototype.setProvider = function (p) {
+	    this.provider = p;
+	};
+
+	/**
+	 * Should be used to start polling
+	 *
+	 * @method startPolling
+	 * @param {Object} data
+	 * @param {Number} pollId
+	 * @param {Function} callback
+	 * @param {Function} uninstall
+	 *
+	 * @todo cleanup number of params
+	 */
+	RequestManager.prototype.startPolling = function (data, pollId, callback, uninstall) {
+	    this.polls[pollId] = {data: data, id: pollId, callback: callback, uninstall: uninstall};
+
+
+	    // start polling
+	    if (!this.timeout) {
+	        this.poll();
+	    }
+	};
+
+	/**
+	 * Should be used to stop polling for filter with given id
+	 *
+	 * @method stopPolling
+	 * @param {Number} pollId
+	 */
+	RequestManager.prototype.stopPolling = function (pollId) {
+	    delete this.polls[pollId];
+
+	    // stop polling
+	    if(Object.keys(this.polls).length === 0 && this.timeout) {
+	        clearTimeout(this.timeout);
+	        this.timeout = null;
+	    }
+	};
+
+	/**
+	 * Should be called to reset the polling mechanism of the request manager
+	 *
+	 * @method reset
+	 */
+	RequestManager.prototype.reset = function (keepIsSyncing) {
+	    /*jshint maxcomplexity:5 */
+
+	    for (var key in this.polls) {
+	        // remove all polls, except sync polls,
+	        // they need to be removed manually by calling syncing.stopWatching()
+	        if(!keepIsSyncing || key.indexOf('syncPoll_') === -1) {
+	            this.polls[key].uninstall();
+	            delete this.polls[key];
+	        }
+	    }
+
+	    // stop polling
+	    if(Object.keys(this.polls).length === 0 && this.timeout) {
+	        clearTimeout(this.timeout);
+	        this.timeout = null;
+	    }
+	};
+
+	/**
+	 * Should be called to poll for changes on filter with given id
+	 *
+	 * @method poll
+	 */
+	RequestManager.prototype.poll = function () {
+	    /*jshint maxcomplexity: 6 */
+	    this.timeout = setTimeout(this.poll.bind(this), c.ETH_POLLING_TIMEOUT);
+
+	    if (Object.keys(this.polls).length === 0) {
+	        return;
+	    }
+
+	    if (!this.provider) {
+	        console.error(errors.InvalidProvider());
+	        return;
+	    }
+
+	    var pollsData = [];
+	    var pollsIds = [];
+	    for (var key in this.polls) {
+	        pollsData.push(this.polls[key].data);
+	        pollsIds.push(key);
+	    }
+
+	    if (pollsData.length === 0) {
+	        return;
+	    }
+
+	    var payload = Jsonrpc.toBatchPayload(pollsData);
+	    
+	    // map the request id to they poll id
+	    var pollsIdMap = {};
+	    payload.forEach(function(load, index){
+	        pollsIdMap[load.id] = pollsIds[index];
 	    });
 
-	    result.topics = result.topics.concat(indexedTopics);
 
-	    return result;
-	};
+	    var self = this;
+	    this.provider.sendAsync(payload, function (error, results) {
 
-	/**
-	 * Should be used to decode indexed params and options
-	 *
-	 * @method decode
-	 * @param {Object} data
-	 * @return {Object} result object with decoded indexed && not indexed params
-	 */
-	SolidityEvent.prototype.decode = function (data) {
-	 
-	    data.data = data.data || '';
-	    data.topics = data.topics || [];
 
-	    var argTopics = this._anonymous ? data.topics : data.topics.slice(1);
-	    var indexedData = argTopics.map(function (topics) { return topics.slice(2); }).join("");
-	    var indexedParams = coder.decodeParams(this.types(true), indexedData); 
-
-	    var notIndexedData = data.data.slice(2);
-	    var notIndexedParams = coder.decodeParams(this.types(false), notIndexedData);
-	    
-	    var result = formatters.outputLogFormatter(data);
-	    result.event = this.displayName();
-	    result.address = data.address;
-
-	    result.args = this._params.reduce(function (acc, current) {
-	        acc[current.name] = current.indexed ? indexedParams.shift() : notIndexedParams.shift();
-	        return acc;
-	    }, {});
-
-	    delete result.data;
-	    delete result.topics;
-
-	    return result;
-	};
-
-	/**
-	 * Should be used to create new filter object from event
-	 *
-	 * @method execute
-	 * @param {Object} indexed
-	 * @param {Object} options
-	 * @return {Object} filter object
-	 */
-	SolidityEvent.prototype.execute = function (indexed, options, callback) {
-
-	    if (utils.isFunction(arguments[arguments.length - 1])) {
-	        callback = arguments[arguments.length - 1];
-	        if(arguments.length === 2)
-	            options = null;
-	        if(arguments.length === 1) {
-	            options = null;
-	            indexed = {};
+	        // TODO: console log?
+	        if (error) {
+	            return;
 	        }
-	    }
-	    
-	    var o = this.encode(indexed, options);
-	    var formatter = this.decode.bind(this);
-	    return new Filter(this._requestManager, o, watches.eth(), formatter, callback);
+
+	        if (!utils.isArray(results)) {
+	            throw errors.InvalidResponse(results);
+	        }
+	        results.map(function (result) {
+	            var id = pollsIdMap[result.id];
+
+	            // make sure the filter is still installed after arrival of the request
+	            if (self.polls[id]) {
+	                result.callback = self.polls[id].callback;
+	                return result;
+	            } else
+	                return false;
+	        }).filter(function (result) {
+	            return !!result; 
+	        }).filter(function (result) {
+	            var valid = Jsonrpc.isValidResponse(result);
+	            if (!valid) {
+	                result.callback(errors.InvalidResponse(result));
+	            }
+	            return valid;
+	        }).forEach(function (result) {
+	            result.callback(null, result.result);
+	        });
+	    });
 	};
 
-	/**
-	 * Should be used to attach event to contract object
-	 *
-	 * @method attachToContract
-	 * @param {Contract}
-	 */
-	SolidityEvent.prototype.attachToContract = function (contract) {
-	    var execute = this.execute.bind(this);
-	    var displayName = this.displayName();
-	    if (!contract[displayName]) {
-	        contract[displayName] = execute;
-	    }
-	    contract[displayName][this.typeName()] = this.execute.bind(this, contract);
-	};
-
-	module.exports = SolidityEvent;
+	module.exports = RequestManager;
 
 
 
 /***/ },
-/* 226 */
+/* 228 */
+/***/ function(module, exports) {
+
+	/*
+	    This file is part of web3.js.
+
+	    web3.js is free software: you can redistribute it and/or modify
+	    it under the terms of the GNU Lesser General Public License as published by
+	    the Free Software Foundation, either version 3 of the License, or
+	    (at your option) any later version.
+
+	    web3.js is distributed in the hope that it will be useful,
+	    but WITHOUT ANY WARRANTY; without even the implied warranty of
+	    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	    GNU Lesser General Public License for more details.
+
+	    You should have received a copy of the GNU Lesser General Public License
+	    along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
+	*/
+	/** @file jsonrpc.js
+	 * @authors:
+	 *   Marek Kotewicz <marek@ethdev.com>
+	 *   Aaron Kumavis <aaron@kumavis.me>
+	 * @date 2015
+	 */
+
+	// Initialize Jsonrpc as a simple object with utility functions.
+	var Jsonrpc = {
+	    messageId: 0
+	};
+
+	/**
+	 * Should be called to valid json create payload object
+	 *
+	 * @method toPayload
+	 * @param {Function} method of jsonrpc call, required
+	 * @param {Array} params, an array of method params, optional
+	 * @returns {Object} valid jsonrpc payload object
+	 */
+	Jsonrpc.toPayload = function (method, params) {
+	    if (!method)
+	        console.error('jsonrpc method should be specified!');
+
+	    // advance message ID
+	    Jsonrpc.messageId++;
+
+	    return {
+	        jsonrpc: '2.0',
+	        id: Jsonrpc.messageId,
+	        method: method,
+	        params: params || []
+	    };
+	};
+
+	/**
+	 * Should be called to check if jsonrpc response is valid
+	 *
+	 * @method isValidResponse
+	 * @param {Object}
+	 * @returns {Boolean} true if response is valid, otherwise false
+	 */
+	Jsonrpc.isValidResponse = function (response) {
+	    return Array.isArray(response) ? response.every(validateSingleMessage) : validateSingleMessage(response);
+
+	    function validateSingleMessage(message){
+	      return !!message &&
+	        !message.error &&
+	        message.jsonrpc === '2.0' &&
+	        typeof message.id === 'number' &&
+	        message.result !== undefined; // only undefined is not valid json object
+	    }
+	};
+
+	/**
+	 * Should be called to create batch payload object
+	 *
+	 * @method toBatchPayload
+	 * @param {Array} messages, an array of objects with method (required) and params (optional) fields
+	 * @returns {Array} batch payload
+	 */
+	Jsonrpc.toBatchPayload = function (messages) {
+	    return messages.map(function (message) {
+	        return Jsonrpc.toPayload(message.method, message.params);
+	    });
+	};
+
+	module.exports = Jsonrpc;
+
+
+
+/***/ },
+/* 229 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -26532,9 +26848,9 @@
 	 */
 
 
-	var BigNumber = __webpack_require__(227);
-	var sha3 = __webpack_require__(228);
-	var utf8 = __webpack_require__(263);
+	var BigNumber = __webpack_require__(230);
+	var sha3 = __webpack_require__(231);
+	var utf8 = __webpack_require__(266);
 
 	var unitMap = {
 	    'noether':      '0',    
@@ -27096,7 +27412,7 @@
 
 
 /***/ },
-/* 227 */
+/* 230 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/*! bignumber.js v2.0.7 https://github.com/MikeMcl/bignumber.js/LICENCE */
@@ -29785,7 +30101,7 @@
 
 
 /***/ },
-/* 228 */
+/* 231 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -29810,8 +30126,8 @@
 	 * @date 2015
 	 */
 
-	var CryptoJS = __webpack_require__(229);
-	var sha3 = __webpack_require__(241);
+	var CryptoJS = __webpack_require__(232);
+	var sha3 = __webpack_require__(244);
 
 	module.exports = function (value, options) {
 	    if (options && options.encoding === 'hex') {
@@ -29829,13 +30145,13 @@
 
 
 /***/ },
-/* 229 */
+/* 232 */
 /***/ function(module, exports, __webpack_require__) {
 
 	;(function (root, factory, undef) {
 		if (true) {
 			// CommonJS
-			module.exports = exports = factory(__webpack_require__(230), __webpack_require__(231), __webpack_require__(232), __webpack_require__(233), __webpack_require__(234), __webpack_require__(235), __webpack_require__(236), __webpack_require__(237), __webpack_require__(238), __webpack_require__(239), __webpack_require__(240), __webpack_require__(241), __webpack_require__(242), __webpack_require__(243), __webpack_require__(244), __webpack_require__(245), __webpack_require__(246), __webpack_require__(247), __webpack_require__(248), __webpack_require__(249), __webpack_require__(250), __webpack_require__(251), __webpack_require__(252), __webpack_require__(253), __webpack_require__(254), __webpack_require__(255), __webpack_require__(256), __webpack_require__(257), __webpack_require__(258), __webpack_require__(259), __webpack_require__(260), __webpack_require__(261), __webpack_require__(262));
+			module.exports = exports = factory(__webpack_require__(233), __webpack_require__(234), __webpack_require__(235), __webpack_require__(236), __webpack_require__(237), __webpack_require__(238), __webpack_require__(239), __webpack_require__(240), __webpack_require__(241), __webpack_require__(242), __webpack_require__(243), __webpack_require__(244), __webpack_require__(245), __webpack_require__(246), __webpack_require__(247), __webpack_require__(248), __webpack_require__(249), __webpack_require__(250), __webpack_require__(251), __webpack_require__(252), __webpack_require__(253), __webpack_require__(254), __webpack_require__(255), __webpack_require__(256), __webpack_require__(257), __webpack_require__(258), __webpack_require__(259), __webpack_require__(260), __webpack_require__(261), __webpack_require__(262), __webpack_require__(263), __webpack_require__(264), __webpack_require__(265));
 		}
 		else if (typeof define === "function" && define.amd) {
 			// AMD
@@ -29852,7 +30168,7 @@
 	}));
 
 /***/ },
-/* 230 */
+/* 233 */
 /***/ function(module, exports, __webpack_require__) {
 
 	;(function (root, factory) {
@@ -30617,13 +30933,13 @@
 	}));
 
 /***/ },
-/* 231 */
+/* 234 */
 /***/ function(module, exports, __webpack_require__) {
 
 	;(function (root, factory) {
 		if (true) {
 			// CommonJS
-			module.exports = exports = factory(__webpack_require__(230));
+			module.exports = exports = factory(__webpack_require__(233));
 		}
 		else if (typeof define === "function" && define.amd) {
 			// AMD
@@ -30926,13 +31242,13 @@
 	}));
 
 /***/ },
-/* 232 */
+/* 235 */
 /***/ function(module, exports, __webpack_require__) {
 
 	;(function (root, factory) {
 		if (true) {
 			// CommonJS
-			module.exports = exports = factory(__webpack_require__(230));
+			module.exports = exports = factory(__webpack_require__(233));
 		}
 		else if (typeof define === "function" && define.amd) {
 			// AMD
@@ -31007,13 +31323,13 @@
 	}));
 
 /***/ },
-/* 233 */
+/* 236 */
 /***/ function(module, exports, __webpack_require__) {
 
 	;(function (root, factory) {
 		if (true) {
 			// CommonJS
-			module.exports = exports = factory(__webpack_require__(230));
+			module.exports = exports = factory(__webpack_require__(233));
 		}
 		else if (typeof define === "function" && define.amd) {
 			// AMD
@@ -31161,13 +31477,13 @@
 	}));
 
 /***/ },
-/* 234 */
+/* 237 */
 /***/ function(module, exports, __webpack_require__) {
 
 	;(function (root, factory) {
 		if (true) {
 			// CommonJS
-			module.exports = exports = factory(__webpack_require__(230));
+			module.exports = exports = factory(__webpack_require__(233));
 		}
 		else if (typeof define === "function" && define.amd) {
 			// AMD
@@ -31301,13 +31617,13 @@
 	}));
 
 /***/ },
-/* 235 */
+/* 238 */
 /***/ function(module, exports, __webpack_require__) {
 
 	;(function (root, factory) {
 		if (true) {
 			// CommonJS
-			module.exports = exports = factory(__webpack_require__(230));
+			module.exports = exports = factory(__webpack_require__(233));
 		}
 		else if (typeof define === "function" && define.amd) {
 			// AMD
@@ -31574,13 +31890,13 @@
 	}));
 
 /***/ },
-/* 236 */
+/* 239 */
 /***/ function(module, exports, __webpack_require__) {
 
 	;(function (root, factory) {
 		if (true) {
 			// CommonJS
-			module.exports = exports = factory(__webpack_require__(230));
+			module.exports = exports = factory(__webpack_require__(233));
 		}
 		else if (typeof define === "function" && define.amd) {
 			// AMD
@@ -31729,13 +32045,13 @@
 	}));
 
 /***/ },
-/* 237 */
+/* 240 */
 /***/ function(module, exports, __webpack_require__) {
 
 	;(function (root, factory) {
 		if (true) {
 			// CommonJS
-			module.exports = exports = factory(__webpack_require__(230));
+			module.exports = exports = factory(__webpack_require__(233));
 		}
 		else if (typeof define === "function" && define.amd) {
 			// AMD
@@ -31933,13 +32249,13 @@
 	}));
 
 /***/ },
-/* 238 */
+/* 241 */
 /***/ function(module, exports, __webpack_require__) {
 
 	;(function (root, factory, undef) {
 		if (true) {
 			// CommonJS
-			module.exports = exports = factory(__webpack_require__(230), __webpack_require__(237));
+			module.exports = exports = factory(__webpack_require__(233), __webpack_require__(240));
 		}
 		else if (typeof define === "function" && define.amd) {
 			// AMD
@@ -32018,13 +32334,13 @@
 	}));
 
 /***/ },
-/* 239 */
+/* 242 */
 /***/ function(module, exports, __webpack_require__) {
 
 	;(function (root, factory, undef) {
 		if (true) {
 			// CommonJS
-			module.exports = exports = factory(__webpack_require__(230), __webpack_require__(231));
+			module.exports = exports = factory(__webpack_require__(233), __webpack_require__(234));
 		}
 		else if (typeof define === "function" && define.amd) {
 			// AMD
@@ -32346,13 +32662,13 @@
 	}));
 
 /***/ },
-/* 240 */
+/* 243 */
 /***/ function(module, exports, __webpack_require__) {
 
 	;(function (root, factory, undef) {
 		if (true) {
 			// CommonJS
-			module.exports = exports = factory(__webpack_require__(230), __webpack_require__(231), __webpack_require__(239));
+			module.exports = exports = factory(__webpack_require__(233), __webpack_require__(234), __webpack_require__(242));
 		}
 		else if (typeof define === "function" && define.amd) {
 			// AMD
@@ -32434,13 +32750,13 @@
 	}));
 
 /***/ },
-/* 241 */
+/* 244 */
 /***/ function(module, exports, __webpack_require__) {
 
 	;(function (root, factory, undef) {
 		if (true) {
 			// CommonJS
-			module.exports = exports = factory(__webpack_require__(230), __webpack_require__(231));
+			module.exports = exports = factory(__webpack_require__(233), __webpack_require__(234));
 		}
 		else if (typeof define === "function" && define.amd) {
 			// AMD
@@ -32762,13 +33078,13 @@
 	}));
 
 /***/ },
-/* 242 */
+/* 245 */
 /***/ function(module, exports, __webpack_require__) {
 
 	;(function (root, factory) {
 		if (true) {
 			// CommonJS
-			module.exports = exports = factory(__webpack_require__(230));
+			module.exports = exports = factory(__webpack_require__(233));
 		}
 		else if (typeof define === "function" && define.amd) {
 			// AMD
@@ -33034,13 +33350,13 @@
 	}));
 
 /***/ },
-/* 243 */
+/* 246 */
 /***/ function(module, exports, __webpack_require__) {
 
 	;(function (root, factory) {
 		if (true) {
 			// CommonJS
-			module.exports = exports = factory(__webpack_require__(230));
+			module.exports = exports = factory(__webpack_require__(233));
 		}
 		else if (typeof define === "function" && define.amd) {
 			// AMD
@@ -33182,13 +33498,13 @@
 	}));
 
 /***/ },
-/* 244 */
+/* 247 */
 /***/ function(module, exports, __webpack_require__) {
 
 	;(function (root, factory, undef) {
 		if (true) {
 			// CommonJS
-			module.exports = exports = factory(__webpack_require__(230), __webpack_require__(236), __webpack_require__(243));
+			module.exports = exports = factory(__webpack_require__(233), __webpack_require__(239), __webpack_require__(246));
 		}
 		else if (typeof define === "function" && define.amd) {
 			// AMD
@@ -33332,13 +33648,13 @@
 	}));
 
 /***/ },
-/* 245 */
+/* 248 */
 /***/ function(module, exports, __webpack_require__) {
 
 	;(function (root, factory, undef) {
 		if (true) {
 			// CommonJS
-			module.exports = exports = factory(__webpack_require__(230), __webpack_require__(236), __webpack_require__(243));
+			module.exports = exports = factory(__webpack_require__(233), __webpack_require__(239), __webpack_require__(246));
 		}
 		else if (typeof define === "function" && define.amd) {
 			// AMD
@@ -33469,13 +33785,13 @@
 	}));
 
 /***/ },
-/* 246 */
+/* 249 */
 /***/ function(module, exports, __webpack_require__) {
 
 	;(function (root, factory) {
 		if (true) {
 			// CommonJS
-			module.exports = exports = factory(__webpack_require__(230));
+			module.exports = exports = factory(__webpack_require__(233));
 		}
 		else if (typeof define === "function" && define.amd) {
 			// AMD
@@ -34349,13 +34665,13 @@
 	}));
 
 /***/ },
-/* 247 */
+/* 250 */
 /***/ function(module, exports, __webpack_require__) {
 
 	;(function (root, factory, undef) {
 		if (true) {
 			// CommonJS
-			module.exports = exports = factory(__webpack_require__(230), __webpack_require__(246));
+			module.exports = exports = factory(__webpack_require__(233), __webpack_require__(249));
 		}
 		else if (typeof define === "function" && define.amd) {
 			// AMD
@@ -34432,13 +34748,13 @@
 	}));
 
 /***/ },
-/* 248 */
+/* 251 */
 /***/ function(module, exports, __webpack_require__) {
 
 	;(function (root, factory, undef) {
 		if (true) {
 			// CommonJS
-			module.exports = exports = factory(__webpack_require__(230), __webpack_require__(246));
+			module.exports = exports = factory(__webpack_require__(233), __webpack_require__(249));
 		}
 		else if (typeof define === "function" && define.amd) {
 			// AMD
@@ -34495,13 +34811,13 @@
 	}));
 
 /***/ },
-/* 249 */
+/* 252 */
 /***/ function(module, exports, __webpack_require__) {
 
 	;(function (root, factory, undef) {
 		if (true) {
 			// CommonJS
-			module.exports = exports = factory(__webpack_require__(230), __webpack_require__(246));
+			module.exports = exports = factory(__webpack_require__(233), __webpack_require__(249));
 		}
 		else if (typeof define === "function" && define.amd) {
 			// AMD
@@ -34616,13 +34932,13 @@
 	}));
 
 /***/ },
-/* 250 */
+/* 253 */
 /***/ function(module, exports, __webpack_require__) {
 
 	;(function (root, factory, undef) {
 		if (true) {
 			// CommonJS
-			module.exports = exports = factory(__webpack_require__(230), __webpack_require__(246));
+			module.exports = exports = factory(__webpack_require__(233), __webpack_require__(249));
 		}
 		else if (typeof define === "function" && define.amd) {
 			// AMD
@@ -34675,13 +34991,13 @@
 	}));
 
 /***/ },
-/* 251 */
+/* 254 */
 /***/ function(module, exports, __webpack_require__) {
 
 	;(function (root, factory, undef) {
 		if (true) {
 			// CommonJS
-			module.exports = exports = factory(__webpack_require__(230), __webpack_require__(246));
+			module.exports = exports = factory(__webpack_require__(233), __webpack_require__(249));
 		}
 		else if (typeof define === "function" && define.amd) {
 			// AMD
@@ -34720,13 +35036,13 @@
 	}));
 
 /***/ },
-/* 252 */
+/* 255 */
 /***/ function(module, exports, __webpack_require__) {
 
 	;(function (root, factory, undef) {
 		if (true) {
 			// CommonJS
-			module.exports = exports = factory(__webpack_require__(230), __webpack_require__(246));
+			module.exports = exports = factory(__webpack_require__(233), __webpack_require__(249));
 		}
 		else if (typeof define === "function" && define.amd) {
 			// AMD
@@ -34774,13 +35090,13 @@
 	}));
 
 /***/ },
-/* 253 */
+/* 256 */
 /***/ function(module, exports, __webpack_require__) {
 
 	;(function (root, factory, undef) {
 		if (true) {
 			// CommonJS
-			module.exports = exports = factory(__webpack_require__(230), __webpack_require__(246));
+			module.exports = exports = factory(__webpack_require__(233), __webpack_require__(249));
 		}
 		else if (typeof define === "function" && define.amd) {
 			// AMD
@@ -34823,13 +35139,13 @@
 	}));
 
 /***/ },
-/* 254 */
+/* 257 */
 /***/ function(module, exports, __webpack_require__) {
 
 	;(function (root, factory, undef) {
 		if (true) {
 			// CommonJS
-			module.exports = exports = factory(__webpack_require__(230), __webpack_require__(246));
+			module.exports = exports = factory(__webpack_require__(233), __webpack_require__(249));
 		}
 		else if (typeof define === "function" && define.amd) {
 			// AMD
@@ -34868,13 +35184,13 @@
 	}));
 
 /***/ },
-/* 255 */
+/* 258 */
 /***/ function(module, exports, __webpack_require__) {
 
 	;(function (root, factory, undef) {
 		if (true) {
 			// CommonJS
-			module.exports = exports = factory(__webpack_require__(230), __webpack_require__(246));
+			module.exports = exports = factory(__webpack_require__(233), __webpack_require__(249));
 		}
 		else if (typeof define === "function" && define.amd) {
 			// AMD
@@ -34918,13 +35234,13 @@
 	}));
 
 /***/ },
-/* 256 */
+/* 259 */
 /***/ function(module, exports, __webpack_require__) {
 
 	;(function (root, factory, undef) {
 		if (true) {
 			// CommonJS
-			module.exports = exports = factory(__webpack_require__(230), __webpack_require__(246));
+			module.exports = exports = factory(__webpack_require__(233), __webpack_require__(249));
 		}
 		else if (typeof define === "function" && define.amd) {
 			// AMD
@@ -34953,13 +35269,13 @@
 	}));
 
 /***/ },
-/* 257 */
+/* 260 */
 /***/ function(module, exports, __webpack_require__) {
 
 	;(function (root, factory, undef) {
 		if (true) {
 			// CommonJS
-			module.exports = exports = factory(__webpack_require__(230), __webpack_require__(246));
+			module.exports = exports = factory(__webpack_require__(233), __webpack_require__(249));
 		}
 		else if (typeof define === "function" && define.amd) {
 			// AMD
@@ -35024,13 +35340,13 @@
 	}));
 
 /***/ },
-/* 258 */
+/* 261 */
 /***/ function(module, exports, __webpack_require__) {
 
 	;(function (root, factory, undef) {
 		if (true) {
 			// CommonJS
-			module.exports = exports = factory(__webpack_require__(230), __webpack_require__(234), __webpack_require__(235), __webpack_require__(245), __webpack_require__(246));
+			module.exports = exports = factory(__webpack_require__(233), __webpack_require__(237), __webpack_require__(238), __webpack_require__(248), __webpack_require__(249));
 		}
 		else if (typeof define === "function" && define.amd) {
 			// AMD
@@ -35261,13 +35577,13 @@
 	}));
 
 /***/ },
-/* 259 */
+/* 262 */
 /***/ function(module, exports, __webpack_require__) {
 
 	;(function (root, factory, undef) {
 		if (true) {
 			// CommonJS
-			module.exports = exports = factory(__webpack_require__(230), __webpack_require__(234), __webpack_require__(235), __webpack_require__(245), __webpack_require__(246));
+			module.exports = exports = factory(__webpack_require__(233), __webpack_require__(237), __webpack_require__(238), __webpack_require__(248), __webpack_require__(249));
 		}
 		else if (typeof define === "function" && define.amd) {
 			// AMD
@@ -36036,13 +36352,13 @@
 	}));
 
 /***/ },
-/* 260 */
+/* 263 */
 /***/ function(module, exports, __webpack_require__) {
 
 	;(function (root, factory, undef) {
 		if (true) {
 			// CommonJS
-			module.exports = exports = factory(__webpack_require__(230), __webpack_require__(234), __webpack_require__(235), __webpack_require__(245), __webpack_require__(246));
+			module.exports = exports = factory(__webpack_require__(233), __webpack_require__(237), __webpack_require__(238), __webpack_require__(248), __webpack_require__(249));
 		}
 		else if (typeof define === "function" && define.amd) {
 			// AMD
@@ -36180,13 +36496,13 @@
 	}));
 
 /***/ },
-/* 261 */
+/* 264 */
 /***/ function(module, exports, __webpack_require__) {
 
 	;(function (root, factory, undef) {
 		if (true) {
 			// CommonJS
-			module.exports = exports = factory(__webpack_require__(230), __webpack_require__(234), __webpack_require__(235), __webpack_require__(245), __webpack_require__(246));
+			module.exports = exports = factory(__webpack_require__(233), __webpack_require__(237), __webpack_require__(238), __webpack_require__(248), __webpack_require__(249));
 		}
 		else if (typeof define === "function" && define.amd) {
 			// AMD
@@ -36377,13 +36693,13 @@
 	}));
 
 /***/ },
-/* 262 */
+/* 265 */
 /***/ function(module, exports, __webpack_require__) {
 
 	;(function (root, factory, undef) {
 		if (true) {
 			// CommonJS
-			module.exports = exports = factory(__webpack_require__(230), __webpack_require__(234), __webpack_require__(235), __webpack_require__(245), __webpack_require__(246));
+			module.exports = exports = factory(__webpack_require__(233), __webpack_require__(237), __webpack_require__(238), __webpack_require__(248), __webpack_require__(249));
 		}
 		else if (typeof define === "function" && define.amd) {
 			// AMD
@@ -36572,7 +36888,7 @@
 	}));
 
 /***/ },
-/* 263 */
+/* 266 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(module, global) {/*! https://mths.be/utf8js v2.1.2 by @mathias */
@@ -36818,10 +37134,10 @@
 
 	}(this));
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(264)(module), (function() { return this; }())))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(267)(module), (function() { return this; }())))
 
 /***/ },
-/* 264 */
+/* 267 */
 /***/ function(module, exports) {
 
 	module.exports = function(module) {
@@ -36837,529 +37153,7 @@
 
 
 /***/ },
-/* 265 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/*
-	    This file is part of web3.js.
-
-	    web3.js is free software: you can redistribute it and/or modify
-	    it under the terms of the GNU Lesser General Public License as published by
-	    the Free Software Foundation, either version 3 of the License, or
-	    (at your option) any later version.
-
-	    web3.js is distributed in the hope that it will be useful,
-	    but WITHOUT ANY WARRANTY; without even the implied warranty of
-	    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-	    GNU Lesser General Public License for more details.
-
-	    You should have received a copy of the GNU Lesser General Public License
-	    along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
-	*/
-	/** 
-	 * @file coder.js
-	 * @author Marek Kotewicz <marek@ethdev.com>
-	 * @date 2015
-	 */
-
-	var f = __webpack_require__(266);
-
-	var SolidityTypeAddress = __webpack_require__(269);
-	var SolidityTypeBool = __webpack_require__(271);
-	var SolidityTypeInt = __webpack_require__(272);
-	var SolidityTypeUInt = __webpack_require__(273);
-	var SolidityTypeDynamicBytes = __webpack_require__(274);
-	var SolidityTypeString = __webpack_require__(275);
-	var SolidityTypeReal = __webpack_require__(276);
-	var SolidityTypeUReal = __webpack_require__(277);
-	var SolidityTypeBytes = __webpack_require__(278);
-
-	/**
-	 * SolidityCoder prototype should be used to encode/decode solidity params of any type
-	 */
-	var SolidityCoder = function (types) {
-	    this._types = types;
-	};
-
-	/**
-	 * This method should be used to transform type to SolidityType
-	 *
-	 * @method _requireType
-	 * @param {String} type
-	 * @returns {SolidityType} 
-	 * @throws {Error} throws if no matching type is found
-	 */
-	SolidityCoder.prototype._requireType = function (type) {
-	    var solidityType = this._types.filter(function (t) {
-	        return t.isType(type);
-	    })[0];
-
-	    if (!solidityType) {
-	        throw Error('invalid solidity type!: ' + type);
-	    }
-
-	    return solidityType;
-	};
-
-	/**
-	 * Should be used to encode plain param
-	 *
-	 * @method encodeParam
-	 * @param {String} type
-	 * @param {Object} plain param
-	 * @return {String} encoded plain param
-	 */
-	SolidityCoder.prototype.encodeParam = function (type, param) {
-	    return this.encodeParams([type], [param]);
-	};
-
-	/**
-	 * Should be used to encode list of params
-	 *
-	 * @method encodeParams
-	 * @param {Array} types
-	 * @param {Array} params
-	 * @return {String} encoded list of params
-	 */
-	SolidityCoder.prototype.encodeParams = function (types, params) {
-	    var solidityTypes = this.getSolidityTypes(types);
-
-	    var encodeds = solidityTypes.map(function (solidityType, index) {
-	        return solidityType.encode(params[index], types[index]);
-	    });
-
-	    var dynamicOffset = solidityTypes.reduce(function (acc, solidityType, index) {
-	        var staticPartLength = solidityType.staticPartLength(types[index]);
-	        var roundedStaticPartLength = Math.floor((staticPartLength + 31) / 32) * 32;
-	        return acc + roundedStaticPartLength;
-	    }, 0);
-
-	    var result = this.encodeMultiWithOffset(types, solidityTypes, encodeds, dynamicOffset); 
-
-	    return result;
-	};
-
-	SolidityCoder.prototype.encodeMultiWithOffset = function (types, solidityTypes, encodeds, dynamicOffset) {
-	    var result = "";
-	    var self = this;
-
-	    var isDynamic = function (i) {
-	       return solidityTypes[i].isDynamicArray(types[i]) || solidityTypes[i].isDynamicType(types[i]);
-	    };
-
-	    types.forEach(function (type, i) {
-	        if (isDynamic(i)) {
-	            result += f.formatInputInt(dynamicOffset).encode();
-	            var e = self.encodeWithOffset(types[i], solidityTypes[i], encodeds[i], dynamicOffset);
-	            dynamicOffset += e.length / 2;
-	        } else {
-	            // don't add length to dynamicOffset. it's already counted
-	            result += self.encodeWithOffset(types[i], solidityTypes[i], encodeds[i], dynamicOffset);
-	        }
-
-	        // TODO: figure out nested arrays
-	    });
-	    
-	    types.forEach(function (type, i) {
-	        if (isDynamic(i)) {
-	            var e = self.encodeWithOffset(types[i], solidityTypes[i], encodeds[i], dynamicOffset);
-	            dynamicOffset += e.length / 2;
-	            result += e;
-	        }
-	    });
-	    return result;
-	};
-
-	// TODO: refactor whole encoding!
-	SolidityCoder.prototype.encodeWithOffset = function (type, solidityType, encoded, offset) {
-	    var self = this;
-	    if (solidityType.isDynamicArray(type)) {
-	        return (function () {
-	            // offset was already set
-	            var nestedName = solidityType.nestedName(type);
-	            var nestedStaticPartLength = solidityType.staticPartLength(nestedName);
-	            var result = encoded[0];
-	            
-	            (function () {
-	                var previousLength = 2; // in int
-	                if (solidityType.isDynamicArray(nestedName)) {
-	                    for (var i = 1; i < encoded.length; i++) {
-	                        previousLength += +(encoded[i - 1])[0] || 0;
-	                        result += f.formatInputInt(offset + i * nestedStaticPartLength + previousLength * 32).encode();
-	                    }
-	                }
-	            })();
-	            
-	            // first element is length, skip it
-	            (function () {
-	                for (var i = 0; i < encoded.length - 1; i++) {
-	                    var additionalOffset = result / 2;
-	                    result += self.encodeWithOffset(nestedName, solidityType, encoded[i + 1], offset +  additionalOffset);
-	                }
-	            })();
-
-	            return result;
-	        })();
-	       
-	    } else if (solidityType.isStaticArray(type)) {
-	        return (function () {
-	            var nestedName = solidityType.nestedName(type);
-	            var nestedStaticPartLength = solidityType.staticPartLength(nestedName);
-	            var result = "";
-
-
-	            if (solidityType.isDynamicArray(nestedName)) {
-	                (function () {
-	                    var previousLength = 0; // in int
-	                    for (var i = 0; i < encoded.length; i++) {
-	                        // calculate length of previous item
-	                        previousLength += +(encoded[i - 1] || [])[0] || 0; 
-	                        result += f.formatInputInt(offset + i * nestedStaticPartLength + previousLength * 32).encode();
-	                    }
-	                })();
-	            }
-
-	            (function () {
-	                for (var i = 0; i < encoded.length; i++) {
-	                    var additionalOffset = result / 2;
-	                    result += self.encodeWithOffset(nestedName, solidityType, encoded[i], offset + additionalOffset);
-	                }
-	            })();
-
-	            return result;
-	        })();
-	    }
-
-	    return encoded;
-	};
-
-	/**
-	 * Should be used to decode bytes to plain param
-	 *
-	 * @method decodeParam
-	 * @param {String} type
-	 * @param {String} bytes
-	 * @return {Object} plain param
-	 */
-	SolidityCoder.prototype.decodeParam = function (type, bytes) {
-	    return this.decodeParams([type], bytes)[0];
-	};
-
-	/**
-	 * Should be used to decode list of params
-	 *
-	 * @method decodeParam
-	 * @param {Array} types
-	 * @param {String} bytes
-	 * @return {Array} array of plain params
-	 */
-	SolidityCoder.prototype.decodeParams = function (types, bytes) {
-	    var solidityTypes = this.getSolidityTypes(types);
-	    var offsets = this.getOffsets(types, solidityTypes);
-	        
-	    return solidityTypes.map(function (solidityType, index) {
-	        return solidityType.decode(bytes, offsets[index],  types[index], index);
-	    });
-	};
-
-	SolidityCoder.prototype.getOffsets = function (types, solidityTypes) {
-	    var lengths =  solidityTypes.map(function (solidityType, index) {
-	        return solidityType.staticPartLength(types[index]);
-	    });
-	    
-	    for (var i = 1; i < lengths.length; i++) {
-	         // sum with length of previous element
-	        lengths[i] += lengths[i - 1]; 
-	    }
-
-	    return lengths.map(function (length, index) {
-	        // remove the current length, so the length is sum of previous elements
-	        var staticPartLength = solidityTypes[index].staticPartLength(types[index]);
-	        return length - staticPartLength; 
-	    });
-	};
-
-	SolidityCoder.prototype.getSolidityTypes = function (types) {
-	    var self = this;
-	    return types.map(function (type) {
-	        return self._requireType(type);
-	    });
-	};
-
-	var coder = new SolidityCoder([
-	    new SolidityTypeAddress(),
-	    new SolidityTypeBool(),
-	    new SolidityTypeInt(),
-	    new SolidityTypeUInt(),
-	    new SolidityTypeDynamicBytes(),
-	    new SolidityTypeBytes(),
-	    new SolidityTypeString(),
-	    new SolidityTypeReal(),
-	    new SolidityTypeUReal()
-	]);
-
-	module.exports = coder;
-
-
-
-/***/ },
-/* 266 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/*
-	    This file is part of web3.js.
-
-	    web3.js is free software: you can redistribute it and/or modify
-	    it under the terms of the GNU Lesser General Public License as published by
-	    the Free Software Foundation, either version 3 of the License, or
-	    (at your option) any later version.
-
-	    web3.js is distributed in the hope that it will be useful,
-	    but WITHOUT ANY WARRANTY; without even the implied warranty of
-	    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-	    GNU Lesser General Public License for more details.
-
-	    You should have received a copy of the GNU Lesser General Public License
-	    along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
-	*/
-	/** 
-	 * @file formatters.js
-	 * @author Marek Kotewicz <marek@ethdev.com>
-	 * @date 2015
-	 */
-
-	var BigNumber = __webpack_require__(227);
-	var utils = __webpack_require__(226);
-	var c = __webpack_require__(267);
-	var SolidityParam = __webpack_require__(268);
-
-
-	/**
-	 * Formats input value to byte representation of int
-	 * If value is negative, return it's two's complement
-	 * If the value is floating point, round it down
-	 *
-	 * @method formatInputInt
-	 * @param {String|Number|BigNumber} value that needs to be formatted
-	 * @returns {SolidityParam}
-	 */
-	var formatInputInt = function (value) {
-	    BigNumber.config(c.ETH_BIGNUMBER_ROUNDING_MODE);
-	    var result = utils.padLeft(utils.toTwosComplement(value).round().toString(16), 64);
-	    return new SolidityParam(result);
-	};
-
-	/**
-	 * Formats input bytes
-	 *
-	 * @method formatInputBytes
-	 * @param {String}
-	 * @returns {SolidityParam}
-	 */
-	var formatInputBytes = function (value) {
-	    var result = utils.toHex(value).substr(2);
-	    var l = Math.floor((result.length + 63) / 64);
-	    result = utils.padRight(result, l * 64);
-	    return new SolidityParam(result);
-	};
-
-	/**
-	 * Formats input bytes
-	 *
-	 * @method formatDynamicInputBytes
-	 * @param {String}
-	 * @returns {SolidityParam}
-	 */
-	var formatInputDynamicBytes = function (value) {
-	    var result = utils.toHex(value).substr(2);
-	    var length = result.length / 2;
-	    var l = Math.floor((result.length + 63) / 64);
-	    result = utils.padRight(result, l * 64);
-	    return new SolidityParam(formatInputInt(length).value + result);
-	};
-
-	/**
-	 * Formats input value to byte representation of string
-	 *
-	 * @method formatInputString
-	 * @param {String}
-	 * @returns {SolidityParam}
-	 */
-	var formatInputString = function (value) {
-	    var result = utils.fromUtf8(value).substr(2);
-	    var length = result.length / 2;
-	    var l = Math.floor((result.length + 63) / 64);
-	    result = utils.padRight(result, l * 64);
-	    return new SolidityParam(formatInputInt(length).value + result);
-	};
-
-	/**
-	 * Formats input value to byte representation of bool
-	 *
-	 * @method formatInputBool
-	 * @param {Boolean}
-	 * @returns {SolidityParam}
-	 */
-	var formatInputBool = function (value) {
-	    var result = '000000000000000000000000000000000000000000000000000000000000000' + (value ?  '1' : '0');
-	    return new SolidityParam(result);
-	};
-
-	/**
-	 * Formats input value to byte representation of real
-	 * Values are multiplied by 2^m and encoded as integers
-	 *
-	 * @method formatInputReal
-	 * @param {String|Number|BigNumber}
-	 * @returns {SolidityParam}
-	 */
-	var formatInputReal = function (value) {
-	    return formatInputInt(new BigNumber(value).times(new BigNumber(2).pow(128)));
-	};
-
-	/**
-	 * Check if input value is negative
-	 *
-	 * @method signedIsNegative
-	 * @param {String} value is hex format
-	 * @returns {Boolean} true if it is negative, otherwise false
-	 */
-	var signedIsNegative = function (value) {
-	    return (new BigNumber(value.substr(0, 1), 16).toString(2).substr(0, 1)) === '1';
-	};
-
-	/**
-	 * Formats right-aligned output bytes to int
-	 *
-	 * @method formatOutputInt
-	 * @param {SolidityParam} param
-	 * @returns {BigNumber} right-aligned output bytes formatted to big number
-	 */
-	var formatOutputInt = function (param) {
-	    var value = param.staticPart() || "0";
-
-	    // check if it's negative number
-	    // it it is, return two's complement
-	    if (signedIsNegative(value)) {
-	        return new BigNumber(value, 16).minus(new BigNumber('ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff', 16)).minus(1);
-	    }
-	    return new BigNumber(value, 16);
-	};
-
-	/**
-	 * Formats right-aligned output bytes to uint
-	 *
-	 * @method formatOutputUInt
-	 * @param {SolidityParam}
-	 * @returns {BigNumeber} right-aligned output bytes formatted to uint
-	 */
-	var formatOutputUInt = function (param) {
-	    var value = param.staticPart() || "0";
-	    return new BigNumber(value, 16);
-	};
-
-	/**
-	 * Formats right-aligned output bytes to real
-	 *
-	 * @method formatOutputReal
-	 * @param {SolidityParam}
-	 * @returns {BigNumber} input bytes formatted to real
-	 */
-	var formatOutputReal = function (param) {
-	    return formatOutputInt(param).dividedBy(new BigNumber(2).pow(128)); 
-	};
-
-	/**
-	 * Formats right-aligned output bytes to ureal
-	 *
-	 * @method formatOutputUReal
-	 * @param {SolidityParam}
-	 * @returns {BigNumber} input bytes formatted to ureal
-	 */
-	var formatOutputUReal = function (param) {
-	    return formatOutputUInt(param).dividedBy(new BigNumber(2).pow(128)); 
-	};
-
-	/**
-	 * Should be used to format output bool
-	 *
-	 * @method formatOutputBool
-	 * @param {SolidityParam}
-	 * @returns {Boolean} right-aligned input bytes formatted to bool
-	 */
-	var formatOutputBool = function (param) {
-	    return param.staticPart() === '0000000000000000000000000000000000000000000000000000000000000001' ? true : false;
-	};
-
-	/**
-	 * Should be used to format output bytes
-	 *
-	 * @method formatOutputBytes
-	 * @param {SolidityParam} left-aligned hex representation of string
-	 * @returns {String} hex string
-	 */
-	var formatOutputBytes = function (param) {
-	    return '0x' + param.staticPart();
-	};
-
-	/**
-	 * Should be used to format output bytes
-	 *
-	 * @method formatOutputDynamicBytes
-	 * @param {SolidityParam} left-aligned hex representation of string
-	 * @returns {String} hex string
-	 */
-	var formatOutputDynamicBytes = function (param) {
-	    var length = (new BigNumber(param.dynamicPart().slice(0, 64), 16)).toNumber() * 2;
-	    return '0x' + param.dynamicPart().substr(64, length);
-	};
-
-	/**
-	 * Should be used to format output string
-	 *
-	 * @method formatOutputString
-	 * @param {SolidityParam} left-aligned hex representation of string
-	 * @returns {String} ascii string
-	 */
-	var formatOutputString = function (param) {
-	    var length = (new BigNumber(param.dynamicPart().slice(0, 64), 16)).toNumber() * 2;
-	    return utils.toUtf8(param.dynamicPart().substr(64, length));
-	};
-
-	/**
-	 * Should be used to format output address
-	 *
-	 * @method formatOutputAddress
-	 * @param {SolidityParam} right-aligned input bytes
-	 * @returns {String} address
-	 */
-	var formatOutputAddress = function (param) {
-	    var value = param.staticPart();
-	    return "0x" + value.slice(value.length - 40, value.length);
-	};
-
-	module.exports = {
-	    formatInputInt: formatInputInt,
-	    formatInputBytes: formatInputBytes,
-	    formatInputDynamicBytes: formatInputDynamicBytes,
-	    formatInputString: formatInputString,
-	    formatInputBool: formatInputBool,
-	    formatInputReal: formatInputReal,
-	    formatOutputInt: formatOutputInt,
-	    formatOutputUInt: formatOutputUInt,
-	    formatOutputReal: formatOutputReal,
-	    formatOutputUReal: formatOutputUReal,
-	    formatOutputBool: formatOutputBool,
-	    formatOutputBytes: formatOutputBytes,
-	    formatOutputDynamicBytes: formatOutputDynamicBytes,
-	    formatOutputString: formatOutputString,
-	    formatOutputAddress: formatOutputAddress
-	};
-
-
-
-/***/ },
-/* 267 */
+/* 268 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -37399,7 +37193,7 @@
 
 
 	/// required to define ETH_BIGNUMBER_ROUNDING_MODE
-	var BigNumber = __webpack_require__(227);
+	var BigNumber = __webpack_require__(230);
 
 	var ETH_UNITS = [
 	    'wei',
@@ -37444,8 +37238,8 @@
 
 
 /***/ },
-/* 268 */
-/***/ function(module, exports, __webpack_require__) {
+/* 269 */
+/***/ function(module, exports) {
 
 	/*
 	    This file is part of web3.js.
@@ -37464,1052 +37258,31 @@
 	    along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
 	*/
 	/** 
-	 * @file param.js
+	 * @file errors.js
 	 * @author Marek Kotewicz <marek@ethdev.com>
 	 * @date 2015
 	 */
 
-	var utils = __webpack_require__(226);
-
-	/**
-	 * SolidityParam object prototype.
-	 * Should be used when encoding, decoding solidity bytes
-	 */
-	var SolidityParam = function (value, offset) {
-	    this.value = value || '';
-	    this.offset = offset; // offset in bytes
+	module.exports = {
+	    InvalidNumberOfParams: function () {
+	        return new Error('Invalid number of input parameters');
+	    },
+	    InvalidConnection: function (host){
+	        return new Error('CONNECTION ERROR: Couldn\'t connect to node '+ host +'.');
+	    },
+	    InvalidProvider: function () {
+	        return new Error('Provider not set or invalid');
+	    },
+	    InvalidResponse: function (result){
+	        var message = !!result && !!result.error && !!result.error.message ? result.error.message : 'Invalid JSON RPC response: ' + JSON.stringify(result);
+	        return new Error(message);
+	    }
 	};
-
-	/**
-	 * This method should be used to get length of params's dynamic part
-	 * 
-	 * @method dynamicPartLength
-	 * @returns {Number} length of dynamic part (in bytes)
-	 */
-	SolidityParam.prototype.dynamicPartLength = function () {
-	    return this.dynamicPart().length / 2;
-	};
-
-	/**
-	 * This method should be used to create copy of solidity param with different offset
-	 *
-	 * @method withOffset
-	 * @param {Number} offset length in bytes
-	 * @returns {SolidityParam} new solidity param with applied offset
-	 */
-	SolidityParam.prototype.withOffset = function (offset) {
-	    return new SolidityParam(this.value, offset);
-	};
-
-	/**
-	 * This method should be used to combine solidity params together
-	 * eg. when appending an array
-	 *
-	 * @method combine
-	 * @param {SolidityParam} param with which we should combine
-	 * @param {SolidityParam} result of combination
-	 */
-	SolidityParam.prototype.combine = function (param) {
-	    return new SolidityParam(this.value + param.value); 
-	};
-
-	/**
-	 * This method should be called to check if param has dynamic size.
-	 * If it has, it returns true, otherwise false
-	 *
-	 * @method isDynamic
-	 * @returns {Boolean}
-	 */
-	SolidityParam.prototype.isDynamic = function () {
-	    return this.offset !== undefined;
-	};
-
-	/**
-	 * This method should be called to transform offset to bytes
-	 *
-	 * @method offsetAsBytes
-	 * @returns {String} bytes representation of offset
-	 */
-	SolidityParam.prototype.offsetAsBytes = function () {
-	    return !this.isDynamic() ? '' : utils.padLeft(utils.toTwosComplement(this.offset).toString(16), 64);
-	};
-
-	/**
-	 * This method should be called to get static part of param
-	 *
-	 * @method staticPart
-	 * @returns {String} offset if it is a dynamic param, otherwise value
-	 */
-	SolidityParam.prototype.staticPart = function () {
-	    if (!this.isDynamic()) {
-	        return this.value; 
-	    } 
-	    return this.offsetAsBytes();
-	};
-
-	/**
-	 * This method should be called to get dynamic part of param
-	 *
-	 * @method dynamicPart
-	 * @returns {String} returns a value if it is a dynamic param, otherwise empty string
-	 */
-	SolidityParam.prototype.dynamicPart = function () {
-	    return this.isDynamic() ? this.value : '';
-	};
-
-	/**
-	 * This method should be called to encode param
-	 *
-	 * @method encode
-	 * @returns {String}
-	 */
-	SolidityParam.prototype.encode = function () {
-	    return this.staticPart() + this.dynamicPart();
-	};
-
-	/**
-	 * This method should be called to encode array of params
-	 *
-	 * @method encodeList
-	 * @param {Array[SolidityParam]} params
-	 * @returns {String}
-	 */
-	SolidityParam.encodeList = function (params) {
-	    
-	    // updating offsets
-	    var totalOffset = params.length * 32;
-	    var offsetParams = params.map(function (param) {
-	        if (!param.isDynamic()) {
-	            return param;
-	        }
-	        var offset = totalOffset;
-	        totalOffset += param.dynamicPartLength();
-	        return param.withOffset(offset);
-	    });
-
-	    // encode everything!
-	    return offsetParams.reduce(function (result, param) {
-	        return result + param.dynamicPart();
-	    }, offsetParams.reduce(function (result, param) {
-	        return result + param.staticPart();
-	    }, ''));
-	};
-
-
-
-	module.exports = SolidityParam;
-
-
-
-/***/ },
-/* 269 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var f = __webpack_require__(266);
-	var SolidityType = __webpack_require__(270);
-
-	/**
-	 * SolidityTypeAddress is a prootype that represents address type
-	 * It matches:
-	 * address
-	 * address[]
-	 * address[4]
-	 * address[][]
-	 * address[3][]
-	 * address[][6][], ...
-	 */
-	var SolidityTypeAddress = function () {
-	    this._inputFormatter = f.formatInputInt;
-	    this._outputFormatter = f.formatOutputAddress;
-	};
-
-	SolidityTypeAddress.prototype = new SolidityType({});
-	SolidityTypeAddress.prototype.constructor = SolidityTypeAddress;
-
-	SolidityTypeAddress.prototype.isType = function (name) {
-	    return !!name.match(/address(\[([0-9]*)\])?/);
-	};
-
-	SolidityTypeAddress.prototype.staticPartLength = function (name) {
-	    return 32 * this.staticArrayLength(name);
-	};
-
-	module.exports = SolidityTypeAddress;
 
 
 
 /***/ },
 /* 270 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var f = __webpack_require__(266);
-	var SolidityParam = __webpack_require__(268);
-
-	/**
-	 * SolidityType prototype is used to encode/decode solidity params of certain type
-	 */
-	var SolidityType = function (config) {
-	    this._inputFormatter = config.inputFormatter;
-	    this._outputFormatter = config.outputFormatter;
-	};
-
-	/**
-	 * Should be used to determine if this SolidityType do match given name
-	 *
-	 * @method isType
-	 * @param {String} name
-	 * @return {Bool} true if type match this SolidityType, otherwise false
-	 */
-	SolidityType.prototype.isType = function (name) {
-	    throw "this method should be overrwritten for type " + name;
-	};
-
-	/**
-	 * Should be used to determine what is the length of static part in given type
-	 *
-	 * @method staticPartLength
-	 * @param {String} name
-	 * @return {Number} length of static part in bytes
-	 */
-	SolidityType.prototype.staticPartLength = function (name) {
-	    throw "this method should be overrwritten for type: " + name;
-	};
-
-	/**
-	 * Should be used to determine if type is dynamic array
-	 * eg: 
-	 * "type[]" => true
-	 * "type[4]" => false
-	 *
-	 * @method isDynamicArray
-	 * @param {String} name
-	 * @return {Bool} true if the type is dynamic array 
-	 */
-	SolidityType.prototype.isDynamicArray = function (name) {
-	    var nestedTypes = this.nestedTypes(name);
-	    return !!nestedTypes && !nestedTypes[nestedTypes.length - 1].match(/[0-9]{1,}/g);
-	};
-
-	/**
-	 * Should be used to determine if type is static array
-	 * eg: 
-	 * "type[]" => false
-	 * "type[4]" => true
-	 *
-	 * @method isStaticArray
-	 * @param {String} name
-	 * @return {Bool} true if the type is static array 
-	 */
-	SolidityType.prototype.isStaticArray = function (name) {
-	    var nestedTypes = this.nestedTypes(name);
-	    return !!nestedTypes && !!nestedTypes[nestedTypes.length - 1].match(/[0-9]{1,}/g);
-	};
-
-	/**
-	 * Should return length of static array
-	 * eg. 
-	 * "int[32]" => 32
-	 * "int256[14]" => 14
-	 * "int[2][3]" => 3
-	 * "int" => 1
-	 * "int[1]" => 1
-	 * "int[]" => 1
-	 *
-	 * @method staticArrayLength
-	 * @param {String} name
-	 * @return {Number} static array length
-	 */
-	SolidityType.prototype.staticArrayLength = function (name) {
-	    var nestedTypes = this.nestedTypes(name);
-	    if (nestedTypes) {
-	       return parseInt(nestedTypes[nestedTypes.length - 1].match(/[0-9]{1,}/g) || 1);
-	    }
-	    return 1;
-	};
-
-	/**
-	 * Should return nested type
-	 * eg.
-	 * "int[32]" => "int"
-	 * "int256[14]" => "int256"
-	 * "int[2][3]" => "int[2]"
-	 * "int" => "int"
-	 * "int[]" => "int"
-	 *
-	 * @method nestedName
-	 * @param {String} name
-	 * @return {String} nested name
-	 */
-	SolidityType.prototype.nestedName = function (name) {
-	    // remove last [] in name
-	    var nestedTypes = this.nestedTypes(name);
-	    if (!nestedTypes) {
-	        return name;
-	    }
-
-	    return name.substr(0, name.length - nestedTypes[nestedTypes.length - 1].length);
-	};
-
-	/**
-	 * Should return true if type has dynamic size by default
-	 * such types are "string", "bytes"
-	 *
-	 * @method isDynamicType
-	 * @param {String} name
-	 * @return {Bool} true if is dynamic, otherwise false
-	 */
-	SolidityType.prototype.isDynamicType = function () {
-	    return false;
-	};
-
-	/**
-	 * Should return array of nested types
-	 * eg.
-	 * "int[2][3][]" => ["[2]", "[3]", "[]"]
-	 * "int[] => ["[]"]
-	 * "int" => null
-	 *
-	 * @method nestedTypes
-	 * @param {String} name
-	 * @return {Array} array of nested types
-	 */
-	SolidityType.prototype.nestedTypes = function (name) {
-	    // return list of strings eg. "[]", "[3]", "[]", "[2]"
-	    return name.match(/(\[[0-9]*\])/g);
-	};
-
-	/**
-	 * Should be used to encode the value
-	 *
-	 * @method encode
-	 * @param {Object} value 
-	 * @param {String} name
-	 * @return {String} encoded value
-	 */
-	SolidityType.prototype.encode = function (value, name) {
-	    var self = this;
-	    if (this.isDynamicArray(name)) {
-
-	        return (function () {
-	            var length = value.length;                          // in int
-	            var nestedName = self.nestedName(name);
-
-	            var result = [];
-	            result.push(f.formatInputInt(length).encode());
-	            
-	            value.forEach(function (v) {
-	                result.push(self.encode(v, nestedName));
-	            });
-
-	            return result;
-	        })();
-
-	    } else if (this.isStaticArray(name)) {
-
-	        return (function () {
-	            var length = self.staticArrayLength(name);          // in int
-	            var nestedName = self.nestedName(name);
-
-	            var result = [];
-	            for (var i = 0; i < length; i++) {
-	                result.push(self.encode(value[i], nestedName));
-	            }
-
-	            return result;
-	        })();
-
-	    }
-
-	    return this._inputFormatter(value, name).encode();
-	};
-
-	/**
-	 * Should be used to decode value from bytes
-	 *
-	 * @method decode
-	 * @param {String} bytes
-	 * @param {Number} offset in bytes
-	 * @param {String} name type name
-	 * @returns {Object} decoded value
-	 */
-	SolidityType.prototype.decode = function (bytes, offset, name) {
-	    var self = this;
-
-	    if (this.isDynamicArray(name)) {
-
-	        return (function () {
-	            var arrayOffset = parseInt('0x' + bytes.substr(offset * 2, 64)); // in bytes
-	            var length = parseInt('0x' + bytes.substr(arrayOffset * 2, 64)); // in int
-	            var arrayStart = arrayOffset + 32; // array starts after length; // in bytes
-
-	            var nestedName = self.nestedName(name);
-	            var nestedStaticPartLength = self.staticPartLength(nestedName);  // in bytes
-	            var roundedNestedStaticPartLength = Math.floor((nestedStaticPartLength + 31) / 32) * 32;
-	            var result = [];
-
-	            for (var i = 0; i < length * roundedNestedStaticPartLength; i += roundedNestedStaticPartLength) {
-	                result.push(self.decode(bytes, arrayStart + i, nestedName));
-	            }
-
-	            return result;
-	        })();
-
-	    } else if (this.isStaticArray(name)) {
-
-	        return (function () {
-	            var length = self.staticArrayLength(name);                      // in int
-	            var arrayStart = offset;                                        // in bytes
-
-	            var nestedName = self.nestedName(name);
-	            var nestedStaticPartLength = self.staticPartLength(nestedName); // in bytes
-	            var roundedNestedStaticPartLength = Math.floor((nestedStaticPartLength + 31) / 32) * 32;
-	            var result = [];
-
-	            for (var i = 0; i < length * roundedNestedStaticPartLength; i += roundedNestedStaticPartLength) {
-	                result.push(self.decode(bytes, arrayStart + i, nestedName));
-	            }
-
-	            return result;
-	        })();
-	    } else if (this.isDynamicType(name)) {
-	        
-	        return (function () {
-	            var dynamicOffset = parseInt('0x' + bytes.substr(offset * 2, 64));      // in bytes
-	            var length = parseInt('0x' + bytes.substr(dynamicOffset * 2, 64));      // in bytes
-	            var roundedLength = Math.floor((length + 31) / 32);                     // in int
-	        
-	            return self._outputFormatter(new SolidityParam(bytes.substr(dynamicOffset * 2, ( 1 + roundedLength) * 64), 0));
-	        })();
-	    }
-
-	    var length = this.staticPartLength(name);
-	    return this._outputFormatter(new SolidityParam(bytes.substr(offset * 2, length * 2)));
-	};
-
-	module.exports = SolidityType;
-
-
-/***/ },
-/* 271 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var f = __webpack_require__(266);
-	var SolidityType = __webpack_require__(270);
-
-	/**
-	 * SolidityTypeBool is a prootype that represents bool type
-	 * It matches:
-	 * bool
-	 * bool[]
-	 * bool[4]
-	 * bool[][]
-	 * bool[3][]
-	 * bool[][6][], ...
-	 */
-	var SolidityTypeBool = function () {
-	    this._inputFormatter = f.formatInputBool;
-	    this._outputFormatter = f.formatOutputBool;
-	};
-
-	SolidityTypeBool.prototype = new SolidityType({});
-	SolidityTypeBool.prototype.constructor = SolidityTypeBool;
-
-	SolidityTypeBool.prototype.isType = function (name) {
-	    return !!name.match(/^bool(\[([0-9]*)\])*$/);
-	};
-
-	SolidityTypeBool.prototype.staticPartLength = function (name) {
-	    return 32 * this.staticArrayLength(name);
-	};
-
-	module.exports = SolidityTypeBool;
-
-
-/***/ },
-/* 272 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var f = __webpack_require__(266);
-	var SolidityType = __webpack_require__(270);
-
-	/**
-	 * SolidityTypeInt is a prootype that represents int type
-	 * It matches:
-	 * int
-	 * int[]
-	 * int[4]
-	 * int[][]
-	 * int[3][]
-	 * int[][6][], ...
-	 * int32
-	 * int64[]
-	 * int8[4]
-	 * int256[][]
-	 * int[3][]
-	 * int64[][6][], ...
-	 */
-	var SolidityTypeInt = function () {
-	    this._inputFormatter = f.formatInputInt;
-	    this._outputFormatter = f.formatOutputInt;
-	};
-
-	SolidityTypeInt.prototype = new SolidityType({});
-	SolidityTypeInt.prototype.constructor = SolidityTypeInt;
-
-	SolidityTypeInt.prototype.isType = function (name) {
-	    return !!name.match(/^int([0-9]*)?(\[([0-9]*)\])*$/);
-	};
-
-	SolidityTypeInt.prototype.staticPartLength = function (name) {
-	    return 32 * this.staticArrayLength(name);
-	};
-
-	module.exports = SolidityTypeInt;
-
-
-/***/ },
-/* 273 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var f = __webpack_require__(266);
-	var SolidityType = __webpack_require__(270);
-
-	/**
-	 * SolidityTypeUInt is a prootype that represents uint type
-	 * It matches:
-	 * uint
-	 * uint[]
-	 * uint[4]
-	 * uint[][]
-	 * uint[3][]
-	 * uint[][6][], ...
-	 * uint32
-	 * uint64[]
-	 * uint8[4]
-	 * uint256[][]
-	 * uint[3][]
-	 * uint64[][6][], ...
-	 */
-	var SolidityTypeUInt = function () {
-	    this._inputFormatter = f.formatInputInt;
-	    this._outputFormatter = f.formatOutputUInt;
-	};
-
-	SolidityTypeUInt.prototype = new SolidityType({});
-	SolidityTypeUInt.prototype.constructor = SolidityTypeUInt;
-
-	SolidityTypeUInt.prototype.isType = function (name) {
-	    return !!name.match(/^uint([0-9]*)?(\[([0-9]*)\])*$/);
-	};
-
-	SolidityTypeUInt.prototype.staticPartLength = function (name) {
-	    return 32 * this.staticArrayLength(name);
-	};
-
-	module.exports = SolidityTypeUInt;
-
-
-/***/ },
-/* 274 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var f = __webpack_require__(266);
-	var SolidityType = __webpack_require__(270);
-
-	var SolidityTypeDynamicBytes = function () {
-	    this._inputFormatter = f.formatInputDynamicBytes;
-	    this._outputFormatter = f.formatOutputDynamicBytes;
-	};
-
-	SolidityTypeDynamicBytes.prototype = new SolidityType({});
-	SolidityTypeDynamicBytes.prototype.constructor = SolidityTypeDynamicBytes;
-
-	SolidityTypeDynamicBytes.prototype.isType = function (name) {
-	    return !!name.match(/^bytes(\[([0-9]*)\])*$/);
-	};
-
-	SolidityTypeDynamicBytes.prototype.staticPartLength = function (name) {
-	    return 32 * this.staticArrayLength(name);
-	};
-
-	SolidityTypeDynamicBytes.prototype.isDynamicType = function () {
-	    return true;
-	};
-
-	module.exports = SolidityTypeDynamicBytes;
-
-
-
-/***/ },
-/* 275 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var f = __webpack_require__(266);
-	var SolidityType = __webpack_require__(270);
-
-	var SolidityTypeString = function () {
-	    this._inputFormatter = f.formatInputString;
-	    this._outputFormatter = f.formatOutputString;
-	};
-
-	SolidityTypeString.prototype = new SolidityType({});
-	SolidityTypeString.prototype.constructor = SolidityTypeString;
-
-	SolidityTypeString.prototype.isType = function (name) {
-	    return !!name.match(/^string(\[([0-9]*)\])*$/);
-	};
-
-	SolidityTypeString.prototype.staticPartLength = function (name) {
-	    return 32 * this.staticArrayLength(name);
-	};
-
-	SolidityTypeString.prototype.isDynamicType = function () {
-	    return true;
-	};
-
-	module.exports = SolidityTypeString;
-
-
-
-/***/ },
-/* 276 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var f = __webpack_require__(266);
-	var SolidityType = __webpack_require__(270);
-
-	/**
-	 * SolidityTypeReal is a prootype that represents real type
-	 * It matches:
-	 * real
-	 * real[]
-	 * real[4]
-	 * real[][]
-	 * real[3][]
-	 * real[][6][], ...
-	 * real32
-	 * real64[]
-	 * real8[4]
-	 * real256[][]
-	 * real[3][]
-	 * real64[][6][], ...
-	 */
-	var SolidityTypeReal = function () {
-	    this._inputFormatter = f.formatInputReal;
-	    this._outputFormatter = f.formatOutputReal;
-	};
-
-	SolidityTypeReal.prototype = new SolidityType({});
-	SolidityTypeReal.prototype.constructor = SolidityTypeReal;
-
-	SolidityTypeReal.prototype.isType = function (name) {
-	    return !!name.match(/real([0-9]*)?(\[([0-9]*)\])?/);
-	};
-
-	SolidityTypeReal.prototype.staticPartLength = function (name) {
-	    return 32 * this.staticArrayLength(name);
-	};
-
-	module.exports = SolidityTypeReal;
-
-
-/***/ },
-/* 277 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var f = __webpack_require__(266);
-	var SolidityType = __webpack_require__(270);
-
-	/**
-	 * SolidityTypeUReal is a prootype that represents ureal type
-	 * It matches:
-	 * ureal
-	 * ureal[]
-	 * ureal[4]
-	 * ureal[][]
-	 * ureal[3][]
-	 * ureal[][6][], ...
-	 * ureal32
-	 * ureal64[]
-	 * ureal8[4]
-	 * ureal256[][]
-	 * ureal[3][]
-	 * ureal64[][6][], ...
-	 */
-	var SolidityTypeUReal = function () {
-	    this._inputFormatter = f.formatInputReal;
-	    this._outputFormatter = f.formatOutputUReal;
-	};
-
-	SolidityTypeUReal.prototype = new SolidityType({});
-	SolidityTypeUReal.prototype.constructor = SolidityTypeUReal;
-
-	SolidityTypeUReal.prototype.isType = function (name) {
-	    return !!name.match(/^ureal([0-9]*)?(\[([0-9]*)\])*$/);
-	};
-
-	SolidityTypeUReal.prototype.staticPartLength = function (name) {
-	    return 32 * this.staticArrayLength(name);
-	};
-
-	module.exports = SolidityTypeUReal;
-
-
-/***/ },
-/* 278 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var f = __webpack_require__(266);
-	var SolidityType = __webpack_require__(270);
-
-	/**
-	 * SolidityTypeBytes is a prootype that represents bytes type
-	 * It matches:
-	 * bytes
-	 * bytes[]
-	 * bytes[4]
-	 * bytes[][]
-	 * bytes[3][]
-	 * bytes[][6][], ...
-	 * bytes32
-	 * bytes64[]
-	 * bytes8[4]
-	 * bytes256[][]
-	 * bytes[3][]
-	 * bytes64[][6][], ...
-	 */
-	var SolidityTypeBytes = function () {
-	    this._inputFormatter = f.formatInputBytes;
-	    this._outputFormatter = f.formatOutputBytes;
-	};
-
-	SolidityTypeBytes.prototype = new SolidityType({});
-	SolidityTypeBytes.prototype.constructor = SolidityTypeBytes;
-
-	SolidityTypeBytes.prototype.isType = function (name) {
-	    return !!name.match(/^bytes([0-9]{1,})(\[([0-9]*)\])*$/);
-	};
-
-	SolidityTypeBytes.prototype.staticPartLength = function (name) {
-	    var matches = name.match(/^bytes([0-9]*)/);
-	    var size = parseInt(matches[1]);
-	    return size * this.staticArrayLength(name);
-	};
-
-	module.exports = SolidityTypeBytes;
-
-
-/***/ },
-/* 279 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/*
-	    This file is part of web3.js.
-
-	    web3.js is free software: you can redistribute it and/or modify
-	    it under the terms of the GNU Lesser General Public License as published by
-	    the Free Software Foundation, either version 3 of the License, or
-	    (at your option) any later version.
-
-	    web3.js is distributed in the hope that it will be useful,
-	    but WITHOUT ANY WARRANTY; without even the implied warranty of
-	    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-	    GNU Lesser General Public License for more details.
-
-	    You should have received a copy of the GNU Lesser General Public License
-	    along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
-	*/
-	/**
-	 * @file formatters.js
-	 * @author Marek Kotewicz <marek@ethdev.com>
-	 * @author Fabian Vogelsteller <fabian@ethdev.com>
-	 * @date 2015
-	 */
-
-	var utils = __webpack_require__(226);
-	var config = __webpack_require__(267);
-	var Iban = __webpack_require__(280);
-
-	/**
-	 * Should the format output to a big number
-	 *
-	 * @method outputBigNumberFormatter
-	 * @param {String|Number|BigNumber}
-	 * @returns {BigNumber} object
-	 */
-	var outputBigNumberFormatter = function (number) {
-	    return utils.toBigNumber(number);
-	};
-
-	var isPredefinedBlockNumber = function (blockNumber) {
-	    return blockNumber === 'latest' || blockNumber === 'pending' || blockNumber === 'earliest';
-	};
-
-	var inputDefaultBlockNumberFormatter = function (blockNumber) {
-	    if (blockNumber === undefined) {
-	        return config.defaultBlock;
-	    }
-	    return inputBlockNumberFormatter(blockNumber);
-	};
-
-	var inputBlockNumberFormatter = function (blockNumber) {
-	    if (blockNumber === undefined) {
-	        return undefined;
-	    } else if (isPredefinedBlockNumber(blockNumber)) {
-	        return blockNumber;
-	    }
-	    return utils.toHex(blockNumber);
-	};
-
-	/**
-	 * Formats the input of a transaction and converts all values to HEX
-	 *
-	 * @method inputCallFormatter
-	 * @param {Object} transaction options
-	 * @returns object
-	*/
-	var inputCallFormatter = function (options){
-
-	    options.from = options.from || config.defaultAccount;
-
-	    if (options.from) {
-	        options.from = inputAddressFormatter(options.from);
-	    }
-
-	    if (options.to) { // it might be contract creation
-	        options.to = inputAddressFormatter(options.to);
-	    }
-
-	    ['gasPrice', 'gas', 'value', 'nonce'].filter(function (key) {
-	        return options[key] !== undefined;
-	    }).forEach(function(key){
-	        options[key] = utils.fromDecimal(options[key]);
-	    });
-
-	    return options;
-	};
-
-	/**
-	 * Formats the input of a transaction and converts all values to HEX
-	 *
-	 * @method inputTransactionFormatter
-	 * @param {Object} transaction options
-	 * @returns object
-	*/
-	var inputTransactionFormatter = function (options){
-
-	    options.from = options.from || config.defaultAccount;
-	    options.from = inputAddressFormatter(options.from);
-
-	    if (options.to) { // it might be contract creation
-	        options.to = inputAddressFormatter(options.to);
-	    }
-
-	    ['gasPrice', 'gas', 'value', 'nonce'].filter(function (key) {
-	        return options[key] !== undefined;
-	    }).forEach(function(key){
-	        options[key] = utils.fromDecimal(options[key]);
-	    });
-
-	    return options;
-	};
-
-	/**
-	 * Formats the output of a transaction to its proper values
-	 *
-	 * @method outputTransactionFormatter
-	 * @param {Object} tx
-	 * @returns {Object}
-	*/
-	var outputTransactionFormatter = function (tx){
-	    if(tx.blockNumber !== null)
-	        tx.blockNumber = utils.toDecimal(tx.blockNumber);
-	    if(tx.transactionIndex !== null)
-	        tx.transactionIndex = utils.toDecimal(tx.transactionIndex);
-	    tx.nonce = utils.toDecimal(tx.nonce);
-	    tx.gas = utils.toDecimal(tx.gas);
-	    tx.gasPrice = utils.toBigNumber(tx.gasPrice);
-	    tx.value = utils.toBigNumber(tx.value);
-	    return tx;
-	};
-
-	/**
-	 * Formats the output of a transaction receipt to its proper values
-	 *
-	 * @method outputTransactionReceiptFormatter
-	 * @param {Object} receipt
-	 * @returns {Object}
-	*/
-	var outputTransactionReceiptFormatter = function (receipt){
-	    if(receipt.blockNumber !== null)
-	        receipt.blockNumber = utils.toDecimal(receipt.blockNumber);
-	    if(receipt.transactionIndex !== null)
-	        receipt.transactionIndex = utils.toDecimal(receipt.transactionIndex);
-	    receipt.cumulativeGasUsed = utils.toDecimal(receipt.cumulativeGasUsed);
-	    receipt.gasUsed = utils.toDecimal(receipt.gasUsed);
-
-	    if(utils.isArray(receipt.logs)) {
-	        receipt.logs = receipt.logs.map(function(log){
-	            return outputLogFormatter(log);
-	        });
-	    }
-
-	    return receipt;
-	};
-
-	/**
-	 * Formats the output of a block to its proper values
-	 *
-	 * @method outputBlockFormatter
-	 * @param {Object} block
-	 * @returns {Object}
-	*/
-	var outputBlockFormatter = function(block) {
-
-	    // transform to number
-	    block.gasLimit = utils.toDecimal(block.gasLimit);
-	    block.gasUsed = utils.toDecimal(block.gasUsed);
-	    block.size = utils.toDecimal(block.size);
-	    block.timestamp = utils.toDecimal(block.timestamp);
-	    if(block.number !== null)
-	        block.number = utils.toDecimal(block.number);
-
-	    block.difficulty = utils.toBigNumber(block.difficulty);
-	    block.totalDifficulty = utils.toBigNumber(block.totalDifficulty);
-
-	    if (utils.isArray(block.transactions)) {
-	        block.transactions.forEach(function(item){
-	            if(!utils.isString(item))
-	                return outputTransactionFormatter(item);
-	        });
-	    }
-
-	    return block;
-	};
-
-	/**
-	 * Formats the output of a log
-	 *
-	 * @method outputLogFormatter
-	 * @param {Object} log object
-	 * @returns {Object} log
-	*/
-	var outputLogFormatter = function(log) {
-	    if(log.blockNumber !== null)
-	        log.blockNumber = utils.toDecimal(log.blockNumber);
-	    if(log.transactionIndex !== null)
-	        log.transactionIndex = utils.toDecimal(log.transactionIndex);
-	    if(log.logIndex !== null)
-	        log.logIndex = utils.toDecimal(log.logIndex);
-
-	    return log;
-	};
-
-	/**
-	 * Formats the input of a whisper post and converts all values to HEX
-	 *
-	 * @method inputPostFormatter
-	 * @param {Object} transaction object
-	 * @returns {Object}
-	*/
-	var inputPostFormatter = function(post) {
-
-	    // post.payload = utils.toHex(post.payload);
-	    post.ttl = utils.fromDecimal(post.ttl);
-	    post.workToProve = utils.fromDecimal(post.workToProve);
-	    post.priority = utils.fromDecimal(post.priority);
-
-	    // fallback
-	    if (!utils.isArray(post.topics)) {
-	        post.topics = post.topics ? [post.topics] : [];
-	    }
-
-	    // format the following options
-	    post.topics = post.topics.map(function(topic){
-	        // convert only if not hex
-	        return (topic.indexOf('0x') === 0) ? topic : utils.fromUtf8(topic);
-	    });
-
-	    return post;
-	};
-
-	/**
-	 * Formats the output of a received post message
-	 *
-	 * @method outputPostFormatter
-	 * @param {Object}
-	 * @returns {Object}
-	 */
-	var outputPostFormatter = function(post){
-
-	    post.expiry = utils.toDecimal(post.expiry);
-	    post.sent = utils.toDecimal(post.sent);
-	    post.ttl = utils.toDecimal(post.ttl);
-	    post.workProved = utils.toDecimal(post.workProved);
-	    // post.payloadRaw = post.payload;
-	    // post.payload = utils.toAscii(post.payload);
-
-	    // if (utils.isJson(post.payload)) {
-	    //     post.payload = JSON.parse(post.payload);
-	    // }
-
-	    // format the following options
-	    if (!post.topics) {
-	        post.topics = [];
-	    }
-	    post.topics = post.topics.map(function(topic){
-	        return utils.toAscii(topic);
-	    });
-
-	    return post;
-	};
-
-	var inputAddressFormatter = function (address) {
-	    var iban = new Iban(address);
-	    if (iban.isValid() && iban.isDirect()) {
-	        return '0x' + iban.address();
-	    } else if (utils.isStrictAddress(address)) {
-	        return address;
-	    } else if (utils.isAddress(address)) {
-	        return '0x' + address;
-	    }
-	    throw new Error('invalid address');
-	};
-
-
-	var outputSyncingFormatter = function(result) {
-
-	    result.startingBlock = utils.toDecimal(result.startingBlock);
-	    result.currentBlock = utils.toDecimal(result.currentBlock);
-	    result.highestBlock = utils.toDecimal(result.highestBlock);
-	    if (result.knownStates) {
-	        result.knownStates = utils.toDecimal(result.knownStates);
-	        result.pulledStates = utils.toDecimal(result.pulledStates);
-	    }
-
-	    return result;
-	};
-
-	module.exports = {
-	    inputDefaultBlockNumberFormatter: inputDefaultBlockNumberFormatter,
-	    inputBlockNumberFormatter: inputBlockNumberFormatter,
-	    inputCallFormatter: inputCallFormatter,
-	    inputTransactionFormatter: inputTransactionFormatter,
-	    inputAddressFormatter: inputAddressFormatter,
-	    inputPostFormatter: inputPostFormatter,
-	    outputBigNumberFormatter: outputBigNumberFormatter,
-	    outputTransactionFormatter: outputTransactionFormatter,
-	    outputTransactionReceiptFormatter: outputTransactionReceiptFormatter,
-	    outputBlockFormatter: outputBlockFormatter,
-	    outputLogFormatter: outputLogFormatter,
-	    outputPostFormatter: outputPostFormatter,
-	    outputSyncingFormatter: outputSyncingFormatter
-	};
-
-
-
-/***/ },
-/* 280 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -38534,7 +37307,7 @@
 	 * @date 2015
 	 */
 
-	var BigNumber = __webpack_require__(227);
+	var BigNumber = __webpack_require__(230);
 
 	var padLeft = function (string, bytes) {
 	    var result = string;
@@ -38742,1773 +37515,7 @@
 
 
 /***/ },
-/* 281 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/*
-	    This file is part of web3.js.
-
-	    web3.js is free software: you can redistribute it and/or modify
-	    it under the terms of the GNU Lesser General Public License as published by
-	    the Free Software Foundation, either version 3 of the License, or
-	    (at your option) any later version.
-
-	    web3.js is distributed in the hope that it will be useful,
-	    but WITHOUT ANY WARRANTY; without even the implied warranty of
-	    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-	    GNU Lesser General Public License for more details.
-
-	    You should have received a copy of the GNU Lesser General Public License
-	    along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
-	*/
-	/** @file filter.js
-	 * @authors:
-	 *   Jeffrey Wilcke <jeff@ethdev.com>
-	 *   Marek Kotewicz <marek@ethdev.com>
-	 *   Marian Oancea <marian@ethdev.com>
-	 *   Fabian Vogelsteller <fabian@ethdev.com>
-	 *   Gav Wood <g@ethdev.com>
-	 * @date 2014
-	 */
-
-	var formatters = __webpack_require__(279);
-	var utils = __webpack_require__(226);
-
-	/**
-	* Converts a given topic to a hex string, but also allows null values.
-	*
-	* @param {Mixed} value
-	* @return {String}
-	*/
-	var toTopic = function(value){
-
-	    if(value === null || typeof value === 'undefined')
-	        return null;
-
-	    value = String(value);
-
-	    if(value.indexOf('0x') === 0)
-	        return value;
-	    else
-	        return utils.fromUtf8(value);
-	};
-
-	/// This method should be called on options object, to verify deprecated properties && lazy load dynamic ones
-	/// @param should be string or object
-	/// @returns options string or object
-	var getOptions = function (options) {
-
-	    if (utils.isString(options)) {
-	        return options;
-	    }
-
-	    options = options || {};
-
-	    // make sure topics, get converted to hex
-	    options.topics = options.topics || [];
-	    options.topics = options.topics.map(function(topic){
-	        return (utils.isArray(topic)) ? topic.map(toTopic) : toTopic(topic);
-	    });
-
-	    return {
-	        topics: options.topics,
-	        from: options.from,
-	        to: options.to,
-	        address: options.address,
-	        fromBlock: formatters.inputBlockNumberFormatter(options.fromBlock),
-	        toBlock: formatters.inputBlockNumberFormatter(options.toBlock)
-	    };
-	};
-
-	/**
-	Adds the callback and sets up the methods, to iterate over the results.
-
-	@method getLogsAtStart
-	@param {Object} self
-	@param {funciton}
-	*/
-	var getLogsAtStart = function(self, callback){
-	    // call getFilterLogs for the first watch callback start
-	    if (!utils.isString(self.options)) {
-	        self.get(function (err, messages) {
-	            // don't send all the responses to all the watches again... just to self one
-	            if (err) {
-	                callback(err);
-	            }
-
-	            if(utils.isArray(messages)) {
-	                messages.forEach(function (message) {
-	                    callback(null, message);
-	                });
-	            }
-	        });
-	    }
-	};
-
-	/**
-	Adds the callback and sets up the methods, to iterate over the results.
-
-	@method pollFilter
-	@param {Object} self
-	*/
-	var pollFilter = function(self) {
-
-	    var onMessage = function (error, messages) {
-	        if (error) {
-	            return self.callbacks.forEach(function (callback) {
-	                callback(error);
-	            });
-	        }
-
-	        if(utils.isArray(messages)) {
-	            messages.forEach(function (message) {
-	                message = self.formatter ? self.formatter(message) : message;
-	                self.callbacks.forEach(function (callback) {
-	                    callback(null, message);
-	                });
-	            });
-	        }
-	    };
-
-	    self.requestManager.startPolling({
-	        method: self.implementation.poll.call,
-	        params: [self.filterId],
-	    }, self.filterId, onMessage, self.stopWatching.bind(self));
-
-	};
-
-	var Filter = function (requestManager, options, methods, formatter, callback) {
-	    var self = this;
-	    var implementation = {};
-	    methods.forEach(function (method) {
-	        method.setRequestManager(requestManager);
-	        method.attachToObject(implementation);
-	    });
-	    this.requestManager = requestManager;
-	    this.options = getOptions(options);
-	    this.implementation = implementation;
-	    this.filterId = null;
-	    this.callbacks = [];
-	    this.getLogsCallbacks = [];
-	    this.pollFilters = [];
-	    this.formatter = formatter;
-	    this.implementation.newFilter(this.options, function(error, id){
-	        if(error) {
-	            self.callbacks.forEach(function(cb){
-	                cb(error);
-	            });
-	        } else {
-	            self.filterId = id;
-
-	            // check if there are get pending callbacks as a consequence
-	            // of calling get() with filterId unassigned.
-	            self.getLogsCallbacks.forEach(function (cb){
-	                self.get(cb);
-	            });
-	            self.getLogsCallbacks = [];
-
-	            // get filter logs for the already existing watch calls
-	            self.callbacks.forEach(function(cb){
-	                getLogsAtStart(self, cb);
-	            });
-	            if(self.callbacks.length > 0)
-	                pollFilter(self);
-
-	            // start to watch immediately
-	            if(typeof callback === 'function') {
-	                return self.watch(callback);
-	            }
-	        }
-	    });
-
-	    return this;
-	};
-
-	Filter.prototype.watch = function (callback) {
-	    this.callbacks.push(callback);
-
-	    if(this.filterId) {
-	        getLogsAtStart(this, callback);
-	        pollFilter(this);
-	    }
-
-	    return this;
-	};
-
-	Filter.prototype.stopWatching = function (callback) {
-	    this.requestManager.stopPolling(this.filterId);
-	    this.callbacks = [];
-	    // remove filter async
-	    if (callback) {
-	        this.implementation.uninstallFilter(this.filterId, callback);
-	    } else {
-	        return this.implementation.uninstallFilter(this.filterId);
-	    }
-	};
-
-	Filter.prototype.get = function (callback) {
-	    var self = this;
-	    if (utils.isFunction(callback)) {
-	        if (this.filterId === null) {
-	            // If filterId is not set yet, call it back
-	            // when newFilter() assigns it.
-	            this.getLogsCallbacks.push(callback);
-	        } else {
-	            this.implementation.getLogs(this.filterId, function(err, res){
-	                if (err) {
-	                    callback(err);
-	                } else {
-	                    callback(null, res.map(function (log) {
-	                        return self.formatter ? self.formatter(log) : log;
-	                    }));
-	                }
-	            });
-	        }
-	    } else {
-	        if (this.filterId === null) {
-	            throw new Error('Filter ID Error: filter().get() can\'t be chained synchronous, please provide a callback for the get() method.');
-	        }
-	        var logs = this.implementation.getLogs(this.filterId);
-	        return logs.map(function (log) {
-	            return self.formatter ? self.formatter(log) : log;
-	        });
-	    }
-
-	    return this;
-	};
-
-	module.exports = Filter;
-
-
-
-/***/ },
-/* 282 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/*
-	    This file is part of web3.js.
-
-	    web3.js is free software: you can redistribute it and/or modify
-	    it under the terms of the GNU Lesser General Public License as published by
-	    the Free Software Foundation, either version 3 of the License, or
-	    (at your option) any later version.
-
-	    web3.js is distributed in the hope that it will be useful,
-	    but WITHOUT ANY WARRANTY; without even the implied warranty of
-	    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-	    GNU Lesser General Public License for more details.
-
-	    You should have received a copy of the GNU Lesser General Public License
-	    along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
-	*/
-	/** @file watches.js
-	 * @authors:
-	 *   Marek Kotewicz <marek@ethdev.com>
-	 * @date 2015
-	 */
-
-	var Method = __webpack_require__(283);
-
-	/// @returns an array of objects describing web3.eth.filter api methods
-	var eth = function () {
-	    var newFilterCall = function (args) {
-	        var type = args[0];
-
-	        switch(type) {
-	            case 'latest':
-	                args.shift();
-	                this.params = 0;
-	                return 'eth_newBlockFilter';
-	            case 'pending':
-	                args.shift();
-	                this.params = 0;
-	                return 'eth_newPendingTransactionFilter';
-	            default:
-	                return 'eth_newFilter';
-	        }
-	    };
-
-	    var newFilter = new Method({
-	        name: 'newFilter',
-	        call: newFilterCall,
-	        params: 1
-	    });
-
-	    var uninstallFilter = new Method({
-	        name: 'uninstallFilter',
-	        call: 'eth_uninstallFilter',
-	        params: 1
-	    });
-
-	    var getLogs = new Method({
-	        name: 'getLogs',
-	        call: 'eth_getFilterLogs',
-	        params: 1
-	    });
-
-	    var poll = new Method({
-	        name: 'poll',
-	        call: 'eth_getFilterChanges',
-	        params: 1
-	    });
-
-	    return [
-	        newFilter,
-	        uninstallFilter,
-	        getLogs,
-	        poll
-	    ];
-	};
-
-	/// @returns an array of objects describing web3.shh.watch api methods
-	var shh = function () {
-	    var newFilter = new Method({
-	        name: 'newFilter',
-	        call: 'shh_newFilter',
-	        params: 1
-	    });
-
-	    var uninstallFilter = new Method({
-	        name: 'uninstallFilter',
-	        call: 'shh_uninstallFilter',
-	        params: 1
-	    });
-
-	    var getLogs = new Method({
-	        name: 'getLogs',
-	        call: 'shh_getMessages',
-	        params: 1
-	    });
-
-	    var poll = new Method({
-	        name: 'poll',
-	        call: 'shh_getFilterChanges',
-	        params: 1
-	    });
-
-	    return [
-	        newFilter,
-	        uninstallFilter,
-	        getLogs,
-	        poll
-	    ];
-	};
-
-	module.exports = {
-	    eth: eth,
-	    shh: shh
-	};
-
-
-
-/***/ },
-/* 283 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/*
-	    This file is part of web3.js.
-
-	    web3.js is free software: you can redistribute it and/or modify
-	    it under the terms of the GNU Lesser General Public License as published by
-	    the Free Software Foundation, either version 3 of the License, or
-	    (at your option) any later version.
-
-	    web3.js is distributed in the hope that it will be useful,
-	    but WITHOUT ANY WARRANTY; without even the implied warranty of
-	    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-	    GNU Lesser General Public License for more details.
-
-	    You should have received a copy of the GNU Lesser General Public License
-	    along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
-	*/
-	/**
-	 * @file method.js
-	 * @author Marek Kotewicz <marek@ethdev.com>
-	 * @date 2015
-	 */
-
-	var utils = __webpack_require__(226);
-	var errors = __webpack_require__(284);
-
-	var Method = function (options) {
-	    this.name = options.name;
-	    this.call = options.call;
-	    this.params = options.params || 0;
-	    this.inputFormatter = options.inputFormatter;
-	    this.outputFormatter = options.outputFormatter;
-	    this.requestManager = null;
-	};
-
-	Method.prototype.setRequestManager = function (rm) {
-	    this.requestManager = rm;
-	};
-
-	/**
-	 * Should be used to determine name of the jsonrpc method based on arguments
-	 *
-	 * @method getCall
-	 * @param {Array} arguments
-	 * @return {String} name of jsonrpc method
-	 */
-	Method.prototype.getCall = function (args) {
-	    return utils.isFunction(this.call) ? this.call(args) : this.call;
-	};
-
-	/**
-	 * Should be used to extract callback from array of arguments. Modifies input param
-	 *
-	 * @method extractCallback
-	 * @param {Array} arguments
-	 * @return {Function|Null} callback, if exists
-	 */
-	Method.prototype.extractCallback = function (args) {
-	    if (utils.isFunction(args[args.length - 1])) {
-	        return args.pop(); // modify the args array!
-	    }
-	};
-
-	/**
-	 * Should be called to check if the number of arguments is correct
-	 * 
-	 * @method validateArgs
-	 * @param {Array} arguments
-	 * @throws {Error} if it is not
-	 */
-	Method.prototype.validateArgs = function (args) {
-	    if (args.length !== this.params) {
-	        throw errors.InvalidNumberOfParams();
-	    }
-	};
-
-	/**
-	 * Should be called to format input args of method
-	 * 
-	 * @method formatInput
-	 * @param {Array}
-	 * @return {Array}
-	 */
-	Method.prototype.formatInput = function (args) {
-	    if (!this.inputFormatter) {
-	        return args;
-	    }
-
-	    return this.inputFormatter.map(function (formatter, index) {
-	        return formatter ? formatter(args[index]) : args[index];
-	    });
-	};
-
-	/**
-	 * Should be called to format output(result) of method
-	 *
-	 * @method formatOutput
-	 * @param {Object}
-	 * @return {Object}
-	 */
-	Method.prototype.formatOutput = function (result) {
-	    return this.outputFormatter && result ? this.outputFormatter(result) : result;
-	};
-
-	/**
-	 * Should create payload from given input args
-	 *
-	 * @method toPayload
-	 * @param {Array} args
-	 * @return {Object}
-	 */
-	Method.prototype.toPayload = function (args) {
-	    var call = this.getCall(args);
-	    var callback = this.extractCallback(args);
-	    var params = this.formatInput(args);
-	    this.validateArgs(params);
-
-	    return {
-	        method: call,
-	        params: params,
-	        callback: callback
-	    };
-	};
-
-	Method.prototype.attachToObject = function (obj) {
-	    var func = this.buildCall();
-	    func.call = this.call; // TODO!!! that's ugly. filter.js uses it
-	    var name = this.name.split('.');
-	    if (name.length > 1) {
-	        obj[name[0]] = obj[name[0]] || {};
-	        obj[name[0]][name[1]] = func;
-	    } else {
-	        obj[name[0]] = func; 
-	    }
-	};
-
-	Method.prototype.buildCall = function() {
-	    var method = this;
-	    var send = function () {
-	        var payload = method.toPayload(Array.prototype.slice.call(arguments));
-	        if (payload.callback) {
-	            return method.requestManager.sendAsync(payload, function (err, result) {
-	                payload.callback(err, method.formatOutput(result));
-	            });
-	        }
-	        return method.formatOutput(method.requestManager.send(payload));
-	    };
-	    send.request = this.request.bind(this);
-	    return send;
-	};
-
-	/**
-	 * Should be called to create pure JSONRPC request which can be used in batch request
-	 *
-	 * @method request
-	 * @param {...} params
-	 * @return {Object} jsonrpc request
-	 */
-	Method.prototype.request = function () {
-	    var payload = this.toPayload(Array.prototype.slice.call(arguments));
-	    payload.format = this.formatOutput.bind(this);
-	    return payload;
-	};
-
-	module.exports = Method;
-
-
-
-/***/ },
-/* 284 */
-/***/ function(module, exports) {
-
-	/*
-	    This file is part of web3.js.
-
-	    web3.js is free software: you can redistribute it and/or modify
-	    it under the terms of the GNU Lesser General Public License as published by
-	    the Free Software Foundation, either version 3 of the License, or
-	    (at your option) any later version.
-
-	    web3.js is distributed in the hope that it will be useful,
-	    but WITHOUT ANY WARRANTY; without even the implied warranty of
-	    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-	    GNU Lesser General Public License for more details.
-
-	    You should have received a copy of the GNU Lesser General Public License
-	    along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
-	*/
-	/** 
-	 * @file errors.js
-	 * @author Marek Kotewicz <marek@ethdev.com>
-	 * @date 2015
-	 */
-
-	module.exports = {
-	    InvalidNumberOfParams: function () {
-	        return new Error('Invalid number of input parameters');
-	    },
-	    InvalidConnection: function (host){
-	        return new Error('CONNECTION ERROR: Couldn\'t connect to node '+ host +'.');
-	    },
-	    InvalidProvider: function () {
-	        return new Error('Provider not set or invalid');
-	    },
-	    InvalidResponse: function (result){
-	        var message = !!result && !!result.error && !!result.error.message ? result.error.message : 'Invalid JSON RPC response: ' + JSON.stringify(result);
-	        return new Error(message);
-	    }
-	};
-
-
-
-/***/ },
-/* 285 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 286 */,
-/* 287 */,
-/* 288 */,
-/* 289 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _classnames = __webpack_require__(290);
-
-	var _classnames2 = _interopRequireDefault(_classnames);
-
-	var _globals = __webpack_require__(223);
-
-	var _MarketSol = __webpack_require__(224);
-
-	var _MarketSol2 = _interopRequireDefault(_MarketSol);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	__webpack_require__(291);
-
-	/* A single Dapp with state taken from the contract */
-	var DApp = _react2.default.createClass({
-	  displayName: 'DApp',
-
-	  getInitialState: function getInitialState() {
-	    return {
-	      ident: 'loading...',
-	      master: '',
-	      fee: 0,
-	      on: false
-	    };
-	  },
-	  componentWillMount: function componentWillMount() {
-	    var self = this;
-	    _MarketSol2.default.deployed().dappList.call(this.props.index).then(function (name) {
-	      _MarketSol2.default.deployed().dapps.call(name).then(function (info) {
-	        self.setState({
-	          ident: web3.toAscii(info[0]),
-	          master: web3.toAscii(info[1]),
-	          fee: info[2].toNumber(),
-	          coinbase: info[3],
-	          state: web3.toAscii(info[4])
-	        });
-	      });
-	    });
-	  },
-	  setActive: function setActive(element) {
-	    $('.dapp').removeClass('active');
-	    $('#actions').addClass('active');
-	    $(element.target).parent().addClass('active');
-	  },
-	  render: function render() {
-	    var classes = (0, _classnames2.default)({
-	      dapp: true,
-	      clearLeft: this.props.clearLeft
-	    });
-
-	    return _react2.default.createElement(
-	      'label',
-	      { key: this.state.ident, className: classes },
-	      _react2.default.createElement('input', { type: 'radio', name: 'dapp', value: this.state.ident, onClick: this.setActive, readOnly: true }),
-	      _react2.default.createElement(
-	        'h3',
-	        { className: 'ident' },
-	        this.state.ident
-	      ),
-	      _react2.default.createElement(
-	        'h3',
-	        { className: 'master' },
-	        this.state.master
-	      ),
-	      _react2.default.createElement(
-	        'h3',
-	        { className: 'fee' },
-	        this.state.fee
-	      ),
-	      _react2.default.createElement(
-	        'h3',
-	        { className: 'on' },
-	        this.state.state
-	      )
-	    );
-	  }
-	});
-
-	var DAppActions = _react2.default.createClass({
-	  displayName: 'DAppActions',
-
-	  startup: function startup() {
-	    var name = $('input[name=dapp]:checked').val();
-	    _MarketSol2.default.deployed().startDApp.estimateGas(name).then(function (gas) {
-	      _MarketSol2.default.deployed().startDApp.sendTransaction(name, {
-	        gas: gas * 2
-	      });
-	    });
-	  },
-	  // the equivalent of force quitting the dapp
-	  fqu: function fqu() {
-	    var name = $('input[name=dapp]:checked').val();
-	    _MarketSol2.default.deployed().finishDApp.estimateGas(name).then(function (gas) {
-	      _MarketSol2.default.deployed().finishDApp.sendTransaction(name, {
-	        gas: gas * 2
-	      });
-	    });
-	  },
-	  render: function render() {
-	    return _react2.default.createElement(
-	      'div',
-	      { id: 'actions' },
-	      _react2.default.createElement(
-	        'h3',
-	        null,
-	        'Details and Actions'
-	      ),
-	      _react2.default.createElement(
-	        'div',
-	        null,
-	        _react2.default.createElement(
-	          'button',
-	          { onClick: this.startup },
-	          'Start'
-	        ),
-	        _react2.default.createElement(
-	          'button',
-	          { onClick: this.fqu },
-	          'Cancel/Force Quit'
-	        )
-	      )
-	    );
-	  }
-	});
-
-	/* Grid of all DApps in the market contract */
-	var ViewDApps = _react2.default.createClass({
-	  displayName: 'ViewDApps',
-
-	  getInitialState: function getInitialState() {
-	    return {
-	      numDApps: 0
-	    };
-	  },
-	  render: function render() {
-	    var div = _react2.default.createElement('div', { id: 'display' }, []);
-	    for (var i = 0; i < this.state.numDApps; i++) {
-	      if (i % 3 == 0) {
-	        div.props.children.push(_react2.default.createElement(DApp, { clearLeft: true, index: i }));
-	      } else {
-	        div.props.children.push(_react2.default.createElement(DApp, { clearLeft: false, index: i }));
-	      }
-	    }
-	    return _react2.default.createElement(
-	      'div',
-	      null,
-	      _react2.default.createElement(_globals.Navbar, null),
-	      _react2.default.createElement(
-	        'main',
-	        { id: 'viewDApps' },
-	        div,
-	        _react2.default.createElement(DAppActions, null)
-	      )
-	    );
-	  },
-	  componentDidMount: function componentDidMount() {
-	    var _this = this;
-
-	    _MarketSol2.default.deployed().numDApps.call().then(function (numDApps) {
-	      _this.setState({ numDApps: numDApps });
-	    });
-	  }
-	});
-
-	exports.default = ViewDApps;
-
-/***/ },
-/* 290 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
-	  Copyright (c) 2016 Jed Watson.
-	  Licensed under the MIT License (MIT), see
-	  http://jedwatson.github.io/classnames
-	*/
-	/* global define */
-
-	(function () {
-		'use strict';
-
-		var hasOwn = {}.hasOwnProperty;
-
-		function classNames () {
-			var classes = [];
-
-			for (var i = 0; i < arguments.length; i++) {
-				var arg = arguments[i];
-				if (!arg) continue;
-
-				var argType = typeof arg;
-
-				if (argType === 'string' || argType === 'number') {
-					classes.push(arg);
-				} else if (Array.isArray(arg)) {
-					classes.push(classNames.apply(null, arg));
-				} else if (argType === 'object') {
-					for (var key in arg) {
-						if (hasOwn.call(arg, key) && arg[key]) {
-							classes.push(key);
-						}
-					}
-				}
-			}
-
-			return classes.join(' ');
-		}
-
-		if (typeof module !== 'undefined' && module.exports) {
-			module.exports = classNames;
-		} else if (true) {
-			// register as 'classnames', consistent with npm package name
-			!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
-				return classNames;
-			}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-		} else {
-			window.classNames = classNames;
-		}
-	}());
-
-
-/***/ },
-/* 291 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 292 */,
-/* 293 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _globals = __webpack_require__(223);
-
-	var _MarketSol = __webpack_require__(224);
-
-	var _MarketSol2 = _interopRequireDefault(_MarketSol);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	__webpack_require__(294);
-
-	var EditDApps = _react2.default.createClass({
-	  displayName: 'EditDApps',
-
-	  createNewDApp: function createNewDApp(argument) {
-	    var ident = $("#ident").val();
-	    var fee = $("#fee").val();
-	    var hash = $("#hash").val();
-	    var classfile = $("#classfile").val();
-	    _MarketSol2.default.deployed().createDApp.estimateGas(ident, parseInt(fee), hash, classfile).then(function (gas) {
-	      _MarketSol2.default.deployed().createDApp.sendTransaction(ident, parseInt(fee), hash, classfile, {
-	        gas: gas * 4
-	      });
-	    });
-	  },
-	  render: function render() {
-	    return _react2.default.createElement(
-	      'div',
-	      null,
-	      _react2.default.createElement(_globals.Navbar, null),
-	      _react2.default.createElement(
-	        'main',
-	        { id: 'editDApps' },
-	        _react2.default.createElement(
-	          'label',
-	          null,
-	          _react2.default.createElement(
-	            'span',
-	            null,
-	            'Identifier'
-	          ),
-	          _react2.default.createElement('input', { id: 'ident' })
-	        ),
-	        _react2.default.createElement(
-	          'label',
-	          null,
-	          _react2.default.createElement(
-	            'span',
-	            null,
-	            'Price'
-	          ),
-	          _react2.default.createElement('input', { id: 'fee' })
-	        ),
-	        _react2.default.createElement(
-	          'label',
-	          null,
-	          _react2.default.createElement(
-	            'span',
-	            null,
-	            'IPFS Hash'
-	          ),
-	          _react2.default.createElement('input', { id: 'hash' })
-	        ),
-	        _react2.default.createElement(
-	          'label',
-	          null,
-	          _react2.default.createElement(
-	            'span',
-	            null,
-	            'Main Class'
-	          ),
-	          _react2.default.createElement('input', { id: 'classfile' })
-	        ),
-	        _react2.default.createElement(
-	          'button',
-	          { id: 'create', onClick: this.createNewDApp },
-	          'Create'
-	        )
-	      )
-	    );
-	  }
-	});
-
-	exports.default = EditDApps;
-
-/***/ },
-/* 294 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 295 */,
-/* 296 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _globals = __webpack_require__(223);
-
-	var _MarketSol = __webpack_require__(224);
-
-	var _MarketSol2 = _interopRequireDefault(_MarketSol);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	__webpack_require__(297);
-
-	var EditNodes = _react2.default.createClass({
-	  displayName: 'EditNodes',
-
-	  createNewNode: function createNewNode(argument) {
-	    var name = $('#name').val();
-	    var state = $('#state').val();
-	    var ipaddress = $('#ipaddress').val();
-	    _MarketSol2.default.deployed().createNode.estimateGas(name, state, ipaddress).then(function (gas) {
-	      _MarketSol2.default.deployed().createNode.sendTransaction(name, state, ipaddress, {
-	        gas: gas * 2
-	      });
-	    });
-	  },
-	  render: function render() {
-	    var name = _react2.default.createElement(
-	      'label',
-	      null,
-	      _react2.default.createElement(
-	        'span',
-	        null,
-	        'Name'
-	      ),
-	      _react2.default.createElement('input', { id: 'name' })
-	    );
-	    var state = _react2.default.createElement(
-	      'label',
-	      null,
-	      _react2.default.createElement(
-	        'span',
-	        null,
-	        'State'
-	      ),
-	      _react2.default.createElement('input', { id: 'state' })
-	    );
-	    var ipaddress = _react2.default.createElement(
-	      'label',
-	      null,
-	      _react2.default.createElement(
-	        'span',
-	        null,
-	        'IP Address'
-	      ),
-	      _react2.default.createElement('input', { id: 'ipaddress' })
-	    );
-
-	    var create = _react2.default.createElement(
-	      'button',
-	      { id: 'create', onClick: this.createNewNode },
-	      'Create'
-	    );
-
-	    return _react2.default.createElement(
-	      'div',
-	      null,
-	      _react2.default.createElement(_globals.Navbar, null),
-	      _react2.default.createElement(
-	        'div',
-	        { id: 'editNodes' },
-	        name,
-	        state,
-	        ipaddress,
-	        create
-	      )
-	    );
-	  }
-	});
-
-	exports.default = EditNodes;
-
-/***/ },
-/* 297 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 298 */,
-/* 299 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _classnames = __webpack_require__(290);
-
-	var _classnames2 = _interopRequireDefault(_classnames);
-
-	var _globals = __webpack_require__(223);
-
-	var _MarketSol = __webpack_require__(224);
-
-	var _MarketSol2 = _interopRequireDefault(_MarketSol);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	__webpack_require__(300);
-
-	/* A single Dapp with state taken from the contract */
-	var Node = _react2.default.createClass({
-	  displayName: 'Node',
-
-	  getInitialState: function getInitialState() {
-	    return {
-	      name: 'loading...',
-	      state: '',
-	      ipaddress: '',
-	      coinbase: '',
-	      dappIdent: ''
-	    };
-	  },
-	  componentWillMount: function componentWillMount() {
-	    var _this = this;
-
-	    _MarketSol2.default.deployed().nodeList(this.props.index).then(function (name) {
-	      return _MarketSol2.default.deployed().nodes.call(name);
-	    }).then(function (info) {
-	      _this.setState({
-	        ident: web3.toAscii(info[0]),
-	        state: web3.toAscii(info[1]),
-	        ipaddress: web3.toAscii(info[2]),
-	        dappIdent: web3.toAscii(info[3]),
-	        coinbase: info[4]
-	      });
-	    });
-	  },
-	  setActive: function setActive(element) {
-	    $('.node').removeClass('active');
-	    $('#actions').addClass('active');
-	    $(element.target).parent().addClass('active');
-	  },
-	  render: function render() {
-	    var classes = (0, _classnames2.default)({
-	      node: true,
-	      clearLeft: this.props.clearLeft
-	    });
-
-	    return _react2.default.createElement(
-	      'label',
-	      { key: this.state.ident, className: classes },
-	      _react2.default.createElement('input', { type: 'radio', name: 'node', value: this.state.ident, onClick: this.setActive, readOnly: true }),
-	      _react2.default.createElement(
-	        'h3',
-	        { className: 'name' },
-	        this.state.ident
-	      ),
-	      _react2.default.createElement(
-	        'h3',
-	        { className: 'state' },
-	        this.state.state
-	      ),
-	      _react2.default.createElement(
-	        'h3',
-	        { className: 'ipaddress' },
-	        this.state.ipaddress
-	      ),
-	      _react2.default.createElement(
-	        'h3',
-	        { className: 'appIdent' },
-	        this.state.dappIdent
-	      ),
-	      _react2.default.createElement(
-	        'h3',
-	        { className: 'coinbase' },
-	        this.state.coinbase
-	      )
-	    );
-	  }
-	});
-
-	var NodeActions = _react2.default.createClass({
-	  displayName: 'NodeActions',
-
-	  getInitialState: function getInitialState() {
-	    return {
-	      value: 0
-	    };
-	  },
-	  setValue: function setValue(event) {
-	    this.setState({
-	      value: event.target.value
-	    });
-	  },
-	  payup: function payup() {
-	    var _this2 = this;
-
-	    var name = $('input[name=node]:checked').val();
-	    _MarketSol2.default.deployed().nodes.call(name).then(function (info) {
-	      web3.eth.sendTransaction({
-	        to: info[4],
-	        value: _this2.state.value
-	      });
-	    });
-	  },
-	  render: function render() {
-	    return _react2.default.createElement(
-	      'div',
-	      { id: 'actions' },
-	      _react2.default.createElement(
-	        'h3',
-	        null,
-	        'Details and Actions'
-	      ),
-	      _react2.default.createElement(
-	        'div',
-	        null,
-	        _react2.default.createElement(
-	          'label',
-	          { htmlFor: 'value' },
-	          _react2.default.createElement(
-	            'span',
-	            null,
-	            'Amount'
-	          ),
-	          _react2.default.createElement('input', { id: 'value', type: 'number', value: this.state.value, onChange: this.setValue })
-	        ),
-	        _react2.default.createElement(
-	          'button',
-	          { id: 'payup', onClick: this.payup },
-	          'Donate to Node'
-	        )
-	      )
-	    );
-	  }
-	});
-
-	/* Grid of all DApps in the market contract */
-	var ViewNodes = _react2.default.createClass({
-	  displayName: 'ViewNodes',
-
-	  getInitialState: function getInitialState() {
-	    return {
-	      numNodes: 0
-	    };
-	  },
-	  render: function render() {
-	    var div = _react2.default.createElement('div', { id: 'display' }, []);
-	    for (var i = 0; i < this.state.numNodes; i++) {
-	      if (i % 3 == 0) {
-	        div.props.children.push(_react2.default.createElement(Node, { clearLeft: true, index: i }));
-	      } else {
-	        div.props.children.push(_react2.default.createElement(Node, { clearLeft: false, index: i }));
-	      }
-	    }
-
-	    return _react2.default.createElement(
-	      'div',
-	      null,
-	      _react2.default.createElement(_globals.Navbar, null),
-	      _react2.default.createElement(
-	        'main',
-	        { id: 'viewNodes' },
-	        div,
-	        _react2.default.createElement(NodeActions, null)
-	      )
-	    );
-	  },
-	  componentDidMount: function componentDidMount() {
-	    var _this3 = this;
-
-	    _MarketSol2.default.deployed().numNodes.call().then(function (numNodes) {
-	      _this3.setState({ numNodes: numNodes });
-	    });
-	  }
-	});
-
-	exports.default = ViewNodes;
-
-/***/ },
-/* 300 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 301 */,
-/* 302 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var Web3 = __webpack_require__(303);
-
-	// dont override global variable
-	if (typeof window !== 'undefined' && typeof window.Web3 === 'undefined') {
-	    window.Web3 = Web3;
-	}
-
-	module.exports = Web3;
-
-
-/***/ },
-/* 303 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/*
-	    This file is part of web3.js.
-
-	    web3.js is free software: you can redistribute it and/or modify
-	    it under the terms of the GNU Lesser General Public License as published by
-	    the Free Software Foundation, either version 3 of the License, or
-	    (at your option) any later version.
-
-	    web3.js is distributed in the hope that it will be useful,
-	    but WITHOUT ANY WARRANTY; without even the implied warranty of
-	    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-	    GNU Lesser General Public License for more details.
-
-	    You should have received a copy of the GNU Lesser General Public License
-	    along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
-	*/
-	/**
-	 * @file web3.js
-	 * @authors:
-	 *   Jeffrey Wilcke <jeff@ethdev.com>
-	 *   Marek Kotewicz <marek@ethdev.com>
-	 *   Marian Oancea <marian@ethdev.com>
-	 *   Fabian Vogelsteller <fabian@ethdev.com>
-	 *   Gav Wood <g@ethdev.com>
-	 * @date 2014
-	 */
-
-	var RequestManager = __webpack_require__(304);
-	var Iban = __webpack_require__(280);
-	var Eth = __webpack_require__(306);
-	var DB = __webpack_require__(317);
-	var Shh = __webpack_require__(318);
-	var Net = __webpack_require__(319);
-	var Personal = __webpack_require__(320);
-	var Settings = __webpack_require__(321);
-	var version = __webpack_require__(322);
-	var utils = __webpack_require__(226);
-	var sha3 = __webpack_require__(228);
-	var extend = __webpack_require__(323);
-	var Batch = __webpack_require__(324);
-	var Property = __webpack_require__(307);
-	var HttpProvider = __webpack_require__(325);
-	var IpcProvider = __webpack_require__(327);
-	var BigNumber = __webpack_require__(227);
-
-
-
-	function Web3 (provider) {
-	    this._requestManager = new RequestManager(provider);
-	    this.currentProvider = provider;
-	    this.eth = new Eth(this);
-	    this.db = new DB(this);
-	    this.shh = new Shh(this);
-	    this.net = new Net(this);
-	    this.personal = new Personal(this);
-	    this.settings = new Settings();
-	    this.version = {
-	        api: version.version
-	    };
-	    this.providers = {
-	        HttpProvider: HttpProvider,
-	        IpcProvider: IpcProvider
-	    };
-	    this._extend = extend(this);
-	    this._extend({
-	        properties: properties()
-	    });
-	}
-
-	// expose providers on the class
-	Web3.providers = {
-	    HttpProvider: HttpProvider,
-	    IpcProvider: IpcProvider
-	};
-
-	Web3.prototype.setProvider = function (provider) {
-	    this._requestManager.setProvider(provider);
-	    this.currentProvider = provider;
-	};
-
-	Web3.prototype.reset = function (keepIsSyncing) {
-	    this._requestManager.reset(keepIsSyncing);
-	    this.settings = new Settings();
-	};
-
-	Web3.prototype.BigNumber = BigNumber;
-	Web3.prototype.toHex = utils.toHex;
-	Web3.prototype.toAscii = utils.toAscii;
-	Web3.prototype.toUtf8 = utils.toUtf8;
-	Web3.prototype.fromAscii = utils.fromAscii;
-	Web3.prototype.fromUtf8 = utils.fromUtf8;
-	Web3.prototype.toDecimal = utils.toDecimal;
-	Web3.prototype.fromDecimal = utils.fromDecimal;
-	Web3.prototype.toBigNumber = utils.toBigNumber;
-	Web3.prototype.toWei = utils.toWei;
-	Web3.prototype.fromWei = utils.fromWei;
-	Web3.prototype.isAddress = utils.isAddress;
-	Web3.prototype.isChecksumAddress = utils.isChecksumAddress;
-	Web3.prototype.toChecksumAddress = utils.toChecksumAddress;
-	Web3.prototype.isIBAN = utils.isIBAN;
-
-
-	Web3.prototype.sha3 = function(string, options) {
-	    return '0x' + sha3(string, options);
-	};
-
-	/**
-	 * Transforms direct icap to address
-	 */
-	Web3.prototype.fromICAP = function (icap) {
-	    var iban = new Iban(icap);
-	    return iban.address();
-	};
-
-	var properties = function () {
-	    return [
-	        new Property({
-	            name: 'version.node',
-	            getter: 'web3_clientVersion'
-	        }),
-	        new Property({
-	            name: 'version.network',
-	            getter: 'net_version',
-	            inputFormatter: utils.toDecimal
-	        }),
-	        new Property({
-	            name: 'version.ethereum',
-	            getter: 'eth_protocolVersion',
-	            inputFormatter: utils.toDecimal
-	        }),
-	        new Property({
-	            name: 'version.whisper',
-	            getter: 'shh_version',
-	            inputFormatter: utils.toDecimal
-	        })
-	    ];
-	};
-
-	Web3.prototype.isConnected = function(){
-	    return (this.currentProvider && this.currentProvider.isConnected());
-	};
-
-	Web3.prototype.createBatch = function () {
-	    return new Batch(this);
-	};
-
-	module.exports = Web3;
-
-
-
-/***/ },
-/* 304 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/*
-	    This file is part of web3.js.
-
-	    web3.js is free software: you can redistribute it and/or modify
-	    it under the terms of the GNU Lesser General Public License as published by
-	    the Free Software Foundation, either version 3 of the License, or
-	    (at your option) any later version.
-
-	    web3.js is distributed in the hope that it will be useful,
-	    but WITHOUT ANY WARRANTY; without even the implied warranty of
-	    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-	    GNU Lesser General Public License for more details.
-
-	    You should have received a copy of the GNU Lesser General Public License
-	    along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
-	*/
-	/** 
-	 * @file requestmanager.js
-	 * @author Jeffrey Wilcke <jeff@ethdev.com>
-	 * @author Marek Kotewicz <marek@ethdev.com>
-	 * @author Marian Oancea <marian@ethdev.com>
-	 * @author Fabian Vogelsteller <fabian@ethdev.com>
-	 * @author Gav Wood <g@ethdev.com>
-	 * @date 2014
-	 */
-
-	var Jsonrpc = __webpack_require__(305);
-	var utils = __webpack_require__(226);
-	var c = __webpack_require__(267);
-	var errors = __webpack_require__(284);
-
-	/**
-	 * It's responsible for passing messages to providers
-	 * It's also responsible for polling the ethereum node for incoming messages
-	 * Default poll timeout is 1 second
-	 * Singleton
-	 */
-	var RequestManager = function (provider) {
-	    this.provider = provider;
-	    this.polls = {};
-	    this.timeout = null;
-	};
-
-	/**
-	 * Should be used to synchronously send request
-	 *
-	 * @method send
-	 * @param {Object} data
-	 * @return {Object}
-	 */
-	RequestManager.prototype.send = function (data) {
-	    if (!this.provider) {
-	        console.error(errors.InvalidProvider());
-	        return null;
-	    }
-
-	    var payload = Jsonrpc.toPayload(data.method, data.params);
-	    var result = this.provider.send(payload);
-
-	    if (!Jsonrpc.isValidResponse(result)) {
-	        throw errors.InvalidResponse(result);
-	    }
-
-	    return result.result;
-	};
-
-	/**
-	 * Should be used to asynchronously send request
-	 *
-	 * @method sendAsync
-	 * @param {Object} data
-	 * @param {Function} callback
-	 */
-	RequestManager.prototype.sendAsync = function (data, callback) {
-	    if (!this.provider) {
-	        return callback(errors.InvalidProvider());
-	    }
-
-	    var payload = Jsonrpc.toPayload(data.method, data.params);
-	    this.provider.sendAsync(payload, function (err, result) {
-	        if (err) {
-	            return callback(err);
-	        }
-	        
-	        if (!Jsonrpc.isValidResponse(result)) {
-	            return callback(errors.InvalidResponse(result));
-	        }
-
-	        callback(null, result.result);
-	    });
-	};
-
-	/**
-	 * Should be called to asynchronously send batch request
-	 *
-	 * @method sendBatch
-	 * @param {Array} batch data
-	 * @param {Function} callback
-	 */
-	RequestManager.prototype.sendBatch = function (data, callback) {
-	    if (!this.provider) {
-	        return callback(errors.InvalidProvider());
-	    }
-
-	    var payload = Jsonrpc.toBatchPayload(data);
-
-	    this.provider.sendAsync(payload, function (err, results) {
-	        if (err) {
-	            return callback(err);
-	        }
-
-	        if (!utils.isArray(results)) {
-	            return callback(errors.InvalidResponse(results));
-	        }
-
-	        callback(err, results);
-	    }); 
-	};
-
-	/**
-	 * Should be used to set provider of request manager
-	 *
-	 * @method setProvider
-	 * @param {Object}
-	 */
-	RequestManager.prototype.setProvider = function (p) {
-	    this.provider = p;
-	};
-
-	/**
-	 * Should be used to start polling
-	 *
-	 * @method startPolling
-	 * @param {Object} data
-	 * @param {Number} pollId
-	 * @param {Function} callback
-	 * @param {Function} uninstall
-	 *
-	 * @todo cleanup number of params
-	 */
-	RequestManager.prototype.startPolling = function (data, pollId, callback, uninstall) {
-	    this.polls[pollId] = {data: data, id: pollId, callback: callback, uninstall: uninstall};
-
-
-	    // start polling
-	    if (!this.timeout) {
-	        this.poll();
-	    }
-	};
-
-	/**
-	 * Should be used to stop polling for filter with given id
-	 *
-	 * @method stopPolling
-	 * @param {Number} pollId
-	 */
-	RequestManager.prototype.stopPolling = function (pollId) {
-	    delete this.polls[pollId];
-
-	    // stop polling
-	    if(Object.keys(this.polls).length === 0 && this.timeout) {
-	        clearTimeout(this.timeout);
-	        this.timeout = null;
-	    }
-	};
-
-	/**
-	 * Should be called to reset the polling mechanism of the request manager
-	 *
-	 * @method reset
-	 */
-	RequestManager.prototype.reset = function (keepIsSyncing) {
-	    /*jshint maxcomplexity:5 */
-
-	    for (var key in this.polls) {
-	        // remove all polls, except sync polls,
-	        // they need to be removed manually by calling syncing.stopWatching()
-	        if(!keepIsSyncing || key.indexOf('syncPoll_') === -1) {
-	            this.polls[key].uninstall();
-	            delete this.polls[key];
-	        }
-	    }
-
-	    // stop polling
-	    if(Object.keys(this.polls).length === 0 && this.timeout) {
-	        clearTimeout(this.timeout);
-	        this.timeout = null;
-	    }
-	};
-
-	/**
-	 * Should be called to poll for changes on filter with given id
-	 *
-	 * @method poll
-	 */
-	RequestManager.prototype.poll = function () {
-	    /*jshint maxcomplexity: 6 */
-	    this.timeout = setTimeout(this.poll.bind(this), c.ETH_POLLING_TIMEOUT);
-
-	    if (Object.keys(this.polls).length === 0) {
-	        return;
-	    }
-
-	    if (!this.provider) {
-	        console.error(errors.InvalidProvider());
-	        return;
-	    }
-
-	    var pollsData = [];
-	    var pollsIds = [];
-	    for (var key in this.polls) {
-	        pollsData.push(this.polls[key].data);
-	        pollsIds.push(key);
-	    }
-
-	    if (pollsData.length === 0) {
-	        return;
-	    }
-
-	    var payload = Jsonrpc.toBatchPayload(pollsData);
-	    
-	    // map the request id to they poll id
-	    var pollsIdMap = {};
-	    payload.forEach(function(load, index){
-	        pollsIdMap[load.id] = pollsIds[index];
-	    });
-
-
-	    var self = this;
-	    this.provider.sendAsync(payload, function (error, results) {
-
-
-	        // TODO: console log?
-	        if (error) {
-	            return;
-	        }
-
-	        if (!utils.isArray(results)) {
-	            throw errors.InvalidResponse(results);
-	        }
-	        results.map(function (result) {
-	            var id = pollsIdMap[result.id];
-
-	            // make sure the filter is still installed after arrival of the request
-	            if (self.polls[id]) {
-	                result.callback = self.polls[id].callback;
-	                return result;
-	            } else
-	                return false;
-	        }).filter(function (result) {
-	            return !!result; 
-	        }).filter(function (result) {
-	            var valid = Jsonrpc.isValidResponse(result);
-	            if (!valid) {
-	                result.callback(errors.InvalidResponse(result));
-	            }
-	            return valid;
-	        }).forEach(function (result) {
-	            result.callback(null, result.result);
-	        });
-	    });
-	};
-
-	module.exports = RequestManager;
-
-
-
-/***/ },
-/* 305 */
-/***/ function(module, exports) {
-
-	/*
-	    This file is part of web3.js.
-
-	    web3.js is free software: you can redistribute it and/or modify
-	    it under the terms of the GNU Lesser General Public License as published by
-	    the Free Software Foundation, either version 3 of the License, or
-	    (at your option) any later version.
-
-	    web3.js is distributed in the hope that it will be useful,
-	    but WITHOUT ANY WARRANTY; without even the implied warranty of
-	    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-	    GNU Lesser General Public License for more details.
-
-	    You should have received a copy of the GNU Lesser General Public License
-	    along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
-	*/
-	/** @file jsonrpc.js
-	 * @authors:
-	 *   Marek Kotewicz <marek@ethdev.com>
-	 *   Aaron Kumavis <aaron@kumavis.me>
-	 * @date 2015
-	 */
-
-	// Initialize Jsonrpc as a simple object with utility functions.
-	var Jsonrpc = {
-	    messageId: 0
-	};
-
-	/**
-	 * Should be called to valid json create payload object
-	 *
-	 * @method toPayload
-	 * @param {Function} method of jsonrpc call, required
-	 * @param {Array} params, an array of method params, optional
-	 * @returns {Object} valid jsonrpc payload object
-	 */
-	Jsonrpc.toPayload = function (method, params) {
-	    if (!method)
-	        console.error('jsonrpc method should be specified!');
-
-	    // advance message ID
-	    Jsonrpc.messageId++;
-
-	    return {
-	        jsonrpc: '2.0',
-	        id: Jsonrpc.messageId,
-	        method: method,
-	        params: params || []
-	    };
-	};
-
-	/**
-	 * Should be called to check if jsonrpc response is valid
-	 *
-	 * @method isValidResponse
-	 * @param {Object}
-	 * @returns {Boolean} true if response is valid, otherwise false
-	 */
-	Jsonrpc.isValidResponse = function (response) {
-	    return Array.isArray(response) ? response.every(validateSingleMessage) : validateSingleMessage(response);
-
-	    function validateSingleMessage(message){
-	      return !!message &&
-	        !message.error &&
-	        message.jsonrpc === '2.0' &&
-	        typeof message.id === 'number' &&
-	        message.result !== undefined; // only undefined is not valid json object
-	    }
-	};
-
-	/**
-	 * Should be called to create batch payload object
-	 *
-	 * @method toBatchPayload
-	 * @param {Array} messages, an array of objects with method (required) and params (optional) fields
-	 * @returns {Array} batch payload
-	 */
-	Jsonrpc.toBatchPayload = function (messages) {
-	    return messages.map(function (message) {
-	        return Jsonrpc.toPayload(message.method, message.params);
-	    });
-	};
-
-	module.exports = Jsonrpc;
-
-
-
-/***/ },
-/* 306 */
+/* 271 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -40536,18 +37543,18 @@
 
 	"use strict";
 
-	var formatters = __webpack_require__(279);
-	var utils = __webpack_require__(226);
-	var Method = __webpack_require__(283);
-	var Property = __webpack_require__(307);
-	var c = __webpack_require__(267);
-	var Contract = __webpack_require__(308);
-	var watches = __webpack_require__(282);
-	var Filter = __webpack_require__(281);
-	var IsSyncing = __webpack_require__(311);
-	var namereg = __webpack_require__(312);
-	var Iban = __webpack_require__(280);
-	var transfer = __webpack_require__(315);
+	var formatters = __webpack_require__(272);
+	var utils = __webpack_require__(229);
+	var Method = __webpack_require__(273);
+	var Property = __webpack_require__(274);
+	var c = __webpack_require__(268);
+	var Contract = __webpack_require__(275);
+	var watches = __webpack_require__(291);
+	var Filter = __webpack_require__(290);
+	var IsSyncing = __webpack_require__(294);
+	var namereg = __webpack_require__(295);
+	var Iban = __webpack_require__(270);
+	var transfer = __webpack_require__(298);
 
 	var blockCall = function (args) {
 	    return (utils.isString(args[0]) && args[0].indexOf('0x') === 0) ? "eth_getBlockByHash" : "eth_getBlockByNumber";
@@ -40861,7 +37868,487 @@
 
 
 /***/ },
-/* 307 */
+/* 272 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/*
+	    This file is part of web3.js.
+
+	    web3.js is free software: you can redistribute it and/or modify
+	    it under the terms of the GNU Lesser General Public License as published by
+	    the Free Software Foundation, either version 3 of the License, or
+	    (at your option) any later version.
+
+	    web3.js is distributed in the hope that it will be useful,
+	    but WITHOUT ANY WARRANTY; without even the implied warranty of
+	    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	    GNU Lesser General Public License for more details.
+
+	    You should have received a copy of the GNU Lesser General Public License
+	    along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
+	*/
+	/**
+	 * @file formatters.js
+	 * @author Marek Kotewicz <marek@ethdev.com>
+	 * @author Fabian Vogelsteller <fabian@ethdev.com>
+	 * @date 2015
+	 */
+
+	var utils = __webpack_require__(229);
+	var config = __webpack_require__(268);
+	var Iban = __webpack_require__(270);
+
+	/**
+	 * Should the format output to a big number
+	 *
+	 * @method outputBigNumberFormatter
+	 * @param {String|Number|BigNumber}
+	 * @returns {BigNumber} object
+	 */
+	var outputBigNumberFormatter = function (number) {
+	    return utils.toBigNumber(number);
+	};
+
+	var isPredefinedBlockNumber = function (blockNumber) {
+	    return blockNumber === 'latest' || blockNumber === 'pending' || blockNumber === 'earliest';
+	};
+
+	var inputDefaultBlockNumberFormatter = function (blockNumber) {
+	    if (blockNumber === undefined) {
+	        return config.defaultBlock;
+	    }
+	    return inputBlockNumberFormatter(blockNumber);
+	};
+
+	var inputBlockNumberFormatter = function (blockNumber) {
+	    if (blockNumber === undefined) {
+	        return undefined;
+	    } else if (isPredefinedBlockNumber(blockNumber)) {
+	        return blockNumber;
+	    }
+	    return utils.toHex(blockNumber);
+	};
+
+	/**
+	 * Formats the input of a transaction and converts all values to HEX
+	 *
+	 * @method inputCallFormatter
+	 * @param {Object} transaction options
+	 * @returns object
+	*/
+	var inputCallFormatter = function (options){
+
+	    options.from = options.from || config.defaultAccount;
+
+	    if (options.from) {
+	        options.from = inputAddressFormatter(options.from);
+	    }
+
+	    if (options.to) { // it might be contract creation
+	        options.to = inputAddressFormatter(options.to);
+	    }
+
+	    ['gasPrice', 'gas', 'value', 'nonce'].filter(function (key) {
+	        return options[key] !== undefined;
+	    }).forEach(function(key){
+	        options[key] = utils.fromDecimal(options[key]);
+	    });
+
+	    return options;
+	};
+
+	/**
+	 * Formats the input of a transaction and converts all values to HEX
+	 *
+	 * @method inputTransactionFormatter
+	 * @param {Object} transaction options
+	 * @returns object
+	*/
+	var inputTransactionFormatter = function (options){
+
+	    options.from = options.from || config.defaultAccount;
+	    options.from = inputAddressFormatter(options.from);
+
+	    if (options.to) { // it might be contract creation
+	        options.to = inputAddressFormatter(options.to);
+	    }
+
+	    ['gasPrice', 'gas', 'value', 'nonce'].filter(function (key) {
+	        return options[key] !== undefined;
+	    }).forEach(function(key){
+	        options[key] = utils.fromDecimal(options[key]);
+	    });
+
+	    return options;
+	};
+
+	/**
+	 * Formats the output of a transaction to its proper values
+	 *
+	 * @method outputTransactionFormatter
+	 * @param {Object} tx
+	 * @returns {Object}
+	*/
+	var outputTransactionFormatter = function (tx){
+	    if(tx.blockNumber !== null)
+	        tx.blockNumber = utils.toDecimal(tx.blockNumber);
+	    if(tx.transactionIndex !== null)
+	        tx.transactionIndex = utils.toDecimal(tx.transactionIndex);
+	    tx.nonce = utils.toDecimal(tx.nonce);
+	    tx.gas = utils.toDecimal(tx.gas);
+	    tx.gasPrice = utils.toBigNumber(tx.gasPrice);
+	    tx.value = utils.toBigNumber(tx.value);
+	    return tx;
+	};
+
+	/**
+	 * Formats the output of a transaction receipt to its proper values
+	 *
+	 * @method outputTransactionReceiptFormatter
+	 * @param {Object} receipt
+	 * @returns {Object}
+	*/
+	var outputTransactionReceiptFormatter = function (receipt){
+	    if(receipt.blockNumber !== null)
+	        receipt.blockNumber = utils.toDecimal(receipt.blockNumber);
+	    if(receipt.transactionIndex !== null)
+	        receipt.transactionIndex = utils.toDecimal(receipt.transactionIndex);
+	    receipt.cumulativeGasUsed = utils.toDecimal(receipt.cumulativeGasUsed);
+	    receipt.gasUsed = utils.toDecimal(receipt.gasUsed);
+
+	    if(utils.isArray(receipt.logs)) {
+	        receipt.logs = receipt.logs.map(function(log){
+	            return outputLogFormatter(log);
+	        });
+	    }
+
+	    return receipt;
+	};
+
+	/**
+	 * Formats the output of a block to its proper values
+	 *
+	 * @method outputBlockFormatter
+	 * @param {Object} block
+	 * @returns {Object}
+	*/
+	var outputBlockFormatter = function(block) {
+
+	    // transform to number
+	    block.gasLimit = utils.toDecimal(block.gasLimit);
+	    block.gasUsed = utils.toDecimal(block.gasUsed);
+	    block.size = utils.toDecimal(block.size);
+	    block.timestamp = utils.toDecimal(block.timestamp);
+	    if(block.number !== null)
+	        block.number = utils.toDecimal(block.number);
+
+	    block.difficulty = utils.toBigNumber(block.difficulty);
+	    block.totalDifficulty = utils.toBigNumber(block.totalDifficulty);
+
+	    if (utils.isArray(block.transactions)) {
+	        block.transactions.forEach(function(item){
+	            if(!utils.isString(item))
+	                return outputTransactionFormatter(item);
+	        });
+	    }
+
+	    return block;
+	};
+
+	/**
+	 * Formats the output of a log
+	 *
+	 * @method outputLogFormatter
+	 * @param {Object} log object
+	 * @returns {Object} log
+	*/
+	var outputLogFormatter = function(log) {
+	    if(log.blockNumber !== null)
+	        log.blockNumber = utils.toDecimal(log.blockNumber);
+	    if(log.transactionIndex !== null)
+	        log.transactionIndex = utils.toDecimal(log.transactionIndex);
+	    if(log.logIndex !== null)
+	        log.logIndex = utils.toDecimal(log.logIndex);
+
+	    return log;
+	};
+
+	/**
+	 * Formats the input of a whisper post and converts all values to HEX
+	 *
+	 * @method inputPostFormatter
+	 * @param {Object} transaction object
+	 * @returns {Object}
+	*/
+	var inputPostFormatter = function(post) {
+
+	    // post.payload = utils.toHex(post.payload);
+	    post.ttl = utils.fromDecimal(post.ttl);
+	    post.workToProve = utils.fromDecimal(post.workToProve);
+	    post.priority = utils.fromDecimal(post.priority);
+
+	    // fallback
+	    if (!utils.isArray(post.topics)) {
+	        post.topics = post.topics ? [post.topics] : [];
+	    }
+
+	    // format the following options
+	    post.topics = post.topics.map(function(topic){
+	        // convert only if not hex
+	        return (topic.indexOf('0x') === 0) ? topic : utils.fromUtf8(topic);
+	    });
+
+	    return post;
+	};
+
+	/**
+	 * Formats the output of a received post message
+	 *
+	 * @method outputPostFormatter
+	 * @param {Object}
+	 * @returns {Object}
+	 */
+	var outputPostFormatter = function(post){
+
+	    post.expiry = utils.toDecimal(post.expiry);
+	    post.sent = utils.toDecimal(post.sent);
+	    post.ttl = utils.toDecimal(post.ttl);
+	    post.workProved = utils.toDecimal(post.workProved);
+	    // post.payloadRaw = post.payload;
+	    // post.payload = utils.toAscii(post.payload);
+
+	    // if (utils.isJson(post.payload)) {
+	    //     post.payload = JSON.parse(post.payload);
+	    // }
+
+	    // format the following options
+	    if (!post.topics) {
+	        post.topics = [];
+	    }
+	    post.topics = post.topics.map(function(topic){
+	        return utils.toAscii(topic);
+	    });
+
+	    return post;
+	};
+
+	var inputAddressFormatter = function (address) {
+	    var iban = new Iban(address);
+	    if (iban.isValid() && iban.isDirect()) {
+	        return '0x' + iban.address();
+	    } else if (utils.isStrictAddress(address)) {
+	        return address;
+	    } else if (utils.isAddress(address)) {
+	        return '0x' + address;
+	    }
+	    throw new Error('invalid address');
+	};
+
+
+	var outputSyncingFormatter = function(result) {
+
+	    result.startingBlock = utils.toDecimal(result.startingBlock);
+	    result.currentBlock = utils.toDecimal(result.currentBlock);
+	    result.highestBlock = utils.toDecimal(result.highestBlock);
+	    if (result.knownStates) {
+	        result.knownStates = utils.toDecimal(result.knownStates);
+	        result.pulledStates = utils.toDecimal(result.pulledStates);
+	    }
+
+	    return result;
+	};
+
+	module.exports = {
+	    inputDefaultBlockNumberFormatter: inputDefaultBlockNumberFormatter,
+	    inputBlockNumberFormatter: inputBlockNumberFormatter,
+	    inputCallFormatter: inputCallFormatter,
+	    inputTransactionFormatter: inputTransactionFormatter,
+	    inputAddressFormatter: inputAddressFormatter,
+	    inputPostFormatter: inputPostFormatter,
+	    outputBigNumberFormatter: outputBigNumberFormatter,
+	    outputTransactionFormatter: outputTransactionFormatter,
+	    outputTransactionReceiptFormatter: outputTransactionReceiptFormatter,
+	    outputBlockFormatter: outputBlockFormatter,
+	    outputLogFormatter: outputLogFormatter,
+	    outputPostFormatter: outputPostFormatter,
+	    outputSyncingFormatter: outputSyncingFormatter
+	};
+
+
+
+/***/ },
+/* 273 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/*
+	    This file is part of web3.js.
+
+	    web3.js is free software: you can redistribute it and/or modify
+	    it under the terms of the GNU Lesser General Public License as published by
+	    the Free Software Foundation, either version 3 of the License, or
+	    (at your option) any later version.
+
+	    web3.js is distributed in the hope that it will be useful,
+	    but WITHOUT ANY WARRANTY; without even the implied warranty of
+	    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	    GNU Lesser General Public License for more details.
+
+	    You should have received a copy of the GNU Lesser General Public License
+	    along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
+	*/
+	/**
+	 * @file method.js
+	 * @author Marek Kotewicz <marek@ethdev.com>
+	 * @date 2015
+	 */
+
+	var utils = __webpack_require__(229);
+	var errors = __webpack_require__(269);
+
+	var Method = function (options) {
+	    this.name = options.name;
+	    this.call = options.call;
+	    this.params = options.params || 0;
+	    this.inputFormatter = options.inputFormatter;
+	    this.outputFormatter = options.outputFormatter;
+	    this.requestManager = null;
+	};
+
+	Method.prototype.setRequestManager = function (rm) {
+	    this.requestManager = rm;
+	};
+
+	/**
+	 * Should be used to determine name of the jsonrpc method based on arguments
+	 *
+	 * @method getCall
+	 * @param {Array} arguments
+	 * @return {String} name of jsonrpc method
+	 */
+	Method.prototype.getCall = function (args) {
+	    return utils.isFunction(this.call) ? this.call(args) : this.call;
+	};
+
+	/**
+	 * Should be used to extract callback from array of arguments. Modifies input param
+	 *
+	 * @method extractCallback
+	 * @param {Array} arguments
+	 * @return {Function|Null} callback, if exists
+	 */
+	Method.prototype.extractCallback = function (args) {
+	    if (utils.isFunction(args[args.length - 1])) {
+	        return args.pop(); // modify the args array!
+	    }
+	};
+
+	/**
+	 * Should be called to check if the number of arguments is correct
+	 * 
+	 * @method validateArgs
+	 * @param {Array} arguments
+	 * @throws {Error} if it is not
+	 */
+	Method.prototype.validateArgs = function (args) {
+	    if (args.length !== this.params) {
+	        throw errors.InvalidNumberOfParams();
+	    }
+	};
+
+	/**
+	 * Should be called to format input args of method
+	 * 
+	 * @method formatInput
+	 * @param {Array}
+	 * @return {Array}
+	 */
+	Method.prototype.formatInput = function (args) {
+	    if (!this.inputFormatter) {
+	        return args;
+	    }
+
+	    return this.inputFormatter.map(function (formatter, index) {
+	        return formatter ? formatter(args[index]) : args[index];
+	    });
+	};
+
+	/**
+	 * Should be called to format output(result) of method
+	 *
+	 * @method formatOutput
+	 * @param {Object}
+	 * @return {Object}
+	 */
+	Method.prototype.formatOutput = function (result) {
+	    return this.outputFormatter && result ? this.outputFormatter(result) : result;
+	};
+
+	/**
+	 * Should create payload from given input args
+	 *
+	 * @method toPayload
+	 * @param {Array} args
+	 * @return {Object}
+	 */
+	Method.prototype.toPayload = function (args) {
+	    var call = this.getCall(args);
+	    var callback = this.extractCallback(args);
+	    var params = this.formatInput(args);
+	    this.validateArgs(params);
+
+	    return {
+	        method: call,
+	        params: params,
+	        callback: callback
+	    };
+	};
+
+	Method.prototype.attachToObject = function (obj) {
+	    var func = this.buildCall();
+	    func.call = this.call; // TODO!!! that's ugly. filter.js uses it
+	    var name = this.name.split('.');
+	    if (name.length > 1) {
+	        obj[name[0]] = obj[name[0]] || {};
+	        obj[name[0]][name[1]] = func;
+	    } else {
+	        obj[name[0]] = func; 
+	    }
+	};
+
+	Method.prototype.buildCall = function() {
+	    var method = this;
+	    var send = function () {
+	        var payload = method.toPayload(Array.prototype.slice.call(arguments));
+	        if (payload.callback) {
+	            return method.requestManager.sendAsync(payload, function (err, result) {
+	                payload.callback(err, method.formatOutput(result));
+	            });
+	        }
+	        return method.formatOutput(method.requestManager.send(payload));
+	    };
+	    send.request = this.request.bind(this);
+	    return send;
+	};
+
+	/**
+	 * Should be called to create pure JSONRPC request which can be used in batch request
+	 *
+	 * @method request
+	 * @param {...} params
+	 * @return {Object} jsonrpc request
+	 */
+	Method.prototype.request = function () {
+	    var payload = this.toPayload(Array.prototype.slice.call(arguments));
+	    payload.format = this.formatOutput.bind(this);
+	    return payload;
+	};
+
+	module.exports = Method;
+
+
+
+/***/ },
+/* 274 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -40887,7 +38374,7 @@
 	 * @date 2015
 	 */
 
-	var utils = __webpack_require__(226);
+	var utils = __webpack_require__(229);
 
 	var Property = function (options) {
 	    this.name = options.name;
@@ -41011,7 +38498,7 @@
 
 
 /***/ },
-/* 308 */
+/* 275 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -41036,11 +38523,11 @@
 	 * @date 2014
 	 */
 
-	var utils = __webpack_require__(226);
-	var coder = __webpack_require__(265);
-	var SolidityEvent = __webpack_require__(225);
-	var SolidityFunction = __webpack_require__(309);
-	var AllEvents = __webpack_require__(310);
+	var utils = __webpack_require__(229);
+	var coder = __webpack_require__(276);
+	var SolidityEvent = __webpack_require__(289);
+	var SolidityFunction = __webpack_require__(292);
+	var AllEvents = __webpack_require__(293);
 
 	/**
 	 * Should be called to encode constructor params
@@ -41315,7 +38802,1859 @@
 
 
 /***/ },
-/* 309 */
+/* 276 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/*
+	    This file is part of web3.js.
+
+	    web3.js is free software: you can redistribute it and/or modify
+	    it under the terms of the GNU Lesser General Public License as published by
+	    the Free Software Foundation, either version 3 of the License, or
+	    (at your option) any later version.
+
+	    web3.js is distributed in the hope that it will be useful,
+	    but WITHOUT ANY WARRANTY; without even the implied warranty of
+	    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	    GNU Lesser General Public License for more details.
+
+	    You should have received a copy of the GNU Lesser General Public License
+	    along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
+	*/
+	/** 
+	 * @file coder.js
+	 * @author Marek Kotewicz <marek@ethdev.com>
+	 * @date 2015
+	 */
+
+	var f = __webpack_require__(277);
+
+	var SolidityTypeAddress = __webpack_require__(279);
+	var SolidityTypeBool = __webpack_require__(281);
+	var SolidityTypeInt = __webpack_require__(282);
+	var SolidityTypeUInt = __webpack_require__(283);
+	var SolidityTypeDynamicBytes = __webpack_require__(284);
+	var SolidityTypeString = __webpack_require__(285);
+	var SolidityTypeReal = __webpack_require__(286);
+	var SolidityTypeUReal = __webpack_require__(287);
+	var SolidityTypeBytes = __webpack_require__(288);
+
+	/**
+	 * SolidityCoder prototype should be used to encode/decode solidity params of any type
+	 */
+	var SolidityCoder = function (types) {
+	    this._types = types;
+	};
+
+	/**
+	 * This method should be used to transform type to SolidityType
+	 *
+	 * @method _requireType
+	 * @param {String} type
+	 * @returns {SolidityType} 
+	 * @throws {Error} throws if no matching type is found
+	 */
+	SolidityCoder.prototype._requireType = function (type) {
+	    var solidityType = this._types.filter(function (t) {
+	        return t.isType(type);
+	    })[0];
+
+	    if (!solidityType) {
+	        throw Error('invalid solidity type!: ' + type);
+	    }
+
+	    return solidityType;
+	};
+
+	/**
+	 * Should be used to encode plain param
+	 *
+	 * @method encodeParam
+	 * @param {String} type
+	 * @param {Object} plain param
+	 * @return {String} encoded plain param
+	 */
+	SolidityCoder.prototype.encodeParam = function (type, param) {
+	    return this.encodeParams([type], [param]);
+	};
+
+	/**
+	 * Should be used to encode list of params
+	 *
+	 * @method encodeParams
+	 * @param {Array} types
+	 * @param {Array} params
+	 * @return {String} encoded list of params
+	 */
+	SolidityCoder.prototype.encodeParams = function (types, params) {
+	    var solidityTypes = this.getSolidityTypes(types);
+
+	    var encodeds = solidityTypes.map(function (solidityType, index) {
+	        return solidityType.encode(params[index], types[index]);
+	    });
+
+	    var dynamicOffset = solidityTypes.reduce(function (acc, solidityType, index) {
+	        var staticPartLength = solidityType.staticPartLength(types[index]);
+	        var roundedStaticPartLength = Math.floor((staticPartLength + 31) / 32) * 32;
+	        return acc + roundedStaticPartLength;
+	    }, 0);
+
+	    var result = this.encodeMultiWithOffset(types, solidityTypes, encodeds, dynamicOffset); 
+
+	    return result;
+	};
+
+	SolidityCoder.prototype.encodeMultiWithOffset = function (types, solidityTypes, encodeds, dynamicOffset) {
+	    var result = "";
+	    var self = this;
+
+	    var isDynamic = function (i) {
+	       return solidityTypes[i].isDynamicArray(types[i]) || solidityTypes[i].isDynamicType(types[i]);
+	    };
+
+	    types.forEach(function (type, i) {
+	        if (isDynamic(i)) {
+	            result += f.formatInputInt(dynamicOffset).encode();
+	            var e = self.encodeWithOffset(types[i], solidityTypes[i], encodeds[i], dynamicOffset);
+	            dynamicOffset += e.length / 2;
+	        } else {
+	            // don't add length to dynamicOffset. it's already counted
+	            result += self.encodeWithOffset(types[i], solidityTypes[i], encodeds[i], dynamicOffset);
+	        }
+
+	        // TODO: figure out nested arrays
+	    });
+	    
+	    types.forEach(function (type, i) {
+	        if (isDynamic(i)) {
+	            var e = self.encodeWithOffset(types[i], solidityTypes[i], encodeds[i], dynamicOffset);
+	            dynamicOffset += e.length / 2;
+	            result += e;
+	        }
+	    });
+	    return result;
+	};
+
+	// TODO: refactor whole encoding!
+	SolidityCoder.prototype.encodeWithOffset = function (type, solidityType, encoded, offset) {
+	    var self = this;
+	    if (solidityType.isDynamicArray(type)) {
+	        return (function () {
+	            // offset was already set
+	            var nestedName = solidityType.nestedName(type);
+	            var nestedStaticPartLength = solidityType.staticPartLength(nestedName);
+	            var result = encoded[0];
+	            
+	            (function () {
+	                var previousLength = 2; // in int
+	                if (solidityType.isDynamicArray(nestedName)) {
+	                    for (var i = 1; i < encoded.length; i++) {
+	                        previousLength += +(encoded[i - 1])[0] || 0;
+	                        result += f.formatInputInt(offset + i * nestedStaticPartLength + previousLength * 32).encode();
+	                    }
+	                }
+	            })();
+	            
+	            // first element is length, skip it
+	            (function () {
+	                for (var i = 0; i < encoded.length - 1; i++) {
+	                    var additionalOffset = result / 2;
+	                    result += self.encodeWithOffset(nestedName, solidityType, encoded[i + 1], offset +  additionalOffset);
+	                }
+	            })();
+
+	            return result;
+	        })();
+	       
+	    } else if (solidityType.isStaticArray(type)) {
+	        return (function () {
+	            var nestedName = solidityType.nestedName(type);
+	            var nestedStaticPartLength = solidityType.staticPartLength(nestedName);
+	            var result = "";
+
+
+	            if (solidityType.isDynamicArray(nestedName)) {
+	                (function () {
+	                    var previousLength = 0; // in int
+	                    for (var i = 0; i < encoded.length; i++) {
+	                        // calculate length of previous item
+	                        previousLength += +(encoded[i - 1] || [])[0] || 0; 
+	                        result += f.formatInputInt(offset + i * nestedStaticPartLength + previousLength * 32).encode();
+	                    }
+	                })();
+	            }
+
+	            (function () {
+	                for (var i = 0; i < encoded.length; i++) {
+	                    var additionalOffset = result / 2;
+	                    result += self.encodeWithOffset(nestedName, solidityType, encoded[i], offset + additionalOffset);
+	                }
+	            })();
+
+	            return result;
+	        })();
+	    }
+
+	    return encoded;
+	};
+
+	/**
+	 * Should be used to decode bytes to plain param
+	 *
+	 * @method decodeParam
+	 * @param {String} type
+	 * @param {String} bytes
+	 * @return {Object} plain param
+	 */
+	SolidityCoder.prototype.decodeParam = function (type, bytes) {
+	    return this.decodeParams([type], bytes)[0];
+	};
+
+	/**
+	 * Should be used to decode list of params
+	 *
+	 * @method decodeParam
+	 * @param {Array} types
+	 * @param {String} bytes
+	 * @return {Array} array of plain params
+	 */
+	SolidityCoder.prototype.decodeParams = function (types, bytes) {
+	    var solidityTypes = this.getSolidityTypes(types);
+	    var offsets = this.getOffsets(types, solidityTypes);
+	        
+	    return solidityTypes.map(function (solidityType, index) {
+	        return solidityType.decode(bytes, offsets[index],  types[index], index);
+	    });
+	};
+
+	SolidityCoder.prototype.getOffsets = function (types, solidityTypes) {
+	    var lengths =  solidityTypes.map(function (solidityType, index) {
+	        return solidityType.staticPartLength(types[index]);
+	    });
+	    
+	    for (var i = 1; i < lengths.length; i++) {
+	         // sum with length of previous element
+	        lengths[i] += lengths[i - 1]; 
+	    }
+
+	    return lengths.map(function (length, index) {
+	        // remove the current length, so the length is sum of previous elements
+	        var staticPartLength = solidityTypes[index].staticPartLength(types[index]);
+	        return length - staticPartLength; 
+	    });
+	};
+
+	SolidityCoder.prototype.getSolidityTypes = function (types) {
+	    var self = this;
+	    return types.map(function (type) {
+	        return self._requireType(type);
+	    });
+	};
+
+	var coder = new SolidityCoder([
+	    new SolidityTypeAddress(),
+	    new SolidityTypeBool(),
+	    new SolidityTypeInt(),
+	    new SolidityTypeUInt(),
+	    new SolidityTypeDynamicBytes(),
+	    new SolidityTypeBytes(),
+	    new SolidityTypeString(),
+	    new SolidityTypeReal(),
+	    new SolidityTypeUReal()
+	]);
+
+	module.exports = coder;
+
+
+
+/***/ },
+/* 277 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/*
+	    This file is part of web3.js.
+
+	    web3.js is free software: you can redistribute it and/or modify
+	    it under the terms of the GNU Lesser General Public License as published by
+	    the Free Software Foundation, either version 3 of the License, or
+	    (at your option) any later version.
+
+	    web3.js is distributed in the hope that it will be useful,
+	    but WITHOUT ANY WARRANTY; without even the implied warranty of
+	    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	    GNU Lesser General Public License for more details.
+
+	    You should have received a copy of the GNU Lesser General Public License
+	    along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
+	*/
+	/** 
+	 * @file formatters.js
+	 * @author Marek Kotewicz <marek@ethdev.com>
+	 * @date 2015
+	 */
+
+	var BigNumber = __webpack_require__(230);
+	var utils = __webpack_require__(229);
+	var c = __webpack_require__(268);
+	var SolidityParam = __webpack_require__(278);
+
+
+	/**
+	 * Formats input value to byte representation of int
+	 * If value is negative, return it's two's complement
+	 * If the value is floating point, round it down
+	 *
+	 * @method formatInputInt
+	 * @param {String|Number|BigNumber} value that needs to be formatted
+	 * @returns {SolidityParam}
+	 */
+	var formatInputInt = function (value) {
+	    BigNumber.config(c.ETH_BIGNUMBER_ROUNDING_MODE);
+	    var result = utils.padLeft(utils.toTwosComplement(value).round().toString(16), 64);
+	    return new SolidityParam(result);
+	};
+
+	/**
+	 * Formats input bytes
+	 *
+	 * @method formatInputBytes
+	 * @param {String}
+	 * @returns {SolidityParam}
+	 */
+	var formatInputBytes = function (value) {
+	    var result = utils.toHex(value).substr(2);
+	    var l = Math.floor((result.length + 63) / 64);
+	    result = utils.padRight(result, l * 64);
+	    return new SolidityParam(result);
+	};
+
+	/**
+	 * Formats input bytes
+	 *
+	 * @method formatDynamicInputBytes
+	 * @param {String}
+	 * @returns {SolidityParam}
+	 */
+	var formatInputDynamicBytes = function (value) {
+	    var result = utils.toHex(value).substr(2);
+	    var length = result.length / 2;
+	    var l = Math.floor((result.length + 63) / 64);
+	    result = utils.padRight(result, l * 64);
+	    return new SolidityParam(formatInputInt(length).value + result);
+	};
+
+	/**
+	 * Formats input value to byte representation of string
+	 *
+	 * @method formatInputString
+	 * @param {String}
+	 * @returns {SolidityParam}
+	 */
+	var formatInputString = function (value) {
+	    var result = utils.fromUtf8(value).substr(2);
+	    var length = result.length / 2;
+	    var l = Math.floor((result.length + 63) / 64);
+	    result = utils.padRight(result, l * 64);
+	    return new SolidityParam(formatInputInt(length).value + result);
+	};
+
+	/**
+	 * Formats input value to byte representation of bool
+	 *
+	 * @method formatInputBool
+	 * @param {Boolean}
+	 * @returns {SolidityParam}
+	 */
+	var formatInputBool = function (value) {
+	    var result = '000000000000000000000000000000000000000000000000000000000000000' + (value ?  '1' : '0');
+	    return new SolidityParam(result);
+	};
+
+	/**
+	 * Formats input value to byte representation of real
+	 * Values are multiplied by 2^m and encoded as integers
+	 *
+	 * @method formatInputReal
+	 * @param {String|Number|BigNumber}
+	 * @returns {SolidityParam}
+	 */
+	var formatInputReal = function (value) {
+	    return formatInputInt(new BigNumber(value).times(new BigNumber(2).pow(128)));
+	};
+
+	/**
+	 * Check if input value is negative
+	 *
+	 * @method signedIsNegative
+	 * @param {String} value is hex format
+	 * @returns {Boolean} true if it is negative, otherwise false
+	 */
+	var signedIsNegative = function (value) {
+	    return (new BigNumber(value.substr(0, 1), 16).toString(2).substr(0, 1)) === '1';
+	};
+
+	/**
+	 * Formats right-aligned output bytes to int
+	 *
+	 * @method formatOutputInt
+	 * @param {SolidityParam} param
+	 * @returns {BigNumber} right-aligned output bytes formatted to big number
+	 */
+	var formatOutputInt = function (param) {
+	    var value = param.staticPart() || "0";
+
+	    // check if it's negative number
+	    // it it is, return two's complement
+	    if (signedIsNegative(value)) {
+	        return new BigNumber(value, 16).minus(new BigNumber('ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff', 16)).minus(1);
+	    }
+	    return new BigNumber(value, 16);
+	};
+
+	/**
+	 * Formats right-aligned output bytes to uint
+	 *
+	 * @method formatOutputUInt
+	 * @param {SolidityParam}
+	 * @returns {BigNumeber} right-aligned output bytes formatted to uint
+	 */
+	var formatOutputUInt = function (param) {
+	    var value = param.staticPart() || "0";
+	    return new BigNumber(value, 16);
+	};
+
+	/**
+	 * Formats right-aligned output bytes to real
+	 *
+	 * @method formatOutputReal
+	 * @param {SolidityParam}
+	 * @returns {BigNumber} input bytes formatted to real
+	 */
+	var formatOutputReal = function (param) {
+	    return formatOutputInt(param).dividedBy(new BigNumber(2).pow(128)); 
+	};
+
+	/**
+	 * Formats right-aligned output bytes to ureal
+	 *
+	 * @method formatOutputUReal
+	 * @param {SolidityParam}
+	 * @returns {BigNumber} input bytes formatted to ureal
+	 */
+	var formatOutputUReal = function (param) {
+	    return formatOutputUInt(param).dividedBy(new BigNumber(2).pow(128)); 
+	};
+
+	/**
+	 * Should be used to format output bool
+	 *
+	 * @method formatOutputBool
+	 * @param {SolidityParam}
+	 * @returns {Boolean} right-aligned input bytes formatted to bool
+	 */
+	var formatOutputBool = function (param) {
+	    return param.staticPart() === '0000000000000000000000000000000000000000000000000000000000000001' ? true : false;
+	};
+
+	/**
+	 * Should be used to format output bytes
+	 *
+	 * @method formatOutputBytes
+	 * @param {SolidityParam} left-aligned hex representation of string
+	 * @returns {String} hex string
+	 */
+	var formatOutputBytes = function (param) {
+	    return '0x' + param.staticPart();
+	};
+
+	/**
+	 * Should be used to format output bytes
+	 *
+	 * @method formatOutputDynamicBytes
+	 * @param {SolidityParam} left-aligned hex representation of string
+	 * @returns {String} hex string
+	 */
+	var formatOutputDynamicBytes = function (param) {
+	    var length = (new BigNumber(param.dynamicPart().slice(0, 64), 16)).toNumber() * 2;
+	    return '0x' + param.dynamicPart().substr(64, length);
+	};
+
+	/**
+	 * Should be used to format output string
+	 *
+	 * @method formatOutputString
+	 * @param {SolidityParam} left-aligned hex representation of string
+	 * @returns {String} ascii string
+	 */
+	var formatOutputString = function (param) {
+	    var length = (new BigNumber(param.dynamicPart().slice(0, 64), 16)).toNumber() * 2;
+	    return utils.toUtf8(param.dynamicPart().substr(64, length));
+	};
+
+	/**
+	 * Should be used to format output address
+	 *
+	 * @method formatOutputAddress
+	 * @param {SolidityParam} right-aligned input bytes
+	 * @returns {String} address
+	 */
+	var formatOutputAddress = function (param) {
+	    var value = param.staticPart();
+	    return "0x" + value.slice(value.length - 40, value.length);
+	};
+
+	module.exports = {
+	    formatInputInt: formatInputInt,
+	    formatInputBytes: formatInputBytes,
+	    formatInputDynamicBytes: formatInputDynamicBytes,
+	    formatInputString: formatInputString,
+	    formatInputBool: formatInputBool,
+	    formatInputReal: formatInputReal,
+	    formatOutputInt: formatOutputInt,
+	    formatOutputUInt: formatOutputUInt,
+	    formatOutputReal: formatOutputReal,
+	    formatOutputUReal: formatOutputUReal,
+	    formatOutputBool: formatOutputBool,
+	    formatOutputBytes: formatOutputBytes,
+	    formatOutputDynamicBytes: formatOutputDynamicBytes,
+	    formatOutputString: formatOutputString,
+	    formatOutputAddress: formatOutputAddress
+	};
+
+
+
+/***/ },
+/* 278 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/*
+	    This file is part of web3.js.
+
+	    web3.js is free software: you can redistribute it and/or modify
+	    it under the terms of the GNU Lesser General Public License as published by
+	    the Free Software Foundation, either version 3 of the License, or
+	    (at your option) any later version.
+
+	    web3.js is distributed in the hope that it will be useful,
+	    but WITHOUT ANY WARRANTY; without even the implied warranty of
+	    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	    GNU Lesser General Public License for more details.
+
+	    You should have received a copy of the GNU Lesser General Public License
+	    along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
+	*/
+	/** 
+	 * @file param.js
+	 * @author Marek Kotewicz <marek@ethdev.com>
+	 * @date 2015
+	 */
+
+	var utils = __webpack_require__(229);
+
+	/**
+	 * SolidityParam object prototype.
+	 * Should be used when encoding, decoding solidity bytes
+	 */
+	var SolidityParam = function (value, offset) {
+	    this.value = value || '';
+	    this.offset = offset; // offset in bytes
+	};
+
+	/**
+	 * This method should be used to get length of params's dynamic part
+	 * 
+	 * @method dynamicPartLength
+	 * @returns {Number} length of dynamic part (in bytes)
+	 */
+	SolidityParam.prototype.dynamicPartLength = function () {
+	    return this.dynamicPart().length / 2;
+	};
+
+	/**
+	 * This method should be used to create copy of solidity param with different offset
+	 *
+	 * @method withOffset
+	 * @param {Number} offset length in bytes
+	 * @returns {SolidityParam} new solidity param with applied offset
+	 */
+	SolidityParam.prototype.withOffset = function (offset) {
+	    return new SolidityParam(this.value, offset);
+	};
+
+	/**
+	 * This method should be used to combine solidity params together
+	 * eg. when appending an array
+	 *
+	 * @method combine
+	 * @param {SolidityParam} param with which we should combine
+	 * @param {SolidityParam} result of combination
+	 */
+	SolidityParam.prototype.combine = function (param) {
+	    return new SolidityParam(this.value + param.value); 
+	};
+
+	/**
+	 * This method should be called to check if param has dynamic size.
+	 * If it has, it returns true, otherwise false
+	 *
+	 * @method isDynamic
+	 * @returns {Boolean}
+	 */
+	SolidityParam.prototype.isDynamic = function () {
+	    return this.offset !== undefined;
+	};
+
+	/**
+	 * This method should be called to transform offset to bytes
+	 *
+	 * @method offsetAsBytes
+	 * @returns {String} bytes representation of offset
+	 */
+	SolidityParam.prototype.offsetAsBytes = function () {
+	    return !this.isDynamic() ? '' : utils.padLeft(utils.toTwosComplement(this.offset).toString(16), 64);
+	};
+
+	/**
+	 * This method should be called to get static part of param
+	 *
+	 * @method staticPart
+	 * @returns {String} offset if it is a dynamic param, otherwise value
+	 */
+	SolidityParam.prototype.staticPart = function () {
+	    if (!this.isDynamic()) {
+	        return this.value; 
+	    } 
+	    return this.offsetAsBytes();
+	};
+
+	/**
+	 * This method should be called to get dynamic part of param
+	 *
+	 * @method dynamicPart
+	 * @returns {String} returns a value if it is a dynamic param, otherwise empty string
+	 */
+	SolidityParam.prototype.dynamicPart = function () {
+	    return this.isDynamic() ? this.value : '';
+	};
+
+	/**
+	 * This method should be called to encode param
+	 *
+	 * @method encode
+	 * @returns {String}
+	 */
+	SolidityParam.prototype.encode = function () {
+	    return this.staticPart() + this.dynamicPart();
+	};
+
+	/**
+	 * This method should be called to encode array of params
+	 *
+	 * @method encodeList
+	 * @param {Array[SolidityParam]} params
+	 * @returns {String}
+	 */
+	SolidityParam.encodeList = function (params) {
+	    
+	    // updating offsets
+	    var totalOffset = params.length * 32;
+	    var offsetParams = params.map(function (param) {
+	        if (!param.isDynamic()) {
+	            return param;
+	        }
+	        var offset = totalOffset;
+	        totalOffset += param.dynamicPartLength();
+	        return param.withOffset(offset);
+	    });
+
+	    // encode everything!
+	    return offsetParams.reduce(function (result, param) {
+	        return result + param.dynamicPart();
+	    }, offsetParams.reduce(function (result, param) {
+	        return result + param.staticPart();
+	    }, ''));
+	};
+
+
+
+	module.exports = SolidityParam;
+
+
+
+/***/ },
+/* 279 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var f = __webpack_require__(277);
+	var SolidityType = __webpack_require__(280);
+
+	/**
+	 * SolidityTypeAddress is a prootype that represents address type
+	 * It matches:
+	 * address
+	 * address[]
+	 * address[4]
+	 * address[][]
+	 * address[3][]
+	 * address[][6][], ...
+	 */
+	var SolidityTypeAddress = function () {
+	    this._inputFormatter = f.formatInputInt;
+	    this._outputFormatter = f.formatOutputAddress;
+	};
+
+	SolidityTypeAddress.prototype = new SolidityType({});
+	SolidityTypeAddress.prototype.constructor = SolidityTypeAddress;
+
+	SolidityTypeAddress.prototype.isType = function (name) {
+	    return !!name.match(/address(\[([0-9]*)\])?/);
+	};
+
+	SolidityTypeAddress.prototype.staticPartLength = function (name) {
+	    return 32 * this.staticArrayLength(name);
+	};
+
+	module.exports = SolidityTypeAddress;
+
+
+
+/***/ },
+/* 280 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var f = __webpack_require__(277);
+	var SolidityParam = __webpack_require__(278);
+
+	/**
+	 * SolidityType prototype is used to encode/decode solidity params of certain type
+	 */
+	var SolidityType = function (config) {
+	    this._inputFormatter = config.inputFormatter;
+	    this._outputFormatter = config.outputFormatter;
+	};
+
+	/**
+	 * Should be used to determine if this SolidityType do match given name
+	 *
+	 * @method isType
+	 * @param {String} name
+	 * @return {Bool} true if type match this SolidityType, otherwise false
+	 */
+	SolidityType.prototype.isType = function (name) {
+	    throw "this method should be overrwritten for type " + name;
+	};
+
+	/**
+	 * Should be used to determine what is the length of static part in given type
+	 *
+	 * @method staticPartLength
+	 * @param {String} name
+	 * @return {Number} length of static part in bytes
+	 */
+	SolidityType.prototype.staticPartLength = function (name) {
+	    throw "this method should be overrwritten for type: " + name;
+	};
+
+	/**
+	 * Should be used to determine if type is dynamic array
+	 * eg: 
+	 * "type[]" => true
+	 * "type[4]" => false
+	 *
+	 * @method isDynamicArray
+	 * @param {String} name
+	 * @return {Bool} true if the type is dynamic array 
+	 */
+	SolidityType.prototype.isDynamicArray = function (name) {
+	    var nestedTypes = this.nestedTypes(name);
+	    return !!nestedTypes && !nestedTypes[nestedTypes.length - 1].match(/[0-9]{1,}/g);
+	};
+
+	/**
+	 * Should be used to determine if type is static array
+	 * eg: 
+	 * "type[]" => false
+	 * "type[4]" => true
+	 *
+	 * @method isStaticArray
+	 * @param {String} name
+	 * @return {Bool} true if the type is static array 
+	 */
+	SolidityType.prototype.isStaticArray = function (name) {
+	    var nestedTypes = this.nestedTypes(name);
+	    return !!nestedTypes && !!nestedTypes[nestedTypes.length - 1].match(/[0-9]{1,}/g);
+	};
+
+	/**
+	 * Should return length of static array
+	 * eg. 
+	 * "int[32]" => 32
+	 * "int256[14]" => 14
+	 * "int[2][3]" => 3
+	 * "int" => 1
+	 * "int[1]" => 1
+	 * "int[]" => 1
+	 *
+	 * @method staticArrayLength
+	 * @param {String} name
+	 * @return {Number} static array length
+	 */
+	SolidityType.prototype.staticArrayLength = function (name) {
+	    var nestedTypes = this.nestedTypes(name);
+	    if (nestedTypes) {
+	       return parseInt(nestedTypes[nestedTypes.length - 1].match(/[0-9]{1,}/g) || 1);
+	    }
+	    return 1;
+	};
+
+	/**
+	 * Should return nested type
+	 * eg.
+	 * "int[32]" => "int"
+	 * "int256[14]" => "int256"
+	 * "int[2][3]" => "int[2]"
+	 * "int" => "int"
+	 * "int[]" => "int"
+	 *
+	 * @method nestedName
+	 * @param {String} name
+	 * @return {String} nested name
+	 */
+	SolidityType.prototype.nestedName = function (name) {
+	    // remove last [] in name
+	    var nestedTypes = this.nestedTypes(name);
+	    if (!nestedTypes) {
+	        return name;
+	    }
+
+	    return name.substr(0, name.length - nestedTypes[nestedTypes.length - 1].length);
+	};
+
+	/**
+	 * Should return true if type has dynamic size by default
+	 * such types are "string", "bytes"
+	 *
+	 * @method isDynamicType
+	 * @param {String} name
+	 * @return {Bool} true if is dynamic, otherwise false
+	 */
+	SolidityType.prototype.isDynamicType = function () {
+	    return false;
+	};
+
+	/**
+	 * Should return array of nested types
+	 * eg.
+	 * "int[2][3][]" => ["[2]", "[3]", "[]"]
+	 * "int[] => ["[]"]
+	 * "int" => null
+	 *
+	 * @method nestedTypes
+	 * @param {String} name
+	 * @return {Array} array of nested types
+	 */
+	SolidityType.prototype.nestedTypes = function (name) {
+	    // return list of strings eg. "[]", "[3]", "[]", "[2]"
+	    return name.match(/(\[[0-9]*\])/g);
+	};
+
+	/**
+	 * Should be used to encode the value
+	 *
+	 * @method encode
+	 * @param {Object} value 
+	 * @param {String} name
+	 * @return {String} encoded value
+	 */
+	SolidityType.prototype.encode = function (value, name) {
+	    var self = this;
+	    if (this.isDynamicArray(name)) {
+
+	        return (function () {
+	            var length = value.length;                          // in int
+	            var nestedName = self.nestedName(name);
+
+	            var result = [];
+	            result.push(f.formatInputInt(length).encode());
+	            
+	            value.forEach(function (v) {
+	                result.push(self.encode(v, nestedName));
+	            });
+
+	            return result;
+	        })();
+
+	    } else if (this.isStaticArray(name)) {
+
+	        return (function () {
+	            var length = self.staticArrayLength(name);          // in int
+	            var nestedName = self.nestedName(name);
+
+	            var result = [];
+	            for (var i = 0; i < length; i++) {
+	                result.push(self.encode(value[i], nestedName));
+	            }
+
+	            return result;
+	        })();
+
+	    }
+
+	    return this._inputFormatter(value, name).encode();
+	};
+
+	/**
+	 * Should be used to decode value from bytes
+	 *
+	 * @method decode
+	 * @param {String} bytes
+	 * @param {Number} offset in bytes
+	 * @param {String} name type name
+	 * @returns {Object} decoded value
+	 */
+	SolidityType.prototype.decode = function (bytes, offset, name) {
+	    var self = this;
+
+	    if (this.isDynamicArray(name)) {
+
+	        return (function () {
+	            var arrayOffset = parseInt('0x' + bytes.substr(offset * 2, 64)); // in bytes
+	            var length = parseInt('0x' + bytes.substr(arrayOffset * 2, 64)); // in int
+	            var arrayStart = arrayOffset + 32; // array starts after length; // in bytes
+
+	            var nestedName = self.nestedName(name);
+	            var nestedStaticPartLength = self.staticPartLength(nestedName);  // in bytes
+	            var roundedNestedStaticPartLength = Math.floor((nestedStaticPartLength + 31) / 32) * 32;
+	            var result = [];
+
+	            for (var i = 0; i < length * roundedNestedStaticPartLength; i += roundedNestedStaticPartLength) {
+	                result.push(self.decode(bytes, arrayStart + i, nestedName));
+	            }
+
+	            return result;
+	        })();
+
+	    } else if (this.isStaticArray(name)) {
+
+	        return (function () {
+	            var length = self.staticArrayLength(name);                      // in int
+	            var arrayStart = offset;                                        // in bytes
+
+	            var nestedName = self.nestedName(name);
+	            var nestedStaticPartLength = self.staticPartLength(nestedName); // in bytes
+	            var roundedNestedStaticPartLength = Math.floor((nestedStaticPartLength + 31) / 32) * 32;
+	            var result = [];
+
+	            for (var i = 0; i < length * roundedNestedStaticPartLength; i += roundedNestedStaticPartLength) {
+	                result.push(self.decode(bytes, arrayStart + i, nestedName));
+	            }
+
+	            return result;
+	        })();
+	    } else if (this.isDynamicType(name)) {
+	        
+	        return (function () {
+	            var dynamicOffset = parseInt('0x' + bytes.substr(offset * 2, 64));      // in bytes
+	            var length = parseInt('0x' + bytes.substr(dynamicOffset * 2, 64));      // in bytes
+	            var roundedLength = Math.floor((length + 31) / 32);                     // in int
+	        
+	            return self._outputFormatter(new SolidityParam(bytes.substr(dynamicOffset * 2, ( 1 + roundedLength) * 64), 0));
+	        })();
+	    }
+
+	    var length = this.staticPartLength(name);
+	    return this._outputFormatter(new SolidityParam(bytes.substr(offset * 2, length * 2)));
+	};
+
+	module.exports = SolidityType;
+
+
+/***/ },
+/* 281 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var f = __webpack_require__(277);
+	var SolidityType = __webpack_require__(280);
+
+	/**
+	 * SolidityTypeBool is a prootype that represents bool type
+	 * It matches:
+	 * bool
+	 * bool[]
+	 * bool[4]
+	 * bool[][]
+	 * bool[3][]
+	 * bool[][6][], ...
+	 */
+	var SolidityTypeBool = function () {
+	    this._inputFormatter = f.formatInputBool;
+	    this._outputFormatter = f.formatOutputBool;
+	};
+
+	SolidityTypeBool.prototype = new SolidityType({});
+	SolidityTypeBool.prototype.constructor = SolidityTypeBool;
+
+	SolidityTypeBool.prototype.isType = function (name) {
+	    return !!name.match(/^bool(\[([0-9]*)\])*$/);
+	};
+
+	SolidityTypeBool.prototype.staticPartLength = function (name) {
+	    return 32 * this.staticArrayLength(name);
+	};
+
+	module.exports = SolidityTypeBool;
+
+
+/***/ },
+/* 282 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var f = __webpack_require__(277);
+	var SolidityType = __webpack_require__(280);
+
+	/**
+	 * SolidityTypeInt is a prootype that represents int type
+	 * It matches:
+	 * int
+	 * int[]
+	 * int[4]
+	 * int[][]
+	 * int[3][]
+	 * int[][6][], ...
+	 * int32
+	 * int64[]
+	 * int8[4]
+	 * int256[][]
+	 * int[3][]
+	 * int64[][6][], ...
+	 */
+	var SolidityTypeInt = function () {
+	    this._inputFormatter = f.formatInputInt;
+	    this._outputFormatter = f.formatOutputInt;
+	};
+
+	SolidityTypeInt.prototype = new SolidityType({});
+	SolidityTypeInt.prototype.constructor = SolidityTypeInt;
+
+	SolidityTypeInt.prototype.isType = function (name) {
+	    return !!name.match(/^int([0-9]*)?(\[([0-9]*)\])*$/);
+	};
+
+	SolidityTypeInt.prototype.staticPartLength = function (name) {
+	    return 32 * this.staticArrayLength(name);
+	};
+
+	module.exports = SolidityTypeInt;
+
+
+/***/ },
+/* 283 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var f = __webpack_require__(277);
+	var SolidityType = __webpack_require__(280);
+
+	/**
+	 * SolidityTypeUInt is a prootype that represents uint type
+	 * It matches:
+	 * uint
+	 * uint[]
+	 * uint[4]
+	 * uint[][]
+	 * uint[3][]
+	 * uint[][6][], ...
+	 * uint32
+	 * uint64[]
+	 * uint8[4]
+	 * uint256[][]
+	 * uint[3][]
+	 * uint64[][6][], ...
+	 */
+	var SolidityTypeUInt = function () {
+	    this._inputFormatter = f.formatInputInt;
+	    this._outputFormatter = f.formatOutputUInt;
+	};
+
+	SolidityTypeUInt.prototype = new SolidityType({});
+	SolidityTypeUInt.prototype.constructor = SolidityTypeUInt;
+
+	SolidityTypeUInt.prototype.isType = function (name) {
+	    return !!name.match(/^uint([0-9]*)?(\[([0-9]*)\])*$/);
+	};
+
+	SolidityTypeUInt.prototype.staticPartLength = function (name) {
+	    return 32 * this.staticArrayLength(name);
+	};
+
+	module.exports = SolidityTypeUInt;
+
+
+/***/ },
+/* 284 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var f = __webpack_require__(277);
+	var SolidityType = __webpack_require__(280);
+
+	var SolidityTypeDynamicBytes = function () {
+	    this._inputFormatter = f.formatInputDynamicBytes;
+	    this._outputFormatter = f.formatOutputDynamicBytes;
+	};
+
+	SolidityTypeDynamicBytes.prototype = new SolidityType({});
+	SolidityTypeDynamicBytes.prototype.constructor = SolidityTypeDynamicBytes;
+
+	SolidityTypeDynamicBytes.prototype.isType = function (name) {
+	    return !!name.match(/^bytes(\[([0-9]*)\])*$/);
+	};
+
+	SolidityTypeDynamicBytes.prototype.staticPartLength = function (name) {
+	    return 32 * this.staticArrayLength(name);
+	};
+
+	SolidityTypeDynamicBytes.prototype.isDynamicType = function () {
+	    return true;
+	};
+
+	module.exports = SolidityTypeDynamicBytes;
+
+
+
+/***/ },
+/* 285 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var f = __webpack_require__(277);
+	var SolidityType = __webpack_require__(280);
+
+	var SolidityTypeString = function () {
+	    this._inputFormatter = f.formatInputString;
+	    this._outputFormatter = f.formatOutputString;
+	};
+
+	SolidityTypeString.prototype = new SolidityType({});
+	SolidityTypeString.prototype.constructor = SolidityTypeString;
+
+	SolidityTypeString.prototype.isType = function (name) {
+	    return !!name.match(/^string(\[([0-9]*)\])*$/);
+	};
+
+	SolidityTypeString.prototype.staticPartLength = function (name) {
+	    return 32 * this.staticArrayLength(name);
+	};
+
+	SolidityTypeString.prototype.isDynamicType = function () {
+	    return true;
+	};
+
+	module.exports = SolidityTypeString;
+
+
+
+/***/ },
+/* 286 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var f = __webpack_require__(277);
+	var SolidityType = __webpack_require__(280);
+
+	/**
+	 * SolidityTypeReal is a prootype that represents real type
+	 * It matches:
+	 * real
+	 * real[]
+	 * real[4]
+	 * real[][]
+	 * real[3][]
+	 * real[][6][], ...
+	 * real32
+	 * real64[]
+	 * real8[4]
+	 * real256[][]
+	 * real[3][]
+	 * real64[][6][], ...
+	 */
+	var SolidityTypeReal = function () {
+	    this._inputFormatter = f.formatInputReal;
+	    this._outputFormatter = f.formatOutputReal;
+	};
+
+	SolidityTypeReal.prototype = new SolidityType({});
+	SolidityTypeReal.prototype.constructor = SolidityTypeReal;
+
+	SolidityTypeReal.prototype.isType = function (name) {
+	    return !!name.match(/real([0-9]*)?(\[([0-9]*)\])?/);
+	};
+
+	SolidityTypeReal.prototype.staticPartLength = function (name) {
+	    return 32 * this.staticArrayLength(name);
+	};
+
+	module.exports = SolidityTypeReal;
+
+
+/***/ },
+/* 287 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var f = __webpack_require__(277);
+	var SolidityType = __webpack_require__(280);
+
+	/**
+	 * SolidityTypeUReal is a prootype that represents ureal type
+	 * It matches:
+	 * ureal
+	 * ureal[]
+	 * ureal[4]
+	 * ureal[][]
+	 * ureal[3][]
+	 * ureal[][6][], ...
+	 * ureal32
+	 * ureal64[]
+	 * ureal8[4]
+	 * ureal256[][]
+	 * ureal[3][]
+	 * ureal64[][6][], ...
+	 */
+	var SolidityTypeUReal = function () {
+	    this._inputFormatter = f.formatInputReal;
+	    this._outputFormatter = f.formatOutputUReal;
+	};
+
+	SolidityTypeUReal.prototype = new SolidityType({});
+	SolidityTypeUReal.prototype.constructor = SolidityTypeUReal;
+
+	SolidityTypeUReal.prototype.isType = function (name) {
+	    return !!name.match(/^ureal([0-9]*)?(\[([0-9]*)\])*$/);
+	};
+
+	SolidityTypeUReal.prototype.staticPartLength = function (name) {
+	    return 32 * this.staticArrayLength(name);
+	};
+
+	module.exports = SolidityTypeUReal;
+
+
+/***/ },
+/* 288 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var f = __webpack_require__(277);
+	var SolidityType = __webpack_require__(280);
+
+	/**
+	 * SolidityTypeBytes is a prootype that represents bytes type
+	 * It matches:
+	 * bytes
+	 * bytes[]
+	 * bytes[4]
+	 * bytes[][]
+	 * bytes[3][]
+	 * bytes[][6][], ...
+	 * bytes32
+	 * bytes64[]
+	 * bytes8[4]
+	 * bytes256[][]
+	 * bytes[3][]
+	 * bytes64[][6][], ...
+	 */
+	var SolidityTypeBytes = function () {
+	    this._inputFormatter = f.formatInputBytes;
+	    this._outputFormatter = f.formatOutputBytes;
+	};
+
+	SolidityTypeBytes.prototype = new SolidityType({});
+	SolidityTypeBytes.prototype.constructor = SolidityTypeBytes;
+
+	SolidityTypeBytes.prototype.isType = function (name) {
+	    return !!name.match(/^bytes([0-9]{1,})(\[([0-9]*)\])*$/);
+	};
+
+	SolidityTypeBytes.prototype.staticPartLength = function (name) {
+	    var matches = name.match(/^bytes([0-9]*)/);
+	    var size = parseInt(matches[1]);
+	    return size * this.staticArrayLength(name);
+	};
+
+	module.exports = SolidityTypeBytes;
+
+
+/***/ },
+/* 289 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/*
+	    This file is part of web3.js.
+
+	    web3.js is free software: you can redistribute it and/or modify
+	    it under the terms of the GNU Lesser General Public License as published by
+	    the Free Software Foundation, either version 3 of the License, or
+	    (at your option) any later version.
+
+	    web3.js is distributed in the hope that it will be useful,
+	    but WITHOUT ANY WARRANTY; without even the implied warranty of
+	    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	    GNU Lesser General Public License for more details.
+
+	    You should have received a copy of the GNU Lesser General Public License
+	    along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
+	*/
+	/** 
+	 * @file event.js
+	 * @author Marek Kotewicz <marek@ethdev.com>
+	 * @date 2014
+	 */
+
+	var utils = __webpack_require__(229);
+	var coder = __webpack_require__(276);
+	var formatters = __webpack_require__(272);
+	var sha3 = __webpack_require__(231);
+	var Filter = __webpack_require__(290);
+	var watches = __webpack_require__(291);
+
+	/**
+	 * This prototype should be used to create event filters
+	 */
+	var SolidityEvent = function (requestManager, json, address) {
+	    this._requestManager = requestManager;
+	    this._params = json.inputs;
+	    this._name = utils.transformToFullName(json);
+	    this._address = address;
+	    this._anonymous = json.anonymous;
+	};
+
+	/**
+	 * Should be used to get filtered param types
+	 *
+	 * @method types
+	 * @param {Bool} decide if returned typed should be indexed
+	 * @return {Array} array of types
+	 */
+	SolidityEvent.prototype.types = function (indexed) {
+	    return this._params.filter(function (i) {
+	        return i.indexed === indexed;
+	    }).map(function (i) {
+	        return i.type;
+	    });
+	};
+
+	/**
+	 * Should be used to get event display name
+	 *
+	 * @method displayName
+	 * @return {String} event display name
+	 */
+	SolidityEvent.prototype.displayName = function () {
+	    return utils.extractDisplayName(this._name);
+	};
+
+	/**
+	 * Should be used to get event type name
+	 *
+	 * @method typeName
+	 * @return {String} event type name
+	 */
+	SolidityEvent.prototype.typeName = function () {
+	    return utils.extractTypeName(this._name);
+	};
+
+	/**
+	 * Should be used to get event signature
+	 *
+	 * @method signature
+	 * @return {String} event signature
+	 */
+	SolidityEvent.prototype.signature = function () {
+	    return sha3(this._name);
+	};
+
+	/**
+	 * Should be used to encode indexed params and options to one final object
+	 * 
+	 * @method encode
+	 * @param {Object} indexed
+	 * @param {Object} options
+	 * @return {Object} everything combined together and encoded
+	 */
+	SolidityEvent.prototype.encode = function (indexed, options) {
+	    indexed = indexed || {};
+	    options = options || {};
+	    var result = {};
+
+	    ['fromBlock', 'toBlock'].filter(function (f) {
+	        return options[f] !== undefined;
+	    }).forEach(function (f) {
+	        result[f] = formatters.inputBlockNumberFormatter(options[f]);
+	    });
+
+	    result.topics = [];
+
+	    result.address = this._address;
+	    if (!this._anonymous) {
+	        result.topics.push('0x' + this.signature());
+	    }
+
+	    var indexedTopics = this._params.filter(function (i) {
+	        return i.indexed === true;
+	    }).map(function (i) {
+	        var value = indexed[i.name];
+	        if (value === undefined || value === null) {
+	            return null;
+	        }
+	        
+	        if (utils.isArray(value)) {
+	            return value.map(function (v) {
+	                return '0x' + coder.encodeParam(i.type, v);
+	            });
+	        }
+	        return '0x' + coder.encodeParam(i.type, value);
+	    });
+
+	    result.topics = result.topics.concat(indexedTopics);
+
+	    return result;
+	};
+
+	/**
+	 * Should be used to decode indexed params and options
+	 *
+	 * @method decode
+	 * @param {Object} data
+	 * @return {Object} result object with decoded indexed && not indexed params
+	 */
+	SolidityEvent.prototype.decode = function (data) {
+	 
+	    data.data = data.data || '';
+	    data.topics = data.topics || [];
+
+	    var argTopics = this._anonymous ? data.topics : data.topics.slice(1);
+	    var indexedData = argTopics.map(function (topics) { return topics.slice(2); }).join("");
+	    var indexedParams = coder.decodeParams(this.types(true), indexedData); 
+
+	    var notIndexedData = data.data.slice(2);
+	    var notIndexedParams = coder.decodeParams(this.types(false), notIndexedData);
+	    
+	    var result = formatters.outputLogFormatter(data);
+	    result.event = this.displayName();
+	    result.address = data.address;
+
+	    result.args = this._params.reduce(function (acc, current) {
+	        acc[current.name] = current.indexed ? indexedParams.shift() : notIndexedParams.shift();
+	        return acc;
+	    }, {});
+
+	    delete result.data;
+	    delete result.topics;
+
+	    return result;
+	};
+
+	/**
+	 * Should be used to create new filter object from event
+	 *
+	 * @method execute
+	 * @param {Object} indexed
+	 * @param {Object} options
+	 * @return {Object} filter object
+	 */
+	SolidityEvent.prototype.execute = function (indexed, options, callback) {
+
+	    if (utils.isFunction(arguments[arguments.length - 1])) {
+	        callback = arguments[arguments.length - 1];
+	        if(arguments.length === 2)
+	            options = null;
+	        if(arguments.length === 1) {
+	            options = null;
+	            indexed = {};
+	        }
+	    }
+	    
+	    var o = this.encode(indexed, options);
+	    var formatter = this.decode.bind(this);
+	    return new Filter(this._requestManager, o, watches.eth(), formatter, callback);
+	};
+
+	/**
+	 * Should be used to attach event to contract object
+	 *
+	 * @method attachToContract
+	 * @param {Contract}
+	 */
+	SolidityEvent.prototype.attachToContract = function (contract) {
+	    var execute = this.execute.bind(this);
+	    var displayName = this.displayName();
+	    if (!contract[displayName]) {
+	        contract[displayName] = execute;
+	    }
+	    contract[displayName][this.typeName()] = this.execute.bind(this, contract);
+	};
+
+	module.exports = SolidityEvent;
+
+
+
+/***/ },
+/* 290 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/*
+	    This file is part of web3.js.
+
+	    web3.js is free software: you can redistribute it and/or modify
+	    it under the terms of the GNU Lesser General Public License as published by
+	    the Free Software Foundation, either version 3 of the License, or
+	    (at your option) any later version.
+
+	    web3.js is distributed in the hope that it will be useful,
+	    but WITHOUT ANY WARRANTY; without even the implied warranty of
+	    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	    GNU Lesser General Public License for more details.
+
+	    You should have received a copy of the GNU Lesser General Public License
+	    along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
+	*/
+	/** @file filter.js
+	 * @authors:
+	 *   Jeffrey Wilcke <jeff@ethdev.com>
+	 *   Marek Kotewicz <marek@ethdev.com>
+	 *   Marian Oancea <marian@ethdev.com>
+	 *   Fabian Vogelsteller <fabian@ethdev.com>
+	 *   Gav Wood <g@ethdev.com>
+	 * @date 2014
+	 */
+
+	var formatters = __webpack_require__(272);
+	var utils = __webpack_require__(229);
+
+	/**
+	* Converts a given topic to a hex string, but also allows null values.
+	*
+	* @param {Mixed} value
+	* @return {String}
+	*/
+	var toTopic = function(value){
+
+	    if(value === null || typeof value === 'undefined')
+	        return null;
+
+	    value = String(value);
+
+	    if(value.indexOf('0x') === 0)
+	        return value;
+	    else
+	        return utils.fromUtf8(value);
+	};
+
+	/// This method should be called on options object, to verify deprecated properties && lazy load dynamic ones
+	/// @param should be string or object
+	/// @returns options string or object
+	var getOptions = function (options) {
+
+	    if (utils.isString(options)) {
+	        return options;
+	    }
+
+	    options = options || {};
+
+	    // make sure topics, get converted to hex
+	    options.topics = options.topics || [];
+	    options.topics = options.topics.map(function(topic){
+	        return (utils.isArray(topic)) ? topic.map(toTopic) : toTopic(topic);
+	    });
+
+	    return {
+	        topics: options.topics,
+	        from: options.from,
+	        to: options.to,
+	        address: options.address,
+	        fromBlock: formatters.inputBlockNumberFormatter(options.fromBlock),
+	        toBlock: formatters.inputBlockNumberFormatter(options.toBlock)
+	    };
+	};
+
+	/**
+	Adds the callback and sets up the methods, to iterate over the results.
+
+	@method getLogsAtStart
+	@param {Object} self
+	@param {funciton}
+	*/
+	var getLogsAtStart = function(self, callback){
+	    // call getFilterLogs for the first watch callback start
+	    if (!utils.isString(self.options)) {
+	        self.get(function (err, messages) {
+	            // don't send all the responses to all the watches again... just to self one
+	            if (err) {
+	                callback(err);
+	            }
+
+	            if(utils.isArray(messages)) {
+	                messages.forEach(function (message) {
+	                    callback(null, message);
+	                });
+	            }
+	        });
+	    }
+	};
+
+	/**
+	Adds the callback and sets up the methods, to iterate over the results.
+
+	@method pollFilter
+	@param {Object} self
+	*/
+	var pollFilter = function(self) {
+
+	    var onMessage = function (error, messages) {
+	        if (error) {
+	            return self.callbacks.forEach(function (callback) {
+	                callback(error);
+	            });
+	        }
+
+	        if(utils.isArray(messages)) {
+	            messages.forEach(function (message) {
+	                message = self.formatter ? self.formatter(message) : message;
+	                self.callbacks.forEach(function (callback) {
+	                    callback(null, message);
+	                });
+	            });
+	        }
+	    };
+
+	    self.requestManager.startPolling({
+	        method: self.implementation.poll.call,
+	        params: [self.filterId],
+	    }, self.filterId, onMessage, self.stopWatching.bind(self));
+
+	};
+
+	var Filter = function (requestManager, options, methods, formatter, callback) {
+	    var self = this;
+	    var implementation = {};
+	    methods.forEach(function (method) {
+	        method.setRequestManager(requestManager);
+	        method.attachToObject(implementation);
+	    });
+	    this.requestManager = requestManager;
+	    this.options = getOptions(options);
+	    this.implementation = implementation;
+	    this.filterId = null;
+	    this.callbacks = [];
+	    this.getLogsCallbacks = [];
+	    this.pollFilters = [];
+	    this.formatter = formatter;
+	    this.implementation.newFilter(this.options, function(error, id){
+	        if(error) {
+	            self.callbacks.forEach(function(cb){
+	                cb(error);
+	            });
+	        } else {
+	            self.filterId = id;
+
+	            // check if there are get pending callbacks as a consequence
+	            // of calling get() with filterId unassigned.
+	            self.getLogsCallbacks.forEach(function (cb){
+	                self.get(cb);
+	            });
+	            self.getLogsCallbacks = [];
+
+	            // get filter logs for the already existing watch calls
+	            self.callbacks.forEach(function(cb){
+	                getLogsAtStart(self, cb);
+	            });
+	            if(self.callbacks.length > 0)
+	                pollFilter(self);
+
+	            // start to watch immediately
+	            if(typeof callback === 'function') {
+	                return self.watch(callback);
+	            }
+	        }
+	    });
+
+	    return this;
+	};
+
+	Filter.prototype.watch = function (callback) {
+	    this.callbacks.push(callback);
+
+	    if(this.filterId) {
+	        getLogsAtStart(this, callback);
+	        pollFilter(this);
+	    }
+
+	    return this;
+	};
+
+	Filter.prototype.stopWatching = function (callback) {
+	    this.requestManager.stopPolling(this.filterId);
+	    this.callbacks = [];
+	    // remove filter async
+	    if (callback) {
+	        this.implementation.uninstallFilter(this.filterId, callback);
+	    } else {
+	        return this.implementation.uninstallFilter(this.filterId);
+	    }
+	};
+
+	Filter.prototype.get = function (callback) {
+	    var self = this;
+	    if (utils.isFunction(callback)) {
+	        if (this.filterId === null) {
+	            // If filterId is not set yet, call it back
+	            // when newFilter() assigns it.
+	            this.getLogsCallbacks.push(callback);
+	        } else {
+	            this.implementation.getLogs(this.filterId, function(err, res){
+	                if (err) {
+	                    callback(err);
+	                } else {
+	                    callback(null, res.map(function (log) {
+	                        return self.formatter ? self.formatter(log) : log;
+	                    }));
+	                }
+	            });
+	        }
+	    } else {
+	        if (this.filterId === null) {
+	            throw new Error('Filter ID Error: filter().get() can\'t be chained synchronous, please provide a callback for the get() method.');
+	        }
+	        var logs = this.implementation.getLogs(this.filterId);
+	        return logs.map(function (log) {
+	            return self.formatter ? self.formatter(log) : log;
+	        });
+	    }
+
+	    return this;
+	};
+
+	module.exports = Filter;
+
+
+
+/***/ },
+/* 291 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/*
+	    This file is part of web3.js.
+
+	    web3.js is free software: you can redistribute it and/or modify
+	    it under the terms of the GNU Lesser General Public License as published by
+	    the Free Software Foundation, either version 3 of the License, or
+	    (at your option) any later version.
+
+	    web3.js is distributed in the hope that it will be useful,
+	    but WITHOUT ANY WARRANTY; without even the implied warranty of
+	    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	    GNU Lesser General Public License for more details.
+
+	    You should have received a copy of the GNU Lesser General Public License
+	    along with web3.js.  If not, see <http://www.gnu.org/licenses/>.
+	*/
+	/** @file watches.js
+	 * @authors:
+	 *   Marek Kotewicz <marek@ethdev.com>
+	 * @date 2015
+	 */
+
+	var Method = __webpack_require__(273);
+
+	/// @returns an array of objects describing web3.eth.filter api methods
+	var eth = function () {
+	    var newFilterCall = function (args) {
+	        var type = args[0];
+
+	        switch(type) {
+	            case 'latest':
+	                args.shift();
+	                this.params = 0;
+	                return 'eth_newBlockFilter';
+	            case 'pending':
+	                args.shift();
+	                this.params = 0;
+	                return 'eth_newPendingTransactionFilter';
+	            default:
+	                return 'eth_newFilter';
+	        }
+	    };
+
+	    var newFilter = new Method({
+	        name: 'newFilter',
+	        call: newFilterCall,
+	        params: 1
+	    });
+
+	    var uninstallFilter = new Method({
+	        name: 'uninstallFilter',
+	        call: 'eth_uninstallFilter',
+	        params: 1
+	    });
+
+	    var getLogs = new Method({
+	        name: 'getLogs',
+	        call: 'eth_getFilterLogs',
+	        params: 1
+	    });
+
+	    var poll = new Method({
+	        name: 'poll',
+	        call: 'eth_getFilterChanges',
+	        params: 1
+	    });
+
+	    return [
+	        newFilter,
+	        uninstallFilter,
+	        getLogs,
+	        poll
+	    ];
+	};
+
+	/// @returns an array of objects describing web3.shh.watch api methods
+	var shh = function () {
+	    var newFilter = new Method({
+	        name: 'newFilter',
+	        call: 'shh_newFilter',
+	        params: 1
+	    });
+
+	    var uninstallFilter = new Method({
+	        name: 'uninstallFilter',
+	        call: 'shh_uninstallFilter',
+	        params: 1
+	    });
+
+	    var getLogs = new Method({
+	        name: 'getLogs',
+	        call: 'shh_getMessages',
+	        params: 1
+	    });
+
+	    var poll = new Method({
+	        name: 'poll',
+	        call: 'shh_getFilterChanges',
+	        params: 1
+	    });
+
+	    return [
+	        newFilter,
+	        uninstallFilter,
+	        getLogs,
+	        poll
+	    ];
+	};
+
+	module.exports = {
+	    eth: eth,
+	    shh: shh
+	};
+
+
+
+/***/ },
+/* 292 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -41340,10 +40679,10 @@
 	 * @date 2015
 	 */
 
-	var coder = __webpack_require__(265);
-	var utils = __webpack_require__(226);
-	var formatters = __webpack_require__(279);
-	var sha3 = __webpack_require__(228);
+	var coder = __webpack_require__(276);
+	var utils = __webpack_require__(229);
+	var formatters = __webpack_require__(272);
+	var sha3 = __webpack_require__(231);
 
 	/**
 	 * This prototype should be used to call/sendTransaction to solidity functions
@@ -41568,7 +40907,7 @@
 
 
 /***/ },
-/* 310 */
+/* 293 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -41593,12 +40932,12 @@
 	 * @date 2014
 	 */
 
-	var sha3 = __webpack_require__(228);
-	var SolidityEvent = __webpack_require__(225);
-	var formatters = __webpack_require__(279);
-	var utils = __webpack_require__(226);
-	var Filter = __webpack_require__(281);
-	var watches = __webpack_require__(282);
+	var sha3 = __webpack_require__(231);
+	var SolidityEvent = __webpack_require__(289);
+	var formatters = __webpack_require__(272);
+	var utils = __webpack_require__(229);
+	var Filter = __webpack_require__(290);
+	var watches = __webpack_require__(291);
 
 	var AllSolidityEvents = function (requestManager, json, address) {
 	    this._requestManager = requestManager;
@@ -41662,7 +41001,7 @@
 
 
 /***/ },
-/* 311 */
+/* 294 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -41687,8 +41026,8 @@
 	 * @date 2015
 	 */
 
-	var formatters = __webpack_require__(279);
-	var utils = __webpack_require__(226);
+	var formatters = __webpack_require__(272);
+	var utils = __webpack_require__(229);
 
 	var count = 1;
 
@@ -41761,7 +41100,7 @@
 
 
 /***/ },
-/* 312 */
+/* 295 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -41786,8 +41125,8 @@
 	 * @date 2015
 	 */
 
-	var globalRegistrarAbi = __webpack_require__(313);
-	var icapRegistrarAbi= __webpack_require__(314);
+	var globalRegistrarAbi = __webpack_require__(296);
+	var icapRegistrarAbi= __webpack_require__(297);
 
 	var globalNameregAddress = '0xc6d9d2cd449a754c494264e1809c50e34d64562b';
 	var icapNameregAddress = '0xa1a111bc074c9cfa781f0c38e63bd51c91b8af00';
@@ -41806,7 +41145,7 @@
 
 
 /***/ },
-/* 313 */
+/* 296 */
 /***/ function(module, exports) {
 
 	module.exports = [
@@ -42065,7 +41404,7 @@
 	];
 
 /***/ },
-/* 314 */
+/* 297 */
 /***/ function(module, exports) {
 
 	module.exports = [
@@ -42178,7 +41517,7 @@
 	];
 
 /***/ },
-/* 315 */
+/* 298 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -42203,8 +41542,8 @@
 	 * @date 2015
 	 */
 
-	var Iban = __webpack_require__(280);
-	var exchangeAbi = __webpack_require__(316);
+	var Iban = __webpack_require__(270);
+	var exchangeAbi = __webpack_require__(299);
 
 	/**
 	 * Should be used to make Iban transfer
@@ -42276,7 +41615,7 @@
 
 
 /***/ },
-/* 316 */
+/* 299 */
 /***/ function(module, exports) {
 
 	module.exports = [
@@ -42427,7 +41766,7 @@
 	];
 
 /***/ },
-/* 317 */
+/* 300 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -42452,7 +41791,7 @@
 	 * @date 2015
 	 */
 
-	var Method = __webpack_require__(283);
+	var Method = __webpack_require__(273);
 
 	var DB = function (web3) {
 	    this._requestManager = web3._requestManager;
@@ -42499,7 +41838,7 @@
 
 
 /***/ },
-/* 318 */
+/* 301 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -42524,10 +41863,10 @@
 	 * @date 2015
 	 */
 
-	var Method = __webpack_require__(283);
-	var formatters = __webpack_require__(279);
-	var Filter = __webpack_require__(281);
-	var watches = __webpack_require__(282);
+	var Method = __webpack_require__(273);
+	var formatters = __webpack_require__(272);
+	var Filter = __webpack_require__(290);
+	var watches = __webpack_require__(291);
 
 	var Shh = function (web3) {
 	    this._requestManager = web3._requestManager;
@@ -42591,7 +41930,7 @@
 
 
 /***/ },
-/* 319 */
+/* 302 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -42616,8 +41955,8 @@
 	 * @date 2015
 	 */
 
-	var utils = __webpack_require__(226);
-	var Property = __webpack_require__(307);
+	var utils = __webpack_require__(229);
+	var Property = __webpack_require__(274);
 
 	var Net = function (web3) {
 	    this._requestManager = web3._requestManager;
@@ -42649,7 +41988,7 @@
 
 
 /***/ },
-/* 320 */
+/* 303 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -42677,9 +42016,9 @@
 
 	"use strict";
 
-	var Method = __webpack_require__(283);
-	var Property = __webpack_require__(307);
-	var formatters = __webpack_require__(279);
+	var Method = __webpack_require__(273);
+	var Property = __webpack_require__(274);
+	var formatters = __webpack_require__(272);
 
 	function Personal(web3) {
 	    this._requestManager = web3._requestManager;
@@ -42748,7 +42087,7 @@
 
 
 /***/ },
-/* 321 */
+/* 304 */
 /***/ function(module, exports) {
 
 	
@@ -42763,7 +42102,7 @@
 
 
 /***/ },
-/* 322 */
+/* 305 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -42771,13 +42110,13 @@
 	};
 
 /***/ },
-/* 323 */
+/* 306 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var formatters = __webpack_require__(279);
-	var utils = __webpack_require__(226);
-	var Method = __webpack_require__(283);
-	var Property = __webpack_require__(307);
+	var formatters = __webpack_require__(272);
+	var utils = __webpack_require__(229);
+	var Method = __webpack_require__(273);
+	var Property = __webpack_require__(274);
 
 	// TODO: refactor, so the input params are not altered.
 	// it's necessary to make same 'extension' work with multiple providers
@@ -42825,7 +42164,7 @@
 
 
 /***/ },
-/* 324 */
+/* 307 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -42850,8 +42189,8 @@
 	 * @date 2015
 	 */
 
-	var Jsonrpc = __webpack_require__(305);
-	var errors = __webpack_require__(284);
+	var Jsonrpc = __webpack_require__(228);
+	var errors = __webpack_require__(269);
 
 	var Batch = function (web3) {
 	    this.requestManager = web3._requestManager;
@@ -42897,7 +42236,7 @@
 
 
 /***/ },
-/* 325 */
+/* 308 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -42926,7 +42265,7 @@
 
 	"use strict";
 
-	var errors = __webpack_require__(284);
+	var errors = __webpack_require__(269);
 
 	// workaround to use httpprovider in different envs
 	var XMLHttpRequest; // jshint ignore: line
@@ -42937,7 +42276,7 @@
 
 	// node
 	} else {
-	    XMLHttpRequest = __webpack_require__(326).XMLHttpRequest; // jshint ignore: line
+	    XMLHttpRequest = __webpack_require__(309).XMLHttpRequest; // jshint ignore: line
 	}
 
 	/**
@@ -43045,7 +42384,7 @@
 
 
 /***/ },
-/* 326 */
+/* 309 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -43060,7 +42399,7 @@
 
 
 /***/ },
-/* 327 */
+/* 310 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -43087,8 +42426,8 @@
 
 	"use strict";
 
-	var utils = __webpack_require__(226);
-	var errors = __webpack_require__(284);
+	var utils = __webpack_require__(229);
+	var errors = __webpack_require__(269);
 
 
 	var IpcProvider = function (path, net) {
@@ -43271,6 +42610,666 @@
 	module.exports = IpcProvider;
 
 
+
+/***/ },
+/* 311 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 312 */,
+/* 313 */,
+/* 314 */,
+/* 315 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _classnames = __webpack_require__(316);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	var _globals = __webpack_require__(223);
+
+	var _MarketSol = __webpack_require__(224);
+
+	var _MarketSol2 = _interopRequireDefault(_MarketSol);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	__webpack_require__(317);
+
+	/* A single Dapp with state taken from the contract */
+	var DApp = _react2.default.createClass({
+	  displayName: 'DApp',
+
+	  getInitialState: function getInitialState() {
+	    return {
+	      ident: 'loading...',
+	      master: '',
+	      fee: 0,
+	      on: false
+	    };
+	  },
+	  componentWillMount: function componentWillMount() {
+	    var self = this;
+	    _MarketSol2.default.deployed().dappList.call(this.props.index).then(function (name) {
+	      _MarketSol2.default.deployed().dapps.call(name).then(function (info) {
+	        self.setState({
+	          ident: web3.toAscii(info[0]),
+	          master: web3.toAscii(info[1]),
+	          fee: info[2].toNumber(),
+	          coinbase: info[3],
+	          state: web3.toAscii(info[4])
+	        });
+	      });
+	    });
+	  },
+	  setActive: function setActive(element) {
+	    $('.dapp').removeClass('active');
+	    $('#actions').addClass('active');
+	    $(element.target).parent().addClass('active');
+	  },
+	  render: function render() {
+	    var classes = (0, _classnames2.default)({
+	      dapp: true,
+	      clearLeft: this.props.clearLeft
+	    });
+
+	    return _react2.default.createElement(
+	      'label',
+	      { key: this.state.ident, className: classes },
+	      _react2.default.createElement('input', { type: 'radio', name: 'dapp', value: this.state.ident, onClick: this.setActive, readOnly: true }),
+	      _react2.default.createElement(
+	        'h3',
+	        { className: 'ident' },
+	        this.state.ident
+	      ),
+	      _react2.default.createElement(
+	        'h3',
+	        { className: 'master' },
+	        this.state.master
+	      ),
+	      _react2.default.createElement(
+	        'h3',
+	        { className: 'fee' },
+	        this.state.fee
+	      ),
+	      _react2.default.createElement(
+	        'h3',
+	        { className: 'on' },
+	        this.state.state
+	      )
+	    );
+	  }
+	});
+
+	var DAppActions = _react2.default.createClass({
+	  displayName: 'DAppActions',
+
+	  startup: function startup() {
+	    var name = $('input[name=dapp]:checked').val();
+	    _MarketSol2.default.deployed().startDApp.estimateGas(name).then(function (gas) {
+	      _MarketSol2.default.deployed().startDApp.sendTransaction(name, {
+	        gas: gas * 2
+	      });
+	    });
+	  },
+	  // the equivalent of force quitting the dapp
+	  fqu: function fqu() {
+	    var name = $('input[name=dapp]:checked').val();
+	    _MarketSol2.default.deployed().finishDApp.estimateGas(name).then(function (gas) {
+	      _MarketSol2.default.deployed().finishDApp.sendTransaction(name, {
+	        gas: gas * 2
+	      });
+	    });
+	  },
+	  render: function render() {
+	    return _react2.default.createElement(
+	      'div',
+	      { id: 'actions' },
+	      _react2.default.createElement(
+	        'h3',
+	        null,
+	        'Details and Actions'
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(
+	          'button',
+	          { onClick: this.startup },
+	          'Start'
+	        ),
+	        _react2.default.createElement(
+	          'button',
+	          { onClick: this.fqu },
+	          'Cancel/Force Quit'
+	        )
+	      )
+	    );
+	  }
+	});
+
+	/* Grid of all DApps in the market contract */
+	var ViewDApps = _react2.default.createClass({
+	  displayName: 'ViewDApps',
+
+	  getInitialState: function getInitialState() {
+	    return {
+	      numDApps: 0
+	    };
+	  },
+	  render: function render() {
+	    var div = _react2.default.createElement('div', { id: 'display' }, []);
+	    for (var i = 0; i < this.state.numDApps; i++) {
+	      if (i % 3 == 0) {
+	        div.props.children.push(_react2.default.createElement(DApp, { clearLeft: true, index: i }));
+	      } else {
+	        div.props.children.push(_react2.default.createElement(DApp, { clearLeft: false, index: i }));
+	      }
+	    }
+	    return _react2.default.createElement(
+	      'div',
+	      null,
+	      _react2.default.createElement(_globals.Navbar, null),
+	      _react2.default.createElement(
+	        'main',
+	        { id: 'viewDApps' },
+	        div,
+	        _react2.default.createElement(DAppActions, null)
+	      )
+	    );
+	  },
+	  componentDidMount: function componentDidMount() {
+	    var _this = this;
+
+	    _MarketSol2.default.deployed().numDApps.call().then(function (numDApps) {
+	      _this.setState({ numDApps: numDApps });
+	    });
+	  }
+	});
+
+	exports.default = ViewDApps;
+
+/***/ },
+/* 316 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
+	  Copyright (c) 2016 Jed Watson.
+	  Licensed under the MIT License (MIT), see
+	  http://jedwatson.github.io/classnames
+	*/
+	/* global define */
+
+	(function () {
+		'use strict';
+
+		var hasOwn = {}.hasOwnProperty;
+
+		function classNames () {
+			var classes = [];
+
+			for (var i = 0; i < arguments.length; i++) {
+				var arg = arguments[i];
+				if (!arg) continue;
+
+				var argType = typeof arg;
+
+				if (argType === 'string' || argType === 'number') {
+					classes.push(arg);
+				} else if (Array.isArray(arg)) {
+					classes.push(classNames.apply(null, arg));
+				} else if (argType === 'object') {
+					for (var key in arg) {
+						if (hasOwn.call(arg, key) && arg[key]) {
+							classes.push(key);
+						}
+					}
+				}
+			}
+
+			return classes.join(' ');
+		}
+
+		if (typeof module !== 'undefined' && module.exports) {
+			module.exports = classNames;
+		} else if (true) {
+			// register as 'classnames', consistent with npm package name
+			!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
+				return classNames;
+			}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+		} else {
+			window.classNames = classNames;
+		}
+	}());
+
+
+/***/ },
+/* 317 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 318 */,
+/* 319 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _globals = __webpack_require__(223);
+
+	var _MarketSol = __webpack_require__(224);
+
+	var _MarketSol2 = _interopRequireDefault(_MarketSol);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	__webpack_require__(320);
+
+	var EditDApps = _react2.default.createClass({
+	  displayName: 'EditDApps',
+
+	  createNewDApp: function createNewDApp(argument) {
+	    var ident = $("#ident").val();
+	    var fee = $("#fee").val();
+	    var hash = $("#hash").val();
+	    var classfile = $("#classfile").val();
+	    _MarketSol2.default.deployed().createDApp.estimateGas(ident, parseInt(fee), hash, classfile).then(function (gas) {
+	      _MarketSol2.default.deployed().createDApp.sendTransaction(ident, parseInt(fee), hash, classfile, {
+	        gas: gas * 4
+	      });
+	    });
+	  },
+	  render: function render() {
+	    return _react2.default.createElement(
+	      'div',
+	      null,
+	      _react2.default.createElement(_globals.Navbar, null),
+	      _react2.default.createElement(
+	        'main',
+	        { id: 'editDApps' },
+	        _react2.default.createElement(
+	          'label',
+	          null,
+	          _react2.default.createElement(
+	            'span',
+	            null,
+	            'Identifier'
+	          ),
+	          _react2.default.createElement('input', { id: 'ident' })
+	        ),
+	        _react2.default.createElement(
+	          'label',
+	          null,
+	          _react2.default.createElement(
+	            'span',
+	            null,
+	            'Price'
+	          ),
+	          _react2.default.createElement('input', { id: 'fee' })
+	        ),
+	        _react2.default.createElement(
+	          'label',
+	          null,
+	          _react2.default.createElement(
+	            'span',
+	            null,
+	            'IPFS Hash'
+	          ),
+	          _react2.default.createElement('input', { id: 'hash' })
+	        ),
+	        _react2.default.createElement(
+	          'label',
+	          null,
+	          _react2.default.createElement(
+	            'span',
+	            null,
+	            'Main Class'
+	          ),
+	          _react2.default.createElement('input', { id: 'classfile' })
+	        ),
+	        _react2.default.createElement(
+	          'button',
+	          { id: 'create', onClick: this.createNewDApp },
+	          'Create'
+	        )
+	      )
+	    );
+	  }
+	});
+
+	exports.default = EditDApps;
+
+/***/ },
+/* 320 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 321 */,
+/* 322 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _globals = __webpack_require__(223);
+
+	var _MarketSol = __webpack_require__(224);
+
+	var _MarketSol2 = _interopRequireDefault(_MarketSol);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	__webpack_require__(323);
+
+	var EditNodes = _react2.default.createClass({
+	  displayName: 'EditNodes',
+
+	  createNewNode: function createNewNode(argument) {
+	    var name = $('#name').val();
+	    var state = $('#state').val();
+	    var ipaddress = $('#ipaddress').val();
+	    _MarketSol2.default.deployed().createNode.estimateGas(name, state, ipaddress).then(function (gas) {
+	      _MarketSol2.default.deployed().createNode.sendTransaction(name, state, ipaddress, {
+	        gas: gas * 2
+	      });
+	    });
+	  },
+	  render: function render() {
+	    var name = _react2.default.createElement(
+	      'label',
+	      null,
+	      _react2.default.createElement(
+	        'span',
+	        null,
+	        'Name'
+	      ),
+	      _react2.default.createElement('input', { id: 'name' })
+	    );
+	    var state = _react2.default.createElement(
+	      'label',
+	      null,
+	      _react2.default.createElement(
+	        'span',
+	        null,
+	        'State'
+	      ),
+	      _react2.default.createElement('input', { id: 'state' })
+	    );
+	    var ipaddress = _react2.default.createElement(
+	      'label',
+	      null,
+	      _react2.default.createElement(
+	        'span',
+	        null,
+	        'IP Address'
+	      ),
+	      _react2.default.createElement('input', { id: 'ipaddress' })
+	    );
+
+	    var create = _react2.default.createElement(
+	      'button',
+	      { id: 'create', onClick: this.createNewNode },
+	      'Create'
+	    );
+
+	    return _react2.default.createElement(
+	      'div',
+	      null,
+	      _react2.default.createElement(_globals.Navbar, null),
+	      _react2.default.createElement(
+	        'div',
+	        { id: 'editNodes' },
+	        name,
+	        state,
+	        ipaddress,
+	        create
+	      )
+	    );
+	  }
+	});
+
+	exports.default = EditNodes;
+
+/***/ },
+/* 323 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 324 */,
+/* 325 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _classnames = __webpack_require__(316);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	var _globals = __webpack_require__(223);
+
+	var _MarketSol = __webpack_require__(224);
+
+	var _MarketSol2 = _interopRequireDefault(_MarketSol);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	__webpack_require__(326);
+
+	/* A single Dapp with state taken from the contract */
+	var Node = _react2.default.createClass({
+	  displayName: 'Node',
+
+	  getInitialState: function getInitialState() {
+	    return {
+	      name: 'loading...',
+	      state: '',
+	      ipaddress: '',
+	      coinbase: '',
+	      dappIdent: ''
+	    };
+	  },
+	  componentWillMount: function componentWillMount() {
+	    var _this = this;
+
+	    _MarketSol2.default.deployed().nodeList(this.props.index).then(function (name) {
+	      return _MarketSol2.default.deployed().nodes.call(name);
+	    }).then(function (info) {
+	      _this.setState({
+	        ident: web3.toAscii(info[0]),
+	        state: web3.toAscii(info[1]),
+	        ipaddress: web3.toAscii(info[2]),
+	        dappIdent: web3.toAscii(info[3]),
+	        coinbase: info[4]
+	      });
+	    });
+	  },
+	  setActive: function setActive(element) {
+	    $('.node').removeClass('active');
+	    $('#actions').addClass('active');
+	    $(element.target).parent().addClass('active');
+	  },
+	  render: function render() {
+	    var classes = (0, _classnames2.default)({
+	      node: true,
+	      clearLeft: this.props.clearLeft
+	    });
+
+	    return _react2.default.createElement(
+	      'label',
+	      { key: this.state.ident, className: classes },
+	      _react2.default.createElement('input', { type: 'radio', name: 'node', value: this.state.ident, onClick: this.setActive, readOnly: true }),
+	      _react2.default.createElement(
+	        'h3',
+	        { className: 'name' },
+	        this.state.ident
+	      ),
+	      _react2.default.createElement(
+	        'h3',
+	        { className: 'state' },
+	        this.state.state
+	      ),
+	      _react2.default.createElement(
+	        'h3',
+	        { className: 'ipaddress' },
+	        this.state.ipaddress
+	      ),
+	      _react2.default.createElement(
+	        'h3',
+	        { className: 'appIdent' },
+	        this.state.dappIdent
+	      ),
+	      _react2.default.createElement(
+	        'h3',
+	        { className: 'coinbase' },
+	        this.state.coinbase
+	      )
+	    );
+	  }
+	});
+
+	var NodeActions = _react2.default.createClass({
+	  displayName: 'NodeActions',
+
+	  getInitialState: function getInitialState() {
+	    return {
+	      value: 0
+	    };
+	  },
+	  setValue: function setValue(event) {
+	    this.setState({
+	      value: event.target.value
+	    });
+	  },
+	  payup: function payup() {
+	    var _this2 = this;
+
+	    var name = $('input[name=node]:checked').val();
+	    _MarketSol2.default.deployed().nodes.call(name).then(function (info) {
+	      web3.eth.sendTransaction({
+	        to: info[4],
+	        value: _this2.state.value
+	      });
+	    });
+	  },
+	  render: function render() {
+	    return _react2.default.createElement(
+	      'div',
+	      { id: 'actions' },
+	      _react2.default.createElement(
+	        'h3',
+	        null,
+	        'Details and Actions'
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(
+	          'label',
+	          { htmlFor: 'value' },
+	          _react2.default.createElement(
+	            'span',
+	            null,
+	            'Amount'
+	          ),
+	          _react2.default.createElement('input', { id: 'value', type: 'number', value: this.state.value, onChange: this.setValue })
+	        ),
+	        _react2.default.createElement(
+	          'button',
+	          { id: 'payup', onClick: this.payup },
+	          'Donate to Node'
+	        )
+	      )
+	    );
+	  }
+	});
+
+	/* Grid of all DApps in the market contract */
+	var ViewNodes = _react2.default.createClass({
+	  displayName: 'ViewNodes',
+
+	  getInitialState: function getInitialState() {
+	    return {
+	      numNodes: 0
+	    };
+	  },
+	  render: function render() {
+	    var div = _react2.default.createElement('div', { id: 'display' }, []);
+	    for (var i = 0; i < this.state.numNodes; i++) {
+	      if (i % 3 == 0) {
+	        div.props.children.push(_react2.default.createElement(Node, { clearLeft: true, index: i }));
+	      } else {
+	        div.props.children.push(_react2.default.createElement(Node, { clearLeft: false, index: i }));
+	      }
+	    }
+
+	    return _react2.default.createElement(
+	      'div',
+	      null,
+	      _react2.default.createElement(_globals.Navbar, null),
+	      _react2.default.createElement(
+	        'main',
+	        { id: 'viewNodes' },
+	        div,
+	        _react2.default.createElement(NodeActions, null)
+	      )
+	    );
+	  },
+	  componentDidMount: function componentDidMount() {
+	    var _this3 = this;
+
+	    _MarketSol2.default.deployed().numNodes.call().then(function (numNodes) {
+	      _this3.setState({ numNodes: numNodes });
+	    });
+	  }
+	});
+
+	exports.default = ViewNodes;
+
+/***/ },
+/* 326 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
 
 /***/ }
 /******/ ]);

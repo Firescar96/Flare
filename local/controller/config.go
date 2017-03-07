@@ -77,6 +77,7 @@ func saveConfig(raw []byte) {
 		log.Println("error with parsing config json")
 		panic(err)
 	}
+	log.Println(_config)
 	data, _ := json.MarshalIndent(_config, "", "    ")
 	confLoc := os.Getenv("FLARECONF")
 	ioutil.WriteFile(confLoc, data, os.ModePerm)

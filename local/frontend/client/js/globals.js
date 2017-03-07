@@ -83,7 +83,8 @@ let wsCallbacks = {
   cassandraConnections: [],
   ipfsConnections: [],
   getLog: [],
-  config: [],
+  getConfig: [],
+  setConfig: [],
   submit: [],
 }
 
@@ -96,6 +97,7 @@ ws.onmessage = (message) => {
       callback(message.data);
     });
   }
+
   // if(wsCallbacks[message.uniqueIdent]) {
   //   wsCallbacks[message.uniqueIdent](this, data);
   //   delete wsCallbacks[message.uniqueIdent];

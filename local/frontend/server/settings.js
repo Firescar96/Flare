@@ -7,7 +7,7 @@ export default function (localWS, wss) {
         case 'setConfig':
           var message = {
             flag: 'setConfig',
-            data: JSON.stringify(data.fields),
+            text: JSON.stringify(data.fields),
           }
           console.log(message);
           if(localWS) {
@@ -29,7 +29,7 @@ export default function (localWS, wss) {
     var data = JSON.parse(message.escapeSpecialChars())
 
     if(data.flag == 'config') {
-      message = {flag: 'config', data: JSON.parse(data.text)}
+      message = {flag: 'getConfig', data: JSON.parse(data.text)}
       wss.clients.forEach((client) => {
         client.send(JSON.stringify(message), () => {});
       });

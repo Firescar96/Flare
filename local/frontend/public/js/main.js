@@ -67,15 +67,15 @@
 
 	var _Connections2 = _interopRequireDefault(_Connections);
 
-	var _Submit = __webpack_require__(238);
+	var _Submit = __webpack_require__(231);
 
 	var _Submit2 = _interopRequireDefault(_Submit);
 
-	var _Settings = __webpack_require__(231);
+	var _Settings = __webpack_require__(235);
 
 	var _Settings2 = _interopRequireDefault(_Settings);
 
-	var _Logs = __webpack_require__(234);
+	var _Logs = __webpack_require__(238);
 
 	var _Logs2 = _interopRequireDefault(_Logs);
 
@@ -25993,7 +25993,8 @@
 	  cassandraConnections: [],
 	  ipfsConnections: [],
 	  getLog: [],
-	  config: [],
+	  getConfig: [],
+	  setConfig: [],
 	  submit: []
 	};
 
@@ -26006,6 +26007,7 @@
 	      callback(message.data);
 	    });
 	  }
+
 	  // if(wsCallbacks[message.uniqueIdent]) {
 	  //   wsCallbacks[message.uniqueIdent](this, data);
 	  //   delete wsCallbacks[message.uniqueIdent];
@@ -26402,9 +26404,190 @@
 
 	var _globals = __webpack_require__(223);
 
+	var _classnames = __webpack_require__(232);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	__webpack_require__(232);
+	__webpack_require__(233);
+
+	var Submit = _react2.default.createClass({
+	  displayName: 'Submit',
+
+	  getInitialState: function getInitialState() {
+	    return {
+	      hash: '',
+	      progress: 0,
+	      state: ''
+	    };
+	  },
+	  componentDidMount: function componentDidMount(argument) {
+	    var _this = this;
+
+	    _globals.ws.addCallback('submit', function (message) {
+	      _this.setState(message);
+	    });
+	  },
+	  render: function render() {
+	    return _react2.default.createElement(
+	      'div',
+	      { id: 'submit-page', className: 'page' },
+	      _react2.default.createElement(_globals.Navbar, null),
+	      _react2.default.createElement(_globals.Sidebar, { path: window.location.pathname }),
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'container' },
+	        _react2.default.createElement(
+	          'h1',
+	          null,
+	          'Submit'
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { id: 'uploadJar' },
+	          _react2.default.createElement(
+	            'h2',
+	            null,
+	            'Upload Jar'
+	          ),
+	          _react2.default.createElement('iframe', { name: 'submitFrame', style: { display: 'none' } }),
+	          _react2.default.createElement(
+	            'form',
+	            { id: 'uploadForm', encType: 'multipart/form-data',
+	              action: '/submit', method: 'post', target: 'submitFrame' },
+	            _react2.default.createElement(
+	              'label',
+	              null,
+	              _react2.default.createElement('input', { type: 'file', name: 'upload' })
+	            ),
+	            _react2.default.createElement(
+	              'div',
+	              null,
+	              _react2.default.createElement(
+	                'button',
+	                { id: 'upload', type: 'submit' },
+	                'StartUpload'
+	              )
+	            ),
+	            _react2.default.createElement(
+	              'div',
+	              { id: 'progressBox' },
+	              _react2.default.createElement(
+	                'span',
+	                null,
+	                this.state.progress
+	              ),
+	              _react2.default.createElement('span', { id: 'progressBar',
+	                className: (0, _classnames2.default)({
+	                  completed: this.state.state.localeCompare('completed') == 0,
+	                  failed: this.state.state.localeCompare('failed') == 0
+	                }),
+	                style: { width: this.state.progress + '%' } })
+	            )
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { id: 'ipfsHash' },
+	          _react2.default.createElement(
+	            'h2',
+	            null,
+	            'IPFS Hash: ',
+	            _react2.default.createElement(
+	              'span',
+	              { id: 'hash' },
+	              this.state.hash
+	            )
+	          )
+	        )
+	      )
+	    );
+	  }
+	});
+
+	exports.default = Submit;
+
+/***/ },
+/* 232 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
+	  Copyright (c) 2016 Jed Watson.
+	  Licensed under the MIT License (MIT), see
+	  http://jedwatson.github.io/classnames
+	*/
+	/* global define */
+
+	(function () {
+		'use strict';
+
+		var hasOwn = {}.hasOwnProperty;
+
+		function classNames () {
+			var classes = [];
+
+			for (var i = 0; i < arguments.length; i++) {
+				var arg = arguments[i];
+				if (!arg) continue;
+
+				var argType = typeof arg;
+
+				if (argType === 'string' || argType === 'number') {
+					classes.push(arg);
+				} else if (Array.isArray(arg)) {
+					classes.push(classNames.apply(null, arg));
+				} else if (argType === 'object') {
+					for (var key in arg) {
+						if (hasOwn.call(arg, key) && arg[key]) {
+							classes.push(key);
+						}
+					}
+				}
+			}
+
+			return classes.join(' ');
+		}
+
+		if (typeof module !== 'undefined' && module.exports) {
+			module.exports = classNames;
+		} else if (true) {
+			// register as 'classnames', consistent with npm package name
+			!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
+				return classNames;
+			}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+		} else {
+			window.classNames = classNames;
+		}
+	}());
+
+
+/***/ },
+/* 233 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 234 */,
+/* 235 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _globals = __webpack_require__(223);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	__webpack_require__(236);
 
 	var initialConfig = {
 	  'cassandra': {
@@ -26415,7 +26598,8 @@
 	    'username': ''
 	  },
 	  'flare': {
-	    'address': '',
+	    'ident': '',
+	    'coinbase': '',
 	    'directory': '',
 	    'local': {
 	      'ip': '',
@@ -26454,11 +26638,13 @@
 	    var newState = this.state;
 	    if (event.target.value == '') {
 	      newState[event.target.name] = event.target.placeholder;
+	      this.props.config.flare[event.target.name] = event.target.placeholder;
 	    } else {
 	      newState[event.target.name] = event.target.value;
+	      this.props.config.flare[event.target.name] = event.target.value;
 	    }
 	    this.setState(newState);
-	    Meteor.call('setConfig', { $set: { flare: newState } });
+	    _globals.ws.send(JSON.stringify({ flag: 'setConfig', fields: this.props.config }));
 	  },
 	  render: function render() {
 	    console.log(this.state);
@@ -26480,13 +26666,13 @@
 	            'label',
 	            null,
 	            'Directory',
-	            _react2.default.createElement('input', { type: 'text', name: 'directory', placeholder: this.props.config.directory, onChange: this.handleChange })
+	            _react2.default.createElement('input', { type: 'text', name: 'directory', placeholder: this.props.config.flare.directory, onChange: this.handleChange })
 	          ),
 	          _react2.default.createElement(
 	            'label',
 	            null,
 	            'Ethereum Address',
-	            _react2.default.createElement('input', { type: 'text', name: 'address', placeholder: this.props.config.address, onChange: this.handleChange })
+	            _react2.default.createElement('input', { type: 'text', name: 'coinbase', placeholder: this.props.config.flare.coinbase, onChange: this.handleChange })
 	          )
 	        ),
 	        _react2.default.createElement(
@@ -26495,8 +26681,14 @@
 	          _react2.default.createElement(
 	            'label',
 	            null,
+	            'Identifier',
+	            _react2.default.createElement('input', { type: 'text', name: 'ident', placeholder: this.props.config.flare.ident, onChange: this.handleChange })
+	          ),
+	          _react2.default.createElement(
+	            'label',
+	            null,
 	            'Price',
-	            _react2.default.createElement('input', { type: 'text', name: 'price', placeholder: this.props.config.price, onChange: this.handleChange })
+	            _react2.default.createElement('input', { type: 'text', name: 'price', placeholder: this.props.config.flare.price, onChange: this.handleChange })
 	          )
 	        ),
 	        _react2.default.createElement(
@@ -26511,13 +26703,13 @@
 	            'label',
 	            null,
 	            'IP Address',
-	            _react2.default.createElement('input', { type: 'text', name: 'local.ip', placeholder: this.props.config.local.ip, onChange: this.handleChange })
+	            _react2.default.createElement('input', { type: 'text', name: 'local.ip', placeholder: this.props.config.flare.local.ip, onChange: this.handleChange })
 	          ),
 	          _react2.default.createElement(
 	            'label',
 	            null,
 	            'Port',
-	            _react2.default.createElement('input', { type: 'text', name: 'local.port', placeholder: this.props.config.local.port, onChange: this.handleChange })
+	            _react2.default.createElement('input', { type: 'text', name: 'local.port', placeholder: this.props.config.flare.local.port, onChange: this.handleChange })
 	          )
 	        ),
 	        _react2.default.createElement(
@@ -26532,17 +26724,20 @@
 	            'label',
 	            null,
 	            'IP Address',
-	            _react2.default.createElement('input', { type: 'text', name: 'master.ip', placeholder: this.props.config.master.ip, onChange: this.handleChange })
+	            _react2.default.createElement('input', { type: 'text', name: 'master.ip', placeholder: this.props.config.flare.master.ip, onChange: this.handleChange })
 	          ),
 	          _react2.default.createElement(
 	            'label',
 	            null,
 	            'Port',
-	            _react2.default.createElement('input', { type: 'text', name: 'master.port', placeholder: this.props.config.master.port, onChange: this.handleChange })
+	            _react2.default.createElement('input', { type: 'text', name: 'master.port', placeholder: this.props.config.flare.master.port, onChange: this.handleChange })
 	          )
 	        )
 	      )
 	    );
+	  },
+	  componentDidMount: function componentDidMount() {
+	    this.setState(this.props.config);
 	  }
 	});
 
@@ -26553,11 +26748,13 @@
 	    var newState = this.state;
 	    if (event.target.value == '') {
 	      newState[event.target.name] = event.target.placeholder;
+	      this.props.config.flare[event.target.name] = event.target.placeholder;
 	    } else {
 	      newState[event.target.name] = event.target.value;
+	      this.props.config.flare[event.target.name] = event.target.value;
 	    }
 	    this.setState(newState);
-	    Meteor.call('setConfig', { $set: { spark: newState } });
+	    _globals.ws.send(JSON.stringify({ flag: 'setConfig', fields: this.props.config }));
 	  },
 	  render: function render() {
 	    return _react2.default.createElement(
@@ -26578,7 +26775,7 @@
 	            'label',
 	            null,
 	            'Directory',
-	            _react2.default.createElement('input', { type: 'text', name: 'directory', placeholder: this.props.config.directory, onChange: this.handleChange })
+	            _react2.default.createElement('input', { type: 'text', name: 'directory', placeholder: this.props.config.spark.directory, onChange: this.handleChange })
 	          )
 	        ),
 	        _react2.default.createElement(
@@ -26596,13 +26793,13 @@
 	              'label',
 	              null,
 	              'IP',
-	              _react2.default.createElement('input', { type: 'text', name: 'master.ip', placeholder: this.props.config.master.ip, onChange: this.handleChange })
+	              _react2.default.createElement('input', { type: 'text', name: 'master.ip', placeholder: this.props.config.spark.master.ip, onChange: this.handleChange })
 	            ),
 	            _react2.default.createElement(
 	              'label',
 	              null,
 	              'Port',
-	              _react2.default.createElement('input', { type: 'text', name: 'master.port', placeholder: this.props.config.master.port, onChange: this.handleChange })
+	              _react2.default.createElement('input', { type: 'text', name: 'master.port', placeholder: this.props.config.spark.master.port, onChange: this.handleChange })
 	            )
 	          ),
 	          _react2.default.createElement(
@@ -26612,13 +26809,13 @@
 	              'label',
 	              null,
 	              'Memory allowed',
-	              _react2.default.createElement('input', { type: 'text', name: 'receiverMemory', placeholder: this.props.config.receiverMemory, onChange: this.handleChange })
+	              _react2.default.createElement('input', { type: 'text', name: 'receiverMemory', placeholder: this.props.config.spark.receiverMemory, onChange: this.handleChange })
 	            ),
 	            _react2.default.createElement(
 	              'label',
 	              null,
 	              'Cores Allowed',
-	              _react2.default.createElement('input', { type: 'text', name: 'cores', placeholder: this.props.config.cores, onChange: this.handleChange })
+	              _react2.default.createElement('input', { type: 'text', name: 'cores', placeholder: this.props.config.spark.cores, onChange: this.handleChange })
 	            )
 	          )
 	        ),
@@ -26642,19 +26839,19 @@
 	              'label',
 	              null,
 	              'Root Category',
-	              _react2.default.createElement('input', { type: 'text', name: 'log4j.rootCategory', placeholder: this.props.config.log4j.rootCategory, disabled: true })
+	              _react2.default.createElement('input', { type: 'text', name: 'log4j.rootCategory', placeholder: this.props.config.spark.log4j.rootCategory, disabled: true })
 	            ),
 	            _react2.default.createElement(
 	              'label',
 	              null,
 	              'Appender',
-	              _react2.default.createElement('input', { type: 'text', name: 'log4j.appender', placeholder: this.props.config.log4j.appender, disabled: true })
+	              _react2.default.createElement('input', { type: 'text', name: 'log4j.appender', placeholder: this.props.config.spark.log4j.appender, disabled: true })
 	            ),
 	            _react2.default.createElement(
 	              'label',
 	              null,
 	              'Directory',
-	              _react2.default.createElement('input', { type: 'text', name: 'log4j.directory', placeholder: this.props.config.log4j.directory, onChange: this.handleChange })
+	              _react2.default.createElement('input', { type: 'text', name: 'log4j.directory', placeholder: this.props.config.spark.log4j.directory, onChange: this.handleChange })
 	            )
 	          ),
 	          _react2.default.createElement(
@@ -26664,19 +26861,19 @@
 	              'label',
 	              null,
 	              'Max File Size',
-	              _react2.default.createElement('input', { type: 'text', name: 'log4j.maxFileSize', placeholder: this.props.config.log4j.maxFileSize, onChange: this.handleChange })
+	              _react2.default.createElement('input', { type: 'text', name: 'log4j.maxFileSize', placeholder: this.props.config.spark.log4j.maxFileSize, onChange: this.handleChange })
 	            ),
 	            _react2.default.createElement(
 	              'label',
 	              null,
 	              'Layout',
-	              _react2.default.createElement('input', { type: 'text', name: 'log4j.layout', placeholder: this.props.config.log4j.layout, disabled: true })
+	              _react2.default.createElement('input', { type: 'text', name: 'log4j.layout', placeholder: this.props.config.spark.log4j.layout, disabled: true })
 	            ),
 	            _react2.default.createElement(
 	              'label',
 	              null,
 	              'Conversion Pattern',
-	              _react2.default.createElement('input', { type: 'text', name: 'log4j.conversionPattern', placeholder: this.props.config.log4j.conversionPattern, disabled: true })
+	              _react2.default.createElement('input', { type: 'text', name: 'log4j.conversionPattern', placeholder: this.props.config.spark.log4j.conversionPattern, disabled: true })
 	            )
 	          )
 	        )
@@ -26692,11 +26889,13 @@
 	    var newState = this.state;
 	    if (event.target.value == '') {
 	      newState[event.target.name] = event.target.placeholder;
+	      this.props.config.flare[event.target.name] = event.target.placeholder;
 	    } else {
 	      newState[event.target.name] = event.target.value;
+	      this.props.config.flare[event.target.name] = event.target.value;
 	    }
 	    this.setState(newState);
-	    Meteor.call('setConfig', { $set: { cassandra: newState } });
+	    _globals.ws.send(JSON.stringify({ flag: 'setConfig', fields: this.props.config }));
 	  },
 	  render: function render() {
 	    return _react2.default.createElement(
@@ -26717,19 +26916,19 @@
 	            'label',
 	            null,
 	            'Directory',
-	            _react2.default.createElement('input', { type: 'text', name: 'directory', placeholder: this.props.config.directory, onChange: this.handleChange })
+	            _react2.default.createElement('input', { type: 'text', name: 'directory', placeholder: this.props.config.cassandra.directory, onChange: this.handleChange })
 	          ),
 	          _react2.default.createElement(
 	            'label',
 	            null,
 	            'Username',
-	            _react2.default.createElement('input', { type: 'text', name: 'username', placeholder: this.props.config.username, onChange: this.handleChange })
+	            _react2.default.createElement('input', { type: 'text', name: 'username', placeholder: this.props.config.cassandra.username, onChange: this.handleChange })
 	          ),
 	          _react2.default.createElement(
 	            'label',
 	            null,
 	            'Password',
-	            _react2.default.createElement('input', { type: 'text', name: 'password', placeholder: this.props.config.password, onChange: this.handleChange })
+	            _react2.default.createElement('input', { type: 'text', name: 'password', placeholder: this.props.config.cassandra.password, onChange: this.handleChange })
 	          )
 	        ),
 	        _react2.default.createElement(
@@ -26739,13 +26938,13 @@
 	            'label',
 	            null,
 	            'IP Address',
-	            _react2.default.createElement('input', { type: 'text', name: 'address', placeholder: this.props.config.ip, onChange: this.handleChange })
+	            _react2.default.createElement('input', { type: 'text', name: 'ip', placeholder: this.props.config.cassandra.ip, onChange: this.handleChange })
 	          ),
 	          _react2.default.createElement(
 	            'label',
 	            null,
 	            'Port',
-	            _react2.default.createElement('input', { type: 'text', name: 'port', placeholder: this.props.config.port, onChange: this.handleChange })
+	            _react2.default.createElement('input', { type: 'text', name: 'port', placeholder: this.props.config.cassandra.port, onChange: this.handleChange })
 	          )
 	        )
 	      )
@@ -26762,7 +26961,7 @@
 	  componentDidMount: function componentDidMount() {
 	    var _this = this;
 
-	    _globals.ws.addCallback('config', function (message) {
+	    _globals.ws.addCallback('getConfig', function (message) {
 	      _this.setState(message);
 	    });
 	    _globals.ws.send(JSON.stringify({ flag: 'getConfig' }));
@@ -26781,9 +26980,9 @@
 	          null,
 	          'Settings'
 	        ),
-	        _react2.default.createElement(Flare, { config: this.state.flare }),
-	        _react2.default.createElement(Spark, { config: this.state.spark }),
-	        _react2.default.createElement(Cassandra, { config: this.state.cassandra })
+	        _react2.default.createElement(Flare, { config: this.state }),
+	        _react2.default.createElement(Spark, { config: this.state }),
+	        _react2.default.createElement(Cassandra, { config: this.state })
 	      )
 	    );
 	  }
@@ -26792,14 +26991,14 @@
 	exports.default = Settings;
 
 /***/ },
-/* 232 */
+/* 236 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 233 */,
-/* 234 */
+/* 237 */,
+/* 238 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -26814,13 +27013,13 @@
 
 	var _globals = __webpack_require__(223);
 
-	var _classnames = __webpack_require__(235);
+	var _classnames = __webpack_require__(232);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	__webpack_require__(236);
+	__webpack_require__(239);
 
 	var SPARK_LOG = 'sparkLog';
 	var SPARK_UI_LOG = 'sparkUILog';
@@ -26947,188 +27146,6 @@
 	});
 
 	exports.default = Logs;
-
-/***/ },
-/* 235 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
-	  Copyright (c) 2016 Jed Watson.
-	  Licensed under the MIT License (MIT), see
-	  http://jedwatson.github.io/classnames
-	*/
-	/* global define */
-
-	(function () {
-		'use strict';
-
-		var hasOwn = {}.hasOwnProperty;
-
-		function classNames () {
-			var classes = [];
-
-			for (var i = 0; i < arguments.length; i++) {
-				var arg = arguments[i];
-				if (!arg) continue;
-
-				var argType = typeof arg;
-
-				if (argType === 'string' || argType === 'number') {
-					classes.push(arg);
-				} else if (Array.isArray(arg)) {
-					classes.push(classNames.apply(null, arg));
-				} else if (argType === 'object') {
-					for (var key in arg) {
-						if (hasOwn.call(arg, key) && arg[key]) {
-							classes.push(key);
-						}
-					}
-				}
-			}
-
-			return classes.join(' ');
-		}
-
-		if (typeof module !== 'undefined' && module.exports) {
-			module.exports = classNames;
-		} else if (true) {
-			// register as 'classnames', consistent with npm package name
-			!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
-				return classNames;
-			}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-		} else {
-			window.classNames = classNames;
-		}
-	}());
-
-
-/***/ },
-/* 236 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 237 */,
-/* 238 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _globals = __webpack_require__(223);
-
-	var _classnames = __webpack_require__(235);
-
-	var _classnames2 = _interopRequireDefault(_classnames);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	__webpack_require__(239);
-
-	var Submit = _react2.default.createClass({
-	  displayName: 'Submit',
-
-	  getInitialState: function getInitialState() {
-	    return {
-	      hash: '',
-	      progress: 0,
-	      state: ''
-	    };
-	  },
-	  componentDidMount: function componentDidMount(argument) {
-	    var _this = this;
-
-	    _globals.ws.addCallback('submit', function (message) {
-	      _this.setState(message);
-	    });
-	  },
-	  render: function render() {
-	    return _react2.default.createElement(
-	      'div',
-	      { id: 'submit-page', className: 'page' },
-	      _react2.default.createElement(_globals.Navbar, null),
-	      _react2.default.createElement(_globals.Sidebar, { path: window.location.pathname }),
-	      _react2.default.createElement(
-	        'div',
-	        { className: 'container' },
-	        _react2.default.createElement(
-	          'h1',
-	          null,
-	          'Submit'
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          { id: 'uploadJar' },
-	          _react2.default.createElement(
-	            'h2',
-	            null,
-	            'Upload Jar'
-	          ),
-	          _react2.default.createElement('iframe', { name: 'submitFrame', style: { display: 'none' } }),
-	          _react2.default.createElement(
-	            'form',
-	            { id: 'uploadForm', encType: 'multipart/form-data',
-	              action: '/submit', method: 'post', target: 'submitFrame' },
-	            _react2.default.createElement(
-	              'label',
-	              null,
-	              '"Don\'t know what goes here"',
-	              _react2.default.createElement('input', { type: 'file', name: 'upload' })
-	            ),
-	            _react2.default.createElement(
-	              'div',
-	              null,
-	              _react2.default.createElement(
-	                'button',
-	                { id: 'upload', type: 'submit' },
-	                'StartUpload'
-	              )
-	            ),
-	            _react2.default.createElement(
-	              'div',
-	              { id: 'progressBox' },
-	              _react2.default.createElement(
-	                'span',
-	                null,
-	                this.state.progress
-	              ),
-	              _react2.default.createElement('span', { id: 'progressBar',
-	                className: (0, _classnames2.default)({
-	                  completed: this.state.state.localeCompare('completed') == 0,
-	                  failed: this.state.state.localeCompare('failed') == 0
-	                }),
-	                style: { width: this.state.progress + '%' } })
-	            )
-	          )
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          { id: 'ipfsHash' },
-	          _react2.default.createElement(
-	            'h2',
-	            null,
-	            'IPFS Hash: ',
-	            _react2.default.createElement(
-	              'span',
-	              { id: 'hash' },
-	              this.state.hash
-	            )
-	          )
-	        )
-	      )
-	    );
-	  }
-	});
-
-	exports.default = Submit;
 
 /***/ },
 /* 239 */

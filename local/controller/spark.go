@@ -99,23 +99,26 @@ func startSpark() {
 	sdw.WriteString("spark.eventLog.enabled " + "true" + "\n")
 	sdw.WriteString("spark.eventLog.dir " + sparkUIDirName + "\n")
 	sdw.Flush()
+
+	spark.start([]byte("master"))
+	spark.start([]byte("slave"))
 }
 
 //state should either be 'master' or 'worker'
 func (si *sparkInstance) start(state []byte) {
 	//TODO: fix so slave isn't started til after a toggle is enabled in webui
-	master := config.Spark.Directory + "/sbin/start-master.sh"
-	slave := config.Spark.Directory + "/sbin/start-slave.sh"
-	slaveArg := "spark://" + config.Spark.Master.IP + ":" + config.Spark.Master.Port
 
 	switch string(state) {
 	case "master":
+		master := config.Spark.Directory + "/sbin/start-master.sh"
 		_, err := exec.Command(master).CombinedOutput()
 		if err != nil {
 			log.Println("error with starting spark master")
 			log.Fatal(err.Error())
 		}
 	case "slave":
+		slave := config.Spark.Directory + "/sbin/start-slave.sh"
+		slaveArg := "spark://" + config.Spark.Master.IP + ":" + config.Spark.Master.Port
 		_, err := exec.Command(slave, slaveArg).CombinedOutput()
 
 		if err != nil {
